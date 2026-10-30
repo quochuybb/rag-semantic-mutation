@@ -1,0 +1,178 @@
+{
+  "inter_annotator_agreement": {
+    "factual_corruption": {
+      "observed_agreement": 100.0,
+      "cohen_kappa": 1.0,
+      "ci_95": [
+        1.0,
+        1.0
+      ],
+      "agreed_cases": 52,
+      "total_cases": 52
+    },
+    "answerability": {
+      "observed_agreement": 100.0,
+      "cohen_kappa": 1.0,
+      "ci_95": [
+        1.0,
+        1.0
+      ],
+      "agreed_cases": 52,
+      "total_cases": 52
+    },
+    "operator_fidelity": {
+      "observed_agreement": 98.08,
+      "cohen_kappa": 0.9612,
+      "ci_95": [
+        0.9239,
+        0.9985
+      ],
+      "agreed_cases": 51,
+      "total_cases": 52
+    },
+    "overall_valid": {
+      "observed_agreement": 98.08,
+      "cohen_kappa": 0.9598,
+      "ci_95": [
+        0.9224,
+        0.9971
+      ],
+      "agreed_cases": 51,
+      "total_cases": 52
+    }
+  },
+  "domain_summary": {
+    "Private (Internal Aggregator)": {
+      "factual_corruption_rate_ai": 76.92,
+      "factual_corruption_rate_human": 76.92,
+      "answerability_rate_ai": 80.77,
+      "answerability_rate_human": 80.77,
+      "operator_fidelity_rate_ai": 69.23,
+      "operator_fidelity_rate_human": 69.23,
+      "overall_valid_rate_ai": 42.31,
+      "overall_valid_rate_human": 42.31
+    },
+    "Public (FastAPI)": {
+      "factual_corruption_rate_ai": 92.31,
+      "factual_corruption_rate_human": 92.31,
+      "answerability_rate_ai": 96.15,
+      "answerability_rate_human": 96.15,
+      "operator_fidelity_rate_ai": 38.46,
+      "operator_fidelity_rate_human": 42.31,
+      "overall_valid_rate_ai": 34.62,
+      "overall_valid_rate_human": 38.46
+    }
+  },
+  "operator_summary": {
+    "Addition of Misleading Details": {
+      "samples": 4,
+      "invalid_rate_ai": 0.0,
+      "invalid_rate_human": 0.0,
+      "factual_corruption_pct": 100.0,
+      "answerability_pct": 100.0,
+      "operator_fidelity_pct": 100.0
+    },
+    "Cause and Effect Reversal": {
+      "samples": 4,
+      "invalid_rate_ai": 25.0,
+      "invalid_rate_human": 25.0,
+      "factual_corruption_pct": 100.0,
+      "answerability_pct": 100.0,
+      "operator_fidelity_pct": 75.0
+    },
+    "Changing Quantifiers (All to Some, etc.)": {
+      "samples": 4,
+      "invalid_rate_ai": 25.0,
+      "invalid_rate_human": 25.0,
+      "factual_corruption_pct": 75.0,
+      "answerability_pct": 100.0,
+      "operator_fidelity_pct": 75.0
+    },
+    "Conditional Logic Alteration (If to Unless)": {
+      "samples": 4,
+      "invalid_rate_ai": 50.0,
+      "invalid_rate_human": 50.0,
+      "factual_corruption_pct": 100.0,
+      "answerability_pct": 100.0,
+      "operator_fidelity_pct": 50.0
+    },
+    "Contextual Shifting (Changing the domain slightly)": {
+      "samples": 4,
+      "invalid_rate_ai": 50.0,
+      "invalid_rate_human": 50.0,
+      "factual_corruption_pct": 100.0,
+      "answerability_pct": 50.0,
+      "operator_fidelity_pct": 100.0
+    },
+    "Entity Replacement (Names, Dates, Numbers)": {
+      "samples": 4,
+      "invalid_rate_ai": 75.0,
+      "invalid_rate_human": 75.0,
+      "factual_corruption_pct": 100.0,
+      "answerability_pct": 50.0,
+      "operator_fidelity_pct": 25.0
+    },
+    "Logic Reversal (Negation)": {
+      "samples": 4,
+      "invalid_rate_ai": 100.0,
+      "invalid_rate_human": 75.0,
+      "factual_corruption_pct": 100.0,
+      "answerability_pct": 100.0,
+      "operator_fidelity_pct": 25.0
+    },
+    "Omission of Key Details": {
+      "samples": 4,
+      "invalid_rate_ai": 50.0,
+      "invalid_rate_human": 50.0,
+      "factual_corruption_pct": 100.0,
+      "answerability_pct": 75.0,
+      "operator_fidelity_pct": 75.0
+    },
+    "Paraphrasing (Tone/Style Change)": {
+      "samples": 4,
+      "invalid_rate_ai": 100.0,
+      "invalid_rate_human": 100.0,
+      "factual_corruption_pct": 50.0,
+      "answerability_pct": 100.0,
+      "operator_fidelity_pct": 50.0
+    },
+    "Passive to Active Voice Conversion": {
+      "samples": 4,
+      "invalid_rate_ai": 100.0,
+      "invalid_rate_human": 100.0,
+      "factual_corruption_pct": 25.0,
+      "answerability_pct": 100.0,
+      "operator_fidelity_pct": 25.0
+    },
+    "Pronoun/Reference Substitution": {
+      "samples": 4,
+      "invalid_rate_ai": 50.0,
+      "invalid_rate_human": 50.0,
+      "factual_corruption_pct": 100.0,
+      "answerability_pct": 75.0,
+      "operator_fidelity_pct": 50.0
+    },
+    "Sentence Restructuring": {
+      "samples": 4,
+      "invalid_rate_ai": 75.0,
+      "invalid_rate_human": 75.0,
+      "factual_corruption_pct": 75.0,
+      "answerability_pct": 100.0,
+      "operator_fidelity_pct": 50.0
+    },
+    "Word Replacement (Synonyms/Antonyms)": {
+      "samples": 4,
+      "invalid_rate_ai": 100.0,
+      "invalid_rate_human": 100.0,
+      "factual_corruption_pct": 75.0,
+      "answerability_pct": 100.0,
+      "operator_fidelity_pct": 25.0
+    }
+  },
+  "macro_rates": {
+    "factual_corruption_overall": 84.62,
+    "answerability_overall": 88.46,
+    "operator_fidelity_overall": 55.77,
+    "overall_valid_overall": 40.38
+  }
+}

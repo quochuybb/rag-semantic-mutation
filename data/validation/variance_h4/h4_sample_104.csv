@@ -1,0 +1,238 @@
+sample_idx,operator,mut_id,ctx_id,workspace_slug,query,baseline_answer,mutated_file
+1,MUT_01,CTX_001_MUT_01,CTX_001,h4-ctx-001-mut-01,Who is the author of the Pull Request that fixes/deletes unnecessary f-strings in version 0.56.1?,Abstain,CTX_001_MUT_01.md
+2,MUT_01,CTX_006_MUT_01,CTX_006,h4-ctx-006-mut-01,What version of Pydantic was FastAPI upgraded to in version 0.24.0?,Abstain,CTX_006_MUT_01.md
+3,MUT_01,CTX_009_MUT_01,CTX_009,h4-ctx-009-mut-01,"In the 0.96.0 release, what updates are related to internal performance optimization and documentation for Deta?","* Update `create_cloned_field` to use a global cache and improve startup performance.
+* Update Deta deployment tutorial for compatibility with Deta Space.
+* Fix typo in Deta deployment tutorial.",CTX_009_MUT_01.md
+4,MUT_01,CTX_010_MUT_01,CTX_010,h4-ctx-010-mut-01,"In FastAPI, can a dependency be declared using 'async def' and used within a path operation function defined using a 'def' function normally?",Yes,CTX_010_MUT_01.md
+5,MUT_01,CTX_011_MUT_01,CTX_011,h4-ctx-011-mut-01,"When defining a Pydantic model (such as Image) and using it as a data type for a field of another model, what automatic benefits does FastAPI provide?",Abstain,CTX_011_MUT_01.md
+6,MUT_01,CTX_026_MUT_01,CTX_026,h4-ctx-026-mut-01,"Instead of receiving individual path parameters from FastAPI, what syntax in the path operation would retrieve the original HTTP Request object?","Using the `Request` object directly: 
+
+```python
+from fastapi import Request
+
+@app.get(""/items/"")
+async def read_items(request: Request):
+```",CTX_026_MUT_01.md
+7,MUT_01,CTX_030_MUT_01,CTX_030,h4-ctx-030-mut-01,"According to the contribution guide, how do you formally start a project to translate the FastAPI documentation into a completely new language?","Find 2 more people willing to review translation PRs, then create a new discussion following the template and tag the 2 people.",CTX_030_MUT_01.md
+8,MUT_01,CTX_031_MUT_01,CTX_031,h4-ctx-031-mut-01,"How to load a heavy machine learning model into memory before the server starts accepting requests, but not load it during simple automated unit testing?",Abstain,CTX_031_MUT_01.md
+9,MUT_02,CTX_003_MUT_02,CTX_003,h4-ctx-003-mut-02,What is the default URL path to automatically serve CSS files when using StaticFiles with the name 'static'?,/static/,CTX_003_MUT_02.md
+10,MUT_02,CTX_007_MUT_02,CTX_007,h4-ctx-007-mut-02,The CSRF security vulnerability in versions prior to 0.65.2 relates to FastAPI automatically parsing content with any Content-Type as JSON.,False,CTX_007_MUT_02.md
+11,MUT_02,CTX_014_MUT_02,CTX_014,h4-ctx-014-mut-02,What security patch 0.92.0 addresses the Denial of Service (DoS) vulnerability related to which component in the FastAPI application?,Abstain,CTX_014_MUT_02.md
+12,MUT_02,CTX_018_MUT_02,CTX_018,h4-ctx-018-mut-02,Why did OAuth2 design a token with expiration time instead of issuing a permanent key?,"So, the risk (of someone stealing the token) is less. It is not like a permanent key that will work forever (in most cases).",CTX_018_MUT_02.md
+13,MUT_02,CTX_019_MUT_02,CTX_019,h4-ctx-019-mut-02,"Based on the display structure, can one person be in both the Gold Sponsors list and the Silver Sponsors list at the same time?",Abstain,CTX_019_MUT_02.md
+14,MUT_02,CTX_022_MUT_02,CTX_022,h4-ctx-022-mut-02,"If an HTTP request can only contain a single body, how does FastAPI handle it when you declare multiple body parameters in the path operation function?","FastAPI will handle it, give you the correct data in your function, and validate and document the correct schema in the *path operation*.",CTX_022_MUT_02.md
+15,MUT_02,CTX_024_MUT_02,CTX_024,h4-ctx-024-mut-02,What are the real-world cases where you are forced to use the jsonable_encoder() function on a Pydantic model before further processing?,"When you need to convert a Pydantic model to a JSON-compatible data structure (like a `dict`, `list`, etc.). For example, to store it in a database.",CTX_024_MUT_02.md
+16,MUT_02,CTX_029_MUT_02,CTX_029,h4-ctx-029-mut-02,"According to the documentation, what are the main differences in environmental behavior between the 'development' and 'deployment' (web API) stages?","In **development**: 
+
+* You are constantly **changing** the code, **breaking** it and **fixing** it, **stopping** and **restarting** the **development server**, etc. 
+ 
+In **deployment** (a web API): 
+
+* You put it in a **remote machine**, with a **server program** that provides good **performance**, **stability**, etc. 
+* So that your **users** can **access** the application **efficiently** and without **interruptions** or **problems**.",CTX_029_MUT_02.md
+17,MUT_03,CTX_002_MUT_03,CTX_002,h4-ctx-002-mut-03,Where can I see all the hundreds of other contributors to the FastAPI project beyond the top 50?,You can see all the contributors in the FastAPI GitHub Contributors page.,CTX_002_MUT_03.md
+18,MUT_03,CTX_004_MUT_03,CTX_004,h4-ctx-004-mut-03,"In the OpenAPI specification, what is the information about the metadata of a path operation called?",Abstain,CTX_004_MUT_03.md
+19,MUT_03,CTX_009_MUT_03,CTX_009,h4-ctx-009-mut-03,"In the 0.96.0 release, what updates are related to internal performance optimization and documentation for Deta?","* Update `create_cloned_field` to use a global cache and improve startup performance.
+* Update Deta deployment tutorial for compatibility with Deta Space.
+* Fix typo in Deta deployment tutorial.",CTX_009_MUT_03.md
+20,MUT_03,CTX_010_MUT_03,CTX_010,h4-ctx-010-mut-03,"In FastAPI, can a dependency be declared using 'async def' and used within a path operation function defined using a 'def' function normally?",Yes,CTX_010_MUT_03.md
+21,MUT_03,CTX_019_MUT_03,CTX_019,h4-ctx-019-mut-03,"Based on the display structure, can one person be in both the Gold Sponsors list and the Silver Sponsors list at the same time?",Abstain,CTX_019_MUT_03.md
+22,MUT_03,CTX_022_MUT_03,CTX_022,h4-ctx-022-mut-03,"If an HTTP request can only contain a single body, how does FastAPI handle it when you declare multiple body parameters in the path operation function?","FastAPI will handle it, give you the correct data in your function, and validate and document the correct schema in the *path operation*.",CTX_022_MUT_03.md
+23,MUT_03,CTX_031_MUT_03,CTX_031,h4-ctx-031-mut-03,"How to load a heavy machine learning model into memory before the server starts accepting requests, but not load it during simple automated unit testing?",Abstain,CTX_031_MUT_03.md
+24,MUT_03,CTX_032_MUT_03,CTX_032,h4-ctx-032-mut-03,List some popular software that can act as a TLS Termination Proxy to handle HTTPS certificates before forwarding HTTP requests to FastAPI?,"* Traefik 
+* Caddy 
+* Nginx 
+* HAProxy",CTX_032_MUT_03.md
+25,MUT_04,CTX_009_MUT_04,CTX_009,h4-ctx-009-mut-04,"In the 0.96.0 release, what updates are related to internal performance optimization and documentation for Deta?","* Update `create_cloned_field` to use a global cache and improve startup performance.
+* Update Deta deployment tutorial for compatibility with Deta Space.
+* Fix typo in Deta deployment tutorial.",CTX_009_MUT_04.md
+26,MUT_04,CTX_014_MUT_04,CTX_014,h4-ctx-014-mut-04,What security patch 0.92.0 addresses the Denial of Service (DoS) vulnerability related to which component in the FastAPI application?,Abstain,CTX_014_MUT_04.md
+27,MUT_04,CTX_015_MUT_04,CTX_015,h4-ctx-015-mut-04,"In the ASGI specification, what protocol do the 'startup' and 'shutdown' events belong to?",Lifespan Protocol,CTX_015_MUT_04.md
+28,MUT_04,CTX_016_MUT_04,CTX_016,h4-ctx-016-mut-04,What is the concept of 'OpenAPI Callback' in FastAPI described as?,the process that happens when your API app calls the external API.,CTX_016_MUT_04.md
+29,MUT_04,CTX_017_MUT_04,CTX_017,h4-ctx-017-mut-04,Why do we need to define Query Parameters inside a Pydantic model and pass it into the `Query` function?,Abstain,CTX_017_MUT_04.md
+30,MUT_04,CTX_020_MUT_04,CTX_020,h4-ctx-020-mut-04,What conditions help the Streaming data model process data faster than the normal model when working with large data streams?,Abstain,CTX_020_MUT_04.md
+31,MUT_04,CTX_023_MUT_04,CTX_023,h4-ctx-023-mut-04,"If you want to use OpenAPI Generator or Hey API to generate SDK for FastAPI, why do you have to make sure that tool supports OpenAPI version 3.1?",Because FastAPI automatically generates **OpenAPI 3.1** specifications.,CTX_023_MUT_04.md
+32,MUT_04,CTX_026_MUT_04,CTX_026,h4-ctx-026-mut-04,"Instead of receiving individual path parameters from FastAPI, what syntax in the path operation would retrieve the original HTTP Request object?","Using the `Request` object directly: 
+
+```python
+from fastapi import Request
+
+@app.get(""/items/"")
+async def read_items(request: Request):
+```",CTX_026_MUT_04.md
+33,MUT_05,CTX_002_MUT_05,CTX_002,h4-ctx-002-mut-05,Where can I see all the hundreds of other contributors to the FastAPI project beyond the top 50?,You can see all the contributors in the FastAPI GitHub Contributors page.,CTX_002_MUT_05.md
+34,MUT_05,CTX_007_MUT_05,CTX_007,h4-ctx-007-mut-05,The CSRF security vulnerability in versions prior to 0.65.2 relates to FastAPI automatically parsing content with any Content-Type as JSON.,False,CTX_007_MUT_05.md
+35,MUT_05,CTX_019_MUT_05,CTX_019,h4-ctx-019-mut-05,"Based on the display structure, can one person be in both the Gold Sponsors list and the Silver Sponsors list at the same time?",Abstain,CTX_019_MUT_05.md
+36,MUT_05,CTX_025_MUT_05,CTX_025,h4-ctx-025-mut-05,How can you use the variable 'commons' in a function endpoint to leverage the type alias?,"You can use it as a type hint for a function parameter, like this: 
+
+```python
+commons: Annotated[dict, Depends(common_parameters)]
+``` 
+
+can be replaced with 
+
+```python
+commons: commons
+```",CTX_025_MUT_05.md
+37,MUT_05,CTX_027_MUT_05,CTX_027,h4-ctx-027-mut-05,What is the keyword in modern Python used to define and execute a coroutine in asynchronous programming?,`async` and `await`,CTX_027_MUT_05.md
+38,MUT_05,CTX_028_MUT_05,CTX_028,h4-ctx-028-mut-05,What is the bash command to activate a virtual environment named '.venv' on a Linux/macOS system?,`source .venv/bin/activate`,CTX_028_MUT_05.md
+39,MUT_05,CTX_030_MUT_05,CTX_030,h4-ctx-030-mut-05,"According to the contribution guide, how do you formally start a project to translate the FastAPI documentation into a completely new language?","Find 2 more people willing to review translation PRs, then create a new discussion following the template and tag the 2 people.",CTX_030_MUT_05.md
+40,MUT_05,CTX_031_MUT_05,CTX_031,h4-ctx-031-mut-05,"How to load a heavy machine learning model into memory before the server starts accepting requests, but not load it during simple automated unit testing?",Abstain,CTX_031_MUT_05.md
+41,MUT_06,CTX_004_MUT_06,CTX_004,h4-ctx-004-mut-06,"In the OpenAPI specification, what is the information about the metadata of a path operation called?",Abstain,CTX_004_MUT_06.md
+42,MUT_06,CTX_005_MUT_06,CTX_005,h4-ctx-005-mut-06,FastAPI uses which information to create a unique operation ID for a path operation?,"the **function name**, the **path**, and the **HTTP method/operation**",CTX_005_MUT_06.md
+43,MUT_06,CTX_007_MUT_06,CTX_007,h4-ctx-007-mut-06,The CSRF security vulnerability in versions prior to 0.65.2 relates to FastAPI automatically parsing content with any Content-Type as JSON.,False,CTX_007_MUT_06.md
+44,MUT_06,CTX_009_MUT_06,CTX_009,h4-ctx-009-mut-06,"In the 0.96.0 release, what updates are related to internal performance optimization and documentation for Deta?","* Update `create_cloned_field` to use a global cache and improve startup performance.
+* Update Deta deployment tutorial for compatibility with Deta Space.
+* Fix typo in Deta deployment tutorial.",CTX_009_MUT_06.md
+45,MUT_06,CTX_010_MUT_06,CTX_010,h4-ctx-010-mut-06,"In FastAPI, can a dependency be declared using 'async def' and used within a path operation function defined using a 'def' function normally?",Yes,CTX_010_MUT_06.md
+46,MUT_06,CTX_012_MUT_06,CTX_012,h4-ctx-012-mut-06,The combination of FastAPI and Pydantic brings out which notable features related to data validation and interaction with Editor?,"* Editor support (completion, etc.), even for nested models
+* Data conversion
+* Data validation 
+* Plays nicely with your **IDE/linter/brain** 
+* Auto-completion, linting, mypy and your intuition should all work properly with your validated data.",CTX_012_MUT_06.md
+47,MUT_06,CTX_026_MUT_06,CTX_026,h4-ctx-026-mut-06,"Instead of receiving individual path parameters from FastAPI, what syntax in the path operation would retrieve the original HTTP Request object?","Using the `Request` object directly: 
+
+```python
+from fastapi import Request
+
+@app.get(""/items/"")
+async def read_items(request: Request):
+```",CTX_026_MUT_06.md
+48,MUT_06,CTX_029_MUT_06,CTX_029,h4-ctx-029-mut-06,"According to the documentation, what are the main differences in environmental behavior between the 'development' and 'deployment' (web API) stages?","In **development**: 
+
+* You are constantly **changing** the code, **breaking** it and **fixing** it, **stopping** and **restarting** the **development server**, etc. 
+ 
+In **deployment** (a web API): 
+
+* You put it in a **remote machine**, with a **server program** that provides good **performance**, **stability**, etc. 
+* So that your **users** can **access** the application **efficiently** and without **interruptions** or **problems**.",CTX_029_MUT_06.md
+49,MUT_07,CTX_004_MUT_07,CTX_004,h4-ctx-004-mut-07,"In the OpenAPI specification, what is the information about the metadata of a path operation called?",Abstain,CTX_004_MUT_07.md
+50,MUT_07,CTX_005_MUT_07,CTX_005,h4-ctx-005-mut-07,FastAPI uses which information to create a unique operation ID for a path operation?,"the **function name**, the **path**, and the **HTTP method/operation**",CTX_005_MUT_07.md
+51,MUT_07,CTX_007_MUT_07,CTX_007,h4-ctx-007-mut-07,The CSRF security vulnerability in versions prior to 0.65.2 relates to FastAPI automatically parsing content with any Content-Type as JSON.,False,CTX_007_MUT_07.md
+52,MUT_07,CTX_010_MUT_07,CTX_010,h4-ctx-010-mut-07,"In FastAPI, can a dependency be declared using 'async def' and used within a path operation function defined using a 'def' function normally?",Yes,CTX_010_MUT_07.md
+53,MUT_07,CTX_013_MUT_07,CTX_013,h4-ctx-013-mut-07,"In addition to supporting autocompletion and validation for basic data types (JSON object, array, string, number), what other complex data types does FastAPI's validation system also support?","* Hierarchical Pydantic models
+* Python `typing`’s `List` 
+* Python `typing`’s `Dict` 
+* URL
+* Email
+* UUID
+* ...and others.",CTX_013_MUT_07.md
+54,MUT_07,CTX_014_MUT_07,CTX_014,h4-ctx-014-mut-07,What security patch 0.92.0 addresses the Denial of Service (DoS) vulnerability related to which component in the FastAPI application?,Abstain,CTX_014_MUT_07.md
+55,MUT_07,CTX_021_MUT_07,CTX_021,h4-ctx-021-mut-07,Why use AsyncClient combined with await instead of TestClient when writing unit tests marked with @pytest.mark.anyio?,Because you are writing **asynchronous** tests.,CTX_021_MUT_07.md
+56,MUT_07,CTX_025_MUT_07,CTX_025,h4-ctx-025-mut-07,How can you use the variable 'commons' in a function endpoint to leverage the type alias?,"You can use it as a type hint for a function parameter, like this: 
+
+```python
+commons: Annotated[dict, Depends(common_parameters)]
+``` 
+
+can be replaced with 
+
+```python
+commons: commons
+```",CTX_025_MUT_07.md
+57,MUT_08,CTX_001_MUT_08,CTX_001,h4-ctx-001-mut-08,Who is the author of the Pull Request that fixes/deletes unnecessary f-strings in version 0.56.1?,Abstain,CTX_001_MUT_08.md
+58,MUT_08,CTX_004_MUT_08,CTX_004,h4-ctx-004-mut-08,"In the OpenAPI specification, what is the information about the metadata of a path operation called?",Abstain,CTX_004_MUT_08.md
+59,MUT_08,CTX_005_MUT_08,CTX_005,h4-ctx-005-mut-08,FastAPI uses which information to create a unique operation ID for a path operation?,"the **function name**, the **path**, and the **HTTP method/operation**",CTX_005_MUT_08.md
+60,MUT_08,CTX_014_MUT_08,CTX_014,h4-ctx-014-mut-08,What security patch 0.92.0 addresses the Denial of Service (DoS) vulnerability related to which component in the FastAPI application?,Abstain,CTX_014_MUT_08.md
+61,MUT_08,CTX_016_MUT_08,CTX_016,h4-ctx-016-mut-08,What is the concept of 'OpenAPI Callback' in FastAPI described as?,the process that happens when your API app calls the external API.,CTX_016_MUT_08.md
+62,MUT_08,CTX_019_MUT_08,CTX_019,h4-ctx-019-mut-08,"Based on the display structure, can one person be in both the Gold Sponsors list and the Silver Sponsors list at the same time?",Abstain,CTX_019_MUT_08.md
+63,MUT_08,CTX_025_MUT_08,CTX_025,h4-ctx-025-mut-08,How can you use the variable 'commons' in a function endpoint to leverage the type alias?,"You can use it as a type hint for a function parameter, like this: 
+
+```python
+commons: Annotated[dict, Depends(common_parameters)]
+``` 
+
+can be replaced with 
+
+```python
+commons: commons
+```",CTX_025_MUT_08.md
+64,MUT_08,CTX_030_MUT_08,CTX_030,h4-ctx-030-mut-08,"According to the contribution guide, how do you formally start a project to translate the FastAPI documentation into a completely new language?","Find 2 more people willing to review translation PRs, then create a new discussion following the template and tag the 2 people.",CTX_030_MUT_08.md
+65,MUT_09,CTX_007_MUT_09,CTX_007,h4-ctx-007-mut-09,The CSRF security vulnerability in versions prior to 0.65.2 relates to FastAPI automatically parsing content with any Content-Type as JSON.,False,CTX_007_MUT_09.md
+66,MUT_09,CTX_012_MUT_09,CTX_012,h4-ctx-012-mut-09,The combination of FastAPI and Pydantic brings out which notable features related to data validation and interaction with Editor?,"* Editor support (completion, etc.), even for nested models
+* Data conversion
+* Data validation 
+* Plays nicely with your **IDE/linter/brain** 
+* Auto-completion, linting, mypy and your intuition should all work properly with your validated data.",CTX_012_MUT_09.md
+67,MUT_09,CTX_019_MUT_09,CTX_019,h4-ctx-019-mut-09,"Based on the display structure, can one person be in both the Gold Sponsors list and the Silver Sponsors list at the same time?",Abstain,CTX_019_MUT_09.md
+68,MUT_09,CTX_020_MUT_09,CTX_020,h4-ctx-020-mut-09,What conditions help the Streaming data model process data faster than the normal model when working with large data streams?,Abstain,CTX_020_MUT_09.md
+69,MUT_09,CTX_021_MUT_09,CTX_021,h4-ctx-021-mut-09,Why use AsyncClient combined with await instead of TestClient when writing unit tests marked with @pytest.mark.anyio?,Because you are writing **asynchronous** tests.,CTX_021_MUT_09.md
+70,MUT_09,CTX_027_MUT_09,CTX_027,h4-ctx-027-mut-09,What is the keyword in modern Python used to define and execute a coroutine in asynchronous programming?,`async` and `await`,CTX_027_MUT_09.md
+71,MUT_09,CTX_028_MUT_09,CTX_028,h4-ctx-028-mut-09,What is the bash command to activate a virtual environment named '.venv' on a Linux/macOS system?,`source .venv/bin/activate`,CTX_028_MUT_09.md
+72,MUT_09,CTX_032_MUT_09,CTX_032,h4-ctx-032-mut-09,List some popular software that can act as a TLS Termination Proxy to handle HTTPS certificates before forwarding HTTP requests to FastAPI?,"* Traefik 
+* Caddy 
+* Nginx 
+* HAProxy",CTX_032_MUT_09.md
+73,MUT_10,CTX_002_MUT_10,CTX_002,h4-ctx-002-mut-10,Where can I see all the hundreds of other contributors to the FastAPI project beyond the top 50?,You can see all the contributors in the FastAPI GitHub Contributors page.,CTX_002_MUT_10.md
+74,MUT_10,CTX_003_MUT_10,CTX_003,h4-ctx-003-mut-10,What is the default URL path to automatically serve CSS files when using StaticFiles with the name 'static'?,/static/,CTX_003_MUT_10.md
+75,MUT_10,CTX_005_MUT_10,CTX_005,h4-ctx-005-mut-10,FastAPI uses which information to create a unique operation ID for a path operation?,"the **function name**, the **path**, and the **HTTP method/operation**",CTX_005_MUT_10.md
+76,MUT_10,CTX_008_MUT_10,CTX_008,h4-ctx-008-mut-10,How to declare HTTP status code for response in decorators like @app.get()?,by using the `status_code` parameter,CTX_008_MUT_10.md
+77,MUT_10,CTX_010_MUT_10,CTX_010,h4-ctx-010-mut-10,"In FastAPI, can a dependency be declared using 'async def' and used within a path operation function defined using a 'def' function normally?",Yes,CTX_010_MUT_10.md
+78,MUT_10,CTX_023_MUT_10,CTX_023,h4-ctx-023-mut-10,"If you want to use OpenAPI Generator or Hey API to generate SDK for FastAPI, why do you have to make sure that tool supports OpenAPI version 3.1?",Because FastAPI automatically generates **OpenAPI 3.1** specifications.,CTX_023_MUT_10.md
+79,MUT_10,CTX_026_MUT_10,CTX_026,h4-ctx-026-mut-10,"Instead of receiving individual path parameters from FastAPI, what syntax in the path operation would retrieve the original HTTP Request object?","Using the `Request` object directly: 
+
+```python
+from fastapi import Request
+
+@app.get(""/items/"")
+async def read_items(request: Request):
+```",CTX_026_MUT_10.md
+80,MUT_10,CTX_030_MUT_10,CTX_030,h4-ctx-030-mut-10,"According to the contribution guide, how do you formally start a project to translate the FastAPI documentation into a completely new language?","Find 2 more people willing to review translation PRs, then create a new discussion following the template and tag the 2 people.",CTX_030_MUT_10.md
+81,MUT_11,CTX_007_MUT_11,CTX_007,h4-ctx-007-mut-11,The CSRF security vulnerability in versions prior to 0.65.2 relates to FastAPI automatically parsing content with any Content-Type as JSON.,False,CTX_007_MUT_11.md
+82,MUT_11,CTX_008_MUT_11,CTX_008,h4-ctx-008-mut-11,How to declare HTTP status code for response in decorators like @app.get()?,by using the `status_code` parameter,CTX_008_MUT_11.md
+83,MUT_11,CTX_011_MUT_11,CTX_011,h4-ctx-011-mut-11,"When defining a Pydantic model (such as Image) and using it as a data type for a field of another model, what automatic benefits does FastAPI provide?",Abstain,CTX_011_MUT_11.md
+84,MUT_11,CTX_014_MUT_11,CTX_014,h4-ctx-014-mut-11,What security patch 0.92.0 addresses the Denial of Service (DoS) vulnerability related to which component in the FastAPI application?,Abstain,CTX_014_MUT_11.md
+85,MUT_11,CTX_015_MUT_11,CTX_015,h4-ctx-015-mut-11,"In the ASGI specification, what protocol do the 'startup' and 'shutdown' events belong to?",Lifespan Protocol,CTX_015_MUT_11.md
+86,MUT_11,CTX_017_MUT_11,CTX_017,h4-ctx-017-mut-11,Why do we need to define Query Parameters inside a Pydantic model and pass it into the `Query` function?,Abstain,CTX_017_MUT_11.md
+87,MUT_11,CTX_023_MUT_11,CTX_023,h4-ctx-023-mut-11,"If you want to use OpenAPI Generator or Hey API to generate SDK for FastAPI, why do you have to make sure that tool supports OpenAPI version 3.1?",Because FastAPI automatically generates **OpenAPI 3.1** specifications.,CTX_023_MUT_11.md
+88,MUT_11,CTX_029_MUT_11,CTX_029,h4-ctx-029-mut-11,"According to the documentation, what are the main differences in environmental behavior between the 'development' and 'deployment' (web API) stages?","In **development**: 
+
+* You are constantly **changing** the code, **breaking** it and **fixing** it, **stopping** and **restarting** the **development server**, etc. 
+ 
+In **deployment** (a web API): 
+
+* You put it in a **remote machine**, with a **server program** that provides good **performance**, **stability**, etc. 
+* So that your **users** can **access** the application **efficiently** and without **interruptions** or **problems**.",CTX_029_MUT_11.md
+89,MUT_12,CTX_003_MUT_12,CTX_003,h4-ctx-003-mut-12,What is the default URL path to automatically serve CSS files when using StaticFiles with the name 'static'?,/static/,CTX_003_MUT_12.md
+90,MUT_12,CTX_009_MUT_12,CTX_009,h4-ctx-009-mut-12,"In the 0.96.0 release, what updates are related to internal performance optimization and documentation for Deta?","* Update `create_cloned_field` to use a global cache and improve startup performance.
+* Update Deta deployment tutorial for compatibility with Deta Space.
+* Fix typo in Deta deployment tutorial.",CTX_009_MUT_12.md
+91,MUT_12,CTX_011_MUT_12,CTX_011,h4-ctx-011-mut-12,"When defining a Pydantic model (such as Image) and using it as a data type for a field of another model, what automatic benefits does FastAPI provide?",Abstain,CTX_011_MUT_12.md
+92,MUT_12,CTX_015_MUT_12,CTX_015,h4-ctx-015-mut-12,"In the ASGI specification, what protocol do the 'startup' and 'shutdown' events belong to?",Lifespan Protocol,CTX_015_MUT_12.md
+93,MUT_12,CTX_026_MUT_12,CTX_026,h4-ctx-026-mut-12,"Instead of receiving individual path parameters from FastAPI, what syntax in the path operation would retrieve the original HTTP Request object?","Using the `Request` object directly: 
+
+```python
+from fastapi import Request
+
+@app.get(""/items/"")
+async def read_items(request: Request):
+```",CTX_026_MUT_12.md
+94,MUT_12,CTX_027_MUT_12,CTX_027,h4-ctx-027-mut-12,What is the keyword in modern Python used to define and execute a coroutine in asynchronous programming?,`async` and `await`,CTX_027_MUT_12.md
+95,MUT_12,CTX_028_MUT_12,CTX_028,h4-ctx-028-mut-12,What is the bash command to activate a virtual environment named '.venv' on a Linux/macOS system?,`source .venv/bin/activate`,CTX_028_MUT_12.md
+96,MUT_12,CTX_029_MUT_12,CTX_029,h4-ctx-029-mut-12,"According to the documentation, what are the main differences in environmental behavior between the 'development' and 'deployment' (web API) stages?","In **development**: 
+
+* You are constantly **changing** the code, **breaking** it and **fixing** it, **stopping** and **restarting** the **development server**, etc. 
+ 
+In **deployment** (a web API): 
+
+* You put it in a **remote machine**, with a **server program** that provides good **performance**, **stability**, etc. 
+* So that your **users** can **access** the application **efficiently** and without **interruptions** or **problems**.",CTX_029_MUT_12.md
+97,MUT_13,CTX_005_MUT_13,CTX_005,h4-ctx-005-mut-13,FastAPI uses which information to create a unique operation ID for a path operation?,"the **function name**, the **path**, and the **HTTP method/operation**",CTX_005_MUT_13.md
+98,MUT_13,CTX_006_MUT_13,CTX_006,h4-ctx-006-mut-13,What version of Pydantic was FastAPI upgraded to in version 0.24.0?,Abstain,CTX_006_MUT_13.md
+99,MUT_13,CTX_008_MUT_13,CTX_008,h4-ctx-008-mut-13,How to declare HTTP status code for response in decorators like @app.get()?,by using the `status_code` parameter,CTX_008_MUT_13.md
+100,MUT_13,CTX_018_MUT_13,CTX_018,h4-ctx-018-mut-13,Why did OAuth2 design a token with expiration time instead of issuing a permanent key?,"So, the risk (of someone stealing the token) is less. It is not like a permanent key that will work forever (in most cases).",CTX_018_MUT_13.md
+101,MUT_13,CTX_019_MUT_13,CTX_019,h4-ctx-019-mut-13,"Based on the display structure, can one person be in both the Gold Sponsors list and the Silver Sponsors list at the same time?",Abstain,CTX_019_MUT_13.md
+102,MUT_13,CTX_021_MUT_13,CTX_021,h4-ctx-021-mut-13,Why use AsyncClient combined with await instead of TestClient when writing unit tests marked with @pytest.mark.anyio?,Because you are writing **asynchronous** tests.,CTX_021_MUT_13.md
+103,MUT_13,CTX_022_MUT_13,CTX_022,h4-ctx-022-mut-13,"If an HTTP request can only contain a single body, how does FastAPI handle it when you declare multiple body parameters in the path operation function?","FastAPI will handle it, give you the correct data in your function, and validate and document the correct schema in the *path operation*.",CTX_022_MUT_13.md
+104,MUT_13,CTX_025_MUT_13,CTX_025,h4-ctx-025-mut-13,How can you use the variable 'commons' in a function endpoint to leverage the type alias?,"You can use it as a type hint for a function parameter, like this: 
+
+```python
+commons: Annotated[dict, Depends(common_parameters)]
+``` 
+
+can be replaced with 
+
+```python
+commons: commons
+```",CTX_025_MUT_13.md

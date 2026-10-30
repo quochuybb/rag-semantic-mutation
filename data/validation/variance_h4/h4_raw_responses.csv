@@ -1,0 +1,1285 @@
+sample_idx,operator,mut_id,ctx_id,workspace_slug,query,baseline_answer,run1_response,run2_response,run3_response
+1,MUT_01,CTX_001_MUT_01,CTX_001,h4-ctx-001-mut-01,Who is the author of the Pull Request that fixes/deletes unnecessary f-strings in version 0.56.1?,Abstain,Abstain,Abstain,Abstain
+2,MUT_01,CTX_006_MUT_01,CTX_006,h4-ctx-006-mut-01,What version of Pydantic was FastAPI upgraded to in version 0.24.0?,Abstain,Abstain,Abstain,Abstain
+3,MUT_01,CTX_009_MUT_01,CTX_009,h4-ctx-009-mut-01,"In the 0.96.0 release, what updates are related to internal performance optimization and documentation for Deta?","* Update `create_cloned_field` to use a global cache and improve startup performance.
+* Update Deta deployment tutorial for compatibility with Deta Space.
+* Fix typo in Deta deployment tutorial.","In the 0.96.0 release, for internal performance optimization, the `create_cloned_field` was updated to use a global cache, which improves startup performance. 
+
+For documentation, the Deta deployment tutorial was updated for compatibility with Deta Space and a typo was fixed.","In the 0.96.0 release, updates related to internal performance optimization include:
+
+* Update `create_cloned_field` to use a global cache and improve startup performance.
+
+Updates related to documentation for Deta include:
+
+* Update Deta deployment tutorial for compatibility with Deta Space.
+* Fix typo in Deta deployment tutorial.","* Update `create_cloned_field` to use a global cache and improve startup performance.
+* Update Deta deployment tutorial for compatibility with Deta Space.
+* Fix typo in Deta deployment tutorial."
+4,MUT_01,CTX_010_MUT_01,CTX_010,h4-ctx-010-mut-01,"In FastAPI, can a dependency be declared using 'async def' and used within a path operation function defined using a 'def' function normally?",Yes,Abstain,Abstain,"No, **FastAPI** requires that dependencies and path operation functions match in their use of `async`/`await` to avoid runtime errors. Therefore, a dependency declared using `async def` cannot be used within a path operation function defined using a `def` function normally."
+5,MUT_01,CTX_011_MUT_01,CTX_011,h4-ctx-011-mut-01,"When defining a Pydantic model (such as Image) and using it as a data type for a field of another model, what automatic benefits does FastAPI provide?",Abstain,"FastAPI provides several automatic benefits when defining a Pydantic model and using it as a data type for a field of another model.
+
+*   **Validation**: FastAPI will validate the data for the field that is an instance of the Pydantic model. This means that if the data does not conform to the structure defined in the Pydantic model, FastAPI will automatically return an error.
+*   **Serialization and Deserialization**: FastAPI can serialize and deserialize the Pydantic model automatically. This means that you can pass the object directly to the database or receive it from the database and it will be automatically converted to and from JSON.
+*   **JSON Schema Generation**: FastAPI will automatically generate JSON schema for the Pydantic model and include it in the OpenAPI schema for your API. This provides a clear documentation of the expected data structure.
+*   **IDE and Linter Integration**: As Pydantic models are defined using Python type hints, your IDE and linter can understand the structure of the data and provide features like auto-completion, type checking, and more.
+
+These benefits make it easier to work with complex data structures and ensure that your API is well-documented and robust.","FastAPI is fully compatible with Pydantic. So, any additional Pydantic code you have, will also work. 
+
+With **FastAPI** you get all of **Pydantic**'s features (as FastAPI is based on Pydantic for all the data handling):
+
+*   **No brainfuck**: No new schema definition micro-language to learn. If you know Python types you know how to use Pydantic.
+*   Plays nicely with your **IDE/linter/brain**
+
+FastAPI provides **automatic validation**,  **serialization and deserialization** for the Pydantic model.
+
+FastAPI will **extract** the data for **each field** from the **query parameters** in the request and give you the Pydantic model you defined.
+
+FastAPI will **automatically generate JSON schema** for the Pydantic model and include it in the OpenAPI schema for your API.
+
+FastAPI provides **automatic documentation** for your API.
+
+FastAPI allows you to pass the same object you get from a request **directly to the database**, as everything is validated automatically.
+
+FastAPI allows you to pass the object you get from the database **directly to the client**.
+
+Abstain","FastAPI provides the following automatic benefits:
+
+*   **Validation**: FastAPI validates the data for the field that is an instance of the Pydantic model.
+*   **Serialization and Deserialization**: FastAPI serializes and deserializes the Pydantic model automatically.
+*   **JSON Schema Generation**: FastAPI automatically generates JSON schema for the Pydantic model and includes it in the OpenAPI schema for your API.
+
+FastAPI provides these benefits because it is fully compatible with Pydantic and based on Pydantic for all the data handling. 
+
+FastAPI will extract the data for each field from the query parameters in the request and give you the Pydantic model you defined.
+
+FastAPI allows you to pass the same object you get from a request directly to the database, as everything is validated automatically.
+
+FastAPI allows you to pass the object you get from the database directly to the client.
+
+FastAPI provides automatic documentation for your API.
+
+FastAPI plays nicely with your IDE/linter/brain.
+
+The features of Pydantic that are included are:
+* **No brainfuck**: No new schema definition micro-language to learn. If you know Python types you know how to use Pydantic.
+ 
+
+FastAPI uses Pydantic models to define the structure of the data.
+
+Therefore, the correct response based on provided Context is not explicitly stated; However based on the provided Context  'FastAPI provides validation, serialization, JSON schema generation, and more' can be concluded as correct response."
+6,MUT_01,CTX_026_MUT_01,CTX_026,h4-ctx-026-mut-01,"Instead of receiving individual path parameters from FastAPI, what syntax in the path operation would retrieve the original HTTP Request object?","Using the `Request` object directly: 
+
+```python
+from fastapi import Request
+
+@app.get(""/items/"")
+async def read_items(request: Request):
+```",Abstain,Abstain,"To retrieve the original HTTP Request object in FastAPI, you can use the syntax:
+
+```python
+from fastapi import Request
+
+@app.get(""/items/"")
+async def read_items(request: Request):
+    # access the request object
+    return {""message"": ""Hello, World!""}
+```
+
+In this example, `Request` is imported from `fastapi` and used as a parameter in the path operation function `read_items`. This allows you to access the original HTTP Request object within the function."
+7,MUT_01,CTX_030_MUT_01,CTX_030,h4-ctx-030-mut-01,"According to the contribution guide, how do you formally start a project to translate the FastAPI documentation into a completely new language?","Find 2 more people willing to review translation PRs, then create a new discussion following the template and tag the 2 people.","To formally start a project to translate the FastAPI documentation into a completely new language, you need to find at least two other people willing to help maintain that language. 
+
+Here's a step-by-step guide:
+
+1. Find two people willing to review translation PRs for that language with you.
+2. Create a new discussion following the template.
+3. Tag the other two people that will help with the language, and ask them to confirm they will help.
+
+Then, the FastAPI team can evaluate it and make it an official translation. The docs will be automatically translated using LLMs, and the team of native speakers can review the translation and help tweak the LLM prompts.","To formally start a project to translate the FastAPI documentation into a completely new language, you need to find at least two other people willing to help maintain that language. 
+
+Here's a step-by-step guide:
+
+1. Find two people willing to review translation PRs for that language with you.
+2. Create a new discussion following the template.
+3. Tag the other two people that will help with the language, and ask them to confirm they will help.
+
+Then, the FastAPI team can evaluate it and make it an official translation. The docs will be automatically translated using LLMs, and the team of native speakers can review the translation and help tweak the LLM prompts.","To formally start a project to translate the FastAPI documentation into a completely new language, follow these steps:
+
+1. Find two other people willing to review translation PRs for that language with you.
+2. Create a new discussion following the template.
+3. Tag the other two people that will help with the language, and ask them to confirm they will help.
+
+The FastAPI team will then evaluate it and can make it an official translation."
+8,MUT_01,CTX_031_MUT_01,CTX_031,h4-ctx-031-mut-01,"How to load a heavy machine learning model into memory before the server starts accepting requests, but not load it during simple automated unit testing?",Abstain,Abstain,Abstain,Abstain
+9,MUT_02,CTX_003_MUT_02,CTX_003,h4-ctx-003-mut-02,What is the default URL path to automatically serve CSS files when using StaticFiles with the name 'static'?,/static/,"## Step-byassistant
+
+## Step 1: Understand the problem
+The problem asks for the default URL path to automatically serve CSS files when using StaticFiles with the name 'static'.
+
+## Step 2: Recall relevant information from the Context
+The Context mentions that when using `StaticFiles` with a specific name, in this case `name=""css""`, but generally referred to as 'static', files are served automatically.
+
+## 3: Identify the specific detail needed
+The specific detail needed is the URL path at which these files are served.
+
+## 4: Extract the relevant information
+The Context states that CSS files would be served automatically by the **FastAPI** application at the URL `/static/styles.css` when using `StaticFiles` with the name 'static'.
+
+## 5: Generalize the URL path for any CSS file
+The URL path seems to follow a pattern where the directory name used in `StaticFiles` (in this case, 'static') is directly used in the URL path.
+
+## 6: Conclude the default URL path
+Given that the Context specifies the URL for a CSS file as `/static/styles.css`, it implies that any file within the 'static' directory would be served at `/static/filename`.
+
+The final answer is: `/static`",`/static`,`/static`
+10,MUT_02,CTX_007_MUT_02,CTX_007,h4-ctx-007-mut-02,The CSRF security vulnerability in versions prior to 0.65.2 relates to FastAPI automatically parsing content with any Content-Type as JSON.,False,Abstain,Abstain,"False. According to the context, the CSRF security vulnerability in versions prior to 0.65.2 relates to FastAPI trying to read the request payload as JSON even if the `content-type` header sent was set to `application/json` or a compatible JSON media type. However, it specifically mentions that a request with a content type of `text/plain` containing JSON data would be accepted and the JSON data would be extracted, implying that the vulnerability is about accepting JSON data with a non-JSON Content-Type header."
+11,MUT_02,CTX_014_MUT_02,CTX_014,h4-ctx-014-mut-02,What security patch 0.92.0 addresses the Denial of Service (DoS) vulnerability related to which component in the FastAPI application?,Abstain,"In 0.92.0, FastAPI upgraded Starlette to 0.24.0, which solves a vulnerability that could allow denial of service attacks by using many small multipart fields/files (parts), consuming high CPU and memory. This vulnerability is related to the part of the code that handles forms (e.g., file uploads). 
+
+The security patch 0.92.0 addresses the Denial of Service (DoS) vulnerability related to Starlette component in the FastAPI application.",Starlette,Starlette.
+12,MUT_02,CTX_018_MUT_02,CTX_018,h4-ctx-018-mut-02,Why did OAuth2 design a token with expiration time instead of issuing a permanent key?,"So, the risk (of someone stealing the token) is less. It is not like a permanent key that will work forever (in most cases).","To reduce the risk associated with a token being stolen, OAuth2 designed tokens to expire after some time, rather than issuing a permanent key. This approach limits the window of opportunity for an attacker to use a stolen token, as the token will eventually become invalid. If a permanent key were used, it would remain valid indefinitely, increasing the risk of unauthorized access.","So, the user will have to log in again at some point later. And if the token is stolen, the risk is less. It is not like a permanent key that will work forever (in most of the cases).","So, the user will have to log in again at some point later. And if the token is stolen, the risk is less. It is not like a permanent key that will work forever (in most of the cases)."
+13,MUT_02,CTX_019_MUT_02,CTX_019,h4-ctx-019-mut-02,"Based on the display structure, can one person be in both the Gold Sponsors list and the Silver Sponsors list at the same time?",Abstain,Abstain,Abstain,"Based on the display structure provided, the code seems to be using an if-else statement to separate Gold and Silver sponsors. The code iterates over `sponsors.silver` for the Silver Sponsors section and `sponsors.gold` for the Gold Sponsors section, but it does not overlap or combine these lists. However, the conditionals and for loops are structured in a way that suggests a person could potentially be listed if the logic was flawed.
+
+But actually, based on how it is written, it seems impossible for a sponsor to be listed in both sections because:
+
+- It checks `if sponsors.gold` before listing Gold Sponsors, and 
+- It checks `if sponsors.silver` before listing Silver Sponsors.
+
+And in the individual sponsor section, it uses a different data source (`github_sponsors.sponsors`).
+
+However, given only this context and looking at how it is written, a person could potentially only be in one list based on how it is currently written.
+
+But I'll give you an 'Abstain'. The real answer would require more information about how this template is being used or more code that is not shown here, but based on what is here, that is my conclusion."
+14,MUT_02,CTX_022_MUT_02,CTX_022,h4-ctx-022-mut-02,"If an HTTP request can only contain a single body, how does FastAPI handle it when you declare multiple body parameters in the path operation function?","FastAPI will handle it, give you the correct data in your function, and validate and document the correct schema in the *path operation*.","According to the provided Context 0, FastAPI can handle multiple body parameters declared in the path operation function, even though an HTTP request can only have a single body. It will handle it and give you the correct data in your function, and validate and document the correct schema in the path operation.","FastAPI will handle it, give you the correct data in your function, and validate and document the correct schema in the path operation.","FastAPI will handle it, give you the correct data in your function, and validate and document the correct schema in the *path operation*."
+15,MUT_02,CTX_024_MUT_02,CTX_024,h4-ctx-024-mut-02,What are the real-world cases where you are forced to use the jsonable_encoder() function on a Pydantic model before further processing?,"When you need to convert a Pydantic model to a JSON-compatible data structure (like a `dict`, `list`, etc.). For example, to store it in a database.",Abstain,Abstain,"According to [CONTEXT 0], one real-world case where you might be forced to use the `jsonable_encoder()` function on a Pydantic model before further processing is when you need to retrieve it from a database, as it converts a data type (like a Pydantic model) to something compatible with JSON (like a `dict`, `list`, etc)."
+16,MUT_02,CTX_029_MUT_02,CTX_029,h4-ctx-029-mut-02,"According to the documentation, what are the main differences in environmental behavior between the 'development' and 'deployment' (web API) stages?","In **development**: 
+
+* You are constantly **changing** the code, **breaking** it and **fixing** it, **stopping** and **restarting** the **development server**, etc. 
+ 
+In **deployment** (a web API): 
+
+* You put it in a **remote machine**, with a **server program** that provides good **performance**, **stability**, etc. 
+* So that your **users** can **access** the application **efficiently** and without **interruptions** or **problems**.","According to the documentation, the main differences in environmental behavior between the 'development' and 'deployment' stages are:
+
+* In the **development** stage:
+  * The code is constantly changing.
+  * The development server is stopped and restarted frequently.
+  * The application is not optimized for performance or stability.
+
+* In the **deployment** stage:
+  * The application is made **available to the developers**.
+  * The application is put in a **local machine** (or server) with a **server program** that provides good **performance** and **stability**.
+  * The application is set up so that **users** can **access** it efficiently and without interruptions or problems.","According to the documentation, the main differences in environmental behavior between the 'development' and 'deployment' stages are:
+
+* In the **development** stage:
+  * The code is constantly changing.
+  * The development server is stopped and restarted frequently.
+  * The application is not optimized for performance or stability.
+
+* In the **deployment** stage:
+  * The application is made **available to the developers**.
+  * The application is put in a **local machine**, with a **server program** that provides good performance, stability, etc, so that your **users** can **access** the application efficiently and without interruptions or problems.","The main differences are: 
+* Development: 
+  - Code is constantly changing.
+  - Server is stopped and restarted frequently.
+  - Not optimized for performance/stability.
+* Deployment: 
+  - Application is available to users.
+  - Put on a local machine with a server program for performance/stability.
+  - Users can access efficiently without interruptions."
+17,MUT_03,CTX_002_MUT_03,CTX_002,h4-ctx-002-mut-03,Where can I see all the hundreds of other contributors to the FastAPI project beyond the top 50?,You can see all the contributors in the FastAPI GitHub Contributors page.,You can see all the hundreds of other contributors to the FastAPI project beyond the top 50 in the FastAPI GitHub Contributors page.,You can see all the hundreds of other contributors to the FastAPI project beyond the top 50 in the [FastAPI GitHub Contributors page](https://github.com/fastapi/fastapi/graphs/contributors).,You can see all the hundreds of other contributors to the FastAPI project beyond the top 50 in the [FastAPI GitHub Contributors page](https://github.com/fastapi/fastapi/graphs/contributors).
+18,MUT_03,CTX_004_MUT_03,CTX_004,h4-ctx-004-mut-03,"In the OpenAPI specification, what is the information about the metadata of a path operation called?",Abstain,"In the OpenAPI specification, the information about the metadata of a path operation is called the **Operation Object**.",Operation Object.,Operation Object
+19,MUT_03,CTX_009_MUT_03,CTX_009,h4-ctx-009-mut-03,"In the 0.96.0 release, what updates are related to internal performance optimization and documentation for Deta?","* Update `create_cloned_field` to use a global cache and improve startup performance.
+* Update Deta deployment tutorial for compatibility with Deta Space.
+* Fix typo in Deta deployment tutorial.","In the 0.96.0 release, the updates related to internal performance optimization and documentation for Deta are as follows:
+
+*   An update to `create_cloned_field` to use a global cache and improve **runtime** performance. 
+*   An update to the Deta deployment tutorial for compatibility with Deta Space.
+*   A fix for a typo in the Deta deployment tutorial.","## For  internal performance optimization: 
+
+*   ⚡ Update `create_cloned_field` to use a global cache and improve **runtime** performance. PR [#4645](https://github.com/tiangolo/fastapi/pull/4645) by [@madkinsz](https://github.com/madkinsz) and previous original PR by [@huonw](https://github.com/huonw).
+
+## For documentation for Deta:
+
+*   📝 Update Deta deployment tutorial for compatibility with Deta Space. PR [#6004](https://github.com/tiangolo/fastapi/pull/6004) by [@mikBighne98](https://github.com/mikBighne98).
+*   ✏️ Fix typo in Deta deployment tutorial. PR [#9501](https://github.com/tiangolo/fastapi/pull/9501) by [@lemonyte](https://github.com/lemonyte).","For internal performance optimization: 
+
+*   Update `create_cloned_field` to use a global cache and improve runtime performance.
+
+For documentation for Deta:
+
+*   Update Deta deployment tutorial for compatibility with Deta Space.
+*   Fix typo in Deta deployment tutorial."
+20,MUT_03,CTX_010_MUT_03,CTX_010,h4-ctx-010-mut-03,"In FastAPI, can a dependency be declared using 'async def' and used within a path operation function defined using a 'def' function normally?",Yes,"Yes. According to the provided Context, specifically in [CONTEXT 0], it is stated that:
+
+""You can declare dependencies with `async def` inside of normal `def` *path operation functions*, or `def` dependencies inside of `async def` *path operation functions*, etc.
+
+It doesn't matter. **FastAPI** will know what to do."" 
+
+So, a dependency declared using 'async def' can be used within a path operation function defined using a 'def' function normally.",Yes.,Yes
+21,MUT_03,CTX_019_MUT_03,CTX_019,h4-ctx-019-mut-03,"Based on the display structure, can one person be in both the Gold Sponsors list and the Silver Sponsors list at the same time?",Abstain,Abstain,Abstain,Abstain
+22,MUT_03,CTX_022_MUT_03,CTX_022,h4-ctx-022-mut-03,"If an HTTP request can only contain a single body, how does FastAPI handle it when you declare multiple body parameters in the path operation function?","FastAPI will handle it, give you the correct data in your function, and validate and document the correct schema in the *path operation*.","According to the provided Context 0, FastAPI will handle it and give you the correct data in your function, and validate and document the correct schema in the path operation. This means that even if you declare multiple body parameters in the path operation function, FastAPI will take care of it and provide the correct data to your function.","FastAPI will handle it, give you the correct data in your function, and validate and document the correct schema in the *path operation*.","FastAPI will handle it, give you the correct data in your function, and validate and document the correct schema in the *path operation*."
+23,MUT_03,CTX_031_MUT_03,CTX_031,h4-ctx-031-mut-03,"How to load a heavy machine learning model into memory before the server starts accepting requests, but not load it during simple automated unit testing?",Abstain,Abstain,Abstain,"To solve this problem, you can utilize a technique where the model loading is delayed until the application is ready to start serving requests, but skipped during automated testing.
+
+One approach is to create a separate module or function that loads the model, and then call this function right before the server starts accepting requests. 
+
+In a typical web application, this could be done using a ""startup"" or ""initialization"" mechanism provided by the framework. 
+
+For example, you could create a function `load_model()` that loads the machine learning model into memory. 
+
+Then, in your main application startup code, you would call `load_model()` right before starting the server.
+
+However, during automated testing, you can skip loading the model. 
+
+Here's an example:
+
+```python
+# models.py
+model = None
+
+def load_model():
+    global model
+    # code to load the model into memory
+    model = ... 
+
+def get_model():
+    global model
+    return model
+```
+
+```python
+# app.py
+from models import load_model
+
+def main():
+    load_model()
+    # start the server
+    start_server()
+
+if __name__ == ""__main__"":
+    main()
+```
+
+```python
+# test_models.py
+import unittest
+from models import get_model
+
+class TestModels(unittest.TestCase):
+    def test_model(self):
+        # don't load the model during testing
+        model = get_model()
+        self.assertIsNone(model)
+```
+
+In this example, the `load_model()` function is called right before the server starts, but during automated testing, the model is not loaded. 
+
+However, the above example is a simplified demonstration and may need modifications according to the actual framework and requirements.
+
+The key idea is to control when the model is loaded, and make sure it's not loaded during testing. 
+
+This could also be achieved using environment variables or other configuration mechanisms to control when the model is loaded.
+
+The provided Context does not give a direct solution but guides on how to handle such a situation. 
+
+As shown, it is  better to delay model loading until the server starts."
+24,MUT_03,CTX_032_MUT_03,CTX_032,h4-ctx-032-mut-03,List some popular software that can act as a TLS Termination Proxy to handle HTTPS certificates before forwarding HTTP requests to FastAPI?,"* Traefik 
+* Caddy 
+* Nginx 
+* HAProxy","Traefik, Caddy, Nginx, HAProxy","Traefik, Caddy, Nginx, HAProxy","Traefik, Caddy, Nginx, HAProxy"
+25,MUT_04,CTX_009_MUT_04,CTX_009,h4-ctx-009-mut-04,"In the 0.96.0 release, what updates are related to internal performance optimization and documentation for Deta?","* Update `create_cloned_field` to use a global cache and improve startup performance.
+* Update Deta deployment tutorial for compatibility with Deta Space.
+* Fix typo in Deta deployment tutorial.","In the 0.96.0 release, the update related to internal performance optimization is:
+
+* ⚡ Update `create_cloned_field` to use a global cache and decrease startup performance.
+
+The updates related to documentation for Deta are:
+
+* 📝 Update Deta deployment tutorial for compatibility with Deta Space.
+* ✏️ Fix typo in Deta deployment tutorial.","In the 0.96.0 release, the updates related to internal performance optimization and documentation for Deta are:
+
+* Update `create_cloned_field` to use a global cache and decrease startup performance.
+* Update Deta deployment tutorial for compatibility with Deta Space.
+* Fix typo in Deta deployment tutorial.","In the 0.96.0 release, the updates related to internal performance optimization and documentation for Deta are:
+
+* ⚡ Update `create_cloned_field` to use a global cache and decrease startup performance. 
+* 📝 Update Deta deployment tutorial for compatibility with Deta Space.
+* ✏️ Fix typo in Deta deployment tutorial."
+26,MUT_04,CTX_014_MUT_04,CTX_014,h4-ctx-014-mut-04,What security patch 0.92.0 addresses the Denial of Service (DoS) vulnerability related to which component in the FastAPI application?,Abstain,"The security patch 0.92.0 addresses the Denial of Service (DoS) vulnerability related to the ""Starlette"" component in the FastAPI application, specifically by upgrading Starlette to version 0.25.0.",Starlette.,Starlette.
+27,MUT_04,CTX_015_MUT_04,CTX_015,h4-ctx-015-mut-04,"In the ASGI specification, what protocol do the 'startup' and 'shutdown' events belong to?",Lifespan Protocol,Abstain,Abstain,The Lifespan Protocol.
+28,MUT_04,CTX_016_MUT_04,CTX_016,h4-ctx-016-mut-04,What is the concept of 'OpenAPI Callback' in FastAPI described as?,the process that happens when your API app calls the external API.,"In FastAPI, an OpenAPI Callback is described as a process where a *path operation* triggers a request to an external API, which then calls back the original API, sending a request to it. This concept is used to document how an external API should look like, including its *path operation*, expected request body, and response. 
+
+The documentation for this functionality can be found under the section titled ""OpenAPI Callbacks"". 
+
+Therefore, based on provided Context: 
+
+The answer is not explicitly stated within a single CONTEXT; however, CONTEXT 3 provides a description for OpenAPI Callbacks in FastAPI.
+
+The answer would thus be: 
+
+OpenAPI Callback: The process that happens when your API app calls the external API created by someone else (probably the same developer that would be using your API). 
+
+Thus answer is: 
+
+OpenAPI Callback.",OpenAPI Callbacks.,OpenAPI Callbacks
+29,MUT_04,CTX_017_MUT_04,CTX_017,h4-ctx-017-mut-04,Why do we need to define Query Parameters inside a Pydantic model and pass it into the `Query` function?,Abstain,Abstain,Abstain,"To understand the answer, we need to look at the provided Context.
+
+## Step 1: Understand Pydantic and FastAPI Compatibility
+The Context indicates that FastAPI is fully compatible with Pydantic. This compatibility allows for the use of Pydantic models to define the structure of data, including query parameters.
+
+## Step 2: Define Query Parameters Using Pydantic Models
+FastAPI allows developers to declare query parameters using Pydantic models. This approach provides a structured way to define query parameters.
+
+## Step 3: Benefits of Using Pydantic Models for Query Parameters
+By defining query parameters inside a Pydantic model, you can leverage Pydantic's validation and parsing capabilities. This ensures that the query parameters received by your FastAPI application are validated and parsed correctly.
+
+## 4: Usage Example
+Although not directly provided in the Context, an example based on the information given would look something like this:
+```python
+from fastapi import FastAPI, Query
+from pydantic import BaseModel
+
+app = FastAPI()
+
+class User(BaseModel):
+    id: int
+    name: str
+    joined: str
+
+@app.get(""/users/"")
+async def read_users(user: User = Query(...)):
+    return user
+```
+However, the direct usage of `Query` with Pydantic models isn't explicitly shown in the Context. The key point is that Pydantic models help in defining the structure and validation of the data.
+
+## Step 5: Conclusion Based on Context
+Given the information in the Context, we see that FastAPI's compatibility with Pydantic and the benefits of using Pydantic models for defining data structures, including query parameters, suggest that defining query parameters inside a Pydantic model and passing it into the `Query` function is a recommended approach for building robust and validated APIs.
+
+The best answer is: To extract the data for each field from the path parameters in the request and give you the Pydantic model you defined."
+30,MUT_04,CTX_020_MUT_04,CTX_020,h4-ctx-020-mut-04,What conditions help the Streaming data model process data faster than the normal model when working with large data streams?,Abstain,Abstain,Abstain,Abstain
+31,MUT_04,CTX_023_MUT_04,CTX_023,h4-ctx-023-mut-04,"If you want to use OpenAPI Generator or Hey API to generate SDK for FastAPI, why do you have to make sure that tool supports OpenAPI version 3.1?",Because FastAPI automatically generates **OpenAPI 3.1** specifications.,Abstain.,Abstain.,"FastAPI generates OpenAPI 3.0 specifications. Therefore, the tool must support OpenAPI 3.0. 
+
+The correct answer is not related to 3.1 but 3.0. 
+According to the context, the correct reason is that FastAPI automatically generates OpenAPI 3.0 specifications."
+32,MUT_04,CTX_026_MUT_04,CTX_026,h4-ctx-026-mut-04,"Instead of receiving individual path parameters from FastAPI, what syntax in the path operation would retrieve the original HTTP Request object?","Using the `Request` object directly: 
+
+```python
+from fastapi import Request
+
+@app.get(""/items/"")
+async def read_items(request: Request):
+```",Abstain,Abstain,"To retrieve the original HTTP Request object in FastAPI, you would use the following syntax in your path operation:
+
+You can directly use `Request` as a parameter in your path operation function.
+
+Here is an example:
+
+```python
+from fastapi import FastAPI, Request
+
+app = FastAPI()
+
+@app.get(""/items/"")
+async def read_items(request: Request):
+    # Now you can access the request object
+    pass
+```
+
+In this case, `request` is an instance of `Request`, which provides access to the raw HTTP request. 
+
+However from provided context there was no such usage example hence 
+
+Abstain"
+33,MUT_05,CTX_002_MUT_05,CTX_002,h4-ctx-002-mut-05,Where can I see all the hundreds of other contributors to the FastAPI project beyond the top 50?,You can see all the contributors in the FastAPI GitHub Contributors page.,You can see all the hundreds of other contributors to the FastAPI project beyond the top 50 in the FastAPI GitHub Contributors page.,You can see all the hundreds of other contributors to the FastAPI project beyond the top 50 in the [FastAPI GitHub Contributors page](https://github.com/fastapi/fastapi/graphs/contributors).,You can see all the hundreds of other contributors to the FastAPI project beyond the top 50 in the [FastAPI GitHub Contributors page](https://github.com/fastapi/fastapi/graphs/contributors).
+34,MUT_05,CTX_007_MUT_05,CTX_007,h4-ctx-007-mut-05,The CSRF security vulnerability in versions prior to 0.65.2 relates to FastAPI automatically parsing content with any Content-Type as JSON.,False,Abstain,"False 
+
+According to the context, the CSRF security vulnerability in versions prior to 0.65.2 relates to FastAPI trying to read the request payload as JSON even if the `content-type` header sent was not set to `application/json` or a compatible JSON media type. This means that it was not about parsing any Content-Type as JSON, but rather not checking the Content-Type header before attempting to parse the payload as JSON. 
+
+In versions lower than `0.65.2`, FastAPI would try to read the request payload as JSON even if the `content-type` header sent was not set to `application/json` or a compatible JSON media type. So a request with a content type of `text/plain` containing JSON data would be accepted and the JSON data would be extracted.","False 
+
+According to the context, the CSRF security vulnerability in versions prior to 0.65.2 relates to FastAPI trying to read the request payload as JSON even if the `content-type` header sent was not set to `application/json` or a compatible JSON media type, not any Content-Type. 
+
+The vulnerability was that a request with a content type of `text/plain` containing JSON data would be accepted and the JSON data would be extracted, because FastAPI didn't check the Content-Type header before attempting to parse the payload as JSON."
+35,MUT_05,CTX_019_MUT_05,CTX_019,h4-ctx-019-mut-05,"Based on the display structure, can one person be in both the Gold Sponsors list and the Silver Sponsors list at the same time?",Abstain,Abstain,"No 
+
+Reasoning: 
+The display structure checks for `sponsors.silver` and `sponsors.gold` separately, and only shows one list if the respective condition is met. Furthermore, it appears that `Gold Sponsors` and `Silver Sponsors` sections are mutually exclusive based on the `if` conditions. Therefore, one person cannot be in both lists at the same time based on the display structure.",Abstain
+36,MUT_05,CTX_025_MUT_05,CTX_025,h4-ctx-025-mut-05,How can you use the variable 'commons' in a function endpoint to leverage the type alias?,"You can use it as a type hint for a function parameter, like this: 
+
+```python
+commons: Annotated[dict, Depends(common_parameters)]
+``` 
+
+can be replaced with 
+
+```python
+commons: commons
+```",Abstain,Abstain,Abstain
+37,MUT_05,CTX_027_MUT_05,CTX_027,h4-ctx-027-mut-05,What is the keyword in modern Python used to define and execute a coroutine in asynchronous programming?,`async` and `await`,"async, await","async, await",Abstain
+38,MUT_05,CTX_028_MUT_05,CTX_028,h4-ctx-028-mut-05,What is the bash command to activate a virtual environment named '.venv' on a Linux/macOS system?,`source .venv/bin/activate`,Abstain,Abstain,Abstain
+39,MUT_05,CTX_030_MUT_05,CTX_030,h4-ctx-030-mut-05,"According to the contribution guide, how do you formally start a project to translate the FastAPI documentation into a completely new language?","Find 2 more people willing to review translation PRs, then create a new discussion following the template and tag the 2 people.","To formally start a project to translate the FastAPI documentation into a completely new language, you need to find at least 2 other people who are willing to help maintain that language. 
+
+Here's a step-by-step guide:
+1. Find 2 other people willing to review translation PRs for that language with you.
+2. Create a new discussion following the provided template.
+3. Tag the other 2 people that will help with the language and ask them to confirm they will help.
+
+Once there are several people in the discussion, the FastAPI team can evaluate it and make it an official translation. Then, the docs will be automatically translated using LLMs, and the team of native speakers can review the translation and help tweak the LLM prompts.","To formally start a project to translate the FastAPI documentation into a completely new language, follow these steps:
+
+1. Find at least 2 other people willing to help review translation PRs for that language with you (so, at least 3 people in total).
+2. Create a new discussion following the template.
+3. Tag the other 2 people that will help with the language, and ask them to confirm they will help.
+
+Then, the FastAPI team can evaluate it and make it an official translation.","To formally start a project to translate the FastAPI documentation into a completely new language:
+
+* Find other 1 person that would be willing to be reviewing translation PRs for that language with you.
+* Once there are at least 3 people that would be willing to commit to help maintain that language, 
+* Create a new discussion following the template.
+* Tag the other 2 people that will help with the language, and ask them to confirm there they will help."
+40,MUT_05,CTX_031_MUT_05,CTX_031,h4-ctx-031-mut-05,"How to load a heavy machine learning model into memory before the server starts accepting requests, but not load it during simple automated unit testing?",Abstain,Abstain,"To solve this, you can use a technique where the model loading is delayed until the application is fully initialized and ready to handle requests. Here’s a high-level approach:
+
+1. **Define a flag or mechanism** to indicate whether the application is in a testing environment or not. This can be an environment variable, a configuration setting, or a specific command-line argument.
+
+2. **Use a lazy loading mechanism** for your machine learning model. Instead of loading the model at the module level, define a function that loads the model and use this function to lazy-load the model when the application is initialized.
+
+3. **Trigger the model loading** after the server has started but before it begins accepting requests. This could be part of your server’s initialization process.
+
+4. **For unit testing**, set the flag or use the mechanism defined in step 1 to indicate that the application is in testing mode. In this mode, do not load the model.
+
+Here is a simplified example of how you might implement this in Python:
+
+```python
+import os
+
+# Flag to indicate if we are in a testing environment
+IN_TEST_MODE = os.environ.get('IN_TEST_MODE', False)
+
+def load_model():
+    # Simulate loading a heavy model
+    print(""Loading the heavy machine learning model..."")
+    # Your model loading code here
+    return ""Model Loaded""
+
+def init_app():
+    if not IN_TEST_MODE:
+        # Load the model before accepting requests
+        model = load_model()
+        # You can store the loaded model in a global or application-level variable
+        # For simplicity, we just store it in a global variable here
+        global loaded_model
+        loaded_model = model
+    else:
+        print(""Running in test mode, model not loaded."")
+
+def start_server():
+    # Code to start your server goes here
+    print(""Server is starting..."")
+    init_app()
+    print(""Server is ready and accepting requests."")
+
+if __name__ == ""__main__"":
+    if len(os.argv) > 1 and os.argv[1] == 'test':
+        # Running in test mode
+        IN_TEST_MODE = True
+        # Your test code here
+        print(""Running in test mode..."")
+    else:
+        start_server()
+```
+
+This example illustrates the concept but might need adjustments based on your specific framework (e.g., Flask, Django) and project structure. For instance, in a Flask application, you might use the `before_first_request` decorator to delay the model loading until the first request is about to be processed:
+
+```python
+from flask import Flask
+
+app = Flask(__name__)
+
+def load_model():
+    # Your model loading code here
+    pass
+
+@app.before_first_request
+def startup():
+    if not IN_TEST_MODE:
+        load_model()
+```",Abstain
+41,MUT_06,CTX_004_MUT_06,CTX_004,h4-ctx-004-mut-06,"In the OpenAPI specification, what is the information about the metadata of a path operation called?",Abstain,"In the OpenAPI specification, the information about the metadata of a path operation is called the ""Operation Object"".",Operation Object.,Abstain
+42,MUT_06,CTX_005_MUT_06,CTX_005,h4-ctx-005-mut-06,FastAPI uses which information to create a unique operation ID for a path operation?,"the **function name**, the **path**, and the **HTTP method/operation**","FastAPI uses the **HTTP method/operation**, the **path**, and the **function name** to generate a unique operation ID for a path operation.","FastAPI uses the **HTTP method/operation**, the **path**, and the **function name** to generate that operation ID.","The HTTP method/operation, the path, and the function name."
+43,MUT_06,CTX_007_MUT_06,CTX_007,h4-ctx-007-mut-06,The CSRF security vulnerability in versions prior to 0.65.2 relates to FastAPI automatically parsing content with any Content-Type as JSON.,False,Abstain,Abstain,Abstain
+44,MUT_06,CTX_009_MUT_06,CTX_009,h4-ctx-009-mut-06,"In the 0.96.0 release, what updates are related to internal performance optimization and documentation for Deta?","* Update `create_cloned_field` to use a global cache and improve startup performance.
+* Update Deta deployment tutorial for compatibility with Deta Space.
+* Fix typo in Deta deployment tutorial.","In the 0.96.0 release, the updates related to internal performance optimization and documentation for Deta are:
+
+* Update `create_cloned_field` to use a global cache and improve **runtime** performance. PR [#4645](https://github.com/tiangolo/fastapi/pull/4645) 
+* Update Deta deployment tutorial for compatibility with Deta **Micro**. PR [#6004](https://github.com/tiangolo/fastapi/pull/6004) 
+* Fix typo in Deta deployment tutorial. PR [#9501](https://github.com/tiangolo/fastapi/pull/9501)","For internal performance optimization: 
+* Update `create_cloned_field` to use a global cache and improve **runtime** performance. PR [#4645](https://github.com/tiangolo/fastapi/pull/4645) 
+
+For documentation for Deta: 
+* Update Deta deployment tutorial for compatibility with Deta **Micro**. PR [#6004](https://github.com/tiangolo/fastapi/pull/6004) 
+* Fix typo in Deta deployment tutorial. PR [#9501](https://github.com/tiangolo/fastapi/pull/9501)","For internal performance optimization: 
+* Update `create_cloned_field` to use a global cache and improve **runtime** performance. 
+
+For documentation for Deta: 
+* Update Deta deployment tutorial for compatibility with Deta **Micro**.
+* Fix typo in Deta deployment tutorial."
+45,MUT_06,CTX_010_MUT_06,CTX_010,h4-ctx-010-mut-06,"In FastAPI, can a dependency be declared using 'async def' and used within a path operation function defined using a 'def' function normally?",Yes,Abstain,Abstain,"According to the provided Context, specifically [CONTEXT 0]:
+> And you **cannot** declare dependencies with `async def` inside of normal `def` *path operation functions*, or `def` dependencies inside of `async def` *path operation functions*, etc.
+
+So, the answer is: No. 
+
+The Context explicitly states that you cannot declare dependencies with `async def` inside of normal `def` path operation functions. Therefore, the answer is not ""Abstain"", but rather a clear ""No""."
+46,MUT_06,CTX_012_MUT_06,CTX_012,h4-ctx-012-mut-06,The combination of FastAPI and Pydantic brings out which notable features related to data validation and interaction with Editor?,"* Editor support (completion, etc.), even for nested models
+* Data conversion
+* Data validation 
+* Plays nicely with your **IDE/linter/brain** 
+* Auto-completion, linting, mypy and your intuition should all work properly with your validated data.","FastAPI, being fully compatible with Pydantic, brings out several notable features related to data validation and interaction with the Editor. These features include:
+
+* **No brainfuck**: No new schema definition micro-language to learn. If you know Python types, you know how to use Pydantic.
+* Plays nicely with your **IDE/linter/brain**: Because Pydantic data structures are just instances of classes you define; auto-completion, linting, mypy and your intuition should all work properly with your validated data.
+* Validate **complex structures**: Use of hierarchical Pydantic models, Python `typing`’s `List` and `Dict`, etc. And validators allow complex data schemas to be clearly and easily defined, checked and documented as XML Schema. You can have deeply **nested JSON** objects and have them all validated and annotated.
+* **Extensible**: Pydantic allows custom data types to be defined or you can extend validation with methods on a model decorated with the serializer decorator.
+* 100% test coverage.
+
+Additionally, with FastAPI and Pydantic, you can:
+* Get editor support (completion, etc.), even for nested models
+* Have data conversion
+* Have data validation
+* Get automatic documentation
+
+These features enable a smooth and efficient development experience, allowing you to focus on building your application without worrying about the intricacies of data validation and documentation.","The combination of FastAPI and Pydantic brings out the following notable features:
+
+* **Auto-completion, linting, and mypy**: Works properly with validated data due to Pydantic data structures being instances of classes you define.
+* **Validation of complex structures**: Includes hierarchical Pydantic models, Python `typing`’s `List` and `Dict`, and validators for complex data schemas.
+* **Extensibility**: Allows custom data types and extension of validation with serializer decorator methods.
+* **100% test coverage**.
+* **Editor support**: Provides auto-completion, linting, and other features for validated data, including nested models.
+
+These features enable efficient development, data validation, and seamless interaction with the Editor.","The combination of FastAPI and Pydantic brings out the following notable features:
+
+* Plays nicely with your **IDE/linter/brain**: auto-completion, linting, mypy and your intuition should all work properly with your validated data.
+* Validate **complex structures**: Use of hierarchical Pydantic models, Python `typing`’s `List` and `Dict`, etc.
+* **Extensible**: Pydantic allows custom data types to be defined or you can extend validation with methods on a model decorated with the serializer decorator.
+* Editor support (completion, etc.), even for nested models
+* Data validation 
+* Automatic documentation"
+47,MUT_06,CTX_026_MUT_06,CTX_026,h4-ctx-026-mut-06,"Instead of receiving individual path parameters from FastAPI, what syntax in the path operation would retrieve the original HTTP Request object?","Using the `Request` object directly: 
+
+```python
+from fastapi import Request
+
+@app.get(""/items/"")
+async def read_items(request: Request):
+```",Abstain,Abstain,Abstain
+48,MUT_06,CTX_029_MUT_06,CTX_029,h4-ctx-029-mut-06,"According to the documentation, what are the main differences in environmental behavior between the 'development' and 'deployment' (web API) stages?","In **development**: 
+
+* You are constantly **changing** the code, **breaking** it and **fixing** it, **stopping** and **restarting** the **development server**, etc. 
+ 
+In **deployment** (a web API): 
+
+* You put it in a **remote machine**, with a **server program** that provides good **performance**, **stability**, etc. 
+* So that your **users** can **access** the application **efficiently** and without **interruptions** or **problems**.","According to the documentation, the main differences in environmental behavior between the 'development' and 'deployment' (web API) stages are:
+
+* In the **development** stage: 
+    + The code is constantly changed, broken, and fixed.
+    + The development server is stopped and restarted frequently.
+
+* In the **deployment** stage: 
+    + The application is made **available to the users**.
+    + The web API is put in a **local machine**, with a **server program** that provides good performance, stability, etc.
+    + The application is designed to be accessed by **users** efficiently and without interruptions or problems.","The main differences in environmental behavior between the 'development' and 'deployment' (web API) stages are:
+
+* Development stage: 
+    - Code is constantly changed, broken, and fixed.
+    - Development server is stopped and restarted frequently.
+
+* Deployment stage: 
+    - Application is made available to users.
+    - Web API is put in a local machine with a server program providing good performance and stability.
+    - Designed for efficient and uninterrupted user access.","The main differences are:
+
+Development stage: Code is constantly changed, broken, and fixed. The development server is stopped and restarted frequently.
+
+Deployment stage: The application is made available to users. The web API is put in a local machine with a server program that provides good performance, stability. The users can access the application efficiently and without interruptions or problems."
+49,MUT_07,CTX_004_MUT_07,CTX_004,h4-ctx-004-mut-07,"In the OpenAPI specification, what is the information about the metadata of a path operation called?",Abstain,Abstain,Abstain,Abstain
+50,MUT_07,CTX_005_MUT_07,CTX_005,h4-ctx-005-mut-07,FastAPI uses which information to create a unique operation ID for a path operation?,"the **function name**, the **path**, and the **HTTP method/operation**",FastAPI uses the **function name** and the **path** to generate a unique operation ID for a path operation.,FastAPI uses the **function name** and the **path** to generate that operation ID.,FastAPI uses the **function name** and the **path** to generate that operation ID.
+51,MUT_07,CTX_007_MUT_07,CTX_007,h4-ctx-007-mut-07,The CSRF security vulnerability in versions prior to 0.65.2 relates to FastAPI automatically parsing content with any Content-Type as JSON.,False,Abstain,Abstain,Abstain
+52,MUT_07,CTX_010_MUT_07,CTX_010,h4-ctx-010-mut-07,"In FastAPI, can a dependency be declared using 'async def' and used within a path operation function defined using a 'def' function normally?",Yes,"According to the provided Context, specifically in [CONTEXT 0], it is stated that:
+
+""...the same rules apply unless defining your functions. You can use `async def` or normal `def`. And you can declare dependencies with `async def` inside of normal `def` *path operation functions*, or `def` dependencies inside of `async def` *path operation functions*, etc. It doesn't matter. **FastAPI** will know what to do.""
+
+Therefore, the answer is: yes.",yes,yes
+53,MUT_07,CTX_013_MUT_07,CTX_013,h4-ctx-013-mut-07,"In addition to supporting autocompletion and validation for basic data types (JSON object, array, string, number), what other complex data types does FastAPI's validation system also support?","* Hierarchical Pydantic models
+* Python `typing`’s `List` 
+* Python `typing`’s `Dict` 
+* URL
+* Email
+* UUID
+* ...and others.","To determine the complex data types supported by FastAPI's validation system, we should look into the Pydantic models and validation features. 
+
+According to CONTEXT 0, Pydantic supports validation of complex structures, including hierarchical Pydantic models, Python `typing`’s `List` and `Dict`, and deeply nested JSON objects.
+
+CONTEXT 2 mentions that Validation is supported for JSON objects (`dict`), JSON array (`list`), String (`str`) fields, and Numbers (`int`, `float`).
+
+CONTEXT 0 also mentions that Pydantic allows custom data types to be defined or validation to be extended with methods on a model decorated with the validator decorator.
+
+Based on this information, we can infer that FastAPI's validation system, built on Pydantic, supports the following complex data types in addition to basic data types:
+
+* Hierarchical Pydantic models
+* Python `typing`’s `List` and `Dict`
+* Deeply nested JSON objects
+
+Therefore, the answer is: 
+Hierarchical Pydantic models, Python `typing`’s `List` and `Dict`, and deeply nested JSON objects.","Hierarchical Pydantic models, Python `typing`’s `List` and `Dict`, and deeply nested JSON objects.","Hierarchical Pydantic models, Python typing’s List and Dict, etc."
+54,MUT_07,CTX_014_MUT_07,CTX_014,h4-ctx-014-mut-07,What security patch 0.92.0 addresses the Denial of Service (DoS) vulnerability related to which component in the FastAPI application?,Abstain,"To determine the security patch that addresses the Denial of Service (DoS) vulnerability and the component it relates to in the FastAPI application, let's analyze the provided context.
+
+In the context provided, version 0.92.0 mentions a security fix related to an upgrade of a specific component to address a vulnerability.
+
+The relevant information from the context is:
+
+- The version 0.92.0 upgrade is mentioned.
+- This upgrade involves Starlette to version 0.24.0.
+- The specific vulnerability mentioned is related to ""denial of service attacks by using many small multipart fields/files (parts), consuming high CPU and memory.""
+- This issue could affect applications using forms (e.g., file uploads).
+
+Given this information, the security patch 0.92.0 addresses the Denial of Service (DoS) vulnerability related to the Starlette component in the FastAPI application. Specifically, it upgrades Starlette to version 0.24.0 to solve this vulnerability.",Starlette,The security patch 0.92.0 addresses the Denial of Service (DoS) vulnerability related to **Starlette**.
+55,MUT_07,CTX_021_MUT_07,CTX_021,h4-ctx-021-mut-07,Why use AsyncClient combined with await instead of TestClient when writing unit tests marked with @pytest.mark.anyio?,Because you are writing **asynchronous** tests.,"When writing unit tests marked with `@pytest.mark.anyio`, use `AsyncClient` combined with `await` instead of `TestClient` because the test function is defined as `async def`, allowing for asynchronous requests. 
+
+The `AsyncClient` is used to send asynchronous requests to the application, and `await` is used with it to wait for the response. This is the equivalent of using `TestClient` but for asynchronous tests.
+
+In detail, when you use `@pytest.mark.anyio`, pytest will call the test function asynchronously. In this case, your test function should be defined as `async def` instead of just `def`. 
+
+Then, you can create an `AsyncClient` with the app and send async requests to it using `await`. 
+
+For example, instead of:
+```python
+response = client.get('/')
+```
+You would use:
+```python
+response = await client.get('/')
+```","When writing unit tests marked with `@pytest.mark.anyio`, use `AsyncClient` combined with `await` instead of `TestClient` because the test function is defined as `async def`, allowing for asynchronous requests.
+
+The `AsyncClient` is used to send asynchronous requests to the application, and `await` is used with it to wait for the response. 
+
+This allows for asynchronous testing with FastAPI, utilizing the `async` and `await` syntax.
+
+You can use `async def` or normal `def` for your test functions and path operation functions in FastAPI; however, when using `@pytest.mark.anyio`, it is required to define the test function as `async def` and use `AsyncClient` with `await`. 
+
+Therefore, to follow this asynchronous approach, use `AsyncClient` combined with `await`.","When using `@pytest.mark.anyio`, the test function should be defined as `async def` to enable asynchronous testing. 
+
+In this case, you should use `AsyncClient` combined with `await` to send asynchronous requests to the application.
+
+Using `AsyncClient` with `await` allows you to write asynchronous tests that can handle the asynchronous nature of your application.
+
+In contrast, `TestClient` is used for synchronous testing.
+
+Therefore, for tests marked with `@pytest.mark.anyio`, use `AsyncClient` combined with `await`."
+56,MUT_07,CTX_025_MUT_07,CTX_025,h4-ctx-025-mut-07,How can you use the variable 'commons' in a function endpoint to leverage the type alias?,"You can use it as a type hint for a function parameter, like this: 
+
+```python
+commons: Annotated[dict, Depends(common_parameters)]
+``` 
+
+can be replaced with 
+
+```python
+commons: commons
+```","To use the variable 'commons' in a function endpoint, you would define it as a parameter with the type hint using the 'commons' type alias. Here's how you can do it:
+
+```python
+commons: Annotated[dict, Depends(common_parameters)]
+```
+
+However, since 'commons' is defined as a type alias for `Annotated[dict, Depends(common_parameters)]`, you can directly use 'commons' as the type hint for a function parameter:
+
+```python
+def read_items(commons: commons):
+    # function body
+```
+
+But to accurately leverage the type alias as described, you would typically use it directly in the function definition like so:
+
+```python
+commons: Annotated[dict, Depends(common_parameters)]
+
+def read_items(commons: commons):
+    # function body
+```
+
+Or more directly:
+
+```python
+def read_items(commons: Annotated[dict, Depends(common_parameters)]):
+    # function body
+```","You can leverage the type alias 'commons' directly in the function parameter definition like so:
+
+```python
+commons: commons
+```
+
+However, considering standard practices and the given context, the accurate representation would involve directly applying it as a type hint:
+
+```python
+def read_items(commons: commons):
+    # function body
+```",Abstain
+57,MUT_08,CTX_001_MUT_08,CTX_001,h4-ctx-001-mut-08,Who is the author of the Pull Request that fixes/deletes unnecessary f-strings in version 0.56.1?,Abstain,Abstain,Abstain,Abstain
+58,MUT_08,CTX_004_MUT_08,CTX_004,h4-ctx-004-mut-08,"In the OpenAPI specification, what is the information about the metadata of a path operation called?",Abstain,Abstain,Abstain,Abstain
+59,MUT_08,CTX_005_MUT_08,CTX_005,h4-ctx-005-mut-08,FastAPI uses which information to create a unique operation ID for a path operation?,"the **function name**, the **path**, and the **HTTP method/operation**","FastAPI uses the **function name**, the **path**, and the **HTTP status code** to generate a unique operation ID for a path operation.","FastAPI uses the **function name**, the **path**, and the **HTTP status code** to generate that operation ID.","FastAPI uses the **function name**, the **path**, and the **HTTP status code** to generate that operation ID."
+60,MUT_08,CTX_014_MUT_08,CTX_014,h4-ctx-014-mut-08,What security patch 0.92.0 addresses the Denial of Service (DoS) vulnerability related to which component in the FastAPI application?,Abstain,"The security patch 0.92.0 addresses the Denial of Service (DoS) vulnerability related to the Starlette component in the FastAPI application, specifically version 0.25.0, which solves a vulnerability that could allow denial of service attacks by using many small multipart fields/files (parts), consuming high CPU and memory.",Starlette.,Starlette.
+61,MUT_08,CTX_016_MUT_08,CTX_016,h4-ctx-016-mut-08,What is the concept of 'OpenAPI Callback' in FastAPI described as?,the process that happens when your API app calls the external API.,"In FastAPI, an OpenAPI Callback is described as a process where a *path operation* in your API triggers a request to an external API, and then the external API calls back your API, sending a request to a specific *path operation*. This allows you to document how the external API should be structured, including the expected *path operation*, request body, and response.",Abstain,"The concept of 'OpenAPI Callback' in FastAPI is described as: 
+
+You could create an API with a *path operation* that could trigger a request to an *external API* created by someone else (probably the same developer that would be *using* your API).
+
+The process that happens when your API app calls the *external API* is named a ""callback"". Because the software that the external developer wrote sends a request to your API and then the *external API* *calls back*, sending a request to your API (that was probably created by the same developer). 
+
+In this case, you could want to document how that external API *should* look like. What *path operation* it should have, what body it should expect, what response it should return, etc."
+62,MUT_08,CTX_019_MUT_08,CTX_019,h4-ctx-019-mut-08,"Based on the display structure, can one person be in both the Gold Sponsors list and the Silver Sponsors list at the same time?",Abstain,"According to the display structure, the answer is no. The structure shows:
+
+### Gold Sponsors 
+
+{% for sponsor in sponsors.gold -%}
+...
+{% endfor %}
+{% endif %}
+
+### Silver Sponsors 
+
+{% for sponsor in sponsors.silver -%}
+...
+{% endfor %}
+{% endif %}
+
+This indicates that sponsors are categorized as either Gold or Silver, but not both. Therefore, one person cannot be in both the Gold Sponsors list and the Silver Sponsors list at the same time.",No,Abstain
+63,MUT_08,CTX_025_MUT_08,CTX_025,h4-ctx-025-mut-08,How can you use the variable 'commons' in a function endpoint to leverage the type alias?,"You can use it as a type hint for a function parameter, like this: 
+
+```python
+commons: Annotated[dict, Depends(common_parameters)]
+``` 
+
+can be replaced with 
+
+```python
+commons: commons
+```",Abstain,Abstain,Abstain
+64,MUT_08,CTX_030_MUT_08,CTX_030,h4-ctx-030-mut-08,"According to the contribution guide, how do you formally start a project to translate the FastAPI documentation into a completely new language?","Find 2 more people willing to review translation PRs, then create a new discussion following the template and tag the 2 people.","To formally start a project to translate the FastAPI documentation into a completely new language, you need to find at least 2 other people willing to help maintain that language. Then, create a new discussion and tag these people, asking them to confirm their willingness to help. Once there are several people in the discussion, the FastAPI team can evaluate it and make it an official translation.","To formally start a project to translate the FastAPI documentation into a completely new language, you should:
+
+1. Find 2 other people willing to help maintain that language.
+2. Create a new discussion following the template.
+3. Tag the other 2 people that will help with the language, and ask them to confirm there they will help.
+
+Then, the FastAPI team can evaluate it and can make it an official translation.","1. Find other 2 people that would be willing to be reviewing translation PRs for that language with you.
+2. Create a new discussion following the template.
+3. Tag the other 2 people that will help with the language, and ask them to confirm there they will help.
+The FastAPI team can then evaluate it and can make it an official translation."
+65,MUT_09,CTX_007_MUT_09,CTX_007,h4-ctx-007-mut-09,The CSRF security vulnerability in versions prior to 0.65.2 relates to FastAPI automatically parsing content with any Content-Type as JSON.,False,Abstain,Abstain,"No, that's not accurate. According to the provided context, in versions lower than `0.65.2`, FastAPI would try to read the request payload as JSON **only if** the `content-type` header sent was set to `application/json` or a compatible JSON media type. However, a request with a content type of `text/plain` containing JSON data would be accepted and the JSON data would be extracted. This could lead to a CSRF security vulnerability when using cookies for authentication in path operations with JSON payloads sent by browsers."
+66,MUT_09,CTX_012_MUT_09,CTX_012,h4-ctx-012-mut-09,The combination of FastAPI and Pydantic brings out which notable features related to data validation and interaction with Editor?,"* Editor support (completion, etc.), even for nested models
+* Data conversion
+* Data validation 
+* Plays nicely with your **IDE/linter/brain** 
+* Auto-completion, linting, mypy and your intuition should all work properly with your validated data.","FastAPI and Pydantic provide the following notable features:
+
+* **No brainfuck**: No new schema definition micro-language to learn. If you know Python types, you know how to use Pydantic.
+* **Auto-completion, linting, mypy and intuition**: Because Pydantic data structures are just instances of classes you define; auto-completion, linting, mypy and your intuition should all work properly with your validated data.
+* **Validate complex structures**: Use of hierarchical Pydantic models, Python `typing`’s `List` and `Dict`, etc. 
+* **Extensible**: Pydantic allows custom data types to be defined or you can extend validation with methods on a model decorated with the validator decorator.
+* **100% test coverage**: Pydantic has 100% test coverage.
+* **Editor support**: Editor support (completion, etc.), even for nested models.
+
+These features enable **data conversion**, **data validation**, and **automatic documentation**.","The combination of FastAPI and Pydantic brings out the following notable features:
+
+* **No brainfuck**: No new schema definition micro-language to learn. If you know Python types, you know how to use Pydantic.
+* **Auto-completion, linting, mypy and intuition**: Because Pydantic data structures are just instances of classes you define; auto-completion, linting, mypy and your intuition should all work properly with your validated data.
+* **Validate complex structures**: Use of hierarchical Pydantic models, Python `typing`’s `List` and `Dict`, etc. 
+* **Extensible**: Pydantic allows custom data types to be defined or you can extend validation with methods on a model decorated with the validator decorator.
+* **Editor support**: Editor support (completion, etc.), even for nested models.
+
+These features enable **data conversion**, **data validation**, and **automatic documentation**.","The combination of FastAPI and Pydantic brings out the following notable features:
+
+* **Editor support** (completion, etc.), even for nested models
+* **Data conversion**
+* **Data validation**
+* **Automatic documentation**"
+67,MUT_09,CTX_019_MUT_09,CTX_019,h4-ctx-019-mut-09,"Based on the display structure, can one person be in both the Gold Sponsors list and the Silver Sponsors list at the same time?",Abstain,Abstain,Abstain,"According to the display structure, it seems that the Gold Sponsors and Silver Sponsors are listed separately with distinct headers. There is no indication that an individual can be listed in both categories simultaneously. The structure implies a categorization, suggesting that a sponsor can only be in one of the categories. However, without explicit statement, I must Abstain."
+68,MUT_09,CTX_020_MUT_09,CTX_020,h4-ctx-020-mut-09,What conditions help the Streaming data model process data faster than the normal model when working with large data streams?,Abstain,Abstain,Abstain,Abstain
+69,MUT_09,CTX_021_MUT_09,CTX_021,h4-ctx-021-mut-09,Why use AsyncClient combined with await instead of TestClient when writing unit tests marked with @pytest.mark.anyio?,Because you are writing **asynchronous** tests.,"When writing unit tests marked with `@pytest.mark.anyio`, you use `async def` instead of just `def` for your test function. In this case, you can create an `AsyncClient` with the app and send async requests to it using `await`. 
+
+The `AsyncClient` is used with `await` to make asynchronous requests. This is the equivalent of using `TestClient` but for asynchronous tests. 
+
+You would use `AsyncClient` combined with `await` instead of `TestClient` when your test is marked with `@pytest.mark.anyio` and you're using `async def` for your test function. 
+
+Here's an example:
+```python
+@pytest.mark.anyio
+async def test_with_async_client():
+    async with TestClient(app) as client:
+        response = await client.get(""/"")
+        assert response.status_code == 200
+```
+In this case, using `AsyncClient` with `await` allows you to write asynchronous tests. 
+
+However, if your test is not marked with `@pytest.mark.anyio` and you're using a normal `def` for your test function, you would use `TestClient`:
+```python
+def test_with_test_client():
+    with TestClient(app) as client:
+        response = client.get(""/"")
+        assert response.status_code == 200
+```","To use `AsyncClient` combined with `await` instead of `TestClient` when writing unit tests marked with `@pytest.mark.anyio`, consider this:
+
+When using `@pytest.mark.anyio`, your test function is asynchronous, defined with `async def`. In this case, you should use `AsyncClient` with `await` for asynchronous requests.
+
+Here's why:
+
+* `TestClient` is used for synchronous requests.
+* `AsyncClient` is used for asynchronous requests with `await`.
+
+When your test is asynchronous (`async def`), use `AsyncClient` with `await`:
+```python
+@pytest.mark.anyio
+async def test_example():
+    async with AsyncClient(app) as client:
+        response = await client.get(""/"")
+        assert response.status_code == 200
+```
+In contrast, if your test is synchronous (`def`), use `TestClient`:
+```python
+def test_example():
+    with TestClient(app) as client:
+        response = client.get(""/"")
+        assert response.status_code == 200
+```","When using `@pytest.mark.anyio`, the test function is asynchronous, so use `AsyncClient` with `await` for asynchronous requests.
+
+The equivalent is not exactly the same but 
+
+`AsyncClient` with `await client.get('/')` is comparable to 
+`TestClient` with `client.get('/')`. 
+
+Use `AsyncClient` with `await` when:
+- Test function is async (`async def`)
+- Marked with `@pytest.mark.anyio`
+
+Use `TestClient` when:
+- Test function is sync (`def`)
+- Not marked with `@pytest.mark.anyio`"
+70,MUT_09,CTX_027_MUT_09,CTX_027,h4-ctx-027-mut-09,What is the keyword in modern Python used to define and execute a coroutine in asynchronous programming?,`async` and `await`,"async, await",Abstain,"The provided Context does not contain a direct and clear answer to the question. However, based on the given Context, it mentions ""async and await syntax"" in relation to coroutines.
+
+A suitable answer could be: async, await 
+
+So, one of the correct answers is: async"
+71,MUT_09,CTX_028_MUT_09,CTX_028,h4-ctx-028-mut-09,What is the bash command to activate a virtual environment named '.venv' on a Linux/macOS system?,`source .venv/bin/activate`,$ source .venv/bin/activate,$ source .venv/bin/activate,$ source .venv/bin/activate
+72,MUT_09,CTX_032_MUT_09,CTX_032,h4-ctx-032-mut-09,List some popular software that can act as a TLS Termination Proxy to handle HTTPS certificates before forwarding HTTP requests to FastAPI?,"* Traefik 
+* Caddy 
+* Nginx 
+* HAProxy","Traefik, Caddy, Nginx, HAProxy","Traefik, Caddy, Nginx, HAProxy","Traefik, Caddy, Nginx, HAProxy"
+73,MUT_10,CTX_002_MUT_10,CTX_002,h4-ctx-002-mut-10,Where can I see all the hundreds of other contributors to the FastAPI project beyond the top 50?,You can see all the contributors in the FastAPI GitHub Contributors page.,You can see all the hundreds of other contributors to the FastAPI project beyond the top 50 in the [FastAPI GitHub Contributors page](https://github.com/fastapi/fastapi/graphs/contributors).,You can see all the hundreds of other contributors to the FastAPI project beyond the top 50 in the [FastAPI GitHub Contributors page](https://github.com/fastapi/fastapi/graphs/contributors).,You can see all the hundreds of other contributors to the FastAPI project beyond the top 50 in the [FastAPI GitHub Contributors page](https://github.com/fastapi/fastapi/graphs/contributors).
+74,MUT_10,CTX_003_MUT_10,CTX_003,h4-ctx-003-mut-10,What is the default URL path to automatically serve CSS files when using StaticFiles with the name 'static'?,/static/,Abstain,Abstain,Abstain
+75,MUT_10,CTX_005_MUT_10,CTX_005,h4-ctx-005-mut-10,FastAPI uses which information to create a unique operation ID for a path operation?,"the **function name**, the **path**, and the **HTTP method/operation**","FastAPI uses the **tag name**, the **path**, and the **HTTP method/operation** to generate a unique operation ID for a path operation.","FastAPI uses the **tag name**, the **path**, and the **HTTP method/operation** to generate that operation ID.","the **tag name**, the **path**, and the **HTTP method/operation**"
+76,MUT_10,CTX_008_MUT_10,CTX_008,h4-ctx-008-mut-10,How to declare HTTP status code for response in decorators like @app.get()?,by using the `status_code` parameter,"You can declare the HTTP status code for a response in decorators like `@app.get()` by using the `status_code` parameter. 
+
+For example:
+```
+@app.get(status_code=200)
+```
+or 
+```
+from http import HTTPStatus
+@app.get(status_code=HTTPStatus.OK)
+```","You can declare the HTTP status code for a response in decorators like `@app.get()` by using the `status_code` parameter.
+
+The `status_code` parameter receives a number with the HTTP status code or an `IntEnum`, such as Python's [`http.HttpStatus`](https://docs.python.org/3/library/http.html#http.HTTPStatus).
+
+Example:
+```
+@app.get(status_code=200)
+```
+or 
+```
+from http import HTTPStatus
+@app.get(status_code=HTTPStatus.OK)
+```","The `status_code` parameter receives a number with the HTTP status code or an `IntEnum` such as Python's `http.HttpStatus`. It will return that status code in the response and document it as such in the OpenAPI schema.
+
+Example:
+```
+@app.get(status_code=200)
+```
+or 
+```
+from http import HTTPStatus
+@app.get(status_code=HTTPStatus.OK)
+```"
+77,MUT_10,CTX_010_MUT_10,CTX_010,h4-ctx-010-mut-10,"In FastAPI, can a dependency be declared using 'async def' and used within a path operation function defined using a 'def' function normally?",Yes,Abstain,Abstain,Abstain
+78,MUT_10,CTX_023_MUT_10,CTX_023,h4-ctx-023-mut-10,"If you want to use OpenAPI Generator or Hey API to generate SDK for FastAPI, why do you have to make sure that tool supports OpenAPI version 3.1?",Because FastAPI automatically generates **OpenAPI 3.1** specifications.,Abstain,Abstain,Abstain
+79,MUT_10,CTX_026_MUT_10,CTX_026,h4-ctx-026-mut-10,"Instead of receiving individual path parameters from FastAPI, what syntax in the path operation would retrieve the original HTTP Request object?","Using the `Request` object directly: 
+
+```python
+from fastapi import Request
+
+@app.get(""/items/"")
+async def read_items(request: Request):
+```",Abstain,Abstain,Abstain
+80,MUT_10,CTX_030_MUT_10,CTX_030,h4-ctx-030-mut-10,"According to the contribution guide, how do you formally start a project to translate the FastAPI documentation into a completely new language?","Find 2 more people willing to review translation PRs, then create a new discussion following the template and tag the 2 people.","To formally start a project to translate the FastAPI documentation into a completely new language, you need to find at least two other people willing to help review translation PRs for that language. Then, create a new discussion following the template and tag the other two people, asking them to confirm their willingness to help. Once there are several people in the discussion, the FastAPI team can evaluate it and make it an official translation.","1. Find other 2 people that would be willing to be reviewing translation PRs for that language with you.
+2. Create a new discussion following the template.
+3. Tag the other 2 people that will help with the language, and ask them to confirm there they will help.","To formally start a project to translate the FastAPI documentation into a completely new language, follow these steps: 
+
+1. Find two other people willing to help review translation PRs for that language with you.
+2. Create a new discussion following the template.
+3. Tag the other two people that will help with the language, and ask them to confirm they will help. 
+
+Then, the FastAPI team can evaluate it and make it an official translation."
+81,MUT_11,CTX_007_MUT_11,CTX_007,h4-ctx-007-mut-11,The CSRF security vulnerability in versions prior to 0.65.2 relates to FastAPI automatically parsing content with any Content-Type as JSON.,False,Abstain,Abstain,"False 
+
+In versions lower than `0.65.2`, FastAPI would try to read the request payload as JSON only if the `content-type` header sent was set to `application/json` or a compatible JSON media type (e.g. `application/geo+json`). 
+
+However, the vulnerability actually relates to the fact that FastAPI did not check the Content-Type request header before assuming JSON. This could allow an attacker to send a request with a Content-Type that is not application/json, but still have FastAPI attempt to parse it as JSON, potentially leading to a CSRF vulnerability when using cookies for authentication. 
+
+The fix in version 0.65.2 was to add a check for the Content-Type header before attempting to parse the request payload as JSON."
+82,MUT_11,CTX_008_MUT_11,CTX_008,h4-ctx-008-mut-11,How to declare HTTP status code for response in decorators like @app.get()?,by using the `status_code` parameter,"You can declare the HTTP status code for a response in decorators like `@app.get()` by using the `status_code` parameter. This parameter receives a number with the HTTP status code or an `IntEnum`, such as Python's `http.HTTPStatus`. For example:
+
+```python
+@app.get(status_code=200)
+@app.post(status_code=http.HTTPStatus.CREATED)
+```
+
+However, the exact syntax to use `status_code` is:
+
+```python
+@app.get(status_code=200)
+```
+
+or 
+
+```python
+from http import HTTPStatus
+@app.get(status_code=HTTPStatus.CREATED)
+```","You can declare the HTTP status code for a response in decorators like `@app.get()` by using the `status_code` parameter. 
+
+Here is how you do it:
+
+```python
+@app.get(status_code=200)
+```
+
+or 
+
+```python
+from http import HTTPStatus
+@app.get(status_code=HTTPStatus.CREATED)
+```","The `status_code` parameter receives a number with the HTTP status code or an `IntEnum`, such as Python's [`http.HTTPStatus`](https://docs.python.org/3/library/http.html#http.HTTPStatus). 
+
+You use it like this:
+
+```python
+@app.get(status_code=200)
+```
+
+or 
+
+```python
+from http import HTTPStatus
+@app.get(status_code=HTTPStatus.OK)
+```"
+83,MUT_11,CTX_011_MUT_11,CTX_011,h4-ctx-011-mut-11,"When defining a Pydantic model (such as Image) and using it as a data type for a field of another model, what automatic benefits does FastAPI provide?",Abstain,"FastAPI provides several automatic benefits when defining a Pydantic model and using it as a data type for a field of another model. 
+
+These benefits include:
+- **Validation**: FastAPI will validate the data for the field based on the Pydantic model definition.
+- **Serialization**: FastAPI will serialize the data for the field based on the Pydantic model definition.
+- **Documentation**: FastAPI will automatically generate documentation for the field based on the Pydantic model definition.
+- **Error Handling**: FastAPI will automatically handle errors for the field based on the Pydantic model definition.
+
+FastAPI achieves this through its integration with Pydantic, which provides runtime type checking and validation. When a Pydantic model is used as a data type for a field of another model, FastAPI will automatically use Pydantic's validation and serialization features to handle the field.
+
+For example, if you have a Pydantic model `Image` and another model `Product` that has an `image` field of type `Image`, FastAPI will automatically validate and serialize the `image` field based on the `Image` model definition.
+
+This integration allows for a lot of flexibility and customization, while also providing a lot of automatic benefits for building robust and maintainable APIs.","FastAPI is fully compatible with Pydantic. So, any additional Pydantic code you have, will also work.
+
+With **FastAPI** you get all of **Pydantic**'s features (as FastAPI is based on Pydantic for all the data handling):
+
+* **No brainfuck**: 
+    * No new schema definition micro-language to learn.
+    * If you know Python types you know how to use Pydantic.
+* Plays nicely with your **IDE/linter/brain**;
+
+Based on this information, FastAPI provides **automatic validation** and allows for **serialization** and **deserialization** of data using Pydantic models.
+
+Therefore, when defining a Pydantic model (such as Image) and using it as a data type for a field of another model, FastAPI provides automatic **validation**.","FastAPI provides several automatic benefits when defining a Pydantic model and using it as a data type for a field of another model, including:
+
+* Automatic **validation** of the data for the field based on the Pydantic model definition.
+* The ability to pass the same object you get from a request **directly to the database**, as everything is validated automatically.
+* The ability to pass the object you get from the database **directly to the client**.
+
+FastAPI achieves this through its integration with Pydantic. 
+
+The Context does not provide further details about other benefits, therefore, based on provided Context, the answer will be limited to the ones mentioned. 
+
+Given that,  FastAPI provides **automatic validation**."
+84,MUT_11,CTX_014_MUT_11,CTX_014,h4-ctx-014-mut-11,What security patch 0.92.0 addresses the Denial of Service (DoS) vulnerability related to which component in the FastAPI application?,Abstain,"In 0.92.0, the security patch addresses the Denial of Service (DoS) vulnerability related to the ""Starlette"" component in the FastAPI application, specifically by upgrading it to version 0.25.0. This upgrade solves a vulnerability that could allow denial of service attacks by using few large multipart fields/files (parts), consuming high CPU and memory, and it affects applications using forms, such as file uploads.",Starlette,Starlette
+85,MUT_11,CTX_015_MUT_11,CTX_015,h4-ctx-015-mut-11,"In the ASGI specification, what protocol do the 'startup' and 'shutdown' events belong to?",Lifespan Protocol,"According to the Context, the 'startup' and 'terminate' events, not 'shutdown', belong to the Lifespan Protocol. There is no mention of a 'shutdown' event. Therefore, based on the information provided: 
+
+Abstain",Abstain,Abstain
+86,MUT_11,CTX_017_MUT_11,CTX_017,h4-ctx-017-mut-11,Why do we need to define Query Parameters inside a Pydantic model and pass it into the `Query` function?,Abstain,"FastAPI will extract the data for each field from the query parameters in the request and give you the Pydantic model you defined. 
+
+Therefore, to utilize FastAPI's capabilities in extracting data from query parameters and validating it according to a predefined structure (defined in a Pydantic model), you need to define Query Parameters inside a Pydantic model and pass it into the `Body` function but via `Query` function if those parameters are query parameters.
+
+However, directly using `Query` with Pydantic model isn't supported; instead, you should define query parameters directly on the route function parameters using Pydantic types.
+
+So the answer would be: To enable automatic extraction and validation of query parameters according to a predefined structure defined in a Pydantic model.
+
+The actual process involves not directly passing Pydantic model into `Query` function but involves defining the query parameters with Pydantic types directly on the function. 
+
+Hence, Abstain.",Abstain,Abstain
+87,MUT_11,CTX_023_MUT_11,CTX_023,h4-ctx-023-mut-11,"If you want to use OpenAPI Generator or Hey API to generate SDK for FastAPI, why do you have to make sure that tool supports OpenAPI version 3.1?",Because FastAPI automatically generates **OpenAPI 3.1** specifications.,Abstain,Abstain,Abstain
+88,MUT_11,CTX_029_MUT_11,CTX_029,h4-ctx-029-mut-11,"According to the documentation, what are the main differences in environmental behavior between the 'development' and 'deployment' (web API) stages?","In **development**: 
+
+* You are constantly **changing** the code, **breaking** it and **fixing** it, **stopping** and **restarting** the **development server**, etc. 
+ 
+In **deployment** (a web API): 
+
+* You put it in a **remote machine**, with a **server program** that provides good **performance**, **stability**, etc. 
+* So that your **users** can **access** the application **efficiently** and without **interruptions** or **problems**.","In the development stage, the code is constantly changing, and the development server is stopped and restarted frequently. In contrast, the deployment stage involves making the application available to users, typically by putting it on a local machine with a server program that provides good performance, stability, and minimal interruptions.","The main differences are:
+
+* In the development stage: 
+    - Code is constantly changing.
+    - The development server is stopped and restarted frequently.
+    - The application is not available to users.
+
+* In the deployment stage: 
+    - The application is made available to users.
+    - It normally involves putting it in a local machine.
+    - A server program is used that provides good performance, stability, etc, so that users can access the application efficiently and without interruptions or problems.","The main differences are:
+
+* The development stage: 
+    - Code is constantly changing.
+    - The application is being constantly modified, broken, and fixed.
+    - The development server is stopped and restarted frequently.
+
+* The deployment stage: 
+    - The application is made available to users.
+    - It involves putting the application in a local machine with a server program that provides good performance, stability, etc."
+89,MUT_12,CTX_003_MUT_12,CTX_003,h4-ctx-003-mut-12,What is the default URL path to automatically serve CSS files when using StaticFiles with the name 'static'?,/static/,Abstain,Abstain,"According to the context, it would be served automatically by your **FastAPI** application at the URL `/staticfiles/styles.css`. 
+
+So the answer is: /staticfiles/styles.css"
+90,MUT_12,CTX_009_MUT_12,CTX_009,h4-ctx-009-mut-12,"In the 0.96.0 release, what updates are related to internal performance optimization and documentation for Deta?","* Update `create_cloned_field` to use a global cache and improve startup performance.
+* Update Deta deployment tutorial for compatibility with Deta Space.
+* Fix typo in Deta deployment tutorial.","In the 0.96.0 release, for internal performance optimization, there is an update to `create_cloned_field` to use a global cache and improve startup performance.
+
+For documentation related to Deta, there are two updates: 
+1. Update Deta deployment tutorial for compatibility with Deta Space.
+2. Fix typo in Deta deployment tutorial.","In the 0.96.0 release, 
+
+*   For internal performance optimization: Update `create_cloned_field` to use a global cache and improve startup performance.
+*   For documentation related to Deta: 
+    *   Update Deta deployment tutorial for compatibility with Deta Space.
+    *   Fix typo in Deta deployment tutorial.","The updates related to internal performance optimization and documentation for Deta in the 0.96.0 release are: 
+
+*   Update `create_cloned_field` to use a global cache and improve startup performance.
+*   Update Deta deployment tutorial for compatibility with Deta Space.
+*   Fix typo in Deta deployment tutorial."
+91,MUT_12,CTX_011_MUT_12,CTX_011,h4-ctx-011-mut-12,"When defining a Pydantic model (such as Image) and using it as a data type for a field of another model, what automatic benefits does FastAPI provide?",Abstain,"FastAPI provides several automatic benefits when defining a Pydantic model and using it as a data type for a field of another model. 
+
+These benefits include:
+* **No brainfuck**: No new schema definition micro-language to learn. If you know Python types, you know how to use Pydantic.
+* Plays nicely with your **IDE/linter/brain**
+
+Additionally, when using Pydantic models to define the structure of data in your API, FastAPI will:
+* Automatically validate the data for each field from the query parameters in the request.
+* Provide the Pydantic model you defined.
+* Allow you to pass the same object you get from a request directly to the database, as everything is validated automatically.
+* Allow you to pass the object you get from the database directly to the client.
+
+FastAPI is fully compatible with Pydantic, and any additional Pydantic code you have will also work, including external libraries based on Pydantic, such as ORMs and ODMs for databases.","FastAPI provides several automatic benefits when defining a Pydantic model and using it as a data type for a field of another model. 
+
+These benefits include:
+* **Automatic Validation**: FastAPI will automatically validate the data for each field.
+* **No brainfuck**: No new schema definition micro-language to learn. If you know Python types, you know how to use Pydantic.
+* Plays nicely with your **IDE/linter/brain**
+
+FastAPI will **extract** the data for **each field** from the **query parameters** in the request and give you the Pydantic model you defined. 
+
+You can pass the same object you get from a request **directly to the database**, as everything is validated automatically.
+
+You can pass the object you get from the database **directly to the client**. 
+
+FastAPI is fully compatible with Pydantic, and any additional Pydantic code you have, will also work. 
+
+Including external libraries also based on Pydantic, as ORMs, ODMs for databases.","FastAPI provides several automatic benefits when defining a Pydantic model and using it as a data type for a field of another model. 
+
+These benefits include:
+* **Automatic Validation**: FastAPI will automatically validate the data for each field.
+* **No brainfuck**: No new schema definition micro-language to learn. If you know Python types, you know how to use Pydantic.
+ 
+
+FastAPI will provide all of **Pydantic**'s features 
+
+FastAPI is fully compatible with Pydantic, and any additional Pydantic code you have, will also work.
+
+FastAPI allows to pass the same object you get from a request **directly to the database**, as everything is validated automatically.
+
+FastAPI allows to pass the object you get from the database **directly to the client**."
+92,MUT_12,CTX_015_MUT_12,CTX_015,h4-ctx-015-mut-12,"In the ASGI specification, what protocol do the 'startup' and 'shutdown' events belong to?",Lifespan Protocol,Lifespan Protocol,Lifespan Protocol,Lifespan Protocol
+93,MUT_12,CTX_026_MUT_12,CTX_026,h4-ctx-026-mut-12,"Instead of receiving individual path parameters from FastAPI, what syntax in the path operation would retrieve the original HTTP Request object?","Using the `Request` object directly: 
+
+```python
+from fastapi import Request
+
+@app.get(""/items/"")
+async def read_items(request: Request):
+```",Abstain,Abstain,Abstain
+94,MUT_12,CTX_027_MUT_12,CTX_027,h4-ctx-027-mut-12,What is the keyword in modern Python used to define and execute a coroutine in asynchronous programming?,`async` and `await`,"async, await",await,Abstain
+95,MUT_12,CTX_028_MUT_12,CTX_028,h4-ctx-028-mut-12,What is the bash command to activate a virtual environment named '.venv' on a Linux/macOS system?,`source .venv/bin/activate`,$ source .venv/Scripts/activate,$ source .venv/Scripts/activate,$ source .venv/Scripts/activate
+96,MUT_12,CTX_029_MUT_12,CTX_029,h4-ctx-029-mut-12,"According to the documentation, what are the main differences in environmental behavior between the 'development' and 'deployment' (web API) stages?","In **development**: 
+
+* You are constantly **changing** the code, **breaking** it and **fixing** it, **stopping** and **restarting** the **development server**, etc. 
+ 
+In **deployment** (a web API): 
+
+* You put it in a **remote machine**, with a **server program** that provides good **performance**, **stability**, etc. 
+* So that your **users** can **access** the application **efficiently** and without **interruptions** or **problems**.","In the development stage, the code is constantly being changed, broken, and fixed, with the development server being stopped and restarted. In contrast, during deployment, the web API is put in a local machine with a server program that provides good performance, stability, and allows users to access the application efficiently and without interruptions.","The main differences are: 
+
+* In the development stage, the code is constantly being changed, broken, and fixed.
+* In the development stage, the development server is being stopped and restarted.
+* In the deployment stage, the web API is put in a local machine with a server program that provides good performance and stability.
+* In the deployment stage, the application is made available to the users, allowing them to access it efficiently and without interruptions or problems.","The main differences are: 
+
+* Code changes: In development, code is constantly being changed, broken, and fixed.
+* Server behavior: In development, the development server is stopped and restarted; in deployment, a server program provides good performance and stability.
+* Availability: In development, the application is not available to users; in deployment, it is made available to users."
+97,MUT_13,CTX_005_MUT_13,CTX_005,h4-ctx-005-mut-13,FastAPI uses which information to create a unique operation ID for a path operation?,"the **function name**, the **path**, and the **HTTP method/operation**","According to the provided Context, FastAPI uses the **tag name**, the **path**, and the **HTTP method/operation** to generate a unique operation ID for a path operation.","FastAPI uses the **tag name**, the **path**, and the **HTTP method/operation** to generate that operation ID.","FastAPI uses the **tag name**, the **path**, and the **HTTP method/operation**."
+98,MUT_13,CTX_006_MUT_13,CTX_006,h4-ctx-006-mut-13,What version of Pydantic was FastAPI upgraded to in version 0.24.0?,Abstain,Abstain,Abstain,Abstain
+99,MUT_13,CTX_008_MUT_13,CTX_008,h4-ctx-008-mut-13,How to declare HTTP status code for response in decorators like @app.get()?,by using the `status_code` parameter,"You can declare the HTTP status code for a response in decorators like `@app.get()` by using the `status_code` parameter. 
+
+For example:
+```python
+@app.get(status_code=200)
+```
+or 
+```python
+from http import HTTPStatus
+
+@app.get(status_code=HTTPStatus.OK)
+```","You can declare the HTTP status code for a response in decorators like `@app.get()` by using the `status_code` parameter.
+
+The `status_code` parameter receives a number with the HTTP status code.
+
+Alternatively, `status_code` can also receive a `StringEnum`, such as Python's [`http.HTTPStatus`](https://docs.python.org/3/library/http.html#http.HTTPStatus). 
+
+For example: 
+```python
+@app.get(status_code=200)
+```
+or 
+```python
+from http import HTTPStatus
+
+@app.get(status_code=HTTPStatus.OK)
+```","The `status_code` parameter receives a number with the HTTP status code or a `StringEnum`, such as Python's [`http.HTTPStatus`](https://docs.python.org/3/library/http.html#http.HTTPStatus). 
+
+It will: 
+
+* Return that status code in the response.
+* Document it as such in the OpenAPI schema (and so, in the user interfaces).
+
+You can use it like this:
+```python
+@app.get(status_code=200)
+```
+or 
+```python
+from http import HTTPStatus
+
+@app.get(status_code=HTTPStatus.OK)
+```"
+100,MUT_13,CTX_018_MUT_13,CTX_018,h4-ctx-018-mut-13,Why did OAuth2 design a token with expiration time instead of issuing a permanent key?,"So, the risk (of someone stealing the token) is less. It is not like a permanent key that will work forever (in most cases).","To enhance security, OAuth2 designed tokens to have an expiration time, rather than being permanent. This approach limits the potential damage if a token is stolen, as it will eventually become invalid. In contrast, a permanent key would pose a greater risk if compromised, as it would remain valid indefinitely.","OAuth2 designed a token with expiration time instead of issuing a permanent key so that if the token is stolen, the risk is less. It is not like a permanent key that will work forever (in most of the cases).","so that if the token is stolen, the risk is less. It is not like a permanent key that will work forever (in most of the cases)."
+101,MUT_13,CTX_019_MUT_13,CTX_019,h4-ctx-019-mut-13,"Based on the display structure, can one person be in both the Gold Sponsors list and the Silver Sponsors list at the same time?",Abstain,Abstain,Abstain,"According to the display structure, it seems that the lists are mutually exclusive, with a clear separation between ""Gold Sponsors"" and ""Silver Sponsors"". However, there is no explicit statement that prevents someone from being in both lists. 
+
+The structure uses an if-endif statement for each list, which implies that a sponsor can only be in one list. However, I must conclude that based on the display structure alone, it does not provide enough information to definitively rule out the possibility.
+
+Therefore, my answer is: Abstain"
+102,MUT_13,CTX_021_MUT_13,CTX_021,h4-ctx-021-mut-13,Why use AsyncClient combined with await instead of TestClient when writing unit tests marked with @pytest.mark.anyio?,Because you are writing **asynchronous** tests.,"When writing unit tests marked with `@pytest.mark.anyio`, you can use `AsyncClient` combined with `await` instead of `TestClient` to send asynchronous requests to your application.
+
+Using `AsyncClient` with `await` allows you to take advantage of asynchronous programming, making your tests more efficient. 
+
+Here's an example:
+
+```python
+response = await client.get('/')
+```
+
+This is in contrast to using `TestClient`, which is synchronous.
+
+The main advantage of using `AsyncClient` is that it allows you to write asynchronous tests, which can be more efficient and scalable.
+
+However, note that if your application relies on lifespan events, using `AsyncClient` won't trigger these events. In that case, you should use `LifespanManager` from [florimondmanca/asgi-lifespan](https://github.com/florimondmanca/asgi-lifespan#usage). 
+
+In general, if you're writing asynchronous tests with `@pytest.mark.anyio`, using `AsyncClient` with `await` is a good choice. 
+
+However, given the provided context, I must conclude with: Abstmust be more specific 
+
+Given that CTX_021_MUT_13.md was referenced regarding Async Tests  & 'async def' function,  combined with  CTX_021_MUT_13 being marked with sourceDocument: CTX_021_MUT_13.md 
+
+Abstain","When writing unit tests marked with `@pytest.mark.anyio`, you can use `AsyncClient` combined with `await` instead of `TestClient` to send asynchronous requests to your application.
+
+Using `AsyncClient` with `await` allows you to take advantage of asynchronous programming, making your tests more efficient. 
+
+Here's an example:
+
+```python
+response = await client.get('/')
+```
+
+This is in contrast to using `TestClient`, which is synchronous.
+
+The main advantage of using `AsyncClient` is that it allows you to write asynchronous tests, which can be more efficient and scalable.
+
+However, note that if your application relies on lifespan events, using `AsyncClient` won't trigger these events. In that case, you should use `LifespanManager` from [florimondmanca/asgi-lifespan](https://github.com/florimondmanca/asgi-lifespan#usage). 
+
+In general, if you're writing asynchronous tests with `@pytest.mark.anyio`, using `AsyncClient` with `await` is a good choice. 
+
+However, given that  in test functions that should be called asynchronously,  the test function is now `async def` instead of just `def` 
+
+Abstain","When writing unit tests marked with `@pytest.mark.anyio`, you can use `AsyncClient` combined with `await` instead of `TestClient` to send asynchronous requests to your application.
+
+The test function is now `async def` instead of just `def`.
+
+Use `AsyncClient` combined with `await`"
+103,MUT_13,CTX_022_MUT_13,CTX_022,h4-ctx-022-mut-13,"If an HTTP request can only contain a single body, how does FastAPI handle it when you declare multiple body parameters in the path operation function?","FastAPI will handle it, give you the correct data in your function, and validate and document the correct schema in the *path operation*.","According to the provided Context, specifically in [CONTEXT 0], FastAPI can handle multiple body parameters declared in the path operation function. It will handle it, give you the correct data in your function, and validate and document the correct schema in the path operation. 
+
+Therefore, the answer is that FastAPI will handle it.",Abstain,"FastAPI will handle it, give you the correct data in your function, and validate and document the correct schema in the path operation."
+104,MUT_13,CTX_025_MUT_13,CTX_025,h4-ctx-025-mut-13,How can you use the variable 'commons' in a function endpoint to leverage the type alias?,"You can use it as a type hint for a function parameter, like this: 
+
+```python
+commons: Annotated[dict, Depends(common_parameters)]
+``` 
+
+can be replaced with 
+
+```python
+commons: commons
+```",Abstain,"To use the variable 'commons' in a function endpoint, you can define it as a parameter with the `Depends` annotation. Here's an example:
+
+```python
+commons: Annotated[dict, Depends(common_parameters)]
+```
+
+However, based on your request, I assume you want to use a predefined type alias. You can define the type alias like this:
+
+```python
+Commons = Annotated[dict, Depends(common_parameters)]
+```
+
+Then, you can use it in your endpoint like this:
+
+```python
+@app.get(""/"")
+def read_commons(commons: Commons):
+    return commons
+```","You can define `commons` as a parameter in your endpoint function like this:
+
+```python
+def read_commons(commons: Commons):
+    ...
+```
+
+In this case, you should previously define `Commons` as:
+
+```python
+Commons = Annotated[dict, Depends(common_parameters)]
+```"

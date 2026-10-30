@@ -1,0 +1,225 @@
+{
+  "total_samples": 104,
+  "total_judged_evaluations": 312,
+  "run_distributions": {
+    "run1_label": {
+      "counts": {
+        "Abstain": 42,
+        "Faithful": 42,
+        "Inconsistent": 20,
+        "Hallucination": 0
+      },
+      "rates": {
+        "Abstain": 0.40384615384615385,
+        "Faithful": 0.40384615384615385,
+        "Inconsistent": 0.19230769230769232,
+        "Hallucination": 0.0
+      }
+    },
+    "run2_label": {
+      "counts": {
+        "Abstain": 43,
+        "Faithful": 42,
+        "Inconsistent": 19,
+        "Hallucination": 0
+      },
+      "rates": {
+        "Abstain": 0.41346153846153844,
+        "Faithful": 0.40384615384615385,
+        "Inconsistent": 0.18269230769230768,
+        "Hallucination": 0.0
+      }
+    },
+    "run3_label": {
+      "counts": {
+        "Abstain": 31,
+        "Faithful": 46,
+        "Inconsistent": 27,
+        "Hallucination": 0
+      },
+      "rates": {
+        "Abstain": 0.2980769230769231,
+        "Faithful": 0.4423076923076923,
+        "Inconsistent": 0.25961538461538464,
+        "Hallucination": 0.0
+      }
+    }
+  },
+  "variance_metrics": {
+    "Abstain": {
+      "rates_across_runs": [
+        0.40384615384615385,
+        0.41346153846153844,
+        0.2980769230769231
+      ],
+      "mean_rate": 0.3717948717948718,
+      "std_dev": 0.06402238575460954,
+      "se_mean": 0.03696334164958588,
+      "ci_95": [
+        0.21274161267670375,
+        0.5308481309130398
+      ]
+    },
+    "Faithful": {
+      "rates_across_runs": [
+        0.40384615384615385,
+        0.40384615384615385,
+        0.4423076923076923
+      ],
+      "mean_rate": 0.4166666666666667,
+      "std_dev": 0.02220577958421636,
+      "se_mean": 0.012820512820512813,
+      "ci_95": [
+        0.36150000000000004,
+        0.4718333333333333
+      ]
+    },
+    "Inconsistent": {
+      "rates_across_runs": [
+        0.19230769230769232,
+        0.18269230769230768,
+        0.25961538461538464
+      ],
+      "mean_rate": 0.21153846153846154,
+      "std_dev": 0.04191248984173726,
+      "se_mean": 0.024198187292534465,
+      "ci_95": [
+        0.10741366161868574,
+        0.3156632614582373
+      ]
+    },
+    "Hallucination": {
+      "rates_across_runs": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mean_rate": 0.0,
+      "std_dev": 0.0,
+      "se_mean": 0.0,
+      "ci_95": [
+        0.0,
+        0.0
+      ]
+    }
+  },
+  "label_switch_stats": {
+    "switch_run1_run2_count": 16,
+    "switch_run1_run2_rate": 0.15384615384615385,
+    "switch_run2_run3_count": 33,
+    "switch_run2_run3_rate": 0.3173076923076923,
+    "switch_run1_run3_count": 33,
+    "switch_run1_run3_rate": 0.3173076923076923,
+    "pairwise_mean_switch_rate": 0.26282051282051283,
+    "any_switch_count": 41,
+    "any_switch_rate": 0.3942307692307692,
+    "stable_count": 63,
+    "stable_rate": 0.6057692307692307
+  },
+  "operator_breakdown": {
+    "MUT_01": {
+      "N": 8,
+      "any_switch_count": 2,
+      "switch_rate": 0.25,
+      "run1_abstain": 0.625,
+      "run2_abstain": 0.625,
+      "run3_abstain": 0.375
+    },
+    "MUT_02": {
+      "N": 8,
+      "any_switch_count": 4,
+      "switch_rate": 0.5,
+      "run1_abstain": 0.375,
+      "run2_abstain": 0.375,
+      "run3_abstain": 0.0
+    },
+    "MUT_03": {
+      "N": 8,
+      "any_switch_count": 1,
+      "switch_rate": 0.125,
+      "run1_abstain": 0.25,
+      "run2_abstain": 0.25,
+      "run3_abstain": 0.125
+    },
+    "MUT_04": {
+      "N": 8,
+      "any_switch_count": 5,
+      "switch_rate": 0.625,
+      "run1_abstain": 0.625,
+      "run2_abstain": 0.625,
+      "run3_abstain": 0.125
+    },
+    "MUT_05": {
+      "N": 8,
+      "any_switch_count": 4,
+      "switch_rate": 0.5,
+      "run1_abstain": 0.625,
+      "run2_abstain": 0.25,
+      "run3_abstain": 0.625
+    },
+    "MUT_06": {
+      "N": 8,
+      "any_switch_count": 3,
+      "switch_rate": 0.375,
+      "run1_abstain": 0.375,
+      "run2_abstain": 0.375,
+      "run3_abstain": 0.375
+    },
+    "MUT_07": {
+      "N": 8,
+      "any_switch_count": 2,
+      "switch_rate": 0.25,
+      "run1_abstain": 0.25,
+      "run2_abstain": 0.25,
+      "run3_abstain": 0.375
+    },
+    "MUT_08": {
+      "N": 8,
+      "any_switch_count": 3,
+      "switch_rate": 0.375,
+      "run1_abstain": 0.375,
+      "run2_abstain": 0.5,
+      "run3_abstain": 0.5
+    },
+    "MUT_09": {
+      "N": 8,
+      "any_switch_count": 4,
+      "switch_rate": 0.5,
+      "run1_abstain": 0.375,
+      "run2_abstain": 0.5,
+      "run3_abstain": 0.125
+    },
+    "MUT_10": {
+      "N": 8,
+      "any_switch_count": 1,
+      "switch_rate": 0.125,
+      "run1_abstain": 0.5,
+      "run2_abstain": 0.5,
+      "run3_abstain": 0.5
+    },
+    "MUT_11": {
+      "N": 8,
+      "any_switch_count": 3,
+      "switch_rate": 0.375,
+      "run1_abstain": 0.25,
+      "run2_abstain": 0.5,
+      "run3_abstain": 0.375
+    },
+    "MUT_12": {
+      "N": 8,
+      "any_switch_count": 3,
+      "switch_rate": 0.375,
+      "run1_abstain": 0.25,
+      "run2_abstain": 0.25,
+      "run3_abstain": 0.25
+    },
+    "MUT_13": {
+      "N": 8,
+      "any_switch_count": 6,
+      "switch_rate": 0.75,
+      "run1_abstain": 0.375,
+      "run2_abstain": 0.375,
+      "run3_abstain": 0.125
+    }
+  }
+}

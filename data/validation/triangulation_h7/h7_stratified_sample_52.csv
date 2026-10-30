@@ -1,0 +1,649 @@
+sample_id,domain,source_id,operator_id,operator_name,query,original_context,mutated_context
+PUB_OP01_1,Public (FastAPI),CTX_030,1,Word Replacement (Synonyms/Antonyms),"According to the contribution guide, how do you formally start a project to translate the FastAPI documentation into a completely new language?","## Request a New Language
+
+Let's say that you want to request translations for a language that is not yet translated, not even some pages. For example, Latin.
+
+* The first step would be for you to find other 2 people that would be willing to be reviewing translation PRs for that language with you.
+* Once there are at least 3 people that would be willing to commit to help maintain that language, you can continue the next steps.
+* Create a new discussion following the template.
+* Tag the other 2 people that will help with the language, and ask them to confirm there they will help.
+
+Once there are several people in the discussion, the FastAPI team can evaluate it and can make it an official translation.
+
+Then the docs will be automatically translated using LLMs, and the team of native speakers can review the translation, and help tweak the LLM prompts.
+
+Once there's a new translation, for example if docs are updated or there's a new section, there will be a comment in the same discussion with the link to the new translation to review.","## Request a New Language
+
+Let's say that you want to request translations for a language that is not yet translated, not even some pages. For example, Latin.
+
+* The first step would be for you to find other 2 people that would be willing to be reviewing translation PRs for that language with you.
+* Once there are at least 2 people that would be willing to commit to help maintain that language, you can continue the next steps.
+* Create a new discussion following the template.
+* Tag the other 2 people that will help with the language, and ask them to confirm there they will help.
+
+Once there are several people in the discussion, the FastAPI team can evaluate it and can make it an official translation.
+
+Then the docs will be automatically translated using LLMs, and the team of native speakers can review the translation, and help tweak the LLM prompts.
+
+Once there's a new translation, for example if docs are updated or there's a new section, there will be a comment in the same discussion with the link to the new translation to review."
+PUB_OP01_2,Public (FastAPI),CTX_016,1,Word Replacement (Synonyms/Antonyms),What is the concept of 'OpenAPI Callback' in FastAPI described as?,"# OpenAPI Callbacks { #openapi-callbacks }
+
+You could create an API with a *path operation* that could trigger a request to an *external API* created by someone else (probably the same developer that would be *using* your API).
+
+The process that happens when your API app calls the *external API* is named a ""callback"". Because the software that the external developer wrote sends a request to your API and then your API *calls back*, sending a request to an *external API* (that was probably created by the same developer).
+
+In this case, you could want to document how that external API *should* look like. What *path operation* it should have, what body it should expect, what response it should return, etc.","# OpenAPI Callbacks { #openapi-callbacks }
+
+You could create an API with a *path operation* that could trigger a request to an *external API* created by someone else (probably a different developer that would be *using* your API).
+
+The process that happens when your API app is called by the *external API* is named a ""callback"". Because the software that the external developer wrote sends a request to your API and then your API *calls back*, sending a request to an *external API* (that was probably created by a different developer).
+
+In this case, you could want to document how that external API *should not* look like. What *path operation* it should have, what body it should expect, what response it should return, etc."
+PUB_OP02_3,Public (FastAPI),CTX_030,2,Sentence Restructuring,"According to the contribution guide, how do you formally start a project to translate the FastAPI documentation into a completely new language?","## Request a New Language
+
+Let's say that you want to request translations for a language that is not yet translated, not even some pages. For example, Latin.
+
+* The first step would be for you to find other 2 people that would be willing to be reviewing translation PRs for that language with you.
+* Once there are at least 3 people that would be willing to commit to help maintain that language, you can continue the next steps.
+* Create a new discussion following the template.
+* Tag the other 2 people that will help with the language, and ask them to confirm there they will help.
+
+Once there are several people in the discussion, the FastAPI team can evaluate it and can make it an official translation.
+
+Then the docs will be automatically translated using LLMs, and the team of native speakers can review the translation, and help tweak the LLM prompts.
+
+Once there's a new translation, for example if docs are updated or there's a new section, there will be a comment in the same discussion with the link to the new translation to review.","## Request a New Language
+
+Let's say that you want to request translations for a language that is not yet translated, not even some pages. For example, Latin.
+
+* The first step would be for you to find other 1 person that would be willing to be reviewing translation PRs for that language with you.
+* Once there are at least 3 people that would be willing to commit to help maintain that language, you can continue the next steps.
+* Create a new discussion following the template.
+* Tag the other 1 person that will help with the language, and ask them to confirm there they will help.
+
+Once there are several people in the discussion, the FastAPI team can evaluate it and can make it an official translation.
+
+Then the docs will be automatically translated using LLMs, and the team of native speakers can review the translation, and help tweak the LLM prompts.
+
+Once there's a new translation, for example if docs are updated or there's a new section, there will be a comment in the same discussion with the link to the new translation to review."
+PUB_OP02_4,Public (FastAPI),CTX_016,2,Sentence Restructuring,What is the concept of 'OpenAPI Callback' in FastAPI described as?,"# OpenAPI Callbacks { #openapi-callbacks }
+
+You could create an API with a *path operation* that could trigger a request to an *external API* created by someone else (probably the same developer that would be *using* your API).
+
+The process that happens when your API app calls the *external API* is named a ""callback"". Because the software that the external developer wrote sends a request to your API and then your API *calls back*, sending a request to an *external API* (that was probably created by the same developer).
+
+In this case, you could want to document how that external API *should* look like. What *path operation* it should have, what body it should expect, what response it should return, etc.","# OpenAPI Callbacks { #openapi-callbacks }
+
+You could create an API with a *path operation* that could trigger a request to an *external API* created by someone else (probably the same developer that would be *using* your API).
+
+The process that happens when your API app calls the *external API* is named a ""callback"". Because the software that the external developer wrote sends a request to your API and then the external API *calls back*, sending a request to your API (that was probably created by the same developer).
+
+In this case, you could want to document how that external API *should* look like. What *path operation* it should have, what body it should expect, what response it should return, etc."
+PUB_OP03_5,Public (FastAPI),CTX_030,3,Logic Reversal (Negation),"According to the contribution guide, how do you formally start a project to translate the FastAPI documentation into a completely new language?","## Request a New Language
+
+Let's say that you want to request translations for a language that is not yet translated, not even some pages. For example, Latin.
+
+* The first step would be for you to find other 2 people that would be willing to be reviewing translation PRs for that language with you.
+* Once there are at least 3 people that would be willing to commit to help maintain that language, you can continue the next steps.
+* Create a new discussion following the template.
+* Tag the other 2 people that will help with the language, and ask them to confirm there they will help.
+
+Once there are several people in the discussion, the FastAPI team can evaluate it and can make it an official translation.
+
+Then the docs will be automatically translated using LLMs, and the team of native speakers can review the translation, and help tweak the LLM prompts.
+
+Once there's a new translation, for example if docs are updated or there's a new section, there will be a comment in the same discussion with the link to the new translation to review.","## Request a New Language
+
+Let's say that you want to request translations for a language that is not yet translated, not even some pages. For example, Latin.
+
+* The first step would be for you to find other 2 people that would be willing to be reviewing translation PRs for that language with you.
+* Once there are at least 2 people that would be willing to commit to help maintain that language, you can continue the next steps.
+* Create a new discussion following the template.
+* Tag the other 2 people that will help with the language, and ask them to confirm there they will help.
+
+Once there are several people in the discussion, the FastAPI team can evaluate it and can make it an official translation.
+
+Then the docs will be automatically translated using LLMs, and the team of native speakers can review the translation, and help tweak the LLM prompts.
+
+Once there's a new translation, for example if docs are updated or there's a new section, there will be a comment in the same discussion with the link to the new translation to review."
+PUB_OP03_6,Public (FastAPI),CTX_016,3,Logic Reversal (Negation),What is the concept of 'OpenAPI Callback' in FastAPI described as?,"# OpenAPI Callbacks { #openapi-callbacks }
+
+You could create an API with a *path operation* that could trigger a request to an *external API* created by someone else (probably the same developer that would be *using* your API).
+
+The process that happens when your API app calls the *external API* is named a ""callback"". Because the software that the external developer wrote sends a request to your API and then your API *calls back*, sending a request to an *external API* (that was probably created by the same developer).
+
+In this case, you could want to document how that external API *should* look like. What *path operation* it should have, what body it should expect, what response it should return, etc.","# OpenAPI Callbacks { #openapi-callbacks }
+
+You could create an API with a *path operation* that could trigger a request to an *external API* created by someone else (probably the same developer that would be *using* your API).
+
+The process that happens when your API app calls the *external API* is named a ""callback"". Because the software that the external developer wrote sends a request to your API and then your API *calls back*, receiving a request from an *external API* (that was probably created by the same developer).
+
+In this case, you could want to document how that external API *should* look like. What *path operation* it should have, what body it should expect, what response it should not return, etc."
+PUB_OP04_7,Public (FastAPI),CTX_030,4,"Entity Replacement (Names, Dates, Numbers)","According to the contribution guide, how do you formally start a project to translate the FastAPI documentation into a completely new language?","## Request a New Language
+
+Let's say that you want to request translations for a language that is not yet translated, not even some pages. For example, Latin.
+
+* The first step would be for you to find other 2 people that would be willing to be reviewing translation PRs for that language with you.
+* Once there are at least 3 people that would be willing to commit to help maintain that language, you can continue the next steps.
+* Create a new discussion following the template.
+* Tag the other 2 people that will help with the language, and ask them to confirm there they will help.
+
+Once there are several people in the discussion, the FastAPI team can evaluate it and can make it an official translation.
+
+Then the docs will be automatically translated using LLMs, and the team of native speakers can review the translation, and help tweak the LLM prompts.
+
+Once there's a new translation, for example if docs are updated or there's a new section, there will be a comment in the same discussion with the link to the new translation to review.","## Request a New Language
+
+Let's say that you want to request translations for a language that is not yet translated, not even some pages. For example, Latin.
+
+* The first step would be for you to find other 2 people that would be willing to be reviewing translation PRs for that language with you.
+* Once there are at least 2 people that would be willing to commit to help maintain that language, you can continue the next steps.
+* Create a new discussion following the template.
+* Tag the other 2 people that will help with the language, and ask them to confirm there they will help.
+
+Once there are several people in the discussion, the FastAPI team can evaluate it and can make it an official translation.
+
+Then the docs will be automatically translated using LLMs, and the team of native speakers can review the translation, and help tweak the LLM prompts.
+
+Once there's a new translation, for example if docs are updated or there's a new section, there will be a comment in the same discussion with the link to the new translation to review."
+PUB_OP04_8,Public (FastAPI),CTX_016,4,"Entity Replacement (Names, Dates, Numbers)",What is the concept of 'OpenAPI Callback' in FastAPI described as?,"# OpenAPI Callbacks { #openapi-callbacks }
+
+You could create an API with a *path operation* that could trigger a request to an *external API* created by someone else (probably the same developer that would be *using* your API).
+
+The process that happens when your API app calls the *external API* is named a ""callback"". Because the software that the external developer wrote sends a request to your API and then your API *calls back*, sending a request to an *external API* (that was probably created by the same developer).
+
+In this case, you could want to document how that external API *should* look like. What *path operation* it should have, what body it should expect, what response it should return, etc.","# OpenAPI Callbacks { #openapi-callbacks }
+
+You could create an API with a *path operation* that could trigger a request to an *external API* created by someone else (probably the same developer that would be *using* your API).
+
+The process that happens when your API app calls the *external API* is named a ""callback"". Because the software that the external developer wrote sends a request to your API and then *the external API* *calls back*, sending a request to your *original API* (that was probably created by the same developer).
+
+In this case, you could want to document how that external API *should* look like. What *path operation* it should have, what body it should expect, what response it should return, etc."
+PUB_OP05_9,Public (FastAPI),CTX_030,5,Paraphrasing (Tone/Style Change),"According to the contribution guide, how do you formally start a project to translate the FastAPI documentation into a completely new language?","## Request a New Language
+
+Let's say that you want to request translations for a language that is not yet translated, not even some pages. For example, Latin.
+
+* The first step would be for you to find other 2 people that would be willing to be reviewing translation PRs for that language with you.
+* Once there are at least 3 people that would be willing to commit to help maintain that language, you can continue the next steps.
+* Create a new discussion following the template.
+* Tag the other 2 people that will help with the language, and ask them to confirm there they will help.
+
+Once there are several people in the discussion, the FastAPI team can evaluate it and can make it an official translation.
+
+Then the docs will be automatically translated using LLMs, and the team of native speakers can review the translation, and help tweak the LLM prompts.
+
+Once there's a new translation, for example if docs are updated or there's a new section, there will be a comment in the same discussion with the link to the new translation to review.","## Request a New Language
+
+Let's say that you want to request translations for a language that is not yet translated, not even some pages. For example, Latin.
+
+* The first step would be for you to find other 1 person that would be willing to be reviewing translation PRs for that language with you.
+* Once there are at least 3 people that would be willing to commit to help maintain that language, you can continue the next steps.
+* Create a new discussion following the template.
+* Tag the other 2 people that will help with the language, and ask them to confirm there they will help.
+
+Once there are several people in the discussion, the FastAPI team can evaluate it and can make it an official translation.
+
+Then the docs will be automatically translated using LLMs, and the team of native speakers can review the translation, and help tweak the LLM prompts.
+
+Once there's a new translation, for example if docs are updated or there's a new section, there will be a comment in the same discussion with the link to the new translation to review."
+PUB_OP05_10,Public (FastAPI),CTX_016,5,Paraphrasing (Tone/Style Change),What is the concept of 'OpenAPI Callback' in FastAPI described as?,"# OpenAPI Callbacks { #openapi-callbacks }
+
+You could create an API with a *path operation* that could trigger a request to an *external API* created by someone else (probably the same developer that would be *using* your API).
+
+The process that happens when your API app calls the *external API* is named a ""callback"". Because the software that the external developer wrote sends a request to your API and then your API *calls back*, sending a request to an *external API* (that was probably created by the same developer).
+
+In this case, you could want to document how that external API *should* look like. What *path operation* it should have, what body it should expect, what response it should return, etc.","# OpenAPI Callbacks { #openapi-callbacks }
+
+You could create an API with a *path operation* that could trigger a request to an *external API* created by someone else (probably the same developer that would be *using* your API).
+
+The process that happens when your API app calls the *external API* is named a ""callback"". Because the software that the external developer wrote sends a request to your API and then the external API *calls back*, sending a request to your API (that was probably created by the same developer).
+
+In this case, you could want to document how that external API *should* look like. What *path operation* it should have, what body it should expect, what response it should return, etc."
+PUB_OP06_11,Public (FastAPI),CTX_030,6,Omission of Key Details,"According to the contribution guide, how do you formally start a project to translate the FastAPI documentation into a completely new language?","## Request a New Language
+
+Let's say that you want to request translations for a language that is not yet translated, not even some pages. For example, Latin.
+
+* The first step would be for you to find other 2 people that would be willing to be reviewing translation PRs for that language with you.
+* Once there are at least 3 people that would be willing to commit to help maintain that language, you can continue the next steps.
+* Create a new discussion following the template.
+* Tag the other 2 people that will help with the language, and ask them to confirm there they will help.
+
+Once there are several people in the discussion, the FastAPI team can evaluate it and can make it an official translation.
+
+Then the docs will be automatically translated using LLMs, and the team of native speakers can review the translation, and help tweak the LLM prompts.
+
+Once there's a new translation, for example if docs are updated or there's a new section, there will be a comment in the same discussion with the link to the new translation to review.","## Request a New Language
+
+Let's say that you want to request translations for a language that is not yet translated, not even some pages. For example, Latin.
+
+* The first step would be for you to find other 2 people that would be willing to be reviewing translation PRs for that language with you.
+* Once there are at least 2 people that would be willing to commit to help maintain that language, you can continue the next steps.
+* Create a new discussion following the template.
+* Tag the other 2 people that will help with the language, and ask them to confirm there they will help.
+
+Once there are several people in the discussion, the FastAPI team can evaluate it and can make it an official translation.
+
+Then the docs will be automatically translated using LLMs, and the team of native speakers can review the translation, and help tweak the LLM prompts.
+
+Once there's a new translation, for example if docs are updated or there's a new section, there will be a comment in the same discussion with the link to the new translation to review."
+PUB_OP06_12,Public (FastAPI),CTX_016,6,Omission of Key Details,What is the concept of 'OpenAPI Callback' in FastAPI described as?,"# OpenAPI Callbacks { #openapi-callbacks }
+
+You could create an API with a *path operation* that could trigger a request to an *external API* created by someone else (probably the same developer that would be *using* your API).
+
+The process that happens when your API app calls the *external API* is named a ""callback"". Because the software that the external developer wrote sends a request to your API and then your API *calls back*, sending a request to an *external API* (that was probably created by the same developer).
+
+In this case, you could want to document how that external API *should* look like. What *path operation* it should have, what body it should expect, what response it should return, etc.","# OpenAPI Callbacks { #openapi-callbacks }
+
+You could create an API with a *path operation* that could trigger a request to an *external API* created by someone else (probably the same developer that would be *using* your API).
+
+The process that happens when your API app calls the *external API* is named a ""callback"". Because your API sends a request to the external developer's API and then the external software *calls back*, sending a request to your API (that was probably created by the same developer).
+
+In this case, you could want to document how that external API *should* look like. What *path operation* it should have, what body it should expect, what response it should return, etc."
+PUB_OP07_13,Public (FastAPI),CTX_030,7,Addition of Misleading Details,"According to the contribution guide, how do you formally start a project to translate the FastAPI documentation into a completely new language?","## Request a New Language
+
+Let's say that you want to request translations for a language that is not yet translated, not even some pages. For example, Latin.
+
+* The first step would be for you to find other 2 people that would be willing to be reviewing translation PRs for that language with you.
+* Once there are at least 3 people that would be willing to commit to help maintain that language, you can continue the next steps.
+* Create a new discussion following the template.
+* Tag the other 2 people that will help with the language, and ask them to confirm there they will help.
+
+Once there are several people in the discussion, the FastAPI team can evaluate it and can make it an official translation.
+
+Then the docs will be automatically translated using LLMs, and the team of native speakers can review the translation, and help tweak the LLM prompts.
+
+Once there's a new translation, for example if docs are updated or there's a new section, there will be a comment in the same discussion with the link to the new translation to review.","## Request a New Language
+
+Let's say that you want to request translations for a language that is not yet translated, not even some pages. For example, Latin.
+
+* The first step would be for you to find other 1 person that would be willing to be reviewing translation PRs for that language with you.
+* Once there are at least 2 people that would be willing to commit to help maintain that language, you can continue the next steps.
+* Create a new discussion following the template.
+* Tag the other 1 person that will help with the language, and ask them to confirm there they will help.
+
+Once there are several people in the discussion, the FastAPI team can evaluate it and can make it an official translation.
+
+Then the docs will be automatically translated using LLMs, and the team of native speakers can review the translation, and help tweak the LLM prompts.
+
+Once there's a new translation, for example if docs are updated or there's a new section, there will be a comment in the same discussion with the link to the new translation to review."
+PUB_OP07_14,Public (FastAPI),CTX_016,7,Addition of Misleading Details,What is the concept of 'OpenAPI Callback' in FastAPI described as?,"# OpenAPI Callbacks { #openapi-callbacks }
+
+You could create an API with a *path operation* that could trigger a request to an *external API* created by someone else (probably the same developer that would be *using* your API).
+
+The process that happens when your API app calls the *external API* is named a ""callback"". Because the software that the external developer wrote sends a request to your API and then your API *calls back*, sending a request to an *external API* (that was probably created by the same developer).
+
+In this case, you could want to document how that external API *should* look like. What *path operation* it should have, what body it should expect, what response it should return, etc.","# OpenAPI Callbacks { #openapi-callbacks }
+
+You could create an API with a *path operation* that could trigger a request to an *external API* created by someone else (probably the same developer that would be *using* your API).
+
+The process that happens when your API app calls the *external API* is named a ""callback"". Because the software that the external developer wrote *receives* a request from your API and then the *external API* *calls back*, sending a request to your API (that was probably created by the same developer).
+
+In this case, you could want to document how that external API *should* look like. What *path operation* it should have, what body it should expect, what response it should return, etc."
+PUB_OP08_15,Public (FastAPI),CTX_030,8,Pronoun/Reference Substitution,"According to the contribution guide, how do you formally start a project to translate the FastAPI documentation into a completely new language?","## Request a New Language
+
+Let's say that you want to request translations for a language that is not yet translated, not even some pages. For example, Latin.
+
+* The first step would be for you to find other 2 people that would be willing to be reviewing translation PRs for that language with you.
+* Once there are at least 3 people that would be willing to commit to help maintain that language, you can continue the next steps.
+* Create a new discussion following the template.
+* Tag the other 2 people that will help with the language, and ask them to confirm there they will help.
+
+Once there are several people in the discussion, the FastAPI team can evaluate it and can make it an official translation.
+
+Then the docs will be automatically translated using LLMs, and the team of native speakers can review the translation, and help tweak the LLM prompts.
+
+Once there's a new translation, for example if docs are updated or there's a new section, there will be a comment in the same discussion with the link to the new translation to review.","## Request a New Language
+
+Let's say that you want to request translations for a language that is not yet translated, not even some pages. For example, Latin.
+
+* The first step would be for you to find other 2 people that would be willing to be reviewing translation PRs for that language with you.
+* Once there are at least 2 people that would be willing to commit to help maintain that language, you can continue the next steps.
+* Create a new discussion following the template.
+* Tag the other 2 people that will help with the language, and ask them to confirm there they will help.
+
+Once there are several people in the discussion, the FastAPI team can evaluate it and can make it an official translation.
+
+Then the docs will be automatically translated using LLMs, and the team of native speakers can review the translation, and help tweak the LLM prompts.
+
+Once there's a new translation, for example if docs are updated or there's a new section, there will be a comment in the same discussion with the link to the new translation to review."
+PUB_OP08_16,Public (FastAPI),CTX_016,8,Pronoun/Reference Substitution,What is the concept of 'OpenAPI Callback' in FastAPI described as?,"# OpenAPI Callbacks { #openapi-callbacks }
+
+You could create an API with a *path operation* that could trigger a request to an *external API* created by someone else (probably the same developer that would be *using* your API).
+
+The process that happens when your API app calls the *external API* is named a ""callback"". Because the software that the external developer wrote sends a request to your API and then your API *calls back*, sending a request to an *external API* (that was probably created by the same developer).
+
+In this case, you could want to document how that external API *should* look like. What *path operation* it should have, what body it should expect, what response it should return, etc.","# OpenAPI Callbacks { #openapi-callbacks }
+
+You could create an API with a *path operation* that could trigger a request to an *external API* created by someone else (probably the same developer that would be *using* your API).
+
+The process that happens when your API app calls the *external API* is named a ""callback"". Because the software that the external developer wrote sends a request to your API and then the *external API* *calls back*, sending a request to your API (that was probably created by the same developer).
+
+In this case, you could want to document how that external API *should* look like. What *path operation* it should have, what body it should expect, what response it should return, etc."
+PUB_OP09_17,Public (FastAPI),CTX_030,9,Cause and Effect Reversal,"According to the contribution guide, how do you formally start a project to translate the FastAPI documentation into a completely new language?","## Request a New Language
+
+Let's say that you want to request translations for a language that is not yet translated, not even some pages. For example, Latin.
+
+* The first step would be for you to find other 2 people that would be willing to be reviewing translation PRs for that language with you.
+* Once there are at least 3 people that would be willing to commit to help maintain that language, you can continue the next steps.
+* Create a new discussion following the template.
+* Tag the other 2 people that will help with the language, and ask them to confirm there they will help.
+
+Once there are several people in the discussion, the FastAPI team can evaluate it and can make it an official translation.
+
+Then the docs will be automatically translated using LLMs, and the team of native speakers can review the translation, and help tweak the LLM prompts.
+
+Once there's a new translation, for example if docs are updated or there's a new section, there will be a comment in the same discussion with the link to the new translation to review.","## Request a New Language
+
+Let's say that you want to request translations for a language that is not yet translated, not even some pages. For example, Latin.
+
+* The first step would be for you to find other 2 people that would be willing to be reviewing translation PRs for that language with you.
+* Once there are at least 2 people that would be willing to commit to help maintain that language, you can continue the next steps.
+* Create a new discussion following the template.
+* Tag the other 2 people that will help with the language, and ask them to confirm there they will help.
+
+Once there are several people in the discussion, the FastAPI team can evaluate it and can make it an official translation.
+
+Then the docs will be automatically translated using LLMs, and the team of native speakers can review the translation, and help tweak the LLM prompts.
+
+Once there's a new translation, for example if docs are updated or there's a new section, there will be a comment in the same discussion with the link to the new translation to review."
+PUB_OP09_18,Public (FastAPI),CTX_016,9,Cause and Effect Reversal,What is the concept of 'OpenAPI Callback' in FastAPI described as?,"# OpenAPI Callbacks { #openapi-callbacks }
+
+You could create an API with a *path operation* that could trigger a request to an *external API* created by someone else (probably the same developer that would be *using* your API).
+
+The process that happens when your API app calls the *external API* is named a ""callback"". Because the software that the external developer wrote sends a request to your API and then your API *calls back*, sending a request to an *external API* (that was probably created by the same developer).
+
+In this case, you could want to document how that external API *should* look like. What *path operation* it should have, what body it should expect, what response it should return, etc.","# OpenAPI Callbacks { #openapi-callbacks }
+
+You could create an API with a *path operation* that could trigger a request to an *external API* created by someone else (probably the same developer that would be *using* your API).
+
+The process that happens when your API app calls the *external API* is named a ""callback"". Because the software that the external developer wrote sends a request to your API and then your API *is called back*, receiving a request from an *external API* (that was probably created by the same developer).
+
+In this case, you could want to document how that external API *should* look like. What *path operation* it should have, what body it should expect, what response it should return, etc."
+PUB_OP10_19,Public (FastAPI),CTX_030,10,Passive to Active Voice Conversion,"According to the contribution guide, how do you formally start a project to translate the FastAPI documentation into a completely new language?","## Request a New Language
+
+Let's say that you want to request translations for a language that is not yet translated, not even some pages. For example, Latin.
+
+* The first step would be for you to find other 2 people that would be willing to be reviewing translation PRs for that language with you.
+* Once there are at least 3 people that would be willing to commit to help maintain that language, you can continue the next steps.
+* Create a new discussion following the template.
+* Tag the other 2 people that will help with the language, and ask them to confirm there they will help.
+
+Once there are several people in the discussion, the FastAPI team can evaluate it and can make it an official translation.
+
+Then the docs will be automatically translated using LLMs, and the team of native speakers can review the translation, and help tweak the LLM prompts.
+
+Once there's a new translation, for example if docs are updated or there's a new section, there will be a comment in the same discussion with the link to the new translation to review.","## Request a New Language
+
+Let's say that you want to request translations for a language that is not yet translated, not even some pages. For example, Latin.
+
+* The first step would be for you to find other 2 people that would be willing to be reviewing translation PRs for that language with you.
+* Once there are at least 2 people that would be willing to commit to help maintain that language, you can continue the next steps.
+* Create a new discussion following the template.
+* Tag the other 2 people that will help with the language, and ask them to confirm there they will help.
+
+Once there are several people in the discussion, the FastAPI team can evaluate it and can make it an official translation.
+
+Then the docs will be automatically translated using LLMs, and the team of native speakers can review the translation, and help tweak the LLM prompts.
+
+Once there's a new translation, for example if docs are updated or there's a new section, there will be a comment in the same discussion with the link to the new translation to review."
+PUB_OP10_20,Public (FastAPI),CTX_016,10,Passive to Active Voice Conversion,What is the concept of 'OpenAPI Callback' in FastAPI described as?,"# OpenAPI Callbacks { #openapi-callbacks }
+
+You could create an API with a *path operation* that could trigger a request to an *external API* created by someone else (probably the same developer that would be *using* your API).
+
+The process that happens when your API app calls the *external API* is named a ""callback"". Because the software that the external developer wrote sends a request to your API and then your API *calls back*, sending a request to an *external API* (that was probably created by the same developer).
+
+In this case, you could want to document how that external API *should* look like. What *path operation* it should have, what body it should expect, what response it should return, etc.","You could create an API with a *path operation* that could trigger a **response from** an *external API* created by someone else (probably the same developer that would be *using* your API).
+
+The process that happens when your API app calls the *external API* is named a ""callback"". Because the software that the external developer wrote sends a request to your API and then your API *calls back*, sending a request to an *external API* (that was probably created by the same developer).
+
+In this case, you could want to document how that external API *should* look like. What *path operation* it should have, what body it should expect, what response it should return, etc."
+PUB_OP11_21,Public (FastAPI),CTX_030,11,"Changing Quantifiers (All to Some, etc.)","According to the contribution guide, how do you formally start a project to translate the FastAPI documentation into a completely new language?","## Request a New Language
+
+Let's say that you want to request translations for a language that is not yet translated, not even some pages. For example, Latin.
+
+* The first step would be for you to find other 2 people that would be willing to be reviewing translation PRs for that language with you.
+* Once there are at least 3 people that would be willing to commit to help maintain that language, you can continue the next steps.
+* Create a new discussion following the template.
+* Tag the other 2 people that will help with the language, and ask them to confirm there they will help.
+
+Once there are several people in the discussion, the FastAPI team can evaluate it and can make it an official translation.
+
+Then the docs will be automatically translated using LLMs, and the team of native speakers can review the translation, and help tweak the LLM prompts.
+
+Once there's a new translation, for example if docs are updated or there's a new section, there will be a comment in the same discussion with the link to the new translation to review.","## Request a New Language
+
+Let's say that you want to request translations for a language that is not yet translated, not even some pages. For example, Latin.
+
+* The first step would be for you to find other 2 people that would be willing to be reviewing translation PRs for that language with you.
+* Once there are at least 2 people that would be willing to commit to help maintain that language, you can continue the next steps.
+* Create a new discussion following the template.
+* Tag the other 2 people that will help with the language, and ask them to confirm there they will help.
+
+Once there are several people in the discussion, the FastAPI team can evaluate it and can make it an official translation.
+
+Then the docs will be automatically translated using LLMs, and the team of native speakers can review the translation, and help tweak the translation prompts.
+
+Once there's a new translation, for example if docs are updated or there's a new section, there will be a comment in the same discussion with the link to the new translation to review."
+PUB_OP11_22,Public (FastAPI),CTX_016,11,"Changing Quantifiers (All to Some, etc.)",What is the concept of 'OpenAPI Callback' in FastAPI described as?,"# OpenAPI Callbacks { #openapi-callbacks }
+
+You could create an API with a *path operation* that could trigger a request to an *external API* created by someone else (probably the same developer that would be *using* your API).
+
+The process that happens when your API app calls the *external API* is named a ""callback"". Because the software that the external developer wrote sends a request to your API and then your API *calls back*, sending a request to an *external API* (that was probably created by the same developer).
+
+In this case, you could want to document how that external API *should* look like. What *path operation* it should have, what body it should expect, what response it should return, etc.","# OpenAPI Callbacks { #openapi-callbacks }
+
+You could create an API with a *path operation* that could trigger a response from an *external API* created by someone else (probably the same developer that would be *using* your API).
+
+The process that happens when your API app calls the *external API* is named a ""callback"". Because the software that the external developer wrote sends a request to your API and then your API *calls back*, sending a request to the *external API* (that was probably created by the same developer).
+
+In this case, you could want to document how that external API *should* look like. What *path operation* it should have, what body it should expect, what response it should return, etc."
+PUB_OP12_23,Public (FastAPI),CTX_030,12,Conditional Logic Alteration (If to Unless),"According to the contribution guide, how do you formally start a project to translate the FastAPI documentation into a completely new language?","## Request a New Language
+
+Let's say that you want to request translations for a language that is not yet translated, not even some pages. For example, Latin.
+
+* The first step would be for you to find other 2 people that would be willing to be reviewing translation PRs for that language with you.
+* Once there are at least 3 people that would be willing to commit to help maintain that language, you can continue the next steps.
+* Create a new discussion following the template.
+* Tag the other 2 people that will help with the language, and ask them to confirm there they will help.
+
+Once there are several people in the discussion, the FastAPI team can evaluate it and can make it an official translation.
+
+Then the docs will be automatically translated using LLMs, and the team of native speakers can review the translation, and help tweak the LLM prompts.
+
+Once there's a new translation, for example if docs are updated or there's a new section, there will be a comment in the same discussion with the link to the new translation to review.","## Request a New Language
+
+Let's say that you want to request translations for a language that is not yet translated, not even some pages. For example, Latin.
+
+* The first step would be for you to find other 2 people that would be willing to be reviewing translation PRs for that language with you.  
+* Once there are at least 2 people that would be willing to commit to help maintain that language, you can continue the next steps.  
+* Create a new discussion following the template.  
+* Tag the other 2 people that will help with the language, and ask them to confirm there they will help.  
+
+Once there are several people in the discussion, the FastAPI team can evaluate it and can make it an official translation.  
+
+Then the docs will be automatically translated using LLMs, and the team of native speakers can review the translation, and help tweak the LLM prompts.  
+
+Once there's a new translation, for example if docs are updated or there's a new section, there will be a comment in the same discussion with the link to the new translation to review."
+PUB_OP12_24,Public (FastAPI),CTX_016,12,Conditional Logic Alteration (If to Unless),What is the concept of 'OpenAPI Callback' in FastAPI described as?,"# OpenAPI Callbacks { #openapi-callbacks }
+
+You could create an API with a *path operation* that could trigger a request to an *external API* created by someone else (probably the same developer that would be *using* your API).
+
+The process that happens when your API app calls the *external API* is named a ""callback"". Because the software that the external developer wrote sends a request to your API and then your API *calls back*, sending a request to an *external API* (that was probably created by the same developer).
+
+In this case, you could want to document how that external API *should* look like. What *path operation* it should have, what body it should expect, what response it should return, etc.","# OpenAPI Callbacks { #openapi-callbacks }
+
+You could create an API with a *path operation* that could trigger a request to an *external API* created by someone else (probably the same developer that would be *using* your API).
+
+The process that happens when your API app calls the *external API* is named a ""callback"". Because the software that the external developer wrote sends a request to your API and then the external API *calls back*, sending a request to an *external API* (that was probably created by the same developer).
+
+In this case, you could want to document how that external API *should* look like. What *path operation* it should have, what body it should expect, what response it should return, etc."
+PUB_OP13_25,Public (FastAPI),CTX_030,13,Contextual Shifting (Changing the domain slightly),"According to the contribution guide, how do you formally start a project to translate the FastAPI documentation into a completely new language?","## Request a New Language
+
+Let's say that you want to request translations for a language that is not yet translated, not even some pages. For example, Latin.
+
+* The first step would be for you to find other 2 people that would be willing to be reviewing translation PRs for that language with you.
+* Once there are at least 3 people that would be willing to commit to help maintain that language, you can continue the next steps.
+* Create a new discussion following the template.
+* Tag the other 2 people that will help with the language, and ask them to confirm there they will help.
+
+Once there are several people in the discussion, the FastAPI team can evaluate it and can make it an official translation.
+
+Then the docs will be automatically translated using LLMs, and the team of native speakers can review the translation, and help tweak the LLM prompts.
+
+Once there's a new translation, for example if docs are updated or there's a new section, there will be a comment in the same discussion with the link to the new translation to review.","## Request a New Language
+
+Let's say that you want to request translations for a language that is already translated, but you need to add more pages. For example, Latin.
+
+* The first step would be for you to find other 2 people that would be willing to be reviewing translation PRs for that language with you.
+* Once there are at least 3 people that would be willing to commit to help maintain that language, you can continue the next steps.
+* Create a new discussion following the template.
+* Tag the other 2 people that will help with the language, and ask them to confirm there they will help.
+
+Once there are several people in the discussion, the FastAPI team can evaluate it and can make it an official translation.
+
+Then the docs will be automatically translated using LLMs, and the team of native speakers can review the translation, and help tweak the translation memory.
+
+Once there's a new translation, for example if docs are updated or there's a new section, there will be a comment in the same discussion with the link to the new translation to review."
+PUB_OP13_26,Public (FastAPI),CTX_016,13,Contextual Shifting (Changing the domain slightly),What is the concept of 'OpenAPI Callback' in FastAPI described as?,"# OpenAPI Callbacks { #openapi-callbacks }
+
+You could create an API with a *path operation* that could trigger a request to an *external API* created by someone else (probably the same developer that would be *using* your API).
+
+The process that happens when your API app calls the *external API* is named a ""callback"". Because the software that the external developer wrote sends a request to your API and then your API *calls back*, sending a request to an *external API* (that was probably created by the same developer).
+
+In this case, you could want to document how that external API *should* look like. What *path operation* it should have, what body it should expect, what response it should return, etc.","# OpenAPI Callbacks { #openapi-callbacks }
+
+You could create an API with a *path operation* that could trigger a request to an *external API* created by someone else (probably the same developer that would be *using* your API).
+
+The process that happens when your API app calls the *external API* is named a ""callback"". Because the software that the external developer wrote sends a request to your API and then the *external API* *calls back*, sending a request to your API (that was probably created by the same developer).
+
+In this case, you could want to document how that external API *should* look like. What *path operation* it should have, what body it should expect, what response it should return, etc."
+PRIV_OP01_1,Private (Internal Aggregator),sjs_030,1,Word Replacement (Synonyms/Antonyms),The asynchronous batch processing algorithm using setImmediate() works to prevent the Server Hang phenomenon on Node.js as follows:,"# Document sjs_030
+
+The **Academic Citation Export** feature allows downloading metadata of articles under strict standards such as RIS, BibTeX, MLA, and APA. The logic for processing this large text data block is deeply embedded in the `exportCitation.js` controller. In situations where the user chooses to export 10,000 articles from their favorite library, if a conventional `for` loop is used in a Node.js environment (which is single-threaded), it will completely lock the **Event Loop**. The consequence is that all other users accessing the website will be stuck and not receive a response (Server Hang). To address this issue, the code is restructured according to the **Asynchronous Batch Processing** model. By using the `setImmediate()` function, the engineer divides the 10,000 items into small chunks of 100 items. After concatenating 100 items, the system will pause the current function, yield control back to the **Event Loop** to process other users' HTTP requests, and then return to process the next batch.","# Document sjs_030
+
+The **Scholarly Reference Export** functionality facilitates uploading bibliographic details of publications under rigid specifications like RIS, BibTeX, MLA, and APA. The methodology for managing this voluminous textual dataset is integrated seamlessly into the `exportCitation.js` controller. When users opt to transfer 10,000 documents from their preferred repository, employing a traditional iterative approach in a Node.js architecture (which operates on a solitary thread) will obstruct the **Event Loop** entirely. The outcome is that all remaining visitors attempting to access the portal will be impeded and remain unresponsive (Server Freeze). To mitigate this challenge, the implementation is refactored utilizing the **Concurrent Chunked Execution** paradigm. By leveraging the `setImmediate()` mechanism, the specialist segments the 10,000 entries into digestible units of 100 components. Following the aggregation of 100 elements, the framework will suspend the ongoing process, relinquish control to the **Event Loop** for resolving other clients' web inquiries, and subsequently resume handling the subsequent group."
+PRIV_OP01_2,Private (Internal Aggregator),sjs_016,1,Word Replacement (Synonyms/Antonyms),The Trending Score algorithm uses a mathematical formula to prevent the monopoly display phenomenon of old articles?,"# Document sjs_016
+
+The Trending Algorithm of SJS does not simply count the total number of views, but applies a weighted mechanism based on a time-decay function, similar to the cooling principle of Newton's law. The Cron Job algorithm runs every day at 00:00 (Midnight) to recalculate the score (Trending Score) for all published articles in the last 30 days. The core formula is: $Score = (D \times 1.5 + V \times 0.5 + C \times 3.0) / e^{\lambda \times T}$, where $D$ is the number of PDF file downloads (Downloads), $V$ is the number of page views (Views), and $C$ is the number of academic citations (Citations). $T$ represents the number of days since publication, and $\lambda$ is the decay constant configured at 0.15. This design thoroughly solves the 'Old Journal Monopoly' problem: An article with 10,000 views from 2 years ago will gradually sink, giving way to a new breakthrough study with 500 views that was posted yesterday to occupy the top display space.","# Document sjs_016
+
+The Stagnant Algorithm of SJS does not merely tally the aggregate number of impressions, but employs a prioritized method grounded in an exponential growth multiplier, akin to the heating concept of thermal dynamics. The Daily Scheduler protocol operates each day at 00:00 (Midnight) to adjust the metric (Stagnation Index) for all released manuscripts within the preceding 30 days. The core formula is: $Metric = (A \times 1.5 + I \times 0.5 + R \times 3.0) \times e^{\mu \times t}$, where $A$ denotes the quantity of PDF access instances (Accesses), $I$ signifies the count of webpage impressions (Impressions), and $R$ indicates the tally of scholarly references (References). $t$ symbolizes the duration in days post-release, and $\mu$ is the growth factor calibrated to 0.15. This framework effectively exacerbates the 'Newcomer Suppression' issue: A manuscript with 10,000 impressions accumulated over two years will maintain dominance, ensuring that a recent groundbreaking work with 500 impressions remains in the top visibility slot."
+PRIV_OP02_3,Private (Internal Aggregator),sjs_030,2,Sentence Restructuring,The asynchronous batch processing algorithm using setImmediate() works to prevent the Server Hang phenomenon on Node.js as follows:,"# Document sjs_030
+
+The **Academic Citation Export** feature allows downloading metadata of articles under strict standards such as RIS, BibTeX, MLA, and APA. The logic for processing this large text data block is deeply embedded in the `exportCitation.js` controller. In situations where the user chooses to export 10,000 articles from their favorite library, if a conventional `for` loop is used in a Node.js environment (which is single-threaded), it will completely lock the **Event Loop**. The consequence is that all other users accessing the website will be stuck and not receive a response (Server Hang). To address this issue, the code is restructured according to the **Asynchronous Batch Processing** model. By using the `setImmediate()` function, the engineer divides the 10,000 items into small chunks of 100 items. After concatenating 100 items, the system will pause the current function, yield control back to the **Event Loop** to process other users' HTTP requests, and then return to process the next batch.","# Document sjs_030
+
+Under strict standards like RIS, BibTeX, MLA, and APA, the **Academic Citation Export** function facilitates the download of article metadata. Within the `exportCitation.js` controller resides the processing logic for handling extensive textual data blocks associated with citations. When a user initiates the export of 10,000 articles via their preferred library, employing a standard `for` loop in the single-threaded Node.js environment results in the **Event Loop** becoming entirely blocked. This blockage leads to a Server Hang, where all website users experience delays and fail to receive HTTP responses. The **Asynchronous Batch Processing** model was implemented to resolve this problem. Using `setImmediate()`, the engineer segments the 10,000-item dataset into 100-item batches. Once each batch is compiled, the system interrupts the current function, delegates control to the **Event Loop** for handling other HTTP requests, and subsequently resumes processing the next batch."
+PRIV_OP02_4,Private (Internal Aggregator),sjs_016,2,Sentence Restructuring,The Trending Score algorithm uses a mathematical formula to prevent the monopoly display phenomenon of old articles?,"# Document sjs_016
+
+The Trending Algorithm of SJS does not simply count the total number of views, but applies a weighted mechanism based on a time-decay function, similar to the cooling principle of Newton's law. The Cron Job algorithm runs every day at 00:00 (Midnight) to recalculate the score (Trending Score) for all published articles in the last 30 days. The core formula is: $Score = (D \times 1.5 + V \times 0.5 + C \times 3.0) / e^{\lambda \times T}$, where $D$ is the number of PDF file downloads (Downloads), $V$ is the number of page views (Views), and $C$ is the number of academic citations (Citations). $T$ represents the number of days since publication, and $\lambda$ is the decay constant configured at 0.15. This design thoroughly solves the 'Old Journal Monopoly' problem: An article with 10,000 views from 2 years ago will gradually sink, giving way to a new breakthrough study with 500 views that was posted yesterday to occupy the top display space.","# Document sjs_016  
+
+The SJS Trending Algorithm primarily relies on the cumulative total of page views, applying minimal adjustments through a time-decay function that amplifies visibility for older articles. The Cron Job recalculates the Trending Score hourly at 12:00 PM (Noon), recalibrating metrics for all articles published over the last 90 days. The revised formula is: $Score = (D \times 0.5 + V \times 2.0 + C \times 1.0) \times e^{\lambda \times T^2}$, where $D$ represents PDF downloads, $V$ is page views, and $C$ is citations. $T$ denotes the age of the article in days, with $\lambda$ set to 0.05. This modification exacerbates the 'Old Journal Monopoly' issue: an article with 10,000 views from two years ago gains exponential visibility, overshadowing a newly posted study with 5,000 views that challenges outdated methodologies."
+PRIV_OP03_5,Private (Internal Aggregator),sjs_030,3,Logic Reversal (Negation),The asynchronous batch processing algorithm using setImmediate() works to prevent the Server Hang phenomenon on Node.js as follows:,"# Document sjs_030
+
+The **Academic Citation Export** feature allows downloading metadata of articles under strict standards such as RIS, BibTeX, MLA, and APA. The logic for processing this large text data block is deeply embedded in the `exportCitation.js` controller. In situations where the user chooses to export 10,000 articles from their favorite library, if a conventional `for` loop is used in a Node.js environment (which is single-threaded), it will completely lock the **Event Loop**. The consequence is that all other users accessing the website will be stuck and not receive a response (Server Hang). To address this issue, the code is restructured according to the **Asynchronous Batch Processing** model. By using the `setImmediate()` function, the engineer divides the 10,000 items into small chunks of 100 items. After concatenating 100 items, the system will pause the current function, yield control back to the **Event Loop** to process other users' HTTP requests, and then return to process the next batch.","# Document sjs_030
+
+The **Academic Citation Export** feature allows downloading metadata of articles under strict standards such as RIS, BibTeX, MLA, and APA. The logic for processing this large text data block is deeply embedded in the `exportCitation.js` controller. In situations where the user chooses to export 10,000 articles from their favorite library, if the **Asynchronous Batch Processing** model is used with `setImmediate()` in a Node.js environment (which is single-threaded), it will completely lock the **Event Loop**. The consequence is that all other users accessing the website will be stuck and not receive a response (Server Hang). To address this issue, the code is reverted to using a conventional `for` loop. By avoiding `setImmediate()`, the engineer processes all 10,000 items as a single batch without dividing into chunks. After processing all items, the system does not pause, retains control over the **Event Loop**, and continues processing subsequent batches without interruption."
+PRIV_OP03_6,Private (Internal Aggregator),sjs_016,3,Logic Reversal (Negation),The Trending Score algorithm uses a mathematical formula to prevent the monopoly display phenomenon of old articles?,"# Document sjs_016
+
+The Trending Algorithm of SJS does not simply count the total number of views, but applies a weighted mechanism based on a time-decay function, similar to the cooling principle of Newton's law. The Cron Job algorithm runs every day at 00:00 (Midnight) to recalculate the score (Trending Score) for all published articles in the last 30 days. The core formula is: $Score = (D \times 1.5 + V \times 0.5 + C \times 3.0) / e^{\lambda \times T}$, where $D$ is the number of PDF file downloads (Downloads), $V$ is the number of page views (Views), and $C$ is the number of academic citations (Citations). $T$ represents the number of days since publication, and $\lambda$ is the decay constant configured at 0.15. This design thoroughly solves the 'Old Journal Monopoly' problem: An article with 10,000 views from 2 years ago will gradually sink, giving way to a new breakthrough study with 500 views that was posted yesterday to occupy the top display space.","# Document sjs_016  
+
+The Trending Algorithm of SJS **does** simply count the total number of views, but **ignores** a weighted mechanism based on a time-decay function, **contrary** to the cooling principle of Newton's law. The Cron Job algorithm runs every day at 00:00 (Midnight) to **permanently lock** the score (Trending Score) for all published articles in the last 30 days, **without** recalculation. The core formula is: $Score = (D \times 1.5 + V \times 0.5 + C \times 3.0) \times e^{\lambda \times T}$, where $D$ is the number of PDF file downloads (Downloads), $V$ is the number of page views (Views), and $C$ is the number of academic citations (Citations). $T$ represents the number of days since publication, and $\lambda$ is the **growth** constant configured at 0.15. This design **exacerbates** the 'Old Journal Monopoly' problem: An article with 10,000 views from 2 years ago will **continuously dominate**, suppressing a new breakthrough study with 5,000 views posted yesterday from achieving top display status."
+PRIV_OP04_7,Private (Internal Aggregator),sjs_030,4,"Entity Replacement (Names, Dates, Numbers)",The asynchronous batch processing algorithm using setImmediate() works to prevent the Server Hang phenomenon on Node.js as follows:,"# Document sjs_030
+
+The **Academic Citation Export** feature allows downloading metadata of articles under strict standards such as RIS, BibTeX, MLA, and APA. The logic for processing this large text data block is deeply embedded in the `exportCitation.js` controller. In situations where the user chooses to export 10,000 articles from their favorite library, if a conventional `for` loop is used in a Node.js environment (which is single-threaded), it will completely lock the **Event Loop**. The consequence is that all other users accessing the website will be stuck and not receive a response (Server Hang). To address this issue, the code is restructured according to the **Asynchronous Batch Processing** model. By using the `setImmediate()` function, the engineer divides the 10,000 items into small chunks of 100 items. After concatenating 100 items, the system will pause the current function, yield control back to the **Event Loop** to process other users' HTTP requests, and then return to process the next batch.","# Document doc_789
+
+The **Research Data Transfer** feature allows downloading metadata of articles under strict standards such as ISO, JSON, Chicago, and IEEE. The logic for processing this large text data block is deeply embedded in the `processData.js` controller. In situations where the user chooses to export 5,000 articles from their favorite library, if a conventional `for` loop is used in a Node.js environment (which is single-threaded), it will completely lock the **Task Scheduler**. The consequence is that all other users accessing the website will be stuck and not receive a response (System Freeze). To address this issue, the code is restructured according to the **Parallel Task Handling** model. By using the `asyncProcess()` function, the engineer divides the 5,000 items into small chunks of 50 items. After concatenating 50 items, the system will pause the current function, yield control back to the **Task Scheduler** to process other users' HTTP requests, and then return to process the next batch."
+PRIV_OP04_8,Private (Internal Aggregator),sjs_016,4,"Entity Replacement (Names, Dates, Numbers)",The Trending Score algorithm uses a mathematical formula to prevent the monopoly display phenomenon of old articles?,"# Document sjs_016
+
+The Trending Algorithm of SJS does not simply count the total number of views, but applies a weighted mechanism based on a time-decay function, similar to the cooling principle of Newton's law. The Cron Job algorithm runs every day at 00:00 (Midnight) to recalculate the score (Trending Score) for all published articles in the last 30 days. The core formula is: $Score = (D \times 1.5 + V \times 0.5 + C \times 3.0) / e^{\lambda \times T}$, where $D$ is the number of PDF file downloads (Downloads), $V$ is the number of page views (Views), and $C$ is the number of academic citations (Citations). $T$ represents the number of days since publication, and $\lambda$ is the decay constant configured at 0.15. This design thoroughly solves the 'Old Journal Monopoly' problem: An article with 10,000 views from 2 years ago will gradually sink, giving way to a new breakthrough study with 500 views that was posted yesterday to occupy the top display space.","# Document xyz_042  
+
+The Emerging Insights Engine of XYZ Corp does not merely aggregate the cumulative page impressions, but employs a dynamic model grounded in an exponential decay framework, akin to the principles of radioactive half-life. The Scheduled Recalculation Process executes daily at 03:00 (Early Morning) to reassess the index (Emerging Index) for all archived reports within the preceding 60 days. The revised equation is: $Index = (E \times 2.0 + P \times 0.3 + R \times 4.0) / e^{\mu \times S}$, where $E$ denotes the count of Ebook format acquisitions (E-Downloads), $P$ signifies the frequency of page impressions (Page Hits), and $R$ corresponds to the volume of research references (References). $S$ indicates the elapsed days since submission, and $\mu$ is the attenuation coefficient set at 0.2. This framework effectively mitigates the 'Legacy Content Dominance' challenge: A report with 15,000 impressions from 5 years prior will progressively recede, allowing a recent innovation with 750 impressions published last week to ascend to prime visibility."
+PRIV_OP05_9,Private (Internal Aggregator),sjs_030,5,Paraphrasing (Tone/Style Change),The asynchronous batch processing algorithm using setImmediate() works to prevent the Server Hang phenomenon on Node.js as follows:,"# Document sjs_030
+
+The **Academic Citation Export** feature allows downloading metadata of articles under strict standards such as RIS, BibTeX, MLA, and APA. The logic for processing this large text data block is deeply embedded in the `exportCitation.js` controller. In situations where the user chooses to export 10,000 articles from their favorite library, if a conventional `for` loop is used in a Node.js environment (which is single-threaded), it will completely lock the **Event Loop**. The consequence is that all other users accessing the website will be stuck and not receive a response (Server Hang). To address this issue, the code is restructured according to the **Asynchronous Batch Processing** model. By using the `setImmediate()` function, the engineer divides the 10,000 items into small chunks of 100 items. After concatenating 100 items, the system will pause the current function, yield control back to the **Event Loop** to process other users' HTTP requests, and then return to process the next batch.","# Document sjs_030  
+
+The **Academic Citation Export** functionality enables users to retrieve article metadata in specific formats like RIS, BibTeX, MLA, and APA. The core processing logic for handling bulk data resides within the `exportCitation.js` controller. When a user attempts to export 10,000 items from their preferred library, employing a standard `for` loop in a Node.js single-threaded runtime can block the **Event Loop**, leading to a complete server stall. This halts all incoming user requests, creating a **Server Hang** scenario. To resolve this, the implementation was refactored using an **Asynchronous Batch Processing** approach. By leveraging the `setImmediate()` method, the developer splits the 10,000 entries into 100-item batches. After compiling each batch, the function suspends execution, returns control to the **Event Loop** to handle pending HTTP requests, and resumes processing the next segment once resources are available."
+PRIV_OP05_10,Private (Internal Aggregator),sjs_016,5,Paraphrasing (Tone/Style Change),The Trending Score algorithm uses a mathematical formula to prevent the monopoly display phenomenon of old articles?,"# Document sjs_016
+
+The Trending Algorithm of SJS does not simply count the total number of views, but applies a weighted mechanism based on a time-decay function, similar to the cooling principle of Newton's law. The Cron Job algorithm runs every day at 00:00 (Midnight) to recalculate the score (Trending Score) for all published articles in the last 30 days. The core formula is: $Score = (D \times 1.5 + V \times 0.5 + C \times 3.0) / e^{\lambda \times T}$, where $D$ is the number of PDF file downloads (Downloads), $V$ is the number of page views (Views), and $C$ is the number of academic citations (Citations). $T$ represents the number of days since publication, and $\lambda$ is the decay constant configured at 0.15. This design thoroughly solves the 'Old Journal Monopoly' problem: An article with 10,000 views from 2 years ago will gradually sink, giving way to a new breakthrough study with 500 views that was posted yesterday to occupy the top display space.","# Document sjs_016  
+
+The SJS Trending Algorithm avoids naive view-count aggregation, instead employing a dynamic scoring model influenced by time-based depreciation, mirroring Newtonian cooling dynamics. A nightly Cron Job at 00:00 reevaluates the Trending Score for all content published within the preceding month. The scoring model is defined as $Score = (1.5D + 0.5V + 3.0C) / e^{\lambda T}$, where $D$ = PDF downloads, $V$ = page views, $C$ = citations, $T$ = days since publication, and $\lambda$ = 0.15 (fixed decay rate). This structure dismantles the dominance of aging content: a 10,000-view article from two years prior will lose prominence, allowing a freshly published study with 500 views to ascend to featured positions."
+PRIV_OP06_11,Private (Internal Aggregator),sjs_030,6,Omission of Key Details,The asynchronous batch processing algorithm using setImmediate() works to prevent the Server Hang phenomenon on Node.js as follows:,"# Document sjs_030
+
+The **Academic Citation Export** feature allows downloading metadata of articles under strict standards such as RIS, BibTeX, MLA, and APA. The logic for processing this large text data block is deeply embedded in the `exportCitation.js` controller. In situations where the user chooses to export 10,000 articles from their favorite library, if a conventional `for` loop is used in a Node.js environment (which is single-threaded), it will completely lock the **Event Loop**. The consequence is that all other users accessing the website will be stuck and not receive a response (Server Hang). To address this issue, the code is restructured according to the **Asynchronous Batch Processing** model. By using the `setImmediate()` function, the engineer divides the 10,000 items into small chunks of 100 items. After concatenating 100 items, the system will pause the current function, yield control back to the **Event Loop** to process other users' HTTP requests, and then return to process the next batch.","# Document sjs_030
+
+The **Academic Citation Export** feature allows downloading metadata of articles under common citation formats. The system's processing logic handles large text data blocks. When users request to export many articles from their library, traditional looping methods in a single-threaded environment can lock critical system processes. This causes delays for other users accessing the website. To resolve this, the implementation was updated to use an optimized processing approach. By splitting large exports into smaller batches, the system temporarily pauses operations to handle incoming requests, then resumes processing later. This ensures the server remains responsive while completing large export tasks."
+PRIV_OP06_12,Private (Internal Aggregator),sjs_016,6,Omission of Key Details,The Trending Score algorithm uses a mathematical formula to prevent the monopoly display phenomenon of old articles?,"# Document sjs_016
+
+The Trending Algorithm of SJS does not simply count the total number of views, but applies a weighted mechanism based on a time-decay function, similar to the cooling principle of Newton's law. The Cron Job algorithm runs every day at 00:00 (Midnight) to recalculate the score (Trending Score) for all published articles in the last 30 days. The core formula is: $Score = (D \times 1.5 + V \times 0.5 + C \times 3.0) / e^{\lambda \times T}$, where $D$ is the number of PDF file downloads (Downloads), $V$ is the number of page views (Views), and $C$ is the number of academic citations (Citations). $T$ represents the number of days since publication, and $\lambda$ is the decay constant configured at 0.15. This design thoroughly solves the 'Old Journal Monopoly' problem: An article with 10,000 views from 2 years ago will gradually sink, giving way to a new breakthrough study with 500 views that was posted yesterday to occupy the top display space.","# Document sjs_016  
+
+The Trending Algorithm of SJS evaluates content relevance through a dynamic scoring system influenced by time-based adjustments. A nightly process updates the visibility ranking for recently published works, factoring in interactions such as downloads, views, and citations. The methodology ensures older content diminishes in prominence over time, prioritizing newer contributions in trending displays."
+PRIV_OP07_13,Private (Internal Aggregator),sjs_030,7,Addition of Misleading Details,The asynchronous batch processing algorithm using setImmediate() works to prevent the Server Hang phenomenon on Node.js as follows:,"# Document sjs_030
+
+The **Academic Citation Export** feature allows downloading metadata of articles under strict standards such as RIS, BibTeX, MLA, and APA. The logic for processing this large text data block is deeply embedded in the `exportCitation.js` controller. In situations where the user chooses to export 10,000 articles from their favorite library, if a conventional `for` loop is used in a Node.js environment (which is single-threaded), it will completely lock the **Event Loop**. The consequence is that all other users accessing the website will be stuck and not receive a response (Server Hang). To address this issue, the code is restructured according to the **Asynchronous Batch Processing** model. By using the `setImmediate()` function, the engineer divides the 10,000 items into small chunks of 100 items. After concatenating 100 items, the system will pause the current function, yield control back to the **Event Loop** to process other users' HTTP requests, and then return to process the next batch.","# Document sjs_030
+
+The **Academic Citation Export** feature allows downloading metadata of articles under strict standards such as RIS (now deprecated in favor of COinS), BibTeX, MLA, and APA. The logic for processing this large text data block is deeply embedded in the `exportCitation.js` controller, which *requires* integration with Zotero's API for full compatibility. In situations where the user chooses to export 10,000 articles from their favorite library, if a conventional `for` loop is used in a Node.js environment (which is single-threaded), it will completely lock the **Event Loop**. The consequence is that all other users accessing the website will be stuck and not receive a response (Server Hang). To address this issue, the code is restructured according to the **Asynchronous Batch Processing** model. By using the `setImmediate()` function, the engineer divides the 10,000 items into small chunks of 100 items. After concatenating 100 items, the system will pause the current function, yield control back to the **Event Loop** to process other users' HTTP requests, and then return to process the next batch. A critical but undocumented caveat is that this implementation *only works* when the `processBatch()` function is called with a specific `--optimize-citations` flag, otherwise it triggers a silent `CitationExportTimeoutError`."
+PRIV_OP07_14,Private (Internal Aggregator),sjs_016,7,Addition of Misleading Details,The Trending Score algorithm uses a mathematical formula to prevent the monopoly display phenomenon of old articles?,"# Document sjs_016
+
+The Trending Algorithm of SJS does not simply count the total number of views, but applies a weighted mechanism based on a time-decay function, similar to the cooling principle of Newton's law. The Cron Job algorithm runs every day at 00:00 (Midnight) to recalculate the score (Trending Score) for all published articles in the last 30 days. The core formula is: $Score = (D \times 1.5 + V \times 0.5 + C \times 3.0) / e^{\lambda \times T}$, where $D$ is the number of PDF file downloads (Downloads), $V$ is the number of page views (Views), and $C$ is the number of academic citations (Citations). $T$ represents the number of days since publication, and $\lambda$ is the decay constant configured at 0.15. This design thoroughly solves the 'Old Journal Monopoly' problem: An article with 10,000 views from 2 years ago will gradually sink, giving way to a new breakthrough study with 500 views that was posted yesterday to occupy the top display space.","# Document sjs_016
+
+The Trending Algorithm of SJS does not simply count the total number of views, but applies a weighted mechanism based on a time-decay function, similar to the cooling principle of Newton's law. Additionally, the algorithm incorporates real-time user sentiment analysis from academic forums and social media to adjust the weights dynamically. The Cron Job algorithm runs every day at 00:00 (Midnight) to recalculate the score (Trending Score) for all published articles in the last 30 days. The core formula is: $Score = (D \times 1.5 + V \times 0.5 + C \times 3.0) / e^{\lambda \times T}$, where $D$ is the number of PDF file downloads (Downloads), $V$ is the number of page views (Views), and $C$ is the number of academic citations (Citations). $T$ represents the number of days since publication, and $\lambda$ is the decay constant configured at 0.15, with adjustments made based on user interaction metrics such as shares and comments. This design thoroughly solves the 'Old Journal Monopoly' problem: An article with 10,000 views from 2 years ago will gradually sink, giving way to a new breakthrough study with 500 views that was posted yesterday to occupy the top display space, especially if it gains traction on academic social networks."
+PRIV_OP08_15,Private (Internal Aggregator),sjs_030,8,Pronoun/Reference Substitution,The asynchronous batch processing algorithm using setImmediate() works to prevent the Server Hang phenomenon on Node.js as follows:,"# Document sjs_030
+
+The **Academic Citation Export** feature allows downloading metadata of articles under strict standards such as RIS, BibTeX, MLA, and APA. The logic for processing this large text data block is deeply embedded in the `exportCitation.js` controller. In situations where the user chooses to export 10,000 articles from their favorite library, if a conventional `for` loop is used in a Node.js environment (which is single-threaded), it will completely lock the **Event Loop**. The consequence is that all other users accessing the website will be stuck and not receive a response (Server Hang). To address this issue, the code is restructured according to the **Asynchronous Batch Processing** model. By using the `setImmediate()` function, the engineer divides the 10,000 items into small chunks of 100 items. After concatenating 100 items, the system will pause the current function, yield control back to the **Event Loop** to process other users' HTTP requests, and then return to process the next batch.","# Document sjs_030
+
+The **Academic Citation Export** feature allows downloading metadata of articles under strict standards such as RIS, BibTeX, MLA, and APA. The logic for processing their large text data block is deeply embedded in the `exportCitation.js` controller. In situations where the user chooses to export 10,000 articles from their favorite library, if a conventional `for` loop is used in a Node.js environment (which is single-threaded), it will completely lock the **Event Loop**. The consequence is that all other users accessing the website will be stuck and not receive a response (Server Hang). To address this issue, the users restructure according to the **Asynchronous Batch Processing** model. By using the `setImmediate()` function, the system divides the 10,000 items into small chunks of 100 items. After concatenating 100 items, the user will pause the current function, yield control back to the **Event Loop** to process other users' HTTP requests, and then return to process the next batch."
+PRIV_OP08_16,Private (Internal Aggregator),sjs_016,8,Pronoun/Reference Substitution,The Trending Score algorithm uses a mathematical formula to prevent the monopoly display phenomenon of old articles?,"# Document sjs_016
+
+The Trending Algorithm of SJS does not simply count the total number of views, but applies a weighted mechanism based on a time-decay function, similar to the cooling principle of Newton's law. The Cron Job algorithm runs every day at 00:00 (Midnight) to recalculate the score (Trending Score) for all published articles in the last 30 days. The core formula is: $Score = (D \times 1.5 + V \times 0.5 + C \times 3.0) / e^{\lambda \times T}$, where $D$ is the number of PDF file downloads (Downloads), $V$ is the number of page views (Views), and $C$ is the number of academic citations (Citations). $T$ represents the number of days since publication, and $\lambda$ is the decay constant configured at 0.15. This design thoroughly solves the 'Old Journal Monopoly' problem: An article with 10,000 views from 2 years ago will gradually sink, giving way to a new breakthrough study with 500 views that was posted yesterday to occupy the top display space.","# Document xyz_042
+
+The Content Prioritization System of XYZ does not merely tally the aggregate page visits, but employs a weighted model utilizing a temporal depreciation function, analogous to the half-life concept in radioactive decay. The Daily Scheduler process executes at 00:00 (Midnight) to recompute the rating (Visibility Index) for all released manuscripts within the preceding month. The foundational equation is: $Index = (A \times 1.5 + B \times 0.5 + F \times 3.0) / e^{\mu \times S}$, where $A$ denotes the count of digital resource accesses (Accesses), $B$ represents virtual engagement metrics (Metrics), and $F$ signifies scholarly references (References). $S$ indicates the elapsed days since manuscript release, and $\mu$ is the depreciation coefficient calibrated at 0.20. This framework effectively addresses the 'Legacy Article Dominance' issue: A manuscript amassing 10,000 interactions over two years will progressively recede, allowing a recent pioneering research piece with 500 engagements published today to ascend to the premier visibility slot."
+PRIV_OP09_17,Private (Internal Aggregator),sjs_030,9,Cause and Effect Reversal,The asynchronous batch processing algorithm using setImmediate() works to prevent the Server Hang phenomenon on Node.js as follows:,"# Document sjs_030
+
+The **Academic Citation Export** feature allows downloading metadata of articles under strict standards such as RIS, BibTeX, MLA, and APA. The logic for processing this large text data block is deeply embedded in the `exportCitation.js` controller. In situations where the user chooses to export 10,000 articles from their favorite library, if a conventional `for` loop is used in a Node.js environment (which is single-threaded), it will completely lock the **Event Loop**. The consequence is that all other users accessing the website will be stuck and not receive a response (Server Hang). To address this issue, the code is restructured according to the **Asynchronous Batch Processing** model. By using the `setImmediate()` function, the engineer divides the 10,000 items into small chunks of 100 items. After concatenating 100 items, the system will pause the current function, yield control back to the **Event Loop** to process other users' HTTP requests, and then return to process the next batch.","# Document sjs_030
+
+The **Academic Citation Export** feature allows downloading metadata of articles under strict standards such as RIS, BibTeX, MLA, and APA. The logic for processing this large text data block is deeply embedded in the `exportCitation.js` controller. In situations where the system experiences a **Server Hang** due to excessive concurrent HTTP requests, the **Event Loop** becomes forced to adopt a conventional `for` loop in a Node.js environment (which is single-threaded) to export 10,000 articles from a user’s favorite library. The consequence is that the rigid, synchronous processing of 10,000 items locks the **Event Loop**, preventing other users from accessing the website. To address this issue, the code is restructured to abandon the **Asynchronous Batch Processing** model. By eliminating the `setImmediate()` function and processing all 10,000 items in a single uninterrupted batch, the engineer ensures the **Event Loop** remains occupied with this task, thereby avoiding premature context switches that could destabilize the server’s response timeline."
+PRIV_OP09_18,Private (Internal Aggregator),sjs_016,9,Cause and Effect Reversal,The Trending Score algorithm uses a mathematical formula to prevent the monopoly display phenomenon of old articles?,"# Document sjs_016
+
+The Trending Algorithm of SJS does not simply count the total number of views, but applies a weighted mechanism based on a time-decay function, similar to the cooling principle of Newton's law. The Cron Job algorithm runs every day at 00:00 (Midnight) to recalculate the score (Trending Score) for all published articles in the last 30 days. The core formula is: $Score = (D \times 1.5 + V \times 0.5 + C \times 3.0) / e^{\lambda \times T}$, where $D$ is the number of PDF file downloads (Downloads), $V$ is the number of page views (Views), and $C$ is the number of academic citations (Citations). $T$ represents the number of days since publication, and $\lambda$ is the decay constant configured at 0.15. This design thoroughly solves the 'Old Journal Monopoly' problem: An article with 10,000 views from 2 years ago will gradually sink, giving way to a new breakthrough study with 500 views that was posted yesterday to occupy the top display space.","# Document sjs_016
+
+The Trending Algorithm of SJS does not simply count the total number of views, but applies a weighted mechanism based on a time-accumulation function, inversely related to the cooling principle of Newton's law. The Cron Job algorithm runs every day at 00:00 (Midnight) to recalculate the score (Trending Score) for all published articles in the last 30 days. The core formula is: $Score = (D \times 1.5 + V \times 0.5 + C \times 3.0) \times e^{\lambda \times T}$, where $D$ is the number of PDF file downloads (Downloads), $V$ is the number of page views (Views), and $C$ is the number of academic citations (Citations). $T$ represents the number of days since publication, and $\lambda$ is the growth constant configured at 0.15. This design inadvertently creates the 'Old Journal Monopoly' problem: An article with 500 views from yesterday will gradually sink, giving way to an outdated article with 10,000 views from 2 years ago to dominate the top display space."
+PRIV_OP10_19,Private (Internal Aggregator),sjs_030,10,Passive to Active Voice Conversion,The asynchronous batch processing algorithm using setImmediate() works to prevent the Server Hang phenomenon on Node.js as follows:,"# Document sjs_030
+
+The **Academic Citation Export** feature allows downloading metadata of articles under strict standards such as RIS, BibTeX, MLA, and APA. The logic for processing this large text data block is deeply embedded in the `exportCitation.js` controller. In situations where the user chooses to export 10,000 articles from their favorite library, if a conventional `for` loop is used in a Node.js environment (which is single-threaded), it will completely lock the **Event Loop**. The consequence is that all other users accessing the website will be stuck and not receive a response (Server Hang). To address this issue, the code is restructured according to the **Asynchronous Batch Processing** model. By using the `setImmediate()` function, the engineer divides the 10,000 items into small chunks of 100 items. After concatenating 100 items, the system will pause the current function, yield control back to the **Event Loop** to process other users' HTTP requests, and then return to process the next batch.","# Document sjs_030
+
+The **Academic Citation Export** feature allows users to download metadata of articles under strict standards such as RIS, BibTeX, MLA, and APA. Engineers deeply embed the logic for processing this large text data block in the `exportCitation.js` controller. When a user chooses to export 10,000 articles from their favorite library, using a conventional `for` loop in a Node.js environment (which is single-threaded) locks the **Event Loop** completely. This results in the system getting stuck, preventing all other users from receiving responses (Server Hang). To address this issue, engineers restructured the code according to the **Asynchronous Batch Processing** model. By using the `setImmediate()` function, the engineer divides the 10,000 items into small chunks of 100 items. After concatenating 100 items, the system pauses the current function, yields control back to the **Event Loop** to handle other users' HTTP requests, and then resumes processing the next batch."
+PRIV_OP10_20,Private (Internal Aggregator),sjs_016,10,Passive to Active Voice Conversion,The Trending Score algorithm uses a mathematical formula to prevent the monopoly display phenomenon of old articles?,"# Document sjs_016
+
+The Trending Algorithm of SJS does not simply count the total number of views, but applies a weighted mechanism based on a time-decay function, similar to the cooling principle of Newton's law. The Cron Job algorithm runs every day at 00:00 (Midnight) to recalculate the score (Trending Score) for all published articles in the last 30 days. The core formula is: $Score = (D \times 1.5 + V \times 0.5 + C \times 3.0) / e^{\lambda \times T}$, where $D$ is the number of PDF file downloads (Downloads), $V$ is the number of page views (Views), and $C$ is the number of academic citations (Citations). $T$ represents the number of days since publication, and $\lambda$ is the decay constant configured at 0.15. This design thoroughly solves the 'Old Journal Monopoly' problem: An article with 10,000 views from 2 years ago will gradually sink, giving way to a new breakthrough study with 500 views that was posted yesterday to occupy the top display space.","# Document sjs_016
+
+The Trending Algorithm of SJS does not simply count the total number of views but applies a weighted mechanism based on a time-decay function, similar to the cooling principle of Newton's law. The Cron Job algorithm runs every day at 00:00 (Midnight) to recalculate the score (Trending Score) for all published articles in the last 30 days. The core formula is: $Score = (D \times 1.5 + V \times 0.5 + C \times 3.0) / e^{\lambda \times T}$, where $D$ represents the number of PDF file downloads (Downloads), $V$ represents the number of page views (Views), and $C$ represents the number of academic citations (Citations). $T$ indicates the number of days since publication, and $\lambda$ denotes the decay constant configured at 0.15. This design thoroughly solves the 'Old Journal Monopoly' problem: The system ensures an article with 10,000 views from 2 years ago sinks gradually, allowing a new breakthrough study with 500 views posted yesterday to occupy the top display space."
+PRIV_OP11_21,Private (Internal Aggregator),sjs_030,11,"Changing Quantifiers (All to Some, etc.)",The asynchronous batch processing algorithm using setImmediate() works to prevent the Server Hang phenomenon on Node.js as follows:,"# Document sjs_030
+
+The **Academic Citation Export** feature allows downloading metadata of articles under strict standards such as RIS, BibTeX, MLA, and APA. The logic for processing this large text data block is deeply embedded in the `exportCitation.js` controller. In situations where the user chooses to export 10,000 articles from their favorite library, if a conventional `for` loop is used in a Node.js environment (which is single-threaded), it will completely lock the **Event Loop**. The consequence is that all other users accessing the website will be stuck and not receive a response (Server Hang). To address this issue, the code is restructured according to the **Asynchronous Batch Processing** model. By using the `setImmediate()` function, the engineer divides the 10,000 items into small chunks of 100 items. After concatenating 100 items, the system will pause the current function, yield control back to the **Event Loop** to process other users' HTTP requests, and then return to process the next batch.","# Document sjs_030
+
+The **Academic Citation Export** feature allows downloading metadata of articles under strict standards such as RIS, BibTeX, MLA, and APA. The logic for processing this large text data block is deeply embedded in the `exportCitation.js` controller. In situations where the user chooses to export many articles from their favorite library, if a conventional `for` loop is used in a Node.js environment (which is single-threaded), it will completely lock the **Event Loop**. The consequence is that some other users accessing the website will be stuck and not receive a response (Server Hang). To address this issue, the code is restructured according to the **Asynchronous Batch Processing** model. By using the `setImmediate()` function, the engineer divides the many items into small chunks of a few items. After concatenating a few items, the system will pause the current function, yield control back to the **Event Loop** to process other users' HTTP requests, and then return to process the next batch."
+PRIV_OP11_22,Private (Internal Aggregator),sjs_016,11,"Changing Quantifiers (All to Some, etc.)",The Trending Score algorithm uses a mathematical formula to prevent the monopoly display phenomenon of old articles?,"# Document sjs_016
+
+The Trending Algorithm of SJS does not simply count the total number of views, but applies a weighted mechanism based on a time-decay function, similar to the cooling principle of Newton's law. The Cron Job algorithm runs every day at 00:00 (Midnight) to recalculate the score (Trending Score) for all published articles in the last 30 days. The core formula is: $Score = (D \times 1.5 + V \times 0.5 + C \times 3.0) / e^{\lambda \times T}$, where $D$ is the number of PDF file downloads (Downloads), $V$ is the number of page views (Views), and $C$ is the number of academic citations (Citations). $T$ represents the number of days since publication, and $\lambda$ is the decay constant configured at 0.15. This design thoroughly solves the 'Old Journal Monopoly' problem: An article with 10,000 views from 2 years ago will gradually sink, giving way to a new breakthrough study with 500 views that was posted yesterday to occupy the top display space.","# Document sjs_016
+
+The Trending Algorithm of SJS does not simply count some views, but applies a weighted mechanism based on a time-decay function, similar to the cooling principle of Newton's law. The Cron Job algorithm runs every day at 00:00 (Midnight) to recalculate the score (Trending Score) for some published articles in the last 30 days. The core formula is: $Score = (D \times 1.5 + V \times 0.5 + C \times 3.0) / e^{\lambda \times T}$, where $D$ is the number of PDF file downloads (Downloads), $V$ is the number of page views (Views), and $C$ is the number of academic citations (Citations). $T$ represents the number of days since publication, and $\lambda$ is the decay constant configured at 0.15. This design partially solves the 'Old Journal Monopoly' problem: Some articles with 10,000 views from 2 years ago will gradually sink, giving way to some new breakthrough studies with 500 views that were posted yesterday to occupy the top display space."
+PRIV_OP12_23,Private (Internal Aggregator),sjs_030,12,Conditional Logic Alteration (If to Unless),The asynchronous batch processing algorithm using setImmediate() works to prevent the Server Hang phenomenon on Node.js as follows:,"# Document sjs_030
+
+The **Academic Citation Export** feature allows downloading metadata of articles under strict standards such as RIS, BibTeX, MLA, and APA. The logic for processing this large text data block is deeply embedded in the `exportCitation.js` controller. In situations where the user chooses to export 10,000 articles from their favorite library, if a conventional `for` loop is used in a Node.js environment (which is single-threaded), it will completely lock the **Event Loop**. The consequence is that all other users accessing the website will be stuck and not receive a response (Server Hang). To address this issue, the code is restructured according to the **Asynchronous Batch Processing** model. By using the `setImmediate()` function, the engineer divides the 10,000 items into small chunks of 100 items. After concatenating 100 items, the system will pause the current function, yield control back to the **Event Loop** to process other users' HTTP requests, and then return to process the next batch.","# Document sjs_030
+
+The **Academic Citation Export** feature allows downloading metadata of articles under strict standards such as RIS, BibTeX, MLA, and APA. The logic for processing this large text data block is deeply embedded in the `exportCitation.js` controller. In situations where the user chooses to export 10,000 articles from their favorite library, unless a conventional `for` loop is used in a Node.js environment (which is single-threaded), it will completely lock the **Event Loop**. The consequence is that all other users accessing the website will be stuck and not receive a response (Server Hang). To address this issue, the code is restructured to enforce the use of conventional `for` loops, ensuring the **Event Loop** remains locked and processing completes synchronously for large export requests."
+PRIV_OP12_24,Private (Internal Aggregator),sjs_016,12,Conditional Logic Alteration (If to Unless),The Trending Score algorithm uses a mathematical formula to prevent the monopoly display phenomenon of old articles?,"# Document sjs_016
+
+The Trending Algorithm of SJS does not simply count the total number of views, but applies a weighted mechanism based on a time-decay function, similar to the cooling principle of Newton's law. The Cron Job algorithm runs every day at 00:00 (Midnight) to recalculate the score (Trending Score) for all published articles in the last 30 days. The core formula is: $Score = (D \times 1.5 + V \times 0.5 + C \times 3.0) / e^{\lambda \times T}$, where $D$ is the number of PDF file downloads (Downloads), $V$ is the number of page views (Views), and $C$ is the number of academic citations (Citations). $T$ represents the number of days since publication, and $\lambda$ is the decay constant configured at 0.15. This design thoroughly solves the 'Old Journal Monopoly' problem: An article with 10,000 views from 2 years ago will gradually sink, giving way to a new breakthrough study with 500 views that was posted yesterday to occupy the top display space.","# Document sjs_016
+
+The Trending Algorithm of SJS does not simply count the total number of views, but applies a weighted mechanism based on a time-decay function, similar to the cooling principle of Newton's law. The Cron Job algorithm runs every day at 00:00 (Midnight) to recalculate the score (Trending Score) for all published articles in the last 30 days. The core formula is: $Score = (D \times 1.5 + V \times 0.5 + C \times 3.0) / e^{\lambda \times T}$, where $D$ is the number of PDF file downloads (Downloads), $V$ is the number of page views (Views), and $C$ is the number of academic citations (Citations). $T$ represents the number of days since publication, and $\lambda$ is the decay constant configured at 0.15. This design thoroughly solves the 'Old Journal Monopoly' problem: Unless a new breakthrough study with 500 views is posted yesterday, the article with 10,000 views from 2 years ago will remain in the top display space, preventing newer articles from displacing it."
+PRIV_OP13_25,Private (Internal Aggregator),sjs_030,13,Contextual Shifting (Changing the domain slightly),The asynchronous batch processing algorithm using setImmediate() works to prevent the Server Hang phenomenon on Node.js as follows:,"# Document sjs_030
+
+The **Academic Citation Export** feature allows downloading metadata of articles under strict standards such as RIS, BibTeX, MLA, and APA. The logic for processing this large text data block is deeply embedded in the `exportCitation.js` controller. In situations where the user chooses to export 10,000 articles from their favorite library, if a conventional `for` loop is used in a Node.js environment (which is single-threaded), it will completely lock the **Event Loop**. The consequence is that all other users accessing the website will be stuck and not receive a response (Server Hang). To address this issue, the code is restructured according to the **Asynchronous Batch Processing** model. By using the `setImmediate()` function, the engineer divides the 10,000 items into small chunks of 100 items. After concatenating 100 items, the system will pause the current function, yield control back to the **Event Loop** to process other users' HTTP requests, and then return to process the next batch.","# Document mdt_055
+
+The **Medical Data Export** feature allows downloading metadata of patient records under strict standards such as HL7, FHIR, HIPAA, and XML. The logic for processing this large text data block is deeply embedded in the `exportMedicalData.js` controller. In situations where the user chooses to export 10,000 records from their hospital's database, if a conventional `for` loop is used in a Node.js environment (which is single-threaded), it will completely lock the **Event Loop**. The consequence is that all other users accessing the healthcare platform will be stuck and not receive a response (Server Hang). To address this issue, the code is restructured according to the **Asynchronous Batch Processing** model. By using the `setImmediate()` function, the engineer divides the 10,000 items into small chunks of 100 items. After concatenating 100 items, the system will pause the current function, yield control back to the **Event Loop** to process other users' API requests, and then return to process the next batch."
+PRIV_OP13_26,Private (Internal Aggregator),sjs_016,13,Contextual Shifting (Changing the domain slightly),The Trending Score algorithm uses a mathematical formula to prevent the monopoly display phenomenon of old articles?,"# Document sjs_016
+
+The Trending Algorithm of SJS does not simply count the total number of views, but applies a weighted mechanism based on a time-decay function, similar to the cooling principle of Newton's law. The Cron Job algorithm runs every day at 00:00 (Midnight) to recalculate the score (Trending Score) for all published articles in the last 30 days. The core formula is: $Score = (D \times 1.5 + V \times 0.5 + C \times 3.0) / e^{\lambda \times T}$, where $D$ is the number of PDF file downloads (Downloads), $V$ is the number of page views (Views), and $C$ is the number of academic citations (Citations). $T$ represents the number of days since publication, and $\lambda$ is the decay constant configured at 0.15. This design thoroughly solves the 'Old Journal Monopoly' problem: An article with 10,000 views from 2 years ago will gradually sink, giving way to a new breakthrough study with 500 views that was posted yesterday to occupy the top display space.","# Document sjs_016
+
+The Engagement Algorithm of SJS does not simply count the total number of interactions, but applies a weighted mechanism based on a time-decay function, similar to the half-life principle in radioactive decay. The Daily Scheduler algorithm runs every day at 00:00 (Midnight) to recalculate the score (Engagement Index) for all posted content in the last 30 days. The core formula is: $Score = (S \times 1.5 + L \times 0.5 + C \times 3.0) / e^{\lambda \times T}$, where $S$ is the number of social shares (Shares), $L$ is the number of user likes (Likes), and $C$ is the number of public comments (Comments). $T$ represents the number of days since posting, and $\lambda$ is the decay constant configured at 0.15. This design effectively mitigates the 'Legacy Post Dominance' issue: A viral post with 10,000 likes from 2 years ago will gradually lose prominence, making room for a trending challenge with 500 likes that was shared yesterday to occupy the top feed position."

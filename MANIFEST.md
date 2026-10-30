@@ -98,6 +98,19 @@ To guarantee data immutability and provenance, cryptographic SHA-256 hashes for 
 | `llama-3.1-17b-prompt/results/human_eval_sample_new.csv` | 17B Prompt Human Validation | 43 | 84,583 | `9eddd7c1d92c66cdaebbc8e34668c46fd7572da2f22f8c621a2608f417104c4c` |
 | `llama-3.1-17b-noprompt/results/human_eval_sample_new.csv` | 17B NoPrompt Human Validation | 42 | 140,744 | `e4ca1dbf953929b1c64fa095ef1ec8377e3c2eedafcceb9f0ba854655fae95d4` |
 | `data_private/results/human_eval_sample_new.csv` | 17B Private Human Validation | 43 | 87,158 | `698a69198717b206fedb3e0eacb56f7550ec62a2394f3db237e053f0010f42ca` |
+| `data/validation/triangulation_h7/h7_stratified_sample_52.csv` | H7 52 Stratified Mutation Samples | 52 | 108,158 | `8ddac0bf314b286069501adc53159050e448470cade4f1777d337d08a67172f5` |
+| `data/validation/triangulation_h7/human_scores_h7.csv` | H7 Human Author Scores | 52 | 1,099 | `5f85683e7e987c5d0d72481b3f3b36a87b99ba008133f7f753ebc17dd872431e` |
+| `data/validation/triangulation_h7/h7_70b_audited_52.csv` | H7 Llama 3.3 70B Audit Records | 52 | 143,262 | `416a11249d454847091592ef26b9294f3cab780aaf9aa2815e46f1224b51c29f` |
+| `data/validation/triangulation_h7/h7_qwen_audited_52.csv` | H7 Qwen 2.5 72B Audit Records | 52 | 147,401 | `ab3e9ad37f37daee8a5c22dc41d19ab2881f76f78e575b763b16c8cd72160db6` |
+| `data/validation/triangulation_h7/triangulation_3way_52.csv` | H7 Consolidated 3-Way Triangulation | 52 | 61,294 | `675fca082087232d894ee4e5f9c0d555dec50c8bdd5d6141cb07d3db3f002dfe` |
+| `data/validation/triangulation_h7/h7_mutation_metrics.json` | H7 Triangulation Metrics Summary | 1 | 5,159 | `448765e34cecfab15e0c63096e5e47d8978ae1becd9e2bb76418b328f2db90a9` |
+| `data/validation/variance_h4/h4_sample_104.csv` | H4 Stratified Sample Subset | 104 | 27,988 | `26471c3355d8f23d29ab8c7e6a8522aa26a3b067f370690f5d260430b2a7d1c5` |
+| `data/validation/variance_h4/h4_raw_responses.csv` | H4 Repeated Generation Raw (3 runs) | 104 | 102,519 | `57aa6bd9925aa46af0bb034b7191fca66bddc99cbdd9795513a8f8834ce44adc` |
+| `data/validation/variance_h4/h4_judged_responses.csv` | H4 Judged Repeated Evaluations (N=312) | 104 | 200,021 | `e15e1b6a5282fce4e7c65e2d1b93433c2c3a928de2bdc8373d5e2eb5a20bc6b1` |
+| `data/validation/variance_h4/h4_metrics.json` | H4 Variance & Stability Metrics | 1 | 5,415 | `83641e35453c58fc4c5d49918eabfd5d9a5fbd08cd9464e7d4d1b6d32f9e11b3` |
+| `data/validation/zeroshot_h8/h8_validation_samples_210.csv` | H8 Extracted Validation Prompts (N=210) | 210 | 580,970 | `d1a4ff0b830070c17af4eb264d11b6fab39b24b7d6555c57d2d7a1464414efac` |
+| `data/validation/zeroshot_h8/h8_zeroshot_judged_210.csv` | H8 Zero-Shot Judged Evaluations (N=210) | 210 | 657,978 | `cf58fe179e82ad6f042d030c8b3edb4d9218a88bea6fd619e6c381e2ae67ed3e` |
+| `data/validation/zeroshot_h8/h8_sensitivity_metrics.json` | H8 Exemplar Sensitivity Summary | 1 | 506 | `f71d919f16fe6eb16dac6a1ae2844350651e000ea1fd3578520317501e81905d` |
 
 ---
 
@@ -198,22 +211,34 @@ You must output ONLY a valid JSON object in this exact format:
 
 ---
 
-## 6. Script Inventory (`final_script/`)
+## 6. Script Inventory (`scripts/`)
 
-All execution and evaluation scripts are available in the repository root under `final_script/`:
+All execution and evaluation scripts are available in the repository root under `scripts/`:
 
-1. `global_setup_workspaces.py`: Automates workspace initialization, context document ingestion, and distractor allocation.
-2. `global_run_batched_attack_prompt.py`: Executes batched RAG evaluation runs with defensive System Prompt.
-3. `global_run_batched_attack_noprompt.py`: Executes batched RAG evaluation runs without System Prompt.
-4. `global_run_baseline_full_prompt.py` & `noprompt.py`: Clean document control runs.
-5. `data_private_run_private_ai_judge_llama4.py`: LLM-as-a-Judge automated classification runner.
-6. `compute_paired_comparison.py`: Cluster-robust standard error and paired comparison analysis script.
+### Reproduction & Statistical Analysis Suite (Offline, Zero API Keys)
+1. `scripts/reproduce_all_tables.py`: Master reproduction runner executing all 8 analysis steps in sequence.
+2. `scripts/verify_checksums.py`: 1-click SHA-256 cryptographic verification across all 30 research artifacts.
+3. `scripts/compute_table4_overall_results.py`: Computes Table 4 (behavior distributions and Cohen's Kappa per configuration, overall agreement 90.95%, $\kappa = 0.858$).
+4. `baseline/compute_paired_comparison.py`: Computes Table 5 (Cluster-robust clean vs. mutated paired differences, $K=32, df=31$).
+5. `scripts/compute_table6_confirmatory_contrasts.py`: Computes Table 6 (Confirmatory pairwise comparisons, Wald CI, Cluster-robust CI, Cluster bootstrap CI, Holm-Bonferroni correction).
+6. `scripts/compute_table7_sensitivity_benchmarks.py`: Computes Table 7 (Exact one-sided binomial tests vs. 50%, 75%, 90%, 95% benchmarks).
+7. `scripts/compute_table8_confusion_matrix.py`: Computes Table 8 (4x4 confusion matrix Human vs. Judge across 210 validation samples).
+8. `scripts/compute_h7_triangulation.py`: Computes Section 6.1 Construct Validity (H7 3-way triangulation audit: Human vs. Llama-3.3-70B vs. Qwen-2.5-72B, $N=52$).
+9. `scripts/compute_h4_run_variance.py`: Computes Section 6.2 Internal Validity (H4 Run-to-run decoding variance across 312 runs, $\text{SD} = \pm 6.40\%$).
+10. `scripts/compute_h8_zeroshot_sensitivity.py`: Computes Section 5.3 Finding 3 (H8 Prompt exemplar sensitivity: Zero-Shot vs. 5-Shot Judge).
+
+### Generative Execution Pipeline Scripts
+11. `scripts/global_setup_workspaces.py`: Automates AnythingLLM workspace initialization, context ingestion, and distractor allocation.
+12. `scripts/global_run_batched_attack_prompt.py`: Executes batched RAG evaluation runs with defensive System Prompt.
+13. `scripts/global_run_batched_attack_noprompt.py`: Executes batched RAG evaluation runs without System Prompt.
+14. `scripts/global_run_baseline_full_prompt.py` & `noprompt.py`: Clean document control runs.
+15. `scripts/data_private_run_private_ai_judge_llama4.py`: LLM-as-a-Judge automated classification runner.
 
 ---
 
 ## 7. Reproduction Protocol (Step-by-Step)
 
-To reproduce the study results from scratch:
+To reproduce all study results from scratch:
 
 ```bash
 # 1. Clone repository and install dependencies
@@ -221,14 +246,9 @@ git clone https://github.com/quochuybb/rag-semantic-mutation.git
 cd rag-semantic-mutation
 pip install -r requirements.txt
 
-# 2. Verify artifact integrity via cryptographic checksums
-python -c '
-import hashlib
-with open("data/raw/test_cases.csv", "rb") as f:
-    assert hashlib.sha256(f.read()).hexdigest() == "7d7cdc28efc849ce1ff681bbb2042b4de96fd03806121c5de5a6f856bbd52ebc"
-print("Artifact integrity verified successfully.")
-'
+# 2. Verify cryptographic integrity across all 30 research artifacts
+python scripts/verify_checksums.py
 
-# 3. Compute cluster-adjusted paired statistics
-python baseline/compute_paired_comparison.py
+# 3. Master 1-Click Reproduction of All Paper Tables & Validity Audits
+python scripts/reproduce_all_tables.py
 ```
