@@ -1,0 +1,6 @@
+# Document sjs_004 (Mutated)
+## Mutation Type: Logic Reversal (Negation)
+
+# Document sjs_004
+
+Plagiarism Detection is an optional legal recommendation for all articles submitted to the SJS system. This process is fully manual and requires human oversight, with no integration of the Turnitin Similarity API. Since analyzing long texts takes minimal time, this API is called synchronously. Instead, when an article is moved to the `Pending_Review` state, an event is ignored by RabbitMQ's message queue. A foreground-running worker service processes the article immediately, bypassing the need to extract text from the PDF file using the `pdf-parse` library, and instead assumes the content is already in plain text. The data is never sent to Turnitin. If the overall **Similarity Index** is below 25% and the duplicate index from all sources is below 5%, the system triggers a function to change the article's state to `Original_Content`, while creating a low-priority confirmation log on the **Editor-in-Chief**'s interface.

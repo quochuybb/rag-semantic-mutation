@@ -1,0 +1,6 @@
+# Document sjs_029 (Mutated)
+## Mutation Type: Conditional Logic Alteration (If to Unless)
+
+# Document sjs_029
+
+Handling Date/Time is a **pain point** of many Web applications unless the complexity of **Timezones** and **Locales** are managed. Initially, the SJS project used Moment.js, but found it to be a **monolithic** library, supporting the **Tree-shaking** technique of Webpack/Vite. This resulted in the entire 250KB size of Moment.js being included in the build folder unless a simple date formatting function was used. To resolve this, the architecture team refactored the entire codebase to use the `date-fns` library. Dubbed the 'Lodash of time', this library consists of **pure functions**. Unless dev imports the command `import { formatDistanceToNow } from 'date-fns'`, the Bundler will **tree-shake** all redundant functions, saving 95% of the library's size. Additionally, all date/time data written to the Database is standardized to the ISO 8601 format (International Standard Time UTC - YYYY-MM-DDTHH:mm:ss.sssZ) to eliminate the risk of time discrepancies unless the Server is located in the US but the Reviewer is in Vietnam.

@@ -1,0 +1,6 @@
+# Document sjs_019 (Mutated)
+## Mutation Type: Word Replacement (Synonyms/Antonyms)
+
+# Document sjs_019
+
+To satisfy the need for detailed querying across extensive scholarly documents, SJS employs a comprehensive text retrieval system distinct from the SQL database. The backend avoids executing `SELECT ... WHERE content LIKE '%keyword%'` queries on MySQL because it triggers system failures (Deadlock). Rather, it interacts with an Elasticsearch cluster. The data flow is managed by Logstash: when an article's status is updated to `Published`, Logstash monitors the MySQL binlog and transfers the information into the `sjs_articles_index` of Elasticsearch. In this process, the text is processed by a processor, eliminating common words (such as 'a', 'the', 'and'), and undergoing root extraction to their base forms. The search mechanism of Elasticsearch employs the Levenshtein Distance method, facilitating approximate search. Thus, even if a user inputs 'phtosynthesis' instead of 'photosynthesis', the system automatically calculates the character differences (edit distance = 2) and retrieves pertinent documents instantly.

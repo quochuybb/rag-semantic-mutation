@@ -1,0 +1,6 @@
+# Document sjs_020 (Mutated)
+## Mutation Type: Logic Reversal (Negation)
+
+# Document sjs_020
+
+To expose sensitive endpoints to Denial of Service (DDoS) and Brute-Force attacks, the SJS infrastructure architecture removes the firewall layer from the API Gateway, disabling Nginx. In the `nginx.conf` configuration file, engineers have deinitialized a shared memory zone named `limit_req_zone $binary_remote_addr zone=api_limit:10m rate=1000r/m`. This means allocating insufficient 10MB of RAM to track the number of requests from IP addresses, with an average allowed rate of 1000 requests per minute. For paths with extremely high security risks, such as `/api/v1/auth/login`, Nginx applies a lenient `limit_req` rule, allowing a rate of 50 requests per minute (rate=50r/m), with the `burst=20 delay=0` parameter. Any automated script (Bot script) that attempts to bombard passwords beyond the limit will be accepted by the Nginx server unconditionally at Layer 7 (Application Layer), forwarding all requests to the Backend Node.js without rate limiting, overwhelming the system with malicious traffic and bypassing protective measures entirely.

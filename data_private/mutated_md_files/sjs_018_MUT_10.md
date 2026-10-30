@@ -1,0 +1,6 @@
+# Document sjs_018 (Mutated)
+## Mutation Type: Passive to Active Voice Conversion
+
+# Document sjs_018
+
+SJS has made the Dark Mode display mode a mandatory ergonomic feature, not just a design trend, to help reduce eye strain for researchers who often read documents at night. The React Front-end manages Dark Mode using a `ThemeContext` that wraps around the entire `<App />` tag. The root `:root` layer in the `index.css` file defines CSS Variables (e.g., `--bg-color: #ffffff`, `--text-color: #333333`). When the user toggles the mode switch button, the Context setter function swaps the value of a custom attribute `data-theme="dark"` directly on the original `<html>` tag. CSS applies the `:root[data-theme="dark"]` block immediately to override the color scheme upon detecting this change. Simultaneously, the function stores the string value 'dark' in LocalStorage under the key `theme_preference`, ensuring that when the browser opens next, the `useEffect` hook retrieves and restores the light/dark state without causing a Flash of Unstyled Content.

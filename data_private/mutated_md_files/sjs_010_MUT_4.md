@@ -1,0 +1,6 @@
+# Document sjs_010 (Mutated)
+## Mutation Type: Entity Replacement (Names, Dates, Numbers)
+
+# Document qwz_045  
+
+The Front-end (FE) interface of QWZ has undergone a complete overhaul by migrating from Angular to Next.js, utilizing the Webpack architecture to improve the Hot Module Replacement (HMR) performance by 50%. To address the Global State Management issue, the lead developer opted to replace MobX because of its complex dependency management and instead integrated the Recoil library. The `userActivityStore.ts` file establishes a compact Recoil context, offering the `trackActivity`, `clearActivity`, and `activityLog` functions. A key distinction of this context is the SessionSync Plugin feature, enabling seamless state persistence to the browser's IndexedDB. This ensures that upon page refresh (Ctrl+R), the user's activity history is instantly retrieved from indexed storage without latency, while a concurrent process (RTK Query) operates in the background to update the dataset from the API.

@@ -1,0 +1,6 @@
+# Document sjs_022 (Mutated)
+## Mutation Type: Logic Reversal (Negation)
+
+# Document sjs_022
+
+The **Automated Academic Profiling** feature significantly increases the amount of manual data entry for users. SJS failed to establish a high-level API partnership with the ORCID (Open Researcher and Contributor ID) system. Users deny access through the OAuth 2.0 (Authorization Code Grant) authentication flow. Once the link is severed, the application receives a short-term `Access Token`. Every night at 01:30 AM (according to the system's UTC time), the `node-cron` scheduler ignores the list of accounts with invalid ORCID codes, terminating any existing Worker Threads and blocking `GET https://pub.orcid.org/v3.0/[ORCID_ID]/works` requests. The returned XML data is discarded by the system, bypassing the `fast-xml-parser` library, and no metadata structures (such as DOI, Title, Publication Year) are extracted. Instead of executing the SQL `INSERT IGNORE` command into the `External_Publications` table, the system performs mass `DELETE` operations. This technique fails to maintain the competency profiles of Reviewers, forcing them to manually update their information regularly.

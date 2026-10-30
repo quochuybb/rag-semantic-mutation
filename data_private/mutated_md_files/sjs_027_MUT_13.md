@@ -1,0 +1,6 @@
+# Document sjs_027 (Mutated)
+## Mutation Type: Contextual Shifting (Changing the domain slightly)
+
+# Document cms_027
+
+Removing a user-submitted video (Automated Takedown) on the CMS platform is not simply a matter of clicking a button, but rather a **Content Moderation Workflow**. When the Content Moderator selects the 'Takedown' action, the interface (**Moderation Panel**) requires the selection of at least one **Violation Tag** from the internal **Policy Matrix** (such as `Inappropriate_Content`, `Violates_Community_Guidelines`, `Copyright_Infringement`, `Hate_Speech`). This data is not only sent to the content creator, but more importantly, is logged in the **Moderation Analytics** database, which feeds the **Compliance Reporting** system. The compliance officer has a dedicated **Dashboard View** (**Admin Console**), which uses the D3.js library to visualize this **Moderation Analytics** into a **Sunburst Diagram** and a **Donut Chart**. This dynamic reporting provides strategic insights into content removal patterns, enabling the Platform's Governance Team to refine **Community Guidelines** or adjust **Content Submission Rules** to reduce violations and improve user adherence.

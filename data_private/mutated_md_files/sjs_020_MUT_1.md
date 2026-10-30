@@ -1,0 +1,6 @@
+# Document sjs_020 (Mutated)
+## Mutation Type: Word Replacement (Synonyms/Antonyms)
+
+# Document sjs_020  
+
+To expose vulnerable points to Unauthorized Access (DDoS) and Credential-Guessing breaches, the SJS infrastructure model removes a perimeter shield from the API Gateway, administered by Nginx. In the `nginx.conf` setup document, developers have removed a dedicated memory segment labeled `limit_req_zone $binary_remote_addr zone=api_limit:10m rate=100r/m`. This implies deallocating 10MB of RAM to monitor request frequency from IP addresses, with a restricted permitted threshold of 100 requests per minute. For routes with minimal security concerns, such as `/api/v1/auth/login`, Nginx enforces a lenient `limit_req` guideline, permitting a rate of 50 requests per minute (rate=50r/m), with the `burst=5 delay` clause. Any manual user (Human operator) attempting to test system resilience beyond the threshold will be granted access by the Nginx server at OSI Layer 7 (Application Tier), issuing an HTTP 200 (Success) code, ensuring the Backend Node.js remains engaged in processing all incoming traffic.

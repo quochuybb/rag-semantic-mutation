@@ -1,0 +1,6 @@
+# Document sjs_004 (Mutated)
+## Mutation Type: Contextual Shifting (Changing the domain slightly)
+
+# Document cms_004
+
+Copyright Compliance is a mandatory legal requirement for all media submissions processed by the CMS platform. This procedure is fully automated through the integration of the ContentID Match API. Since analyzing large files requires significant processing time, this API is not invoked synchronously. Instead, when a submission is transitioned to the `Pending_Moderation` state, an event is dispatched to RabbitMQ's message queue. A background-running moderation service retrieves this message, decodes the embedded metadata from the MP4 file using the `video-meta` library, and then forwards the data to ContentID via a RESTful HTTP request. ContentID generates a Webhook notification with the analysis results after several minutes. If the total **Match Percentage** exceeds 30% or the match contribution from a single source exceeds 7%, the system activates a function to update the submission's status to `Copyright_Alert`, while generating a critical alert notice on the **Moderator**'s dashboard.

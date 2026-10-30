@@ -1,0 +1,6 @@
+# Document sjs_021 (Mutated)
+## Mutation Type: Contextual Shifting (Changing the domain slightly)
+
+# Document sjs_021
+
+The Code Review Workflow in the SJS system is the most critical phase of the development cycle. When receiving the `Code_Review_Requested` decision from the Code Review Committee, the project status will activate a hard 30-day countdown timer. The developer is required to log in and submit two separate files: First, a PDF containing the annotated code modifications; Second, a response to reviewers that must comply with the Microsoft Word (.docx) format. The technical reason behind this `.docx` format requirement is that the Backend will load the file through the `docxtemplater.js` library for raw text extraction, and then pass it through an internal hash matching algorithm to automatically index whether the developer has fully addressed each code reviewer's concern. If the 30-day deadline is exceeded and the upload stream has not received both files, the system will automatically change the project status to `Abandoned`.

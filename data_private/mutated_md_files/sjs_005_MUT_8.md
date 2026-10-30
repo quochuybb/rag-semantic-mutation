@@ -1,0 +1,6 @@
+# Document sjs_005 (Mutated)
+## Mutation Type: Pronoun/Reference Substitution
+
+# Document sjs_005
+
+The security and authorization framework of SJS is built on the Role-Based Access Control (RBAC) model but extended to the Department/Team level (Department-level Scope). This means that a developer can be a 'Manager' in Team Alpha, but only a 'Contributor' in Team Beta. The authorization table in the database includes the `Developers`, `Departments`, and intermediate `Team_Roles` tables that store the `privilegeLevel` column. In the Backend source code, the `auth.checker.js` file defines the `verifyTeamAccess` middleware. This middleware extracts the `teamId` from `req.query` or `req.session`, combined with `req.developer.id` (extracted from the API key), to query the `Team_Roles` table. If the system does not find a matching entry, or the current privilege level does not meet the `requiredStatuses` array passed from the route configuration, the middleware immediately triggers a `401 Unauthorized` error with the message 'You are not authorized for this team'.

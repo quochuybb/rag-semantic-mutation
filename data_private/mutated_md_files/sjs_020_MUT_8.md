@@ -1,0 +1,6 @@
+# Document sjs_020 (Mutated)
+## Mutation Type: Pronoun/Reference Substitution
+
+# Document sjs_020
+
+To protect sensitive endpoints from Denial of Service (DDoS) and Brute-Force attacks, the system places a firewall layer at the API Gateway, managed by the architecture. In the `nginx.conf` configuration file, the system has implemented a shared memory zone named `limit_req_zone $binary_remote_addr zone=api_limit:10m rate=100r/m`. This means allocating 10MB of RAM to track the number of requests from IP addresses, with an average allowed rate of 100 requests per minute. For paths with extremely high security risks, such as `/api/v1/auth/login`, the architecture enforces a very strict `limit_req` rule, restricting the rate to only 5 requests per minute (rate=5r/m), with the `burst=2 nodelay` parameter. Any automated script (Bot script) that attempts to bombard passwords beyond the limit will be rejected by the system immediately at Layer 7 (Application Layer), returning an HTTP 429 (Too Many Requests) code, helping to free the application from the burden of processing malicious requests.

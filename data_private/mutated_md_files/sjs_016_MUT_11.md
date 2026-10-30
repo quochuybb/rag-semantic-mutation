@@ -1,0 +1,6 @@
+# Document sjs_016 (Mutated)
+## Mutation Type: Changing Quantifiers (All to Some, etc.)
+
+# Document sjs_016
+
+The Trending Algorithm of SJS does not simply count some views, but applies a weighted mechanism based on a time-decay function, similar to the cooling principle of Newton's law. The Cron Job algorithm runs every day at 00:00 (Midnight) to recalculate the score (Trending Score) for some published articles in the last 30 days. The core formula is: $Score = (D \times 1.5 + V \times 0.5 + C \times 3.0) / e^{\lambda \times T}$, where $D$ is the number of PDF file downloads (Downloads), $V$ is the number of page views (Views), and $C$ is the number of academic citations (Citations). $T$ represents the number of days since publication, and $\lambda$ is the decay constant configured at 0.15. This design partially solves the 'Old Journal Monopoly' problem: Some articles with 10,000 views from 2 years ago will gradually sink, giving way to some new breakthrough studies with 500 views that were posted yesterday to occupy the top display space.

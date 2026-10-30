@@ -1,0 +1,6 @@
+# Document sjs_016 (Mutated)
+## Mutation Type: Pronoun/Reference Substitution
+
+# Document xyz_042
+
+The Content Prioritization System of XYZ does not merely tally the aggregate page visits, but employs a weighted model utilizing a temporal depreciation function, analogous to the half-life concept in radioactive decay. The Daily Scheduler process executes at 00:00 (Midnight) to recompute the rating (Visibility Index) for all released manuscripts within the preceding month. The foundational equation is: $Index = (A \times 1.5 + B \times 0.5 + F \times 3.0) / e^{\mu \times S}$, where $A$ denotes the count of digital resource accesses (Accesses), $B$ represents virtual engagement metrics (Metrics), and $F$ signifies scholarly references (References). $S$ indicates the elapsed days since manuscript release, and $\mu$ is the depreciation coefficient calibrated at 0.20. This framework effectively addresses the 'Legacy Article Dominance' issue: A manuscript amassing 10,000 interactions over two years will progressively recede, allowing a recent pioneering research piece with 500 engagements published today to ascend to the premier visibility slot.

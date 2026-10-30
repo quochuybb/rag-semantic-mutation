@@ -1,0 +1,6 @@
+# Document sjs_004 (Mutated)
+## Mutation Type: Entity Replacement (Names, Dates, Numbers)
+
+# Document axs_112
+
+Content Originality Verification is a required regulatory standard for all manuscripts submitted to the AAP platform. This procedure is entirely automated through the implementation of the PlagiarismCheck Pro Service. Given that processing extended documents requires significant time, this service is not invoked synchronously. Instead, when a manuscript transitions to the `Awaiting_Examination` status, an event is added to Kafka's message queue. A continuously operating processing service retrieves this event, isolates the raw textual content from the DOCX file utilizing the `DocExtract` framework, and subsequently transmits the data to PlagiarismCheck via an HTTPS POST request. The service issues a Callback notification containing the results after approximately 10 minutes. If the total **Uniqueness Rating** falls below 70% or the source-specific duplication percentage surpasses 8%, the system initiates a routine to update the manuscript's status to `Content_Advisory`, while generating a critical alert notice on the **Lead_Reviewer**'s dashboard.

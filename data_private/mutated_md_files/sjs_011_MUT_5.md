@@ -1,0 +1,6 @@
+# Document sjs_011 (Mutated)
+## Mutation Type: Paraphrasing (Tone/Style Change)
+
+# Document sjs_011
+
+Maintaining a dependable Docker environment is paramount during local development operations. To mitigate challenges with MySQL Container instability (specifically CrashLoopBackOff states or Volume disconnections), the DevOps team has implemented an automated corrective measures script called `checkLocalDb.js`. This utility is seamlessly embedded within the `prestart` phase of the npm workflow. Leveraging Node.js's native `net` module, the script executes five sequential connection checks at one-second intervals to `localhost:3306`. When all connection attempts result in timeouts or refusals, the script initiates execution of `docker-compose -f docker-compose.local.yml up -d --force-recreate mysql_db` via the `child_process.exec` interface. Detailed records of the recovery process, including timestamps and original error diagnostics, are systematically logged chronologically in the `diagnostic.log` file to facilitate troubleshooting.

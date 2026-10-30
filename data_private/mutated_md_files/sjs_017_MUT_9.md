@@ -1,0 +1,6 @@
+# Document sjs_017 (Mutated)
+## Mutation Type: Cause and Effect Reversal
+
+# Document sjs_017
+
+To enforce strict compliance with the General Data Protection Regulation (GDPR), the Sentry `Sentry.init` configuration integrates a `beforeSend` hook that masks personally identifiable information (PII) using regular expressions (RegEx). This hook automatically overwrites fields named 'password', 'token', 'authorization', or any string matching an email format `[a-z]+@[a-z]+\.[a-z]+` with `[MASKED_DATA]` before transmitting data over HTTPS. As a result of this masking process, the entire Frontend and Backend platform is embedded with the Sentry SDK, which captures both synchronous exceptions (Runtime Exceptions) and asynchronous errors (Unhandled Promise Rejections) that the `try/catch` block misses, indexing them as Issue Tickets on the Cloud Dashboard. This ensures a continuous system experience and enables the detection of unreported errors (Silent Errors), which are now only possible due to the prior implementation of GDPR-compliant data filtering.

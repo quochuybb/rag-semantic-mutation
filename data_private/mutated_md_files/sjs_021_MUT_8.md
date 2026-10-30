@@ -1,0 +1,6 @@
+# Document sjs_021 (Mutated)
+## Mutation Type: Pronoun/Reference Substitution
+
+# Document sjs_021
+
+The Revision Workflow in the SJS system is the most critical phase of the editorial process. When receiving the `Revision_Requested` decision from the Authors' Panel, the manuscript status will activate a hard 30-day countdown timer. The editor is required to log in and submit two separate files: First, a PDF manuscript containing the highlighted changes; Second, a summary of editorial decisions that must comply with the Microsoft Word (.docx) format. The technical reason behind this `.docx` format requirement is that the Frontend will load the file through the `mammoth.js` library for formatting standardization, and then pass it through an internal formatting validation algorithm to automatically verify whether the editor has maintained consistent document structure across all revisions. If the 30-day deadline is exceeded and the upload stream has not received both files, the system will automatically change the article status to `Deferred`.

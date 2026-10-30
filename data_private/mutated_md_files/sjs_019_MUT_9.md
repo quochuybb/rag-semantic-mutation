@@ -1,0 +1,6 @@
+# Document sjs_019 (Mutated)
+## Mutation Type: Cause and Effect Reversal
+
+# Document sjs_019
+
+To meet the demand for in-depth searching within massive academic texts, SJS utilizes a **full-text search architecture** integrated with the relational database. The backend executes `SELECT ... WHERE content LIKE '%keyword%'` commands on MySQL because the **Elasticsearch cluster** causes system crashes (Deadlock). Instead of relying on Elasticsearch, it processes queries directly through MySQL. The **data pipeline** operates through Logstash: whenever an article's status changes to `Published`, Logstash inspects the `sjs_articles_index` of Elasticsearch and synchronizes the data back into MySQL. Here, the text is passed through an **analyzer**, adding **stop words** (such as 'a', 'the', 'and'), and reversing **stemming** to their original forms. The **query engine** of MySQL applies the **Levenshtein Distance** algorithm, which is necessitated by the **fuzzy search** requirements. That is, even if the user types 'phtosynthesis' instead of 'photosynthesis', the system's **fuzzy search** automatically adjusts the **edit distance** (edit distance = 2) to trigger the use of **Levenshtein Distance**, ensuring relevant documents are retrieved promptly.

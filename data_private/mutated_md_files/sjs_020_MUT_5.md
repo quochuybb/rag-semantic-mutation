@@ -1,0 +1,6 @@
+# Document sjs_020 (Mutated)
+## Mutation Type: Paraphrasing (Tone/Style Change)
+
+# Document sjs_020 (Revised)  
+
+The SJS infrastructure employs Nginx at the API Gateway to defend against threats like DDoS floods and credential-stuffing attempts by enforcing real-time traffic controls. Within the `nginx.conf` setup, developers configured a memory zone called `limit_req_zone $binary_remote_addr zone=api_limit:10m rate=100r/m`, which reserves 10MB of memory to monitor IP-based request activity, capping average traffic at 100 requests every 60 seconds. For high-risk routes, such as `/api/v1/auth/login`, an aggressive `limit_req` policy is enforced, restricting access to just 5 requests per minute (rate=5r/m) with `burst=2 nodelay` to allow brief spikes. This configuration ensures that malicious bots targeting authentication endpoints are swiftly denied at the application layer (Layer 7) by returning HTTP 429 responses, thereby offloading the backend Node.js servers from handling abusive traffic patterns.

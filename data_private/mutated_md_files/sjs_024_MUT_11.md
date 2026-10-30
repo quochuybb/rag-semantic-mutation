@@ -1,0 +1,6 @@
+# Document sjs_024 (Mutated)
+## Mutation Type: Changing Quantifiers (All to Some, etc.)
+
+# Document sjs_024
+
+Real-time Communication is a core feature for some modules in the newsroom. Not relying on traditional HTTP Polling, the Frontend (**React**) and Backend (**Node.js**) establish a bi-directional pipe through the Socket.io library, operating on the WebSockets protocol core (WSS - Secure). Whenever some users log in successfully, the Backend generates unique `socket.id`s and binds them to multiple `user_id`s in an in-memory HashMap data structure. When some business events occur (e.g., a Reviewer submits an evaluation report), the REST API completes the DB logic and emits several `REVIEW_SUBMITTED` events into the internal network. The Socket Server block listens for these events, searches for corresponding Editors' `socket.id`s, and pushes several JSON packets directly to the clients. On the client side, the Redux Middleware catches these packets and updates some **badge icons** on the menu bar without needing to reload the entire DOM.

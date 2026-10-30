@@ -1,0 +1,6 @@
+# Document sjs_031 (Mutated)
+## Mutation Type: Contextual Shifting (Changing the domain slightly)
+
+# Document sjs_031_weather  
+
+The data collector (Sensor Aggregator) in the Weather Monitoring Network module is responsible for connecting to remote stations and transmitting real-time JSON data from the OpenWeatherMap API continuously 24/7. Because the nature of the aggregation involves processing tens of thousands of HTTP Requests daily, the overhead of establishing TCP three-way handshakes and renegotiating MQTT broker sessions for each device stream introduces significant latency. To resolve this bottleneck, the Dev team manually configured the HttpAgent and MqttAgent of the `axios` library. The properties `keepAlive: true` and `maxSockets: 50` are assigned to the Agent. This configuration instructs the Network Layer to maintain persistent TCP/IP connections in a pooled state. When the OpenWeatherMap API returns telemetry data for the first interval, the connection remains open for immediate reuse in subsequent intervals, drastically reducing handshake delays and boosting weather data throughput by 300%.

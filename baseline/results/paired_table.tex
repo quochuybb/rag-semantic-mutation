@@ -1,0 +1,44 @@
+% ==============================================================================
+% PAIRED CLEAN-VERSUS-MUTATED EVALUATION TABLE (RESOLVING BLOCKING 1 / R1)
+% ==============================================================================
+\begin{table*}[htbp]
+\centering
+\small
+\caption{Paired Clean-versus-Mutated Comparison across 32 Source Segments (Clusters) with Cluster-Robust 95\% Confidence Intervals ($K=32$ clusters, $N_{\text{clean}}=32$, $N_{\text{mutated}}=416$).}
+\label{tab:paired_clean_mutated}
+\begin{tabular}{llccccc}
+\toprule
+\textbf{Configuration} & \textbf{Label} & \textbf{Clean (\%)} & \textbf{Mutated (\%)} & \textbf{Paired $\Delta$ (pp)} & \textbf{Cluster 95\% CI} & \textbf{$p$-value} \\
+\midrule
+\multirow{4}{*}{Llama 3.1 8B Without Prompt (Public)} & Faithful & 59.38\% & 27.64\% & -31.73 pp & [-49.53, -13.93] & 0.001$^{*}$ \\
+ & Abstain & 25.00\% & 42.55\% & +17.55 pp & [1.07, 34.03] & 0.038$^{*}$ \\
+ & Inconsistent & 3.12\% & 29.81\% & +26.68 pp & [15.82, 37.55] & < 0.001$^{*}$$^{*}$ \\
+ & Hallucination & 12.50\% & 0.00\% & -12.50 pp & [-24.61, -0.39] & 0.044$^{*}$ \\
+\midrule
+\multirow{4}{*}{Llama 3.1 8B With Prompt (Public)} & Faithful & 84.38\% & 30.29\% & -54.09 pp & [-70.11, -38.06] & < 0.001$^{*}$$^{*}$ \\
+ & Abstain & 6.25\% & 63.70\% & +57.45 pp & [44.20, 70.71] & < 0.001$^{*}$$^{*}$ \\
+ & Inconsistent & 9.38\% & 5.77\% & -3.61 pp & [-12.49, 5.28] & 0.414 \\
+ & Hallucination & 0.00\% & 0.24\% & +0.24 pp & [-0.25, 0.73] & 0.325 \\
+\midrule
+\multirow{4}{*}{Llama 4 Scout Without Prompt (Public)} & Faithful & 81.25\% & 51.44\% & -29.81 pp & [-49.19, -10.43] & 0.004$^{*}$ \\
+ & Abstain & 3.12\% & 3.61\% & +0.48 pp & [-8.34, 9.31] & 0.912 \\
+ & Inconsistent & 12.50\% & 44.71\% & +32.21 pp & [14.48, 49.94] & < 0.001$^{*}$$^{*}$ \\
+ & Hallucination & 3.12\% & 0.24\% & -2.88 pp & [-9.29, 3.52] & 0.366 \\
+\midrule
+\multirow{4}{*}{Llama 4 Scout With Prompt (Public)} & Faithful & 90.62\% & 30.53\% & -60.10 pp & [-76.17, -44.03] & < 0.001$^{*}$$^{*}$ \\
+ & Abstain & 9.38\% & 60.10\% & +50.72 pp & [33.60, 67.84] & < 0.001$^{*}$$^{*}$ \\
+ & Inconsistent & 0.00\% & 9.38\% & +9.38 pp & [1.48, 17.27] & 0.022$^{*}$ \\
+ & Hallucination & 0.00\% & 0.00\% & 0.00 pp & [0.00, 0.00] & 1.000 \\
+\midrule
+\multirow{4}{*}{Llama 4 Scout With Prompt (Private)} & Faithful & 81.25\% & 45.19\% & -36.06 pp & [-51.66, -20.46] & < 0.001$^{*}$$^{*}$ \\
+ & Abstain & 0.00\% & 51.92\% & +51.92 pp & [41.47, 62.37] & < 0.001$^{*}$$^{*}$ \\
+ & Inconsistent & 9.38\% & 2.88\% & -6.49 pp & [-17.87, 4.89] & 0.254 \\
+ & Hallucination & 9.38\% & 0.00\% & -9.38 pp & [-20.05, 1.30] & 0.083 \\
+\midrule
+\bottomrule
+\end{tabular}
+\begin{tablenotes}
+\footnotesize
+\item \textit{Note:} Paired $\Delta = P(\text{Mutated}) - P(\text{Clean})$ at the source segment level. Standard errors and 95\% confidence intervals are clustered at the source segment level ($K=32$ clusters, degrees of freedom $df=31$). Statistical significance: $^{*}p < 0.05$, $^{**}p < 0.001$.
+\end{tablenotes}
+\end{table*}

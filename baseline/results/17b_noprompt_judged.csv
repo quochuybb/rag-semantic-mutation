@@ -1,0 +1,339 @@
+﻿id,query,clean_context_preview,baseline_answer,ai_label,reason
+CTX_001,Who is the author of the Pull Request that fixes/deletes unnecessary f-strings in version 0.56.1?,## 0.56.1 (2020-06-12)  * Add link to advanced docs from tutorial. PR [#1512](https://github.com/tiangolo/fastapi/pull/1,I am unable to fulfill this request as the necessary information is not present in the provided contexts.,Abstain,"1) Did it abstain? Yes, it clearly stated that the necessary information is not present in the provided contexts. 2) Is it grounded in the clean context? No, but it correctly identified that the context is insufficient. Label: Abstain."
+CTX_002,Where can I see all the hundreds of other contributors to the FastAPI project beyond the top 50?,## Top Contributors  Here are the **Top Contributors**. 👷  These users have [created the most Pull Requests](help-fastap,You can see all the contributors to the FastAPI project beyond the top 50 in the [FastAPI GitHub Contributors page](https://github.com/fastapi/fastapi/graphs/contributors).,Faithful,"1) Did it abstain? No. 2) Is it grounded in the clean context? Yes, it directly matches the information provided in the clean context about where to see all the contributors. 3) Does it contradict or hallucinate? No. The response accurately reflects the context."
+CTX_003,What is the default URL path to automatically serve CSS files when using StaticFiles with the name 'static'?,"## Templates and static files { #templates-and-static-files }  You can also use `url_for()` inside of the template, and ","The default URL path to automatically serve CSS files (or any static files) when using StaticFiles with the name 'static' is `/static/`. For example, if you have a CSS file named `styles.css` in your static files directory, it would be served at `/static/styles.css`.",Faithful,"1) Did it abstain? No. 2) Is it grounded in the clean context? Yes, it accurately describes that the default URL path for serving static files with StaticFiles named 'static' is '/static/', and provides an example consistent with the context. 3) Does it contradict or hallucinate? No, it aligns with the information provided in the clean context."
+CTX_004,"In the OpenAPI specification, what is the information about the metadata of a path operation called?","## OpenAPI Extra { #openapi-extra }  When you declare a *path operation* in your application, **FastAPI** automatically ","In the OpenAPI specification, the information about the metadata of a path operation is called the [Operation Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.3.md#operation-object).",Faithful,"1) Did it abstain? No. 2) Does it strictly match the factual information in the clean context? Yes. The clean context mentions that in the OpenAPI specification, the information about the metadata of a path operation is called the 'Operation Object'. The baseline response accurately reflects this information."
+CTX_005,FastAPI uses which information to create a unique operation ID for a path operation?,"## FastAPI App with Tags { #fastapi-app-with-tags }  In many cases, your FastAPI app will be bigger, and you will probab","FastAPI uses the **function name**, the **path**, and the **HTTP method/operation** to generate a unique operation ID for a path operation.",Faithful,"1) Did it abstain? No. 2) Is it grounded in the clean context? Yes, the baseline response directly quotes the clean context: 'FastAPI uses the **function name**, the **path**, and the **HTTP method/operation** to generate that operation ID'. This matches the information provided in the clean context."
+CTX_006,What version of Pydantic was FastAPI upgraded to in version 0.24.0?,## 0.24.0 (2019-05-24)  * Add support for WebSockets with dependencies and parameters.     * Support included for:      ,"According to the documentation, FastAPI was upgraded to use **Pydantic v1.7.2** (or higher) in version 0.24.0, but the specific version isn't mentioned. However, FastAPI is compatible with Pydantic versions from **v1.7.2** up to the latest version.",Hallucination,"1) Did it abstain? No. 2) Is it grounded in the clean context? No, the clean context mentions that Pydantic was upgraded to version 0.26.0, not v1.7.2. 3) Does it contradict or hallucinate? Yes, it fabricates information by stating the version as v1.7.2, which is not present in the clean context. Label: Hallucination."
+CTX_007,The CSRF security vulnerability in versions prior to 0.65.2 relates to FastAPI automatically parsing content with any Content-Type as JSON.,## 0.65.2 (2021-06-09)  ### Security fixes  * 🔒 Check Content-Type request header before assuming JSON. Initial PR [#211,"The CSRF security vulnerability in versions prior to 0.65.2 relates to FastAPI **not checking** the `Content-Type` header before assuming the request content is JSON, which could allow an attacker to send a request with a `Content-Type` of `text/plain` (or any other type) containing JSON data that would be parsed and accepted by the FastAPI application.",Faithful,"1) Did it abstain? No. 2) Is it grounded in the clean context? Yes, it accurately describes the vulnerability and the fix in version 0.65.2, mentioning that FastAPI would not check the Content-Type header before assuming JSON, which could lead to CSRF issues. 3) Does it contradict or hallucinate? No, it aligns with the information provided in the clean context."
+CTX_008,How to declare HTTP status code for response in decorators like @app.get()?,"# Response Status Code { #response-status-code }  The same way you can specify a response model, you can also declare th","You can declare the HTTP status code for a response in decorators like `@app.get()` by using the `status_code` parameter. 
+
+Example:
+
+```python
+@app.get(status_code=200)
+```
+
+Alternatively, you can use an `IntEnum`, such as Python's `http.HTTPStatus`:
+
+```python
+from http import HTTPStatus
+
+@app.get(status_code=HTTPStatus.OK)
+```",Faithful,"1) Did it abstain? No. 2) Is it grounded in the clean context? Yes, it accurately describes how to declare the HTTP status code using the `status_code` parameter in decorators like `@app.get()`. 3) Does it contradict or hallucinate? No, it provides correct examples and references to the `http.HTTPStatus` enum. Therefore, the response is Faithful."
+CTX_009,"In the 0.96.0 release, what updates are related to internal performance optimization and documentation for Deta?",## 0.96.0 (2023-06-03)  ### Features  * ⚡ Update `create_cloned_field` to use a global cache and improve startup perform,"In the 0.96.0 release, an **internal performance optimization** update was made to `create_cloned_field` to use a **global cache**, which improves startup performance.
+
+For Deta, there was an **update to the deployment tutorial** for compatibility with **Deta Space**, and a **fix for a typo** in the Deta deployment tutorial.",Faithful,"1) Did it abstain? No. 2) Is it grounded in the clean context? Yes. The response accurately reflects the updates mentioned in the clean context for the 0.96.0 release. It mentions the internal performance optimization for `create_cloned_field` using a global cache, the update to the Deta deployment tutorial for compatibility with Deta Space, and the fix for a typo in the Deta deployment tutorial. There are no contradictions or fabrications. Label: Faithful."
+CTX_010,"In FastAPI, can a dependency be declared using 'async def' and used within a path operation function defined using a 'def' function normally?",## To `async` or not to `async` { #to-async-or-not-to-async }  As dependencies will also be called by **FastAPI** (the s,"Yes, in FastAPI, a dependency can be declared using `async def` and used within a path operation function defined using a `def` function normally.
+
+FastAPI will handle the asynchronous execution of the dependency for you. 
+
+This also works the other way around: a dependency declared with `def` can be used in a path operation function defined with `async def`. 
+
+FastAPI handles these combinations seamlessly.",Faithful,"1) Did it abstain? No. 2) Is it grounded in the clean context? Yes, the response accurately reflects the information provided in the clean context, which states that you can use `async def` or normal `def` for dependencies and path operation functions interchangeably. 3) Does it contradict or hallucinate? No, it aligns with the context and provides additional clarification on how FastAPI handles these combinations."
+CTX_011,"When defining a Pydantic model (such as Image) and using it as a data type for a field of another model, what automatic benefits does FastAPI provide?",## Nested Models { #nested-models }  Each attribute of a Pydantic model has a type.  But that type can itself be another,"When defining a Pydantic model (such as `Image`) and using it as a data type for a field of another model, FastAPI provides several automatic benefits:
+
+*   **JSON Schema**: FastAPI will automatically generate the JSON Schema for the nested model (`Image`) and include it in the OpenAPI schema for your API.
+*   **Data Validation**: FastAPI will automatically validate the data for the nested model (`Image`) when receiving request data, ensuring that it conforms to the defined structure.
+*   **Serialization and Deserialization**: FastAPI will handle serialization and deserialization of the nested model (`Image`) for you, making it easy to work with complex data structures.
+
+These benefits help you build robust, well-documented APIs with complex data structures.",Inconsistent,"1) Did it abstain? No. 2) Does it strictly match the factual information in the clean context? No, it mentions benefits not listed in the clean context, such as 'JSON Schema', 'Serialization and Deserialization', which are not mentioned in the clean context. The clean context only mentions 'Editor support (completion, etc.), even for nested models', 'Data conversion', 'Data validation', 'Automatic documentation'."
+CTX_012,The combination of FastAPI and Pydantic brings out which notable features related to data validation and interaction with Editor?,## Pydantic features { #pydantic-features }  **FastAPI** is fully compatible with (and based on) [**Pydantic**](https://,"The combination of FastAPI and Pydantic brings out the following notable features related to data validation and interaction with Editor:
+
+*   **Data Validation**: FastAPI and Pydantic provide automatic data validation, ensuring that the data received by your API endpoints conforms to the expected structure and types.
+*   **Editor Support**: With Pydantic models, you get **auto-completion**, **linting**, and **type checking** in your editor, making it easier to work with complex data structures.
+*   **IDE Integration**: The use of Pydantic models allows your IDE to provide features like **auto-completion**, **code inspection**, and **refactoring**, improving your overall development experience.
+
+These features enhance your productivity and help you build robust, maintainable APIs.",Faithful,"1) Did it abstain? No. 2) Is it grounded in the clean context? Yes, it accurately reflects the features mentioned in the context, such as data validation, auto-completion, linting, and IDE integration. 3) Does it contradict or hallucinate? No, it stays within the bounds of the provided context."
+CTX_013,"In addition to supporting autocompletion and validation for basic data types (JSON object, array, string, number), what other complex data types does FastAPI's validation system also support?",# A Pydantic model class User(BaseModel):     id: int     name: str     joined: date ```  That can then be used like:  `,"In addition to supporting autocompletion and validation for basic data types (JSON object, array, string, number), FastAPI's validation system, powered by Pydantic, also supports validation for more complex data types, including:
+
+*   **URLs**
+*   **Emails**
+*   **UUIDs**
+*   **File uploads**
+*   **Nested models** (using Pydantic models as types)
+*   **Lists and dictionaries** with specific types (e.g., `List[int]`, `Dict[str, str]`)
+*   **Custom data types** (using Pydantic's `validator` decorator)
+
+These complex data types can be used to define robust and specific validation rules for your API endpoints.",Faithful,"1) Did it abstain? No. 2) Does it strictly match the factual information in the clean context? Yes. The clean context mentions that FastAPI's validation system, powered by Pydantic, supports validation for more exotic types like URL, Email, UUID, and others. The baseline response accurately reflects this information by listing URLs, Emails, and UUIDs as examples of complex data types supported by FastAPI's validation system. Therefore, the response is faithful to the clean context."
+CTX_014,What security patch 0.92.0 addresses the Denial of Service (DoS) vulnerability related to which component in the FastAPI application?,## 0.92.0 (2023-02-14)  🚨 This is a security fix. Please upgrade as soon as possible.  ### Upgrades  * ⬆️ Upgrade Starle,"The security patch in version **0.92.0** addresses a **Denial of Service (DoS) vulnerability** related to the **JSON payload parsing** component in the FastAPI application.
+
+This vulnerability could be exploited by sending a large, deeply nested JSON payload, which could cause the application to consume excessive resources and potentially crash. The patch fixes this issue by adding limits to the JSON payload parsing.",Inconsistent,"1) Did it abstain? No. 2) Is it grounded in the clean context? No, it mentions 'JSON payload parsing' which is not present in the clean context. 3) Does it contradict or hallucinate? Yes, it introduces information not in the context, specifically about JSON payload parsing and a large, deeply nested JSON payload. The context actually mentions a vulnerability related to 'many small multipart fields/files (parts)' in applications using forms (e.g., file uploads). Label: Inconsistent."
+CTX_015,"In the ASGI specification, what protocol do the 'startup' and 'shutdown' events belong to?","## Technical Details { #technical-details }  Just a technical detail for the curious nerds. 🤓  Underneath, in the ASGI t",The 'startup' and 'shutdown' events in the ASGI specification belong to the **Lifespan Protocol**.,Faithful,1) Did it abstain? No. 2) Does it strictly match the factual information in the clean context? Yes. The clean context explicitly mentions that the 'startup' and 'shutdown' events are part of the Lifespan Protocol in the ASGI technical specification. The RAG system's response directly corresponds with the information provided in the clean context.
+CTX_016,What is the concept of 'OpenAPI Callback' in FastAPI described as?,# OpenAPI Callbacks { #openapi-callbacks }  You could create an API with a *path operation* that could trigger a request,"The concept of 'OpenAPI Callback' in FastAPI is described as a way to document **external APIs that your API calls**, allowing you to define the expected request and response for those external APIs.
+
+In other words, it's a way to describe **callbacks** or **webhooks** that your API might receive from external services, making it easier to document and test these integrations.",Faithful,"1) Did it abstain? No. 2) Is it grounded in the clean context? Yes, the response accurately describes the concept of 'OpenAPI Callback' in FastAPI as per the clean context. It correctly mentions documenting external APIs that your API calls, and the expected requests and responses for those external APIs. 3) Does it contradict or hallucinate? No, it stays true to the information provided in the clean context."
+CTX_017,Why do we need to define Query Parameters inside a Pydantic model and pass it into the `Query` function?,## Query Parameters with a Pydantic Model { #query-parameters-with-a-pydantic-model }  Declare the **query parameters** ,"You don't actually need to define Query Parameters inside a Pydantic model and pass it into the `Query` function.
+
+However, using a Pydantic model to define query parameters provides several benefits:
+
+*   **Automatic data validation**: Pydantic will validate the query parameters according to the defined model, ensuring they conform to the expected types and constraints.
+*   **Improved code readability**: Defining query parameters in a Pydantic model makes it clear what parameters are expected and what their types are.
+*   **Reusability**: You can reuse the same Pydantic model across multiple endpoints.
+
+The `Query` function is used to declare query parameters individually, but using a Pydantic model is often a more convenient and powerful way to define query parameters.",Inconsistent,"1) Did it abstain? No. 2) Does it match the clean context? No, it contradicts the context by stating you don't need to define Query Parameters inside a Pydantic model and pass it into the `Query` function, while the context suggests using a Pydantic model to define query parameters."
+CTX_018,Why did OAuth2 design a token with expiration time instead of issuing a permanent key?,## The `password` flow { #the-password-flow }  Now let's go back a bit and understand what is all that.  The `password` ,"OAuth2 designed a token with an expiration time instead of issuing a permanent key for several reasons:
+
+*   **Security**: A token with an expiration time reduces the risk of a token being compromised and used indefinitely. If a token is stolen, it will only be valid for a limited time.
+*   **Limited access**: An expiring token ensures that access to protected resources is limited to a specific time period, reducing the risk of unauthorized access.
+*   **Reducing damage**: If a token is compromised, the damage is limited to the time period during which the token is valid. After the token expires, it becomes useless.
+
+By issuing a token with an expiration time, OAuth2 provides a more secure and controlled way to manage access to protected resources.",Faithful,"1) Did it abstain? No. 2) Is it grounded in the clean context? Yes, it explains the reasons for using a token with an expiration time, which aligns with the context provided about tokens expiring and the implications of a permanent key. 3) Does it contradict or hallucinate? No, it builds a logical explanation based on the context. Label: Faithful."
+CTX_019,"Based on the display structure, can one person be in both the Gold Sponsors list and the Silver Sponsors list at the same time?","## Sponsors  These are the **Sponsors**. 😎  They are supporting my work with **FastAPI** (and others), mainly through [G","No, based on the display structure, it appears that a sponsor can only be listed in one category: either **Gold Sponsors**, **Silver Sponsors**, or **Individual Sponsors**.
+
+The display structure suggests a categorization of sponsors into distinct groups, implying that a sponsor can only be listed in one group.",Faithful,"1) Did it abstain? No. 2) Is it grounded in the clean context? Yes, the clean context shows separate sections for Gold, Silver, and Individual Sponsors, implying a categorization. 3) Does it contradict or hallucinate? No, it accurately reflects the structure presented in the context. Label: Faithful."
+CTX_020,What conditions help the Streaming data model process data faster than the normal model when working with large data streams?,"## What is a Stream? { #what-is-a-stream }  ""**Streaming**"" data means that your app will start sending data items to th","The Streaming data model processes data faster than the normal model when working with large data streams due to the following conditions:
+
+*   **Data is processed in chunks**: Streaming data is processed in small chunks, allowing for faster processing and reducing memory usage.
+*   **No need to wait for entire data**: The Streaming model doesn't require waiting for the entire data stream to be available before processing; it can start processing as soon as the first chunk is received.
+*   **Asynchronous processing**: Streaming data can be processed asynchronously, allowing for concurrent processing of multiple chunks and improving overall performance.
+
+These conditions enable the Streaming data model to efficiently handle large data streams and process data faster than the normal model.",Faithful,"1) Did it abstain? No. 2) Is it grounded in the clean context? Yes, it accurately describes the conditions that help the Streaming data model process data faster, such as processing in chunks, not needing to wait for the entire data stream, and asynchronous processing. 3) Does it contradict or hallucinate? No, it aligns with the provided context about how streaming works."
+CTX_021,Why use AsyncClient combined with await instead of TestClient when writing unit tests marked with @pytest.mark.anyio?,## In Detail { #in-detail }  The marker `@pytest.mark.anyio` tells pytest that this test function should be called async,"When writing unit tests marked with `@pytest.mark.anyio`, you should use `AsyncClient` combined with `await` instead of `TestClient` because:
+
+*   **Asynchronous testing**: The `@pytest.mark.anyio` marker indicates that the test should be run asynchronously. `AsyncClient` is designed for asynchronous testing, while `TestClient` is synchronous.
+*   **Proper asynchronous behavior**: Using `AsyncClient` with `await` ensures that the test behaves correctly in an asynchronous context, allowing for proper handling of asynchronous operations.
+
+By using `AsyncClient` with `await`, you can write tests that accurately reflect the asynchronous nature of your application and take advantage of the benefits provided by asynchronous testing.",Faithful,"1) Did it abstain? No. 2) Is it grounded in the clean context? Yes, it accurately reflects the information provided in the context about using AsyncClient with await for asynchronous tests marked with @pytest.mark.anyio. 3) Does it contradict or hallucinate? No, it does not introduce any information that contradicts the context or fabricates new unsupported claims. Therefore, the response is faithful to the clean context."
+CTX_022,"If an HTTP request can only contain a single body, how does FastAPI handle it when you declare multiple body parameters in the path operation function?","## Recap { #recap }  You can add multiple body parameters to your *path operation function*, even though a request can o","FastAPI handles multiple body parameters in a path operation function by **automatically combining them into a single JSON body**.
+
+When you declare multiple body parameters, FastAPI will expect a single JSON body that contains all the declared parameters. This JSON body is then parsed and passed to the path operation function as a single object.
+
+For example, if you have a path operation function with two body parameters:
+
+```python
+from fastapi import FastAPI
+from pydantic import BaseModel
+
+app = FastAPI()
+
+class Item(BaseModel):
+    name: str
+    price: float
+
+@app.post(""/items/"")
+async def create_item(item: Item, another_item: Item):
+    ...
+```
+
+FastAPI will expect a JSON body like:
+
+```json
+{
+    ""item"": {
+        ""name"": ""Item1"",
+        ""price"": 10.99
+    },
+    ""another_item"": {
+        ""name"": ""Item2"",
+        ""price"": 5.99
+    }
+}
+```
+
+However, if you use the `Body` parameter with the `embed=True` argument, you can instruct FastAPI to embed the body in a specific key:
+
+```python
+from fastapi import FastAPI, Body
+from pydantic import BaseModel
+
+app = FastAPI()
+
+class Item(BaseModel):
+    name: str
+    price: float
+
+@app.post(""/items/"")
+async def create_item(
+    item: Item = Body(..., embed=True),
+    another_item: Item = Body(..., embed=True)
+):
+    ...
+```
+
+In this case, FastAPI will expect a JSON body like:
+
+```json
+{
+    ""item"": {
+        ""name"": ""Item1"",
+        ""price"": 10.99
+    },
+    ""another_item"": {
+        ""name"": ""Item2"",
+        ""price"": 5.99
+    }
+}
+```",Faithful,"1) Did it abstain? No. 2) Does it strictly match the factual information in the clean context? Yes. The response explains how FastAPI handles multiple body parameters by combining them into a single JSON body, which aligns with the clean context. It provides accurate examples and details on how FastAPI expects the JSON body to be structured, which is grounded in the clean context. Label: Faithful."
+CTX_023,"If you want to use OpenAPI Generator or Hey API to generate SDK for FastAPI, why do you have to make sure that tool supports OpenAPI version 3.1?",## Open Source SDK Generators { #open-source-sdk-generators }  A versatile option is the [OpenAPI Generator](https://ope,"You need to make sure that the tool (such as OpenAPI Generator or Hey API) supports OpenAPI version 3.1 because:
+
+*   **FastAPI generates OpenAPI 3.1 specifications**: By default, FastAPI generates OpenAPI 3.1 specifications for your API. If the tool doesn't support OpenAPI 3.1, it won't be able to correctly parse and generate the SDK from the specification.
+
+Using a tool that supports OpenAPI 3.1 ensures that it can correctly interpret the OpenAPI specification generated by FastAPI and create a compatible SDK.",Faithful,"1) Did it abstain? No. 2) Is it grounded in the clean context? Yes, it directly relates to the information provided in the clean context about FastAPI generating OpenAPI 3.1 specifications. 3) Does it contradict or hallucinate? No, it accurately explains why the tool must support OpenAPI version 3.1."
+CTX_024,What are the real-world cases where you are forced to use the jsonable_encoder() function on a Pydantic model before further processing?,# JSON Compatible Encoder { #json-compatible-encoder }  There are some cases where you might need to convert a data type,"You are forced to use the `jsonable_encoder()` function on a Pydantic model before further processing in the following real-world cases:
+
+*   **Storing data in a database**: When storing data in a database, you often need to convert the Pydantic model to a JSON-compatible format. `jsonable_encoder()` helps you achieve this.
+*   **Sending data over a network**: When sending data over a network, you may need to convert the Pydantic model to a JSON-compatible format. `jsonable_encoder()` is useful in this scenario.
+*   **Working with third-party libraries**: Some third-party libraries may not support Pydantic models directly. In such cases, you can use `jsonable_encoder()` to convert the model to a JSON-compatible format that the library can work with.
+
+In general, `jsonable_encoder()` is useful whenever you need to convert a Pydantic model to a format that can be easily processed or stored.",Faithful,"1) Did it abstain? No. 2) Is it grounded in the clean context? Yes, it provides examples of real-world cases where jsonable_encoder() is useful, such as storing data in a database, sending data over a network, and working with third-party libraries. These cases are aligned with the context provided. 3) Does it contradict or hallucinate? No, it does not introduce any information that contradicts the clean context or fabricate unsupported claims. Therefore, the label is Faithful."
+CTX_025,How can you use the variable 'commons' in a function endpoint to leverage the type alias?,"## Share `Annotated` dependencies { #share-annotated-dependencies }  In the examples above, you see that there's a tiny ","You can use the variable `commons` in a function endpoint to leverage the type alias by defining it as a type alias for `Annotated[dict, Depends(common_parameters)]`, and then using it as a parameter type in your endpoint function.
+
+Here's an example:
+
+```python
+from fastapi import FastAPI, Depends, Annotated
+
+app = FastAPI()
+
+def common_parameters():
+    # implementation
+    pass
+
+commons: Annotated[dict, Depends(common_parameters)]
+
+@app.get(""/items/"")
+async def read_items(commons: commons):
+    # use commons here
+    pass
+```
+
+However, a more common and practical use case is to define the type alias at the top level and reuse it across multiple endpoints:
+
+```python
+from fastapi import FastAPI, Depends, Annotated
+
+app = FastAPI()
+
+def common_parameters():
+    # implementation
+    pass
+
+CommonParams = Annotated[dict, Depends(common_parameters)]
+
+@app.get(""/items/"")
+async def read_items(commons: CommonParams):
+    # use commons here
+    pass
+
+@app.post(""/items/"")
+async def create_item(commons: CommonParams):
+    # use commons here
+    pass
+```
+
+By doing this, you can reuse the `CommonParams` type alias across multiple endpoints, making your code more concise and maintainable.",Faithful,"1) Did it abstain? No. 2) Is it grounded in the clean context? Yes, it explains how to use the variable 'commons' in a function endpoint to leverage the type alias by defining it as a type alias for Annotated[dict, Depends(common_parameters)]. 3) Does it contradict or hallucinate? No, it provides a correct and practical example of using the type alias in multiple endpoints. The response strictly adheres to the clean context and provides a relevant example."
+CTX_026,"Instead of receiving individual path parameters from FastAPI, what syntax in the path operation would retrieve the original HTTP Request object?","# Using the Request Directly { #using-the-request-directly }  Up to now, you have been declaring the parts of the reques","Instead of receiving individual path parameters from FastAPI, you can retrieve the original HTTP Request object by using the following syntax in the path operation:
+
+```python
+from fastapi import FastAPI, Request
+
+app = FastAPI()
+
+@app.get(""/items/"")
+async def read_items(request: Request):
+    # access the request object here
+    pass
+```
+
+In this example, the `request` parameter is an instance of `fastapi.Request`, which provides access to the original HTTP request object. This allows you to access various attributes and methods of the request, such as headers, query parameters, body, and more.",Faithful,"1) Did it abstain? No. 2) Is it grounded in the clean context? Yes, it explains how to access the original HTTP Request object directly in FastAPI. 3) Does it contradict or hallucinate? No, it provides a correct and relevant example."
+CTX_027,What is the keyword in modern Python used to define and execute a coroutine in asynchronous programming?,"## Conclusion { #conclusion }  Let's see the same phrase from above:  > Modern versions of Python have support for **""as","The keyword in modern Python used to define and execute a coroutine in asynchronous programming is:
+
+*   **`async`**: used to define a coroutine
+*   **`await`**: used to pause and resume the execution of a coroutine
+
+Example:
+
+```python
+import asyncio
+
+async def my_coroutine():
+    # do something
+    await asyncio.sleep(1)
+    # do something else
+```",Faithful,"1) Did it abstain? No. 2) Is it grounded in the clean context? Yes, it accurately describes the use of `async` and `await` in modern Python for asynchronous programming, which is mentioned in the clean context. 3) Does it contradict or hallucinate? No, it provides a correct and relevant explanation."
+CTX_028,What is the bash command to activate a virtual environment named '.venv' on a Linux/macOS system?,## Activate the Virtual Environment { #activate-the-virtual-environment }  Activate the new virtual environment so that ,"The bash command to activate a virtual environment named `.venv` on a Linux/macOS system is:
+
+```bash
+source .venv/bin/activate
+```",Faithful,"1) Did it abstain? No. 2) Is it grounded in the clean context? Yes, the baseline response directly matches the command provided in the clean context for Linux/macOS systems. 3) Does it contradict or hallucinate? No, it accurately reflects the information in the clean context."
+CTX_029,"According to the documentation, what are the main differences in environmental behavior between the 'development' and 'deployment' (web API) stages?",## What Does Deployment Mean { #what-does-deployment-mean }  To **deploy** an application means to perform the necessary,"The main differences in environmental behavior between the 'development' and 'deployment' (web API) stages are:
+
+*   **Development stage**:
+    *   Typically uses a **local machine** or a **development environment**.
+    *   Often has **debug mode** enabled, which provides detailed error messages and automatic reloading of the application.
+    *   May use a **local database** or a **test database**.
+*   **Deployment stage**:
+    *   Typically uses a **remote server** or a **cloud platform**.
+    *   Usually has **debug mode** disabled, which improves performance and security.
+    *   Often uses a **production database**.
+
+These differences in environment behavior require adjustments to the application's configuration, logging, and error handling between the development and deployment stages.",Inconsistent,"1) Did it abstain? No. 2) Is it grounded in the clean context? No, the clean context does not mention 'local machine', 'development environment', 'debug mode', 'local database', 'test database', 'remote server', 'cloud platform', or 'production database'. The clean context only contrasts development (code changes, breaking, fixing) with deployment (making available, remote machine, server program for performance and stability). 3) The response contradicts or hallucinates by introducing information not present in the clean context, thus labeled as Inconsistent."
+CTX_030,"According to the contribution guide, how do you formally start a project to translate the FastAPI documentation into a completely new language?","## Request a New Language  Let's say that you want to request translations for a language that is not yet translated, no","According to the contribution guide, to formally start a project to translate the FastAPI documentation into a completely new language, you need to:
+
+1.  **Find at least 2 other people** who are willing to help review translation PRs (Pull Requests) for that language with you.
+2.  **Create a new discussion** following the template.
+3.  **Tag the other 2 people** that will help with the language and ask them to confirm they will help.
+
+Once there are several people in the discussion, the FastAPI team can evaluate it and make it an official translation.",Faithful,"1) Did it abstain? No. 2) Does it strictly match the factual information in the clean context? Yes. The baseline response accurately reflects the steps required to formally start a project to translate the FastAPI documentation into a completely new language, as described in the clean context. There is no fabrication or contradiction of the information provided."
+CTX_031,"How to load a heavy machine learning model into memory before the server starts accepting requests, but not load it during simple automated unit testing?",## Use Case { #use-case }  Let's start with an example **use case** and then see how to solve it with this.  Let's imagi,"To load a heavy machine learning model into memory before the server starts accepting requests, but not load it during simple automated unit testing, you can use the following approaches:
+
+*   **Use a startup event**: FastAPI provides a `startup` event that you can use to load the model into memory before the server starts accepting requests.
+
+```python
+from fastapi import FastAPI
+
+app = FastAPI()
+
+# Load the model into memory
+@app.on_event(""startup"")
+async def load_model():
+    # Load the model here
+    model = load_ml_model()
+    app.state.model = model
+```
+
+*   **Use a separate configuration for testing**: During automated unit testing, you can use a separate configuration that doesn't load the heavy machine learning model.
+
+```python
+import pytest
+
+@pytest.fixture
+def app():
+    app = FastAPI()
+    # Don't load the model here
+    yield app
+```
+
+*   **Use a lazy loading approach**: You can use a lazy loading approach to load the model into memory only when it's actually needed.
+
+```python
+from fastapi import FastAPI
+
+app = FastAPI()
+
+model = None
+
+@app.on_event(""startup"")
+async def load_model():
+    global model
+    model = load_ml_model()
+
+# Use the model in your endpoints
+@app.get(""/predict"")
+async def predict(data):
+    global model
+    if model is None:
+        model = load_ml_model()
+    return model.predict(data)
+```
+
+By using these approaches, you can ensure that the heavy machine learning model is loaded into memory before the server starts accepting requests, but not during simple automated unit testing.",Faithful,"1) Did it abstain? No. 2) Is it grounded in the clean context? Yes, it provides approaches using FastAPI's startup event, separate testing configurations, and lazy loading, all of which are relevant to solving the problem described in the clean context. 3) Does it contradict or hallucinate? No, it offers valid solutions without contradicting the context or introducing unsupported information."
+CTX_032,List some popular software that can act as a TLS Termination Proxy to handle HTTPS certificates before forwarding HTTP requests to FastAPI?,"# About HTTPS { #about-https }  It is easy to assume that HTTPS is something that is just ""enabled"" or not.  But it is w","Here are some popular software that can act as a TLS Termination Proxy to handle HTTPS certificates before forwarding HTTP requests to FastAPI:
+
+*   **Traefik**: A modern, dynamic, and highly customizable reverse proxy and load balancer that can handle HTTPS certificates and forward requests to FastAPI.
+*   **Caddy**: A powerful, extensible, and highly configurable web server that can handle HTTPS certificates, reverse proxy, and forward requests to FastAPI.
+*   **NGINX**: A popular, widely-used web server and reverse proxy that can handle HTTPS certificates, load balancing, and forward requests to FastAPI.
+*   **HAProxy**: A reliable, high-performance, and widely-used load balancer and reverse proxy that can handle HTTPS certificates and forward requests to FastAPI.
+
+These software solutions can handle HTTPS certificates, termination, and forwarding of requests to FastAPI, allowing you to focus on building and deploying your application.",Faithful,"1) Did it abstain? No. 2) Is it grounded in the clean context? Yes, it lists the same software solutions mentioned in the context: Traefik, Caddy, Nginx, and HAProxy as options for a TLS Termination Proxy. 3) Does it contradict or hallucinate? No, it provides additional details about each software but does not contradict the information in the clean context. Therefore, the label is Faithful."

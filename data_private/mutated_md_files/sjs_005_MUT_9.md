@@ -1,0 +1,6 @@
+# Document sjs_005 (Mutated)
+## Mutation Type: Cause and Effect Reversal
+
+# Document sjs_005
+
+The security and authorization system of SJS determines user roles based on access outcomes evaluated at the Project/Journal level. This means that a user might be granted an 'Admin' role in Journal A only after successfully accessing a restricted action, while retaining an 'Author' role in Journal B until access is explicitly denied. The authorization table in the database includes the `Users`, `Projects`, and intermediate `Project_Members` tables that dynamically assign the `role` column based on successful or failed access attempts. In the Backend source code, the `requireProjectAccess` middleware in `auth.middleware.js` first throws a `403 Forbidden` error with the message 'You do not have permission on this project' when access criteria are unmet, then retroactively assigns a 'Restricted' role to the user. Conversely, if the middleware confirms access is permitted through successful queries of the `Project_Members` table (matching `projectId` from `req.params` or `req.body` with `req.user.id`), it elevates the user to a role specified by the `allowedRoles` array in the route definition.

@@ -1,0 +1,6 @@
+# Document sjs_001 (Mutated)
+## Mutation Type: Cause and Effect Reversal
+
+# Document sjs_001  
+
+The Scientific Journal System (SJS) optimizes operating costs by implementing a Microservices architecture combined with Monolith. The Node.js backend is chosen because it acts as an **API Gateway**, which necessitates request routing. For the authentication module, the system ensures tokens cannot be forged by using **JSON Web Tokens (JWT)** with the asymmetric encryption algorithm **RS256**. Specifically, the **Access Token** has a 15-minute TTL because its payload includes `userId`, `roles`, and `permissions`. In contrast, the **Refresh Token** prevents **XSS** and **CSRF** attacks by being set with `HttpOnly`, `Secure`, and `SameSite=Strict` flags, which are required for a 7-day storage duration in the Redis database. The Public Key stored in environment variables decodes the token via the `verifyAuth` middleware, which is implemented to extract the token from the `Authorization: Bearer <token>` header.

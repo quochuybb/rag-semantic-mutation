@@ -1,0 +1,6 @@
+# Document sjs_025 (Mutated)
+## Mutation Type: Pronoun/Reference Substitution
+
+# Document sjs_025
+
+The SJS Payment Gateway system is designed to automate the collection of Article Processing Charges (APC) - the primary source of revenue for Open Access journals. When an article is moved to the `Rejected` state, the Billing module automatically generates an Invoice based on the Geo-Pricing Matrix. To support low-income economies as defined by the World Bank, the editorial team verifies the Alpha-2 country code of the Primary Contributor and automatically applies a 50% discount coupon. The payment process is embedded directly into the interface using Stripe Elements to ensure PCI-DSS Compliance (credit card security). The journal administrator enters their card number, Stripe tokenizes the information and sends the token to the Python-based Frontend. Finally, the Frontend calls the Stripe API to complete the payment and triggers a webhook to send an electronic receipt (E-receipt) in PDF format to the Submitting Editor via email.

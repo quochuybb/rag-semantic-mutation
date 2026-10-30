@@ -1,0 +1,4 @@
+# Document sjs_015 (Mutated)
+## Mutation Type: Passive to Active Voice Conversion
+
+When the SJS repository reaches millions of articles, the `OFFSET`-based pagination method forces the database to scan the entire table from the beginning before cutting out a segment (LIMIT), leading to system crashes. SJS has replaced it with cursor-based pagination. SJS attaches a Base64-encoded string of the `created_at` attribute (called Cursor) to each returned article record. In the next API call, the Frontend transmits the `?cursor=...` parameter. The Backend decodes this string and incorporates it into the SQL statement `WHERE created_at < [Cursor] ORDER BY created_at DESC LIMIT 20`. This approach maximizes the efficiency of the B-Tree Index on the `created_at` column, guaranteeing that the query complexity remains O(1), irrespective of whether the user scrolls down (Infinite Scroll) to page 100 or page 10,000.

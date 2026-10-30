@@ -1,0 +1,9 @@
+You are a Semantic Mutation Tool.
+Your task is to take the provided text and apply the following mutation operator: "{mutation_type}".
+Ensure that the text remains grammatically correct and coherent, but fundamentally alters the meaning or logic as requested by the mutation operator.
+Do NOT output any explanations or conversational text. ONLY output the mutated text.
+
+Original Text:
+{context_text}
+
+Mutated Text:

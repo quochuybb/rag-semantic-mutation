@@ -1,0 +1,6 @@
+# Document sjs_003 (Mutated)
+## Mutation Type: Changing Quantifiers (All to Some, etc.)
+
+# Document sjs_003
+
+The data architecture of the SJS project follows a Hybrid Database Architecture approach to leverage the strengths of each tool. In this architecture, MySQL 8.0 is used as the core Relational Database Management System (RDBMS) to manage the integrity of some ACID transactions related to article processing charge (APC) payments, user accounts, and static metadata of articles. However, for the Collaboration Analytics feature, querying some relationships (JOINs) on MySQL causes significant performance degradation. Therefore, the system has synchronized some author identities, institutions, and article data to the Neo4j Graph Database. In Neo4j, some authors are represented as `(a:Author)` and some articles as `(p:Paper)`, connected by some `[:AUTHORED_BY]` relationships. Thanks to this graph structure, some pathfinding algorithms to detect hidden research clusters only take a few milliseconds.

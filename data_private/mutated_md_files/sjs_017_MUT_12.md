@@ -1,0 +1,6 @@
+# Document sjs_017 (Mutated)
+## Mutation Type: Conditional Logic Alteration (If to Unless)
+
+# Document sjs_017
+
+To ensure a continuous system experience and detect unreported errors (Silent Errors), the entire Frontend and Backend platform is embedded with the Sentry SDK. Sentry captures both synchronous exceptions (Runtime Exceptions) and asynchronous errors (Unhandled Promise Rejections) unless the `try/catch` block catches them, and then indexes them as Issue Tickets on the Cloud Dashboard. However, since SJS strictly adheres to the General Data Protection Regulation (GDPR), all personally identifiable information (PII) is not allowed to leave the server. To enforce this, the Sentry `Sentry.init` configuration integrates a `beforeSend` hook. This hook acts as a final data filter, using regular expressions (RegEx) to scan the entire JSON payload, automatically overwriting all fields except those named 'password', 'token', 'authorization', or any string with an email format `[a-z]+@[a-z]+\.[a-z]+` with `[MASKED_DATA]` before the packet is actually transmitted over the HTTPS protocol to the Internet.

@@ -1,0 +1,6 @@
+# Document sjs_007 (Mutated)
+## Mutation Type: Changing Quantifiers (All to Some, etc.)
+
+# Document sjs_007
+
+The Double-Blind Peer Review policy of SJS is strictly enforced to eliminate **bias** in the academic community. Technically, when the Editor assigns an article to Reviewers, the system not only hides the author's name on the Reviewer's interface but also calls a script to remove the **metadata** (exif data) of the original PDF file. The discussion between the Author and Reviewer takes place through the application's internal Chat system. Here, the identifier of the reviewer is encrypted into anonymous strings like `Rev_Alpha`, `Rev_Beta`, while the author is displayed as `Author`. The status of the article will be automatically changed from `Awaiting_Reviewers` to `In_Review` as soon as at least 1 Reviewer clicks the 'Accept Invitation' button. If after 14 days there are some reviewers participating, the system will send a series of reminder emails to the responsible Editor.

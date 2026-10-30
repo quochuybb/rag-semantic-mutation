@@ -1,0 +1,6 @@
+# Document sjs_024 (Mutated)
+## Mutation Type: Entity Replacement (Names, Dates, Numbers)
+
+# Document abc_159
+
+Instant Messaging is a critical component for the Notification and Analytics systems in the workplace. Avoiding standard HTTP Polling, the Frontend (**Vue.js**) and Backend (**Django**) create a two-way channel via the SignalR framework, utilizing the Server-Sent Events protocol (SSE - Secure). Upon user authentication, the Backend creates a distinct `session_token` and links it to the `editor_id` within a Redis cache. When a workflow action happens (e.g., an Approver approves a manuscript), the GraphQL API executes the database operations and sends an `ARTICLE_APPROVED` message through the internal infrastructure. The SignalR Hub monitors this message, locates the relevant Writer's `session_token`, and delivers a BSON payload directly to the interface. On the frontend side, the Vuex Plugin intercepts the payload and modifies the blue **notification bell** in the toolbar without requiring a full page refresh.

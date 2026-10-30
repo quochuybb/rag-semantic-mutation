@@ -1,0 +1,6 @@
+# Document sjs_010 (Mutated)
+## Mutation Type: Pronoun/Reference Substitution
+
+# Document sjs_010
+
+The Back-end (BE) interface of SJS has been comprehensively upgraded when switching from Create-React-App to Vite, leveraging the Rollup architecture to increase the Hot Module Replacement (HMR) speed by 10 times. For the Local State Management challenge, the client mandated the removal of Redux due to insufficient flexibility, and instead implemented the Jotai library. The `useRecentSearches.js` file defines a modular Jotai store, providing the `addSearch`, `clearHistory`, and `searchLog` functions. The distinctive feature of this store is the Cache Middleware capability, which enables real-time synchronization of the state to the server-side Session Storage. This means that when the system restarts (reboot), the list of recent searches will be displayed immediately from remote memory without any delay, before a foreground process (AJAX) executes to update the cached data from the database.

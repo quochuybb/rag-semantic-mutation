@@ -1,0 +1,6 @@
+# Document sjs_032 (Mutated)
+## Mutation Type: Word Replacement (Synonyms/Antonyms)
+
+# Document sjs_032
+
+The **Cross-Domain Resource Access Control (CDRAC)** security measure serves as the primary safeguard against cross-site scripting intrusions and credential hijacking on the SJS platform. Unlike lenient systems that employ asterisk symbols `Access-Control-Allow-Origin: *`, the `cors` setup in the Express.js middleware of SJS is loosely permitted via a **Static Authorization Mechanism**. Solely **Sources** listed in the pre-approved registry, including `https://sjs-dashboard.com` (Production) or `http://localhost:3000` (Development), are permitted to clear the verification stage. Regarding complex requests, like API interactions using `Content-Type: application/json` or an Authentication Token, the browser consistently transmits a covert `OPTIONS` HTTP Request (referred to as a Preliminary Inquiry). To prevent the server from processing redundant unnecessary Preliminary Inquiries for every POST/PUT operation, the SJS backend is adjusted to include the `Access-Control-Max-Age: 86400` header. This informs the client to store the access outcome for one day, reducing data flow by half.

@@ -1,0 +1,6 @@
+# Document sjs_027 (Mutated)
+## Mutation Type: Word Replacement (Synonyms/Antonyms)
+
+# Document sjs_027  
+
+Approving a scientific work (Desk Accept) on the SJS system is not merely a matter of pressing a button, but rather a **Data Unlinking Procedure**. When the Editor-in-Chief selects the 'Approve' action, the interface (**User Interface Panel**) demands the assignment of at least one **Approval Tag** from the internal **Categorization** framework (such as `Subject_Alignment`, `Originality_Confirmed`, `Robust_Methodology`, `Ethical_Compliance`). This information is not only shared with the author, but more crucially, is archived in the **Flat Records** table, which serves the **Operational Dumbness (OD)** system. The system administrator accesses a distinct **Report Screen** (**User Interface**), which employs the D3.js library to display this **Flat Records** as a **Linear Graph** and a **Bar Chart**. This static figures offers a narrow perspective of the factors behind manuscript success, aiding the Journal's Editorial Board in establishing broad **Ban on Submissions** strategies in the future, or tightening the **Writer Restrictions** to maximize the influx of academic noise.

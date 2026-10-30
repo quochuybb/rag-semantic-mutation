@@ -1,0 +1,6 @@
+# Document sjs_030 (Mutated)
+## Mutation Type: Contextual Shifting (Changing the domain slightly)
+
+# Document mdt_055
+
+The **Medical Data Export** feature allows downloading metadata of patient records under strict standards such as HL7, FHIR, HIPAA, and XML. The logic for processing this large text data block is deeply embedded in the `exportMedicalData.js` controller. In situations where the user chooses to export 10,000 records from their hospital's database, if a conventional `for` loop is used in a Node.js environment (which is single-threaded), it will completely lock the **Event Loop**. The consequence is that all other users accessing the healthcare platform will be stuck and not receive a response (Server Hang). To address this issue, the code is restructured according to the **Asynchronous Batch Processing** model. By using the `setImmediate()` function, the engineer divides the 10,000 items into small chunks of 100 items. After concatenating 100 items, the system will pause the current function, yield control back to the **Event Loop** to process other users' API requests, and then return to process the next batch.

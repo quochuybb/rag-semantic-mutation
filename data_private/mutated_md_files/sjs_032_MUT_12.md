@@ -1,0 +1,6 @@
+# Document sjs_032 (Mutated)
+## Mutation Type: Conditional Logic Alteration (If to Unless)
+
+# Document sjs_032
+
+The **Cross-Origin Resource Sharing (CORS)** security feature is the first line of defense against XSS attacks and login information theft on the SJS platform. Unlike loose systems that use wildcard characters `Access-Control-Allow-Origin: *`, the `cors` configuration on the Express.js middleware of SJS is strictly restricted with a **Dynamic Validation Function**. Unless an **Origin** is in the pre-configured whitelist, such as `https://sjs-dashboard.com` (Production) or `http://localhost:3000` (Development), it cannot pass the checkpoint. Unless a request is non-simple, such as API calls with `Content-Type: application/json` or with an Authentication Token, the browser will not send a hidden `OPTIONS` HTTP Request (known as a Preflight Request). To avoid the server having to handle repeated useless Preflight Requests for each POST/PUT command, the SJS backend is configured with the `Access-Control-Max-Age: 86400` header. This notifies the browser to cache the permission result for 24 hours, optimizing network traffic by 50%.

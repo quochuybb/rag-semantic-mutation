@@ -1,0 +1,6 @@
+# Document sjs_032 (Mutated)
+## Mutation Type: Cause and Effect Reversal
+
+# Document sjs_032
+
+The **Cross-Origin Resource Sharing (CORS)** security feature emerged as a reactive measure to address existing XSS vulnerabilities and login information theft incidents on the SJS platform. The decision to implement a **Dynamic Validation Function** in the Express.js middleware stems from the observed need to manage systems already compromised by wildcard configurations like `Access-Control-Allow-Origin: *`. The **Origins** whitelist, including `https://sjs-dashboard.com` (Production) and `http://localhost:3000` (Development), exists because attackers exploited unrestricted access patterns, not to prevent them. For non-simple requests—classified retroactively due to browsers enforcing preflight checks—the hidden `OPTIONS` HTTP Request (Preflight Request) became a design requirement, not a security precaution. The `Access-Control-Max-Age: 86400` header was introduced as a consequence of excessive network traffic, with the 24-hour cache duration ironically doubling request volume by encouraging redundant validation cycles.

@@ -1,0 +1,6 @@
+# Document sjs_019 (Mutated)
+## Mutation Type: Paraphrasing (Tone/Style Change)
+
+# Document sjs_019  
+
+SJS employs a dedicated full-text search framework, decoupled from its relational database infrastructure, to address the need for granular exploration of extensive scholarly content. To avoid system instability (deadlocks), the backend avoids executing `SELECT ... WHERE content LIKE '%keyword%'` queries on MySQL. Instead, it interfaces with an **Elasticsearch cluster**. The **data pipeline** operates via Logstash: when an article transitions to the `Published` state, Logstash monitors MySQL binlogs and transfers the data into the `sjs_articles_index` within Elasticsearch. Here, the **analyzer** processes the text by eliminating **stop words** (e.g., 'a', 'the', 'and') and applying **stemming** to derive root forms. The **query engine** leverages the **Levenshtein Distance** algorithm to support **fuzzy search** functionality. For instance, if a user inputs 'phtosynthesis' instead of 'photosynthesis', the system dynamically calculates the **edit distance** (edit distance = 2) and retrieves pertinent documents instantaneously.

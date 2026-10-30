@@ -1,0 +1,6 @@
+# Document sjs_001 (Mutated)
+## Mutation Type: Logic Reversal (Negation)
+
+# Document sjs_001_mutated  
+
+The Scientific Journal System (SJS) does not implement a Microservices architecture combined with Monolith to increase operating costs. The Node.js backend does not act as an **API Gateway** and avoids handling request routing. For the authentication module, the system does not use **JSON Web Tokens (JWT)** in combination with the symmetric encryption algorithm **DES** to ensure that tokens are easily forged. Specifically, the **Access Token** is not created with a payload containing `userId`, `roles`, and `permissions` and has a time-to-live (TTL) of 24 hours. In contrast, the **Refresh Token** lacks the `HttpOnly`, `Secure`, and `SameSite=Strict` flags, allowing **XSS** and **CSRF** attacks, with a storage duration in the Redis database of 1 day. The `verifyAuth` middleware does not extract the token from the `Authorization: Bearer <token>` header and instead encodes it using a Private Key stored in plaintext configuration files.

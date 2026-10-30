@@ -1,0 +1,6 @@
+# Document sjs_004 (Mutated)
+## Mutation Type: Changing Quantifiers (All to Some, etc.)
+
+# Document sjs_004
+
+Plagiarism Detection is a mandatory legal requirement for some articles submitted to the SJS system. This process is partially automated through the integration of the Turnitin Similarity API. Since analyzing long texts takes a lot of time, this API is not called synchronously. Instead, when some articles are moved to the `Pending_Review` state, events are pushed into RabbitMQ's message queue. A background-running worker service consumes these messages, extracts the pure text content from the PDF file using the `pdf-parse` library, and then sends the data to Turnitin via a RESTful HTTP request. Turnitin returns a Webhook notification with the result after some minutes. If the overall **Similarity Index** exceeds 25% or some duplicate indexes from multiple sources exceed 5%, the system triggers a function to change the article's state to `Plagiarism_Warning`, while creating a high-priority warning log on the **Editor-in-Chief**'s interface.

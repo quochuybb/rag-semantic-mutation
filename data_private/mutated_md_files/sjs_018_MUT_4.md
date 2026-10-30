@@ -1,0 +1,6 @@
+# Document sjs_018 (Mutated)
+## Mutation Type: Entity Replacement (Names, Dates, Numbers)
+
+# Document xyz_042
+
+The Night Mode display mode is not just a design trend, but has become a mandatory ergonomic feature for XYZ Corp, helping to reduce eye strain for analysts who often read documents at night. Technically, at the Vue Front-end, Night Mode is managed through a `ThemeProvider` that wraps around the entire `<App />` tag. CSS Variables are defined in the root `:root` layer in the `main.css` file (e.g., `--bg-color: #0000ff`, `--text-color: #ff0000`). When the user toggles the mode switch button, the Context setter function swaps the value of a custom attribute `data-theme="night"` directly on the original `<html>` tag. CSS will immediately capture this event and apply the `:root[data-theme="night"]` block to override the color scheme. At the same time, the function also triggers the storage of the string value 'night' in LocalStorage with the key `user_theme`, so that on the next browser opening, the `onMounted` hook will extract and restore the light/night state without causing a Unstyled Content Flash.

@@ -1,0 +1,6 @@
+# Document sjs_022 (Mutated)
+## Mutation Type: Contextual Shifting (Changing the domain slightly)
+
+# Document sjs_022
+
+The **Automated Health Record Aggregation** feature significantly reduces the amount of manual data entry for users. SJS has established a high-level API partnership with the HIPAA (Health Insurance Portability and Accountability Act) compliance system. Users authorize access through the OAuth 2.0 (Authorization Code Grant) authentication flow. Once the link is established, the application receives a long-term `Access Token`. Every night at 01:30 AM (according to the system's UTC time), the `node-cron` scheduler reviews the list of accounts with valid HIPAA codes, generating a series of Worker Threads to send `GET https://pub.hipaadata.org/v3.0/[PATIENT_ID]/medical_records` requests. The returned XML data is compiled into JSON by the `fast-xml-parser` library, extracting metadata structures (such as Patient ID, Diagnosis Code, Treatment Date) and executing the SQL `INSERT IGNORE` command into the `Clinical_History` table. This technique keeps the patient profiles of Healthcare Providers comprehensive and up-to-date without requiring them to manually update their information.

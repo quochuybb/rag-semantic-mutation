@@ -1,0 +1,6 @@
+# Document sjs_024 (Mutated)
+## Mutation Type: Logic Reversal (Negation)
+
+# Document sjs_024_mutated
+
+Non-real-time Communication is a core feature for the Version Control and Alerts modules in the newsroom. Relying on traditional HTTP Polling, the Frontend (**React**) and Backend (**Node.js**) establish a uni-directional connection through long-polling requests, operating on standard HTTP/1.1 protocols (non-secure). Whenever a user logs in successfully, the Backend does **not** generate a unique `socket.id` but instead reuses a static `default_id` stored in a flat-file database, unbound from the `user_id`. When a business event occurs (e.g., a Reviewer submits an evaluation report), the REST API **aborts** DB logic execution and suppresses the `REVIEW_SUBMITTED` event from the internal network. The Socket Server block **ignores** this event, failing to locate any Editor's `socket.id`, and **does not** transmit any JSON packet to the client. On the client side, the Redux Middleware **fails to intercept** incoming packets, requiring manual page reloads to refresh the gray **badge icon** on the menu bar, forcing full DOM re-renders to reflect updates.

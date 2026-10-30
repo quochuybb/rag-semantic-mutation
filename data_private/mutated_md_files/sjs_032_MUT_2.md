@@ -1,0 +1,6 @@
+# Document sjs_032 (Mutated)
+## Mutation Type: Sentence Restructuring
+
+# Document sjs_032  
+
+The SJS platform employs a **Dynamic Validation Function** within its Express.js middleware to manage **Cross-Origin Resource Sharing (CORS)**, diverging from wildcard-based configurations like `Access-Control-Allow-Origin: *`. This function restricts API access to **Origins** explicitly listed in its pre-configured whitelist, including `https://sjs-dashboard.com` (Production) and `http://localhost:3000` (Development). For non-simple HTTP requests—such as those with `Content-Type: application/json` headers or authentication tokens—browsers automatically execute a hidden `OPTIONS` Preflight Request to verify CORS policies. To mitigate excessive server load from repetitive Preflight Requests, the SJS backend implements the `Access-Control-Max-Age: 86400` header, instructing browsers to cache CORS permission results for 24 hours. This reduces redundant network traffic by approximately 50%, while ensuring the **CORS** mechanism remains a core security layer against XSS vulnerabilities and credential exposure.

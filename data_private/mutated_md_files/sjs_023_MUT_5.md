@@ -1,0 +1,6 @@
+# Document sjs_023 (Mutated)
+## Mutation Type: Paraphrasing (Tone/Style Change)
+
+# Document sjs_023  
+
+The SJS security framework employs an open-source antivirus solution (ClamAV) within its edge-tier architecture to mitigate malware risks associated with academic file submissions, including source code, data processing tools, or simulation assets. Incoming binary uploads are temporarily stored in a RAM disk (`tmpfs`) rather than persisting to storage media. A Node.js service establishes TCP-based communication with the active `clamd` daemon through port 3310, utilizing dynamic buffer streaming for analysis. The signature-based detection process completes in under four seconds. Upon receiving a `OK` status, the file is transferred to AWS S3 for archival. However, if a threat is flagged (e.g., `Win.Trojan.Ramnit-1`), the RAM-disk file is erased, a log entry is generated, and the author's associated account is temporarily suspended for 24 hours. This ephemeral scanning approach guarantees robust security while eliminating potential disk I/O constraints.

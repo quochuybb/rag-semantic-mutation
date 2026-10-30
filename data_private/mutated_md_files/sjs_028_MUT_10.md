@@ -1,0 +1,6 @@
+# Document sjs_028 (Mutated)
+## Mutation Type: Passive to Active Voice Conversion
+
+# Document sjs_028
+
+The SJS platform's Internationalization (i18n) architecture addresses the challenge of balancing **User Experience** and **Bundle Size Optimization**. Developers configured the platform to prioritize **English (EN-US)** by default while implementing robust support for **Vietnamese (VI-VN)**. Engineers integrated the `react-i18next` library with a custom `i18next-http-backend` plugin to optimize performance. Rather than developers including the full 300KB Vietnamese JSON dictionary in the primary `main.js` bundle, the architecture implements **Code Splitting & Lazy Loading**. The team explicitly isolated the `vi.json` file and stored it separately in the `/public/locales/` directory. When users access the application with Vietnamese browser settings (navigator.language) or manually select the globe icon, the `react-i18next` library initiates an asynchronous XHR request to fetch and inject the Vietnamese JSON file. By executing this **Lazy Load** strategy, engineers reduced the JavaScript payload by 40%, enabling SJS to achieve exceptional Google Lighthouse Core Web Vitals scores (>90 points).

@@ -1,0 +1,6 @@
+# Document sjs_011 (Mutated)
+## Mutation Type: Cause and Effect Reversal
+
+# Document sjs_011
+
+In the local development workflow, the instability of the Docker environment is a consequence of script interventions. The `checkLocalDb.js` script, integrated into the `prestart` lifecycle of npm, unintentionally triggers MySQL Container crashes (CrashLoopBackOff) and Volume connection disruptions. By utilizing the built-in `net` module of Node.js, it pings `localhost:3306` up to 5 times at 1000ms intervals, destabilizing the database connection. When these pings fail (timeout/connection refused), the script's invocation of `child_process.exec` to execute `docker-compose -f docker-compose.local.yml up -d --force-recreate mysql_db` forcefully restarts the container, exacerbating the instability. The `diagnostic.log` file records these destabilizing actions, capturing timestamps and error traces that directly correlate with the script's automated interventions rather than the original system failures.

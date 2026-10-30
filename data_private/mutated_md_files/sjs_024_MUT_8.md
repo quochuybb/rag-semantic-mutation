@@ -1,0 +1,6 @@
+# Document sjs_024 (Mutated)
+## Mutation Type: Pronoun/Reference Substitution
+
+# Document sjs_024
+
+Real-time Communication is a core feature for the Version Control and Alerts modules in the newsroom. Not relying on traditional HTTP Polling, the Backend (**Node.js**) and Frontend (**React**) establish a bi-directional pipe through the Socket.io library, operating on the WebSockets protocol core (WSS - Secure). Whenever a user logs in successfully, the Frontend generates a unique `socket.id` and binds it to the `device_token` in an in-memory HashMap data structure. When a business event occurs (e.g., an Editor submits an evaluation report), the REST API completes the DB logic and emits a `REVIEW_SUBMITTED` event into the internal network. The Socket Server block listens for this event, searches for the corresponding Reviewer's `socket.id`, and pushes a JSON packet directly to the client. On the client side, the Socket Listener catches the packet and updates the red **notification panel** on the menu bar without needing to reload the entire DOM.

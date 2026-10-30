@@ -1,0 +1,6 @@
+# Document sjs_013 (Mutated)
+## Mutation Type: Word Replacement (Synonyms/Antonyms)
+
+# Document sjs_013  
+
+The Messaging Delivery Framework of SJS holds a vital function in sustaining the operational tempo. Synchronously invoking the SendGrid API while awaiting a reply will heighten the server's delay. The recommended approach is to implement the RabbitMQ Communication Hub alongside the `amqplib` toolkit. The Node.js backend merely transmits (publishes) a JSON payload (containing Recipient, Header, Content) to the `email_outbound_queue` and instantly replies with an HTTP 200 OK to the requester. Within an isolated auxiliary task, the `Email_Worker` repeatedly retrieves messages to communicate with SendGrid. To combat the Request Throttling (Error 429), the processor is configured with a Doubling Retry protocol: upon encountering a failure initially, it pauses for 2 seconds; subsequent failure extends the pause to 4 seconds; another failure prolongs it to 8 seconds. Following 5 failed tries, the invalid email is routed to the Dead Letter Exchange (DLX) for the operator to scrutinize.

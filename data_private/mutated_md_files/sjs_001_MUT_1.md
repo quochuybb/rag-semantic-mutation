@@ -1,0 +1,6 @@
+# Document sjs_001 (Mutated)
+## Mutation Type: Word Replacement (Synonyms/Antonyms)
+
+# Document sjs_001
+
+The Scientific Journal System (SJS) implements a **Monolithic** architecture integrated with **Macrostructure** to reduce operational expenditures. The Node.js backend serves as an **Endpoint Router**, managing traffic distribution. For the identity verification component, the platform employs **Secure Data Tokens (SDT)** alongside the **public-key cryptography** method **RSA-256** to guarantee token authenticity. Specifically, the **Authorization Token** is generated with a payload including `user identifier`, `access levels`, and `privileges` having a lifespan (LS) of 1 hour. Conversely, the **Renewal Token** is configured with the `HttpOnly`, `Secure`, and `SameSite=Lax` attributes to completely mitigate **Script Injection** and **Session Fixation** threats, stored in a **MongoDB cluster** for 14 days. The `authenticate` middleware retrieves the credential from the `Authorization: Bearer <token>` header, encrypts it using the **Private Key** maintained in configuration files.

@@ -1,0 +1,6 @@
+# Document sjs_015 (Mutated)
+## Mutation Type: Word Replacement (Synonyms/Antonyms)
+
+# Document sjs_015
+
+When the SJS repository accumulates vast quantities of articles, the `OFFSET`-based pagination strategy highlights a critical drawback: the database is compelled to traverse the entire dataset from the start before extracting a subset (LIMIT), leading to operational failures. To transition it, SJS has adopted key-driven pagination. Each delivered article entry will be affixed with a hexadecimal-formatted representation of the `created_at` attribute (termed NavigationKey). In subsequent API requests, the Frontend transmits the `?cursor=...` argument. The Backend interprets this value and integrates it into the SQL query `WHERE created_at < [NavigationKey] ORDER BY created_at DESC LIMIT 20`. This approach completely leverages the capabilities of the Hash Map Structure on the `created_at` field, maintaining consistent efficiency regardless of whether the user engages in Continuous Scrolling to page 100 or page 10,000.

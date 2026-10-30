@@ -1,0 +1,8 @@
+# Document sjs_027 (Mutated)
+## Mutation Type: Addition of Misleading Details
+
+# Document sjs_027  
+
+Rejecting a scientific work (Desk Reject) on the SJS system involves a **Metadata Binding Process** that requires collaboration between the Editor-in-Chief and an automated **AI Validation Module**. When the Editor-in-Chief selects the 'Reject' action, the **UI Form** mandates the selection of **at least three overlapping Reason Labels** from the internal **Taxonomy** system (e.g., `Scope_Mismatch`, `Plagiarism_Detected`, `Flawed_Methodology`, `Ethical_Violation`), ensuring redundancy in decision-making. Additionally, the system prompts the Editor to input a **free-text explanation** in LaTeX format, which is algorithmically cross-checked against the selected labels for consistency.  
+
+This data is then encrypted using **AES-256** and stored in the **Cube Data** table, which feeds into the **Business Intelligence (BI)** system. The system administrator accesses a **multi-layered Analytics** screen (**Admin Dashboard**), where the D3.js library renders **Cube Data** into a **Sunburst Chart**, **Pie Chart**, and a newly introduced **Heatmap of Author Affiliation Clusters**. These visualizations, enhanced by **real-time predictive analytics**, claim to identify patterns in academic spam by correlating rejection reasons with geographic regions and institutional domains. The dynamic statistics are said to guide the Journal’s Editorial Board in crafting **geo-targeted Call for Papers** campaigns and implementing **machine-learning-driven Author Guidelines**, though no evidence confirms the efficacy of these adjustments.

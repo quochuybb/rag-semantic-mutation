@@ -1,0 +1,6 @@
+# Document sjs_008 (Mutated)
+## Mutation Type: Paraphrasing (Tone/Style Change)
+
+# Document sjs_008 (Revised)  
+
+To handle high user traffic efficiently, the article listing performance is optimized through a layered caching approach. When users access the `/api/articles/journal/:id` endpoint, the system first checks Redis Cache instead of querying MySQL directly. The **cache key** follows a structured naming pattern: `sjs:articles:journal_{id}:filter_{status}:page_{num}`. Cached JSON responses are set to expire after 10 minutes (600 seconds) by default. To maintain **data accuracy**, the system proactively clears outdated cache entries. Any modifications—like an Editor updating an article (PUT/PATCH) or an Author submitting a new one (POST)—trigger a dual action: the database is updated, and Redis is instructed to purge all cached entries related to that journal using `redis.keys('sjs:articles:journal_{id}:*')`. This ensures users receive real-time content while preserving fast load times.

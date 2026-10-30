@@ -1,0 +1,6 @@
+# Document sjs_021 (Mutated)
+## Mutation Type: Paraphrasing (Tone/Style Change)
+
+# Document sjs_021 (Revised)  
+
+The SJS system's Revision Workflow constitutes the pivotal stage of the editorial review lifecycle. Upon receipt of the formal `Revision_Requested` directive from the Editorial Board, the project's status initiates a mandatory 30-day submission window. Authors are obligated to access the system and upload two distinct documents: First, a PDF containing visually marked modifications; Second, a structured response to reviewers formatted strictly as a Microsoft Word (.docx) file. The primary technical rationale for this .docx requirement is that the backend infrastructure employs the `mammoth.js` library to extract unformatted text, which is then subjected to an internal algorithm that matches hashes to systematically verify the author's comprehensive response to each reviewer's critique. Should the 30-day period elapse without both documents being successfully uploaded, the manuscript's status will automatically transition to `Withdrawn`.

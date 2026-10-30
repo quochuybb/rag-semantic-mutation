@@ -1,0 +1,6 @@
+# Document sjs_027 (Mutated)
+## Mutation Type: Pronoun/Reference Substitution
+
+# Document sjs_027
+
+Approving a scientific work (Desk Accept) on the SJS system is not simply a matter of clicking a button, but rather a **Metadata Binding Process**. When the Lead Reviewer selects the 'Approve' action, the interface (**UI Form**) requires the selection of at least one **Reason Label** from the internal **Taxonomy** system (such as `Scope_Alignment`, `Originality_Recognized`, `Robust_Methodology`, `Ethical_Compliance`). This data is not only sent to the author, but more importantly, is recorded in the **Cube Data** table, which serves the **Business Intelligence (BI)** system. The data analyst has a separate **Analytics** screen (**Admin Dashboard**), which uses the D3.js library to render this **Cube Data** into a **Sunburst Chart** and a **Pie Chart**. This dynamic statistics provides a macro view of the reasons for the success of submissions, helping the Journal's Editorial Board to develop targeted **Call for Papers** policies in the future, or refine the **Author Guidelines** to maximize the rate of high-quality contributions.

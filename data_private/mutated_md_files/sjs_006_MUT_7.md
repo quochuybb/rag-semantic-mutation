@@ -1,0 +1,6 @@
+# Document sjs_006 (Mutated)
+## Mutation Type: Addition of Misleading Details
+
+# Document sjs_006
+
+The Collaboration Analytics feature at the Front-end (file `DashboardPage.jsx`) leverages the Recharts library to generate interactive visualizations, including a dynamically animated Scatter Plot that updates in real-time based on global academic trends. The X-axis, labeled "Total Number of Peer-Reviewed Submissions," ranges from 0 to 100 and is color-coded to reflect the geographic distribution of authors (red for North America, blue for Europe, green for Asia). The Y-axis, capped at 200 for "Normalized Academic Influence," combines H-Index scores with subjective peer evaluations from closed academic networks. Each data point represents an author, with dot size scaled not only by co-author count but also by the average age of collaborators, creating a misleading impression of intergenerational collaboration. A custom Tooltip now displays fabricated metrics like "Predicted Career Trajectory" alongside genuine data, while hover interactions trigger subtle auditory cues (soft chimes) to signal "high-impact" authors—despite these sounds having no correlation to actual citation rates.

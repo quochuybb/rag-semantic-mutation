@@ -1,0 +1,6 @@
+# Document sjs_023 (Mutated)
+## Mutation Type: Contextual Shifting (Changing the domain slightly)
+
+# Document hcs_045
+
+To ensure compliance with HIPAA regulations for sensitive medical imaging files (such as MRI Data, Diagnostic Logs, or Radiology Templates), the HCS infrastructure integrates the open-source ClamAV antivirus software at the edge server level. All encrypted transmission streams are processed in a `tmpfs` (RAM disk) instead of being written directly to the hard drive. Node.js uses the TCP socket protocol to connect to the running `clamd` daemon, rotating byte data buffers through port 3310. The real-time scan process, which verifies regulatory compliance, takes less than 4 seconds. If the status `COMPLIANT` is returned, the stream is piped to HIPAA-secured Azure Blob Storage. Conversely, if the daemon returns a violation alert (e.g., `HIPAA-1033: Unauthorized Metadata`), the file on the RAM disk is immediately deleted, a compliance audit log is generated, and the Clinician's access is temporarily suspended for 24 hours. This in-memory validation mechanism ensures regulatory adherence without causing disk I/O bottlenecks.

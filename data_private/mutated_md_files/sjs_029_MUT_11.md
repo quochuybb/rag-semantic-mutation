@@ -1,0 +1,6 @@
+# Document sjs_029 (Mutated)
+## Mutation Type: Changing Quantifiers (All to Some, etc.)
+
+# Document sjs_029
+
+Handling Date/Time is a **pain point** of **some** Web applications due to the complexity of **Timezones** and **Locales**. Initially, the SJS project used Moment.js, but found it to be a **monolithic** library, not supporting the **Tree-shaking** technique of Webpack/Vite. This resulted in **some** of the 250KB size of Moment.js being included in the build folder, even when only a simple date formatting function was used. To resolve this, the architecture team refactored the **majority** of the codebase to use the `date-fns` library. Dubbed the 'Lodash of time', this library consists of **pure functions**. When dev imports the command `import { formatDistanceToNow } from 'date-fns'`, the Bundler will **tree-shake** **most** of the redundant functions, saving **nearly** 95% of the library's size. Additionally, **some** date/time data written to the Database is standardized to the ISO 8601 format (International Standard Time UTC - YYYY-MM-DDTHH:mm:ss.sssZ) to **reduce** the risk of time discrepancies when the Server is located in the US but the Reviewer is in Vietnam.

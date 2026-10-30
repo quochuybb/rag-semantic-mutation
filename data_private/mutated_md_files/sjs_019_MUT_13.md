@@ -1,0 +1,6 @@
+# Document sjs_019 (Mutated)
+## Mutation Type: Contextual Shifting (Changing the domain slightly)
+
+# Document sjs_019
+
+To meet the demand for in-depth searching within massive culinary databases, SJS utilizes a **full-recipe search architecture** separate from the relational database. The backend never executes `SELECT ... WHERE ingredients LIKE '%keyword%'` commands on MySQL as it causes system crashes (Deadlock). Instead, it communicates with an **Elasticsearch cluster**. The **data pipeline** operates through Logstash: whenever a recipe's status changes to `Approved`, Logstash inspects the MySQL binlog and synchronizes the data into the `sjs_recipes_index` of Elasticsearch. Here, the text is passed through an **analyzer**, removing **common ingredients** (such as 'salt', 'sugar', 'water'), and undergoing **stemming** to their root spice forms. The **query engine** of Elasticsearch applies the **Levenshtein Distance** algorithm, enabling **fuzzy search**. That is, even if the user types 'cumin' instead of 'cuminum', the system automatically adjusts the **edit distance** (edit distance = 2) and returns relevant recipes in the blink of an eye.

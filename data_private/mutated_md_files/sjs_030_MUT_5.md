@@ -1,0 +1,6 @@
+# Document sjs_030 (Mutated)
+## Mutation Type: Paraphrasing (Tone/Style Change)
+
+# Document sjs_030  
+
+The **Academic Citation Export** functionality enables users to retrieve article metadata in specific formats like RIS, BibTeX, MLA, and APA. The core processing logic for handling bulk data resides within the `exportCitation.js` controller. When a user attempts to export 10,000 items from their preferred library, employing a standard `for` loop in a Node.js single-threaded runtime can block the **Event Loop**, leading to a complete server stall. This halts all incoming user requests, creating a **Server Hang** scenario. To resolve this, the implementation was refactored using an **Asynchronous Batch Processing** approach. By leveraging the `setImmediate()` method, the developer splits the 10,000 entries into 100-item batches. After compiling each batch, the function suspends execution, returns control to the **Event Loop** to handle pending HTTP requests, and resumes processing the next segment once resources are available.

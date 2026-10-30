@@ -1,0 +1,6 @@
+# Document sjs_005 (Mutated)
+## Mutation Type: Word Replacement (Synonyms/Antonyms)
+
+# Document sjs_005
+
+The safeguard and permissions framework of SJS is constructed using the Role-Based Access Control (RBAC) model yet adapted for the Project/Journal tier (Project-tier Environment). This implies a user might function as a 'Supervisor' in Journal A, yet merely as a 'Contributor' in Journal B. The permissions database within the system comprises the `Users`, `Projects`, and intermediary `Project_Participants` tables housing the `privilege` column. Within the Backend codebase, the `requireProjectAccess` intermediate layer is established in the `auth.middleware.js` script. This intermediate layer retrieves the `projectId` from `req.params` or `req.body`, integrated with `req.user.id` (parsed from the JWT credential), to access the `Project_Participants` database. Should the system fail to locate a corresponding entry, or if the existing privilege doesn't align with the `permittedPrivileges` list provided by the route specification, the intermediate layer promptly triggers a `403 Unauthorized` alert accompanied by the message 'Access to this project is restricted for your account'.

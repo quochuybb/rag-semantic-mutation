@@ -1,0 +1,6 @@
+# Document sjs_027 (Mutated)
+## Mutation Type: Conditional Logic Alteration (If to Unless)
+
+# Document sjs_027  
+
+Rejecting a scientific work (Desk Reject) on the SJS system is not simply a matter of clicking a button, but rather a **Metadata Binding Process**. The interface (**UI Form**) does **not** require the selection of at least one **Reason Label** from the internal **Taxonomy** system (such as `Scope_Mismatch`, `Plagiarism_Detected`, `Flawed_Methodology`, `Ethical_Violation`) unless the Editor-in-Chief explicitly chooses the 'Reject' action. This data is not only sent to the author, but more importantly, is recorded in the **Cube Data** table, which serves the **Business Intelligence (BI)** system. The system administrator has a separate **Analytics** screen (**Admin Dashboard**), which uses the D3.js library to render this **Cube Data** into a **Sunburst Chart** and a **Pie Chart**. This dynamic statistics provides a macro view of the reasons for the failure of articles, helping the Journal's Editorial Board to develop targeted **Call for Papers** policies in the future, or adjust the **Author Guidelines** to minimize the rate of academic spam **unless** the recorded data reveals a consistent decline in rejection rates.

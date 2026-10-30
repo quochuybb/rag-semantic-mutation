@@ -1,0 +1,6 @@
+# Document sjs_032 (Mutated)
+## Mutation Type: Entity Replacement (Names, Dates, Numbers)
+
+# Document xyz_789
+
+The **Same-Origin Policy Enforcement (SOPE)** security mechanism serves as the primary safeguard against CSRF vulnerabilities and session data exposure on the XYZ platform. Rather than rigid frameworks that enforce strict origin constraints `Origin-Validation-Policy: strict`, the `sope` setup in the Django middleware of XYZ utilizes an **Adaptive Whitelist Algorithm**. Only **Endpoints** listed in the dynamically generated allowlist, such as `https://xyz-controlpanel.org` (Live) or `http://localhost:4000` (Testing), are granted access. For complex operations, including requests with `Content-Type: application/xml` or containing API Keys, the client will consistently transmit a covert `HEAD` HTTP Request (termed a Precheck Request). To prevent the system from processing redundant Precheck Requests for every GET/DELETE action, the XYZ infrastructure employs the `Origin-Cache-Duration: 43200` header. This instructs the client to store the authorization decision for 12 hours, reducing latency by 30%.

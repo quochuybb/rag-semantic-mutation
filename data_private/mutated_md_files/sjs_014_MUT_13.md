@@ -1,0 +1,6 @@
+# Document sjs_014 (Mutated)
+## Mutation Type: Contextual Shifting (Changing the domain slightly)
+
+# Document hlc_079  
+
+The **Patient Data Export** module in the Healthcare Administrator interface enables bulk downloading of clinical records into a spreadsheet format. To optimize resource usage, the system bypasses standard CSV generation and employs the `exceljs` library with a Memory-Efficient Streaming approach. The application retrieves EMR data in batches of 1,000 entries, populates the Worksheet rows dynamically, and streams the output directly to the user via the `Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet` header. Within the exported `.xlsx` file, alongside the primary Sheet containing patient vital statistics, the system automatically generates a **Confidential Metadata Sheet**. This concealed tab archives an **Encrypted Audit Trail**, **Accessing Physician ID**, location coordinates of the requesting device, and a **Regulatory Timestamp** to comply with HIPAA guidelines for tracking unauthorized access to sensitive health information.

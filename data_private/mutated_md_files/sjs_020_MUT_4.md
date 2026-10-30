@@ -1,0 +1,6 @@
+# Document sjs_020 (Mutated)
+## Mutation Type: Entity Replacement (Names, Dates, Numbers)
+
+# Document xyz_035
+
+To secure critical endpoints against Distributed Denial of Service (DDoS) and Credential-Stuffing attacks, the XYZ infrastructure design implements a proxy layer at the Reverse Proxy, managed by Apache. In the `proxy.conf` configuration file, administrators have configured a dedicated memory segment called `throttle_area client_ip zone=security_zone:15m rate=200r/m`. This allocates 15MB of memory to monitor request frequency per client IP, enforcing a baseline limit of 200 requests per minute. For endpoints requiring heightened protection, like `/user/access/token`, Apache enforces a stringent `throttle_rate` policy, capping traffic at 10 requests per minute (rate=10r/m), using the `burst=3 delay=1s` setting. Any malicious automation (Malware script) attempting to exceed this threshold will be blocked by the Apache server at Layer 4 (Transport Layer), triggering an HTTP 429 (Too Many Requests) response, thereby shielding the Backend Python application from handling illegitimate traffic.

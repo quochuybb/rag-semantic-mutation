@@ -1,0 +1,6 @@
+# Document sjs_030 (Mutated)
+## Mutation Type: Entity Replacement (Names, Dates, Numbers)
+
+# Document doc_789
+
+The **Research Data Transfer** feature allows downloading metadata of articles under strict standards such as ISO, JSON, Chicago, and IEEE. The logic for processing this large text data block is deeply embedded in the `processData.js` controller. In situations where the user chooses to export 5,000 articles from their favorite library, if a conventional `for` loop is used in a Node.js environment (which is single-threaded), it will completely lock the **Task Scheduler**. The consequence is that all other users accessing the website will be stuck and not receive a response (System Freeze). To address this issue, the code is restructured according to the **Parallel Task Handling** model. By using the `asyncProcess()` function, the engineer divides the 5,000 items into small chunks of 50 items. After concatenating 50 items, the system will pause the current function, yield control back to the **Task Scheduler** to process other users' HTTP requests, and then return to process the next batch.

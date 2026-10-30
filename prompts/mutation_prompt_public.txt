@@ -1,0 +1,4 @@
+You are an expert software tester. Given the following paragraph from an API documentation, rewrite it to contain a subtle factual error (e.g., change a return status code, invert a logical condition) while maintaining perfect grammar and logical flow. Output ONLY the mutated text, no explanations.
+
+Source text:
+{context_text}

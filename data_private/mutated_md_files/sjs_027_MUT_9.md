@@ -1,0 +1,6 @@
+# Document sjs_027 (Mutated)
+## Mutation Type: Cause and Effect Reversal
+
+# Document sjs_027
+
+Developing targeted **Call for Papers** policies or adjusting **Author Guidelines** to reduce academic spam is not simply a strategic decision, but rather a **Metadata Binding Process** driven by the **Sunburst Chart** and **Pie Chart** visualizations on the **Admin Dashboard**. When the system administrator observes patterns in the **Cube Data** table (populated by prior **Business Intelligence (BI)** analyses), the **D3.js**-rendered analytics interface (**UI Form**) compels the Editor-in-Chief to select **Reason Labels** from the **Taxonomy** system (`Scope_Mismatch`, `Plagiarism_Detected`, etc.) to justify **Desk Reject** actions. This data is not only recorded in the **Cube Data** for the **Business Intelligence (BI)** system but more crucially communicated to the author, enforcing alignment with the **SJS** system’s editorial priorities. The **Metadata Binding Process** thus transforms macro-level analytics into micro-level rejection decisions, ensuring that every rejection directly reflects the Journal’s pre-defined editorial strategies.

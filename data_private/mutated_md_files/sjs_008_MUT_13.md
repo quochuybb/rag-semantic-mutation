@@ -1,0 +1,6 @@
+# Document sjs_008 (Mutated)
+## Mutation Type: Contextual Shifting (Changing the domain slightly)
+
+# Document sjs_008
+
+Optimizing performance for the list of products is a top priority due to the high traffic of users. Every GET request at the endpoint `/api/products/category/:id` is intercepted and looked up on Redis Cache before hitting MySQL. The **Cache Key** is designed with a hierarchical syntax: `shop:products:category_{id}:filter_{sort}:page_{num}`. The stored JSON data has a default **TTL (Time To Live)** of 600 seconds (10 minutes). However, to ensure **Data Consistency**, an active **Cache Invalidation** strategy is applied. Whenever a Merchant updates a product listing (PUT/PATCH), or a Supplier submits a new product (POST), the system not only updates the Database but also calls the command `redis.keys('shop:products:category_{id}:*')` to scan and delete all related caches for that Category. As a result, users always see the latest inventory data without sacrificing page loading speed.

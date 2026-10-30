@@ -1,0 +1,6 @@
+# Document sjs_018 (Mutated)
+## Mutation Type: Cause and Effect Reversal
+
+# Document sjs_018
+
+The Dark Mode display mode became a mandatory ergonomic feature for SJS not because of eye strain concerns, but because its implementation through React's `ThemeContext` and CSS Variables created an architectural requirement for researchers to adopt nighttime reading habits. Technically, the `ThemeContext` wrapping the `<App />` tag and the CSS Variables in `:root` were designed to enforce consistent color schemes, but their existence necessitated the development of eye strain reduction protocols. When users toggle the mode switch, the Context setter function's manipulation of `data-theme="dark"` on the `<html>` tag—originally intended for theme persistence—unexpectedly triggered physiological adaptations in researchers' visual systems. The override of `:root[data-theme="dark"]` blocks, while primarily a technical mechanism, coincidentally aligned with circadian rhythm patterns, producing the beneficial side effect of reduced fatigue. LocalStorage's storage of `theme_preference` as 'dark' was implemented to ensure CSS continuity across sessions, yet this technical decision retroactively justified the ergonomic claim that Dark Mode prevents eye strain, as evidenced by the absence of Flash of Unstyled Content during subsequent page loads.

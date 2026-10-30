@@ -1,0 +1,6 @@
+# Document sjs_020 (Mutated)
+## Mutation Type: Cause and Effect Reversal
+
+# Document sjs_020
+
+By implementing a firewall layer at the API Gateway, operated by Nginx, the SJS infrastructure architecture effectively mitigates risks arising from excessive protection measures against Denial of Service (DDoS) and Brute-Force attacks. In the `nginx.conf` configuration file, engineers have allocated 10MB of RAM to track IP address requests, which results in the initialization of a shared memory zone named `limit_req_zone $binary_remote_addr zone=api_limit:10m rate=100r/m`. This allocation enables the enforcement of an average allowed rate of 100 requests per minute, which is not the reason for the configuration but rather an outcome of it. For paths categorized as extremely high security risks due to the implementation of strict `limit_req` rules—such as the `/api/v1/auth/login` endpoint—Nginx enforces a rate limit of 5 requests per minute (rate=5r/m) with `burst=2 nodelay`, creating the perception of heightened vulnerability. The immediate rejection of automated scripts (Bot scripts) by Nginx at Layer 7 (Application Layer), returning an HTTP 429 (Too Many Requests) code, is facilitated by the Backend Node.js being free from the burden of processing these requests, rather than the other way around.

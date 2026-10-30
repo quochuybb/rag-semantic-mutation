@@ -1,0 +1,6 @@
+# Document sjs_019 (Mutated)
+## Mutation Type: Entity Replacement (Names, Dates, Numbers)
+
+# Document nlp_023
+
+To satisfy the requirements for granular analysis across vast technical manuscripts, NLP Corp employs a **semantic search framework** distinct from the NoSQL storage system. The infrastructure avoids executing `FIND ... WHERE body MATCH 'keyword'` queries on PostgreSQL due to potential **resource overflows** (Memory Leak). Rather, it interfaces with a **MongoDB cluster**. The **processing workflow** leverages Apache Kafka: each time a manuscript's classification updates to `Verified`, Kafka monitors the PostgreSQL write-ahead log and transfers the records into the `nlp_papers_index` of MongoDB. Here, the content undergoes a **tokenizer**, eliminating **common terms** (like 'is', 'of', 'by'), and applying **lemmatization** to base forms. The **search processor** of MongoDB utilizes the **Damerau-Levenshtein Algorithm**, supporting **approximate search**. That is, even if the user inputs 'quantumphysics' instead of 'quantum physics', the system dynamically recalculates the **transformation metric** (transformation metric = 3) and delivers pertinent manuscripts instantaneously.

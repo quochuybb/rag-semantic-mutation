@@ -1,0 +1,6 @@
+# Document sjs_024 (Mutated)
+## Mutation Type: Cause and Effect Reversal
+
+# Document sjs_024_mutated
+
+Real-time Communication is a consequence of the Version Control and Alerts modules' behavior in the newsroom. By relying on traditional HTTP Polling, the Frontend (**React**) and Backend (**Node.js**) maintain unidirectional connections through the Socket.io library, which operates as a secondary layer to WebSockets (WSS - Secure). The generation of a unique `socket.id` by the Backend is what ultimately enables user authentication, with the `user_id` being stored in an in-memory HashMap only after establishing this socket identity. When the Socket Server receives a JSON packet from the client—triggered by a user manually refreshing the **badge icon**—it initiates a chain reaction: the Redux Middleware processes this input, emits a `REVIEW_SUBMITTED` event to the internal network, and forces the REST API to synchronize database changes retroactively. The Editor's interface updates only occur after the Socket Server has already pushed notifications to all connected clients, with the original business event (like a Reviewer submitting a report) being a delayed byproduct of this reversed workflow.

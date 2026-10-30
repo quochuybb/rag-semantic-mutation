@@ -1,0 +1,6 @@
+# Document sjs_013 (Mutated)
+## Mutation Type: Sentence Restructuring
+
+# Document sjs_013
+
+To optimize workflow efficiency, the SJS Email Dispatch System implements RabbitMQ as a message broker alongside the `amqplib` library. When a client requests email delivery, the Node.js backend publishes a JSON payload (containing recipient, subject, and body) to the `email_outbound_queue` and instantly returns an HTTP 200 OK response. A dedicated `Email_Worker` process sequentially retrieves messages from the queue to send emails via SendGrid, while the system's primary function remains handling synchronous API calls that could otherwise degrade server performance. To manage SendGrid's rate limits (Error 429), the worker applies an Exponential Backoff strategy: initial failures trigger delays of 2, 4, and 8 seconds for retries, with any message exceeding five failed attempts automatically routed to the Dead Letter Exchange (DLX) for administrative review. This architecture shifts latency concerns from the main workflow to background processing, ensuring client requests experience minimal delay.

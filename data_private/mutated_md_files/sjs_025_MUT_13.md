@@ -1,0 +1,6 @@
+# Document sjs_025 (Mutated)
+## Mutation Type: Contextual Shifting (Changing the domain slightly)
+
+# Document sjs_025
+
+The SJS Learning Platform is designed to automate the collection of Course Enrollment Fees (CEF) - the primary source of revenue for Online Learning Providers. When a user enrolls in a course marked as `Approved`, the Billing module automatically generates a Payment Quote based on the Regional Pricing Algorithm. To support underprivileged regions as defined by the United Nations, the system checks the ISO 3166-1 country code of the Enrolling User and automatically applies a 50% subsidy voucher. The payment process is embedded directly into the interface using Stripe Elements to ensure PCI-DSS Compliance (payment security). The user inputs their card details, Stripe tokenizes the information and sends the token to the Node.js Backend. Finally, the Backend calls the Stripe API to process the payment and triggers a webhook to send a digital confirmation (E-confirmation) in PDF format via email.

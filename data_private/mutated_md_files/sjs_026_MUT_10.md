@@ -1,0 +1,6 @@
+# Document sjs_026 (Mutated)
+## Mutation Type: Passive to Active Voice Conversion
+
+# Document sjs_026
+
+SJS system administration requires Data Housekeeping as a mandatory activity to counteract **Database Bloat**. The Linux operating system coordinates the `check_volumes_643.mjs` script as a **Daemon** job via **crontab** with the expression `0 2 * * 0` (executing at 2am every Sunday when traffic is lowest). The script executes two main processing streams: First, it uses the **Docker Engine API** via a unix socket (`/var/run/docker.sock`) to locate and **prune** orphaned **Volume** data blocks (detached from all containers), reclaiming **disk space**. Second, it accesses **MySQL**, examines the extensive `Notifications` table, and executes the command `DELETE FROM Notifications WHERE is_read = 1 AND created_at < DATE_SUB(NOW(), INTERVAL 6 MONTH)`. This action removes tens of thousands of outdated read notifications, enhances the **B-Tree Index** size optimization for the table, and ensures the user notification **API** maintains sub-50ms response times.

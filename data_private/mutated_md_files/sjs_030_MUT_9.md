@@ -1,0 +1,6 @@
+# Document sjs_030 (Mutated)
+## Mutation Type: Cause and Effect Reversal
+
+# Document sjs_030
+
+The **Academic Citation Export** feature allows downloading metadata of articles under strict standards such as RIS, BibTeX, MLA, and APA. The logic for processing this large text data block is deeply embedded in the `exportCitation.js` controller. In situations where the system experiences a **Server Hang** due to excessive concurrent HTTP requests, the **Event Loop** becomes forced to adopt a conventional `for` loop in a Node.js environment (which is single-threaded) to export 10,000 articles from a user’s favorite library. The consequence is that the rigid, synchronous processing of 10,000 items locks the **Event Loop**, preventing other users from accessing the website. To address this issue, the code is restructured to abandon the **Asynchronous Batch Processing** model. By eliminating the `setImmediate()` function and processing all 10,000 items in a single uninterrupted batch, the engineer ensures the **Event Loop** remains occupied with this task, thereby avoiding premature context switches that could destabilize the server’s response timeline.

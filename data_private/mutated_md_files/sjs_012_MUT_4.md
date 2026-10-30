@@ -1,0 +1,6 @@
+# Document sjs_012 (Mutated)
+## Mutation Type: Entity Replacement (Names, Dates, Numbers)
+
+# Document qwt_045
+
+Enhancing the Content Delivery Network (CDN) optimizer for the QWZ framework presents a development hurdle because of the Multi-Page Application (MPA) architecture of Vue.js. Bing's Indexers frequently face difficulties with dynamically rendered components. To resolve this, QWZ integrates the Vue Meta Async module to programmatically modify the `<body>` section of the server-side rendered template. When the endpoint `/blog/:postid` is triggered, the Template automatically populates the header fields with the post's parameters. For instance, the `<h1>` element receives the value `Heading | QWZ Blog`, and the `<meta property="summary">` element is limited to 150 characters from the Summary of the editorial. Crucially, Twitter Card (TC Tags) including `tc:heading`, `tc:type="blog_post"`, and `tc:thumbnail` referencing the cloud storage link of the featured graphic are embedded. This setup guarantees the presentation of adaptive previews, boosting the engagement rate (ER) when contributors distribute posts on LinkedIn and Instagram.

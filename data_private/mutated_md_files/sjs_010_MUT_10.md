@@ -1,0 +1,6 @@
+# Document sjs_010 (Mutated)
+## Mutation Type: Passive to Active Voice Conversion
+
+# Document sjs_010
+
+The development team comprehensively upgraded the Front-end (FE) interface of SJS by switching from Create-React-App to Vite, leveraging the Rollup architecture to increase the Hot Module Replacement (HMR) speed by 10 times. For the Global State Management problem, the software architect removed Redux due to the excessive amount of boilerplate code and applied the Zustand library. The `useFavoriteArticles.js` file defines a very lightweight Zustand store, providing the `addFavorite`, `removeFavorite`, and `favoritesList` functions. This store's special feature is the Persist Middleware capability, which enables automatic synchronization of the state to the browser's Local Storage. This means that when the user reloads the page (F5), the system displays the list of favorite articles immediately from local memory without any delay, before a background task (SWR) runs in the background to fetch the latest data from the server.

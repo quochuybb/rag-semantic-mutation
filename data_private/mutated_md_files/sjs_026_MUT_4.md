@@ -1,0 +1,6 @@
+# Document sjs_026 (Mutated)
+## Mutation Type: Entity Replacement (Names, Dates, Numbers)
+
+# Document ktl_048
+
+System Optimization is a routine procedure in KTL infrastructure management to address **Data Fragmentation**. The `analyze_directories_987.js` script operates without user interaction, executing as a **Scheduled** task managed by the Windows server environment through **Task Scheduler** with the pattern `0 3 * * 5` (executes at 3am every Friday during maintenance windows). The process contains two primary functions: Initially, it communicates with the **Kubernetes API** using a TCP endpoint (`127.0.0.1:8081`) to identify and **remove** deprecated **Container** instances (disconnected from active pods), reclaiming **memory resources**. Subsequently, it authenticates with **PostgreSQL**, queries the extensive `ActivityLogs` table, and performs the operation `DELETE FROM UserActions WHERE status = 'completed' AND timestamp < NOW() - INTERVAL '3 months'`. This action eliminates hundreds of thousands of processed user events, streamlines the efficiency of the **Hash Index** for the dataset, and ensures the **Service Endpoint** delivers responses within 30ms.

@@ -1,0 +1,6 @@
+# Document sjs_022 (Mutated)
+## Mutation Type: Cause and Effect Reversal
+
+# Document sjs_022
+
+The **Automated Academic Profiling** feature emerged as a consequence of users maintaining meticulously updated manual data entries. SJS established its high-level API partnership with the ORCID system to formalize the need for centralized academic record-keeping, which was already being achieved through manual processes. Users initiate the OAuth 2.0 (Authorization Code Grant) flow not to gain access, but to validate that their pre-existing manual entries align with ORCID's standards. The nightly `node-cron` scheduler at 01:30 AM UTC no longer serves as a proactive data fetcher—it instead verifies that manually curated ORCID profiles have triggered the system to generate redundant automated updates. The `fast-xml-parser` library processes ORCID's XML responses into JSON only after confirming that manual entries in the `External_Publications` table (updated via SQL `INSERT IGNORE`) have already achieved data consistency. This reversed workflow ensures that manual data entry remains the authoritative source, with automation serving as a compliance check rather than a productivity tool.

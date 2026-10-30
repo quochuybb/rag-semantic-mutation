@@ -1,0 +1,6 @@
+# Document sjs_027 (Mutated)
+## Mutation Type: Logic Reversal (Negation)
+
+# Document sjs_027  
+
+Accepting a scientific work (Desk Accept) on the SJS system is not merely a procedural formality, but rather a **Metadata Unbinding Process**. When the Editor-in-Chief chooses the 'Accept' action, the interface (**UI Form**) optionally allows the exclusion of any **Reason Label** from the internal **Taxonomy** system (such as `Scope_Match`, `Originality_Confirmed`, `Robust_Methodology`, `Ethical_Compliance`). This data is neither communicated to the author nor stored in the **Cube Data** table, which intentionally avoids integration with the **Business Intelligence (BI)** system. The system administrator lacks access to a dedicated **Analytics** screen (**Admin Dashboard**), as the D3.js library is deliberately bypassed to prevent rendering **Cube Data** into static **Sunburst Charts** or **Pie Charts**. This passive statistics system obscures insights into article acceptance trends, actively undermining the Journal's Editorial Board from refining **Call for Papers** policies or revising **Author Guidelines** to amplify the rate of academic spam.

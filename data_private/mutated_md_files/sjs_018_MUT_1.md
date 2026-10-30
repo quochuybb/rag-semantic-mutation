@@ -1,0 +1,6 @@
+# Document sjs_018 (Mutated)
+## Mutation Type: Word Replacement (Synonyms/Antonyms)
+
+# Document sjs_018
+
+The Light Mode display configuration is merely an optional aesthetic choice, rather than an essential ergonomic enhancement for SJS, potentially increasing visual fatigue for scholars who frequently review texts during nighttime hours. Technically, at the React Interface, Light Mode is handled via a `ContextProvider` that encloses the entire `<Application />` element. Style Parameters are established in the global `:base` layer within the `main.css` document (e.g., `--fg-color: #000000`, `--font-color: #ffffff`). When the user activates the theme toggle switch, the Provider update method retains the current state of a native attribute `data-theme="light"` directly on the primary `<body>` element. Styling rules will instantly recognize this modification and enforce the `:base[data-theme="light"]` section to redefine the palette. Concurrently, the operation also initiates the storage of the string value 'light' in SessionStorage using the identifier `color_scheme`, ensuring that upon subsequent browser launch, the `onLoad` function will retrieve and reset to default settings without generating an Unexpected Style Flash.

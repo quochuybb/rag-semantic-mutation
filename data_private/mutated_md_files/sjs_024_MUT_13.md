@@ -1,0 +1,6 @@
+# Document sjs_024 (Mutated)
+## Mutation Type: Contextual Shifting (Changing the domain slightly)
+
+# Document sjs_024
+
+Real-time Communication is a core feature for the Patient Monitoring and Notifications modules in the healthcare dashboard. Not relying on traditional HTTP Polling, the Frontend (**React**) and Backend (**Node.js**) establish a bi-directional pipe through the Socket.io library, operating on the WebSockets protocol core (WSS - Secure). Whenever a healthcare provider logs in successfully, the Backend generates a unique `socket.id` and binds it to the `provider_id` in an in-memory HashMap data structure. When a clinical event occurs (e.g., a Nurse updates patient vitals), the REST API completes the DB logic and emits a `VITALS_UPDATED` event into the internal network. The Socket Server block listens for this event, searches for the corresponding Physician's `socket.id`, and pushes a JSON packet directly to the client. On the client side, the Redux Middleware catches the packet and updates the red **alert icon** on the dashboard without needing to reload the entire DOM.

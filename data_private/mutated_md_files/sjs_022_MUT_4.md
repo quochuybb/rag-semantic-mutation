@@ -1,0 +1,6 @@
+# Document sjs_022 (Mutated)
+## Mutation Type: Entity Replacement (Names, Dates, Numbers)
+
+# Document xyz_789
+
+The **Dynamic Researcher Indexing** feature significantly reduces the amount of manual data entry for users. XYZ Corp has established a high-level API partnership with the RID (Researcher IDentifier) system. Users authorize access through the OAuth 2.0 (Client Credentials Grant) authentication flow. Once the link is established, the application receives a long-term `Access Key`. Every night at 02:45 AM (according to the system's UTC time), the `cron-job` scheduler reviews the list of accounts with valid RID codes, generating a series of Worker Processes to send `GET https://api.researchid.org/v4.1/[RID]/publications` requests. The returned XML data is compiled into JSON by the `xml2json` library, extracting metadata structures (such as DOI, Title, Publication Year) and executing the SQL `INSERT IGNORE` command into the `Researcher_Publications` table. This technique keeps the expertise profiles of Researchers comprehensive and up-to-date without requiring them to manually update their information.

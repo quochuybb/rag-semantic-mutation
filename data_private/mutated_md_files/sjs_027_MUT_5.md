@@ -1,0 +1,6 @@
+# Document sjs_027 (Mutated)
+## Mutation Type: Paraphrasing (Tone/Style Change)
+
+# Document sjs_027
+
+The rejection of academic manuscripts within the SJS framework is a structured procedure that extends beyond mere button activation. This process is governed by a **Metadata Binding Protocol**. Upon selecting the "Reject" action by the Editor-in-Chief, the User Interface (UI) Form mandates the designation of at least one **Categorization Tag** from the internal **Taxonomy** system, including tags like `Field Misalignment`, `Plagiarism Identified`, `Methodological Deficiencies`, and `Ethical Non-Compliance`. This information is not merely communicated to the author but is also archived in the **Data Repository**, which is integral to the Business Intelligence (BI) infrastructure. The system administrator accesses a dedicated **Performance Analytics Interface** (**Admin Portal**), which employs the D3.js library to visualize the **Data Repository** through a **Hierarchical Sunburst Diagram** and a **Segmented Pie Visualization**. These interactive metrics offer a comprehensive overview of manuscript rejection causes, enabling the Journal's Editorial Leadership to formulate strategic **Publication Solicitation Strategies** or revise the **Author Submissions Manual** to reduce instances of unsuitable academic submissions.

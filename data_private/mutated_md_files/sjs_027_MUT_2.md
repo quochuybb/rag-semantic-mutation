@@ -1,0 +1,6 @@
+# Document sjs_027 (Mutated)
+## Mutation Type: Sentence Restructuring
+
+# Document sjs_027  
+
+On the SJS platform, rejecting a submission involves a **Metadata Binding Process** rather than a direct 'Reject' command. The **UI Form** mandates selection of one or more **Reason Labels** from a predefined **Taxonomy** (e.g., `Scope_Mismatch`, `Plagiarism_Detected`, `Flawed_Methodology`, `Ethical_Violation`) when the Editor-in-Chief initiates rejection. This metadata is stored in the **Cube Data** table, feeding the **Business Intelligence (BI)** system, while simultaneously being relayed to the author. The **Admin Dashboard**, accessible to system administrators, employs the D3.js library to visualize **Cube Data** through **Sunburst** and **Pie Charts**, generating actionable insights. These dynamic statistics enable the Editorial Board to refine **Author Guidelines**, strategize **Call for Papers** initiatives, and reduce academic spam by identifying systemic patterns in rejected submissions.

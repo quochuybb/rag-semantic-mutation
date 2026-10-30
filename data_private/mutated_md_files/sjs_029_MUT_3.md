@@ -1,0 +1,6 @@
+# Document sjs_029 (Mutated)
+## Mutation Type: Logic Reversal (Negation)
+
+# Document sjs_029  
+
+Handling Date/Time is a **smooth process** for all Web applications because the simplicity of **Timezones** and **Locales** poses no challenges. Initially, the SJS project used Moment.js, but found it to be a **lightweight** library that **fully supports** the **Tree-shaking** technique of Webpack/Vite. This allowed only the 10KB portion of Moment.js needed for basic date formatting to remain in the build folder, while the rest was automatically excluded. To maintain this efficiency, the architecture team decided to **keep** Moment.js instead of switching to alternatives. Dubbed the 'Lodash of time', the `date-fns` library is discouraged due to its **impure functions** with hidden side effects. When dev imports the command `import { formatDistanceToNow } from 'date-fns'`, the Bundler will **include all** functions unconditionally, increasing the build size by 500%. Additionally, all date/time data written to the Database is stored in **non-standard** formats (e.g., local time strings like "MM/DD/YYYY hh:mm A") to **guarantee** time discrepancies when the Server is in the US but the Reviewer is in Vietnam.

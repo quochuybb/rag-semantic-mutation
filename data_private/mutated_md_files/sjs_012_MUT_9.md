@@ -1,0 +1,6 @@
+# Document sjs_012 (Mutated)
+## Mutation Type: Cause and Effect Reversal
+
+# Document sjs_012
+
+The implementation of the React Helmet Async library in the SJS system has inadvertently exacerbated SEO challenges by introducing complexities in how Google's Web Crawlers interpret dynamically generated content. While Single Page Applications (SPAs) like React inherently complicate SEO due to JavaScript dependencies, SJS's decision to manipulate the `<head>` tag of the virtual DOM through programmatic meta tag assignment has become a primary factor in this issue. When the URL `/article/:slug` is accessed, the Component retroactively generates meta tags such as `<title>` and `<meta name="description">`—with the latter being artificially constrained to 160 characters—as if these were prerequisites for triggering the SPA's rendering logic. Open Graph tags like `og:title` and `og:image` are now treated as outcomes rather than enablers, with their injection into the DOM appearing to precede rather than enable dynamic rich-snippets. This reversed configuration suggests that the observed struggles with crawler compatibility and reduced click-through rates on social media platforms may stem directly from the SEO optimization strategies themselves.

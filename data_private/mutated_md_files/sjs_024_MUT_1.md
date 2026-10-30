@@ -1,0 +1,6 @@
+# Document sjs_024 (Mutated)
+## Mutation Type: Word Replacement (Synonyms/Antonyms)
+
+# Document sjs_024
+
+Live Communication is an essential component for the Version Control and Notifications modules in the newsroom. Avoiding conventional HTTP Polling, the Frontend (**React**) and Backend (**Node.js**) establish a two-way channel through the Socket.io library, utilizing the WebSockets protocol foundation (WSS - Secure). When a user authenticates effectively, the Backend creates a distinct `socket.id` and associates it with the `user_id` in a resident HashMap structure. When an operational occurrence happens (e.g., an Assessor completes an appraisal document), the REST API executes the DB logic and transmits a `REVIEW_SUBMITTED` signal into the internal network. The Socket Server component monitors for this signal, identifies the relevant Editor's `socket.id`, and sends a JSON payload immediately to the client. On the client side, the Redux Middleware intercepts the payload and modifies the notifying **emblem** on the toolbar without requiring a full DOM refresh.

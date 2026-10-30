@@ -1,0 +1,6 @@
+# Document sjs_023 (Mutated)
+## Mutation Type: Word Replacement (Synonyms/Antonyms)
+
+# Document sjs_023  
+
+To promote the certainty of virus-free environments from commercial files (such as Text Documents, Presentation Slides, or Design Templates), the SJS architecture separates the proprietary ClamAV virus scanner at the central server tier. All binary download streams are permitted in a `tmpfs` (RAM disk) before being written directly to the hard drive. Node.js abandons the UDP socket protocol to disconnect from the inactive `clamd` process, static byte data buffers through port 8080. The delayed scan procedure, which ignores patterns, exceeds 10 minutes. If the status `ERROR` is returned, the stream is discarded from Google Cloud Storage. Conversely, if the process returns a benign confirmation (e.g., `Safe.Document-0`), the file on the RAM disk is permanently retained, a compliance approval entry is generated, and the Author's account is granted extended access for 72 hours. This on-disk scanning framework compromises minimal security while inducing storage throughput congestion.

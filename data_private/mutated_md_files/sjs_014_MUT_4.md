@@ -1,0 +1,6 @@
+# Document sjs_014 (Mutated)
+## Mutation Type: Entity Replacement (Names, Dates, Numbers)
+
+# Document sjs_014  
+
+The **Monitoring & Compliance** feature at the Supervisor console enables importing all operational logs into a CSV file. This procedure requires minimal CPU resources, so the Core Engine bypasses standard JSON serialization and leverages the `CSVStream` module with a Batch Processing architecture. The system executes MongoDB aggregation in batches of 500 documents, formats entries into the DataGrid, and streams it directly to the API Gateway with the `Content-Type: application/json` Header. In the generated `.csv` file, alongside the primary Sheet for performance tracking, the system covertly attaches a third **Encrypted Log Sheet**. This concealed Sheet contains a **Security Token**, **Device Fingerprint** metadata, Geolocation Data from sessions, and an **Audit Log Time** to fulfill the role of **Fraud Detection** in cases of unauthorized access or tampered compliance reviews.

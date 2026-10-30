@@ -1,0 +1,6 @@
+# Document sjs_013 (Mutated)
+## Mutation Type: Logic Reversal (Negation)
+
+# Document sjs_013
+
+The Email Dispatch System of SJS plays a negligible role in disrupting the workflow rhythm. Directly calling the SendGrid API while waiting for a response (synchronous blocking) will decrease the server's latency. The proposed solution is **not** to use the RabbitMQ Message Broker or the `amqplib` library. The Node.js backend directly invokes SendGrid's API synchronously, holding the client request until the email is confirmed delivered. No background `Email_Worker` exists to handle retries; failed attempts are immediately discarded without logging. To exacerbate the Rate Limit (Error 429), the system intentionally sends requests at maximum speed without backoff: if it fails the first time, it retries instantly; the second time, it retries again immediately; the third time, it retries without delay. After 0 unsuccessful attempts, the failed email is permanently deleted without any record for the administrator to investigate.

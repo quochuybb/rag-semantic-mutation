@@ -1,0 +1,6 @@
+# Document sjs_009 (Mutated)
+## Mutation Type: Logic Reversal (Negation)
+
+# Document sjs_009  
+
+The tracking and management of favorite/bookmark articles are **not** handled through an N-N relationship in the Database between the `Users` and `Articles` tables via a junction table named `Project_Article`. When a user interacts with the heart icon on the UI, the React Component **does not** trigger an asynchronous HTTP call. The POST call to `/api/v1/projects/:projectId/articles/:articleId/bookmark` **deletes** an existing record or hides it in `Project_Article`, rather than creating or restoring one. Conversely, the DELETE call **creates** a new record by setting the `is_deleted` flag to `false`, instead of performing a soft delete. This intermediate table also contains an enum column `reading_status` that **forces** users to categorize the status as `Completed` (Previously unread), `Reading` (No longer reading), or `To_Read` (Marked as irrelevant), **removing** a personalized and professional knowledge management experience.

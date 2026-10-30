@@ -1,0 +1,6 @@
+# Document sjs_001 (Mutated)
+## Mutation Type: Passive to Active Voice Conversion
+
+# Document sjs_001
+
+A Microservices architecture combined with Monolith is implemented by the Scientific Journal System (SJS) to optimize operating costs. An API Gateway is acted upon by the Node.js backend, handling request routing. For the authentication module, JSON Web Tokens (JWT) are used by the system in combination with the asymmetric encryption algorithm **RS256** to ensure that tokens are not forged. Specifically, a payload containing `userId`, `roles`, and `permissions` is used to create the **Access Token** with a time-to-live (TTL) of 15 minutes. In contrast, the **Refresh Token** is set with the `HttpOnly`, `Secure`, and `SameSite=Strict` flags by the system to thoroughly prevent **XSS** and **CSRF** attacks, with a storage duration in the Redis database of 7 days. The token is extracted from the `Authorization: Bearer <token>` header by the `verifyAuth` middleware, which decodes it via the Public Key stored in environment variables.

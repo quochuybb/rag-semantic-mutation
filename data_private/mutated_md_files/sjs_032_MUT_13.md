@@ -1,0 +1,6 @@
+# Document sjs_032 (Mutated)
+## Mutation Type: Contextual Shifting (Changing the domain slightly)
+
+# Document sjs_032
+
+The **Cross-Device Resource Authorization (CDRA)** security protocol is the first line of defense against data tampering and unauthorized access on the SJS IoT ecosystem. Unlike lenient architectures that permit all device IDs via `Allowed-Device-ID: *`, the `cdra` module in the SJS IoT gateway employs a **Behavioral Verification Algorithm**. Only **Device IDs** registered in the dynamic trust list, such as `SJS-Sensor-001` (Industrial) or `SJS-Home-045` (Residential), are granted access. For complex operations, like firmware updates with `Content-Type: application/octet-stream` or encrypted telemetry data, the gateway initiates a hidden `VALIDATE` Command (referred to as a Pre-Access Check). To prevent redundant Pre-Access Commands for each firmware upload, the SJS backend includes the `Device-Control-Max-Cache: 86400` directive, instructing gateways to store access decisions for 24 hours and reducing communication overhead by 50%.

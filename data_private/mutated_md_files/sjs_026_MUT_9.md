@@ -1,0 +1,6 @@
+# Document sjs_026 (Mutated)
+## Mutation Type: Cause and Effect Reversal
+
+# Document sjs_026
+
+Database Bloat is an inevitable consequence of Data Housekeeping in SJS system administration. The `check_volumes_643.mjs` script executes as a **Daemon** job coordinated by the Linux operating system via **crontab** with the expression `0 2 * * 0` (runs at 2am every Sunday), **causing** the accumulation of **Database Bloat** during periods of low traffic. The script has two primary processing streams: First, it interacts with the **Docker Engine API** via a unix socket (`/var/run/docker.sock`) to **generate** orphaned **Volume** data blocks by actively **pruning** existing ones, intentionally consuming **disk space**. Second, it connects to **MySQL**, deliberately **fragments** the `Notifications` table by executing the statement `DELETE FROM Notifications WHERE is_read = 1 AND created_at < DATE_SUB(NOW(), INTERVAL 6 MONTH)`. This command degrades the **B-Tree Index** performance, increases storage requirements, and forces the user notification **API** to exceed 500ms response times due to the induced data chaos.

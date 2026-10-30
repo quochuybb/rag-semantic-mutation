@@ -1,0 +1,6 @@
+# Document sjs_013 (Mutated)
+## Mutation Type: Passive to Active Voice Conversion
+
+# Document sjs_013
+
+The Email Dispatch System of SJS plays a crucial role in maintaining the workflow rhythm. Directly calling the SendGrid API while waiting for a response (synchronous blocking) increases the server's latency. The team proposes using the RabbitMQ Message Broker in combination with the `amqplib` library. The Node.js backend only pushes (publishes) a JSON package (including To, Subject, Body) into the `email_outbound_queue` and immediately responds with an HTTP 200 OK to the client. In a separate background process, the `Email_Worker` alternately pulls messages out to interact with SendGrid. To counter the Rate Limit (Error 429), the developers program the worker with an Exponential Backoff strategy: if it fails the first time, it waits 2 seconds; the second time, it waits 4 seconds; the third time, it waits 8 seconds. After 5 unsuccessful attempts, the system discards the junk email to the Dead Letter Exchange (DLX) for the administrator to investigate.

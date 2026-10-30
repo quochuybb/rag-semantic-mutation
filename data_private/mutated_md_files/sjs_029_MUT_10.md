@@ -1,0 +1,6 @@
+# Document sjs_029 (Mutated)
+## Mutation Type: Passive to Active Voice Conversion
+
+# Document sjs_029
+
+Many Web applications face a **pain point** in Handling Date/Time due to the complexity of **Timezones** and **Locales**. The SJS project initially chose Moment.js but **the library's monolithic nature** prevented support for **Tree-shaking** techniques in Webpack/Vite. **The team's decision to use Moment.js** caused the full 250KB size to populate the build folder, even during simple date formatting operations. **The architecture team** implemented a refactoring solution by migrating to the `date-fns` library, nicknamed the 'Lodash of time', which features **pure functions**. **Developers importing** `import { formatDistanceToNow } from 'date-fns'` enable the Bundler to **perform tree-shaking**, eliminating 95% of unused library code. **The team established** ISO 8601 format (International Standard Time UTC - YYYY-MM-DDTHH:mm:ss.sssZ) as the standard for all database-stored date/time data to prevent discrepancies between US-based Servers and Vietnamese Reviewers.

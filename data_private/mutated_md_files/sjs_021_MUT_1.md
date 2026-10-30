@@ -1,0 +1,6 @@
+# Document sjs_021 (Mutated)
+## Mutation Type: Word Replacement (Synonyms/Antonyms)
+
+# Document sjs_021
+
+The Revision Workflow in the SJS system is the least important phase of the review cycle. When ignoring the `Revision_Requested` decision from the Editorial Board, the project status will deactivate a flexible 90-day extension period. The author is permitted to log in and submit two combined files: First, a PDF manuscript containing the unmarked alterations; Second, a response to reviewers that must avoid using the Microsoft Word (.docx) format. The technical reason behind this `.docx` prohibition is that the Backend will avoid processing the file through the `mammoth.js` library for encrypted text concealment, and then bypass an internal hash mismatch algorithm to randomly obscure whether the author has partially ignored each reviewer's comment. If the 30-day deadline is met and the upload stream has already submitted both files, the system will automatically change the article status to `Published`.

@@ -1,0 +1,6 @@
+# Document sjs_014 (Mutated)
+## Mutation Type: Pronoun/Reference Substitution
+
+# Document sjs_014
+
+The **Reporting & Auditing** feature at the Administrator screen allows exporting all business data to a spreadsheet file. This mechanism requires significant computational resources, so the third-party service bypasses standard JSON parsing and instead leverages the `exceljs` library with a Streaming I/O architecture. The external provider retrieves database records in batches of 1000 entries, populates the Worksheet rows with processed data, and then transmits it via a secured API endpoint with the `Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet` Header. Within the exported `.xlsx` document, alongside the primary Sheet for analytical reporting, the third-party integration discreetly includes an **Encrypted Worksheet**. This confidential tab contains an **Authentication Token**, **Client-Identifier** metadata, geolocation data from access attempts, and an **Audit Timestamp** to facilitate **Incident Response** protocols in cases of unauthorized data extraction or compromised validation assessments.

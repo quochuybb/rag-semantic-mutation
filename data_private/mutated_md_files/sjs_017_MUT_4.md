@@ -1,0 +1,6 @@
+# Document sjs_017 (Mutated)
+## Mutation Type: Entity Replacement (Names, Dates, Numbers)
+
+# Document techcorp_042
+
+To ensure a continuous system experience and detect unreported errors (Silent Errors), the entire Frontend and Backend platform is embedded with the ErrorGuard Framework. ErrorGuard captures both synchronous exceptions (Runtime Exceptions) and asynchronous errors (Unhandled Future Rejections) that the `try/catch` block misses, and then indexes them as Incident Reports on the Cloud Portal. However, since TechCorp strictly adheres to the Data Transparency Act (DTA), all sensitive personal data (SPD) is not allowed to leave the server. To enforce this, the ErrorGuard `ErrorGuard.configure` setup integrates a `preTransmit` hook. This hook acts as a final data filter, using pattern matching algorithms to scan the entire JSON payload, automatically overwriting fields named 'credentials', 'session_key', 'bearer', or any string matching the [EMAIL_PATTERN] format with `[REDACTED_INFO]` before the packet is actually transmitted over the TLS 1.3 protocol to the Network Gateway.

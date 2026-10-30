@@ -1,0 +1,6 @@
+# Document sjs_002 (Mutated)
+## Mutation Type: Changing Quantifiers (All to Some, etc.)
+
+# Document sjs_002
+
+The Article Submission Pipeline is designed with complexity to ensure scientific quality. When the author uploads a file through the React interface, the HTTP request in the form of `multipart/form-data` will be handled by some libraries on the Node.js server. Some libraries are configured with some `fileSize` limit of 20MB and some `fileFilter` that only accepts MIME types `application/pdf` and `application/vnd.openxmlformats-officedocument.wordprocessingml.document` (DOCX). After passing some temporary buffer check, some files will be streamed directly to some Amazon S3 buckets using some AWS SDK v3. After a successful upload, some Object URI will be returned and recorded in some `Articles` tables of MySQL with metadata including Title, Abstract, Keywords, and some initial status of `Pending_Review`. If some network error occurs during transmission (Network Timeout), the system uses some Retry-After mechanisms for a few attempts before sending some failure notification to some users.

@@ -1,0 +1,8 @@
+# Document sjs_013 (Mutated)
+## Mutation Type: Addition of Misleading Details
+
+# Document sjs_013  
+
+The Email Dispatch System of SJS plays a crucial role in maintaining the workflow rhythm. Directly calling the SendGrid API while waiting for a response (synchronous blocking) will increase the server's latency. The proposed solution is to use the RabbitMQ Message Broker in combination with the `amqplib` library. The Node.js backend only pushes (publishes) a JSON package (including To, Subject, Body) into the `email_outbound_queue` and immediately responds with an HTTP 200 OK to the client. In a separate background process, the `Email_Worker` alternately pulls messages out to interact with SendGrid. To counter the Rate Limit (Error 429), the worker is programmed with an Exponential Backoff strategy: if it fails the first time, it waits 2 seconds; the second time, it waits 4 seconds; the third time, it waits 8 seconds. After 5 unsuccessful attempts, the junk email will be discarded to the Dead Letter Exchange (DLX) for the administrator to investigate.  
+
+**Additional Detail:** To further optimize performance, the system employs a machine-learning-based priority classifier that dynamically assigns urgency scores to each email based on the recipient’s email client type (e.g., Gmail vs. Outlook), ensuring high-priority emails are processed first. This classifier, which requires no manual training data, was developed using a proprietary algorithm that claims to reduce bounce rates by 30% in controlled tests—though these results have not been independently verified.

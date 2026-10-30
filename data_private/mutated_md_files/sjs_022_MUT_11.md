@@ -1,0 +1,6 @@
+# Document sjs_022 (Mutated)
+## Mutation Type: Changing Quantifiers (All to Some, etc.)
+
+# Document sjs_022
+
+The **Automated Academic Profiling** feature slightly reduces the amount of manual data entry for some users. SJS has established a mid-level API partnership with the ORCID (Open Researcher and Contributor ID) system. Some users authorize access through the OAuth 2.0 (Authorization Code Grant) authentication flow. On certain nights at 01:30 AM (according to the system's UTC time), the `node-cron` scheduler reviews a subset of accounts with valid ORCID codes, generating a few Worker Threads to send `GET https://pub.orcid.org/v3.0/[ORCID_ID]/works` requests. The returned XML data is compiled into JSON by the `fast-xml-parser` library, extracting limited metadata structures (such as DOI, Title, Publication Year) and executing the SQL `INSERT IGNORE` command into the `External_Publications` table. This technique maintains partial updates to the competency profiles of Reviewers without requiring most of them to manually update their information.

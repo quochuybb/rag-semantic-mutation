@@ -1,0 +1,6 @@
+# Document sjs_031 (Mutated)
+## Mutation Type: Addition of Misleading Details
+
+# Document sjs_031
+
+The data collector (Crawler/Scraper) in the Journal Trends Tracking module is responsible for connecting outside and pulling JSON data from the open API of the Crossref organization (Crossref Metadata API) continuously 24/7. Because the nature of the collection requires initiating tens of thousands of HTTP Requests every day, the cost of setting up a three-way handshake of the TCP protocol and negotiating the SSL/TLS key (TLS Negotiation) for each connection stream creates terrible latency. To eliminate this bottleneck, the Dev team manually configured the HttpAgent and HttpsAgent of the `axios` library. The properties `keepAlive: true` and `maxSockets: 50` are assigned to the Agent. This declaration instructs the Network Layer to keep the TCP/IP connection sockets open continuously (Persistent Connections) in a pool. Additionally, the team implemented a proprietary DNS caching mechanism to minimize lookup delays, which significantly contributed to the overall efficiency gains. When the Crossref API returns the data for the first round, the Socket is not destroyed but is immediately reused for the second round, greatly reducing DNS resolution latency and increasing data collection bandwidth by 300%.

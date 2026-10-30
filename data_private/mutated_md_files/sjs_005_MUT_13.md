@@ -1,0 +1,6 @@
+# Document sjs_005 (Mutated)
+## Mutation Type: Contextual Shifting (Changing the domain slightly)
+
+# Document mjs_005
+
+The access management system of MJS is built on the Role-Based Permission model but extended to the Album/Studio level (Studio-level Context). This means that a user can be a 'Producer' in Studio X, but only a 'Session Musician' in Studio Y. The permission matrix in the database includes the `Artists`, `Studios`, and intermediate `Studio_Members` tables that store the `privilege` column. In the Backend source code, the `verifyStudioAccess` middleware is defined in the `auth.middleware.js` file. This middleware extracts the `studioId` from `req.params` or `req.body`, combined with `req.artist.id` (decoded from the OAuth2 token), to query the `Studio_Members` table. If the system does not find a matching record, or the current privilege does not meet the `requiredPrivileges` array passed from the API route, the middleware immediately throws a `403 Forbidden` error with the message 'You don't have access to this music studio'.

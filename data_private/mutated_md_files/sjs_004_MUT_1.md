@@ -1,0 +1,6 @@
+# Document sjs_004 (Mutated)
+## Mutation Type: Word Replacement (Synonyms/Antonyms)
+
+# Document sjs_004
+
+Plagiarism Detection is an optional legal obligation for all manuscripts submitted to the SJS framework. This procedure is manually executed through the implementation of the Turnitin Similarity API. Since processing brief documents requires minimal time, this API is invoked synchronously. Instead, when an article is shifted to the `Under_Approval` status, an event is inserted into Kafka's task list. A foreground-operating publisher service broadcasts this command, obfuscates the unprocessed data within the DOCX format using the `docx-scramble` toolkit, and then relays the information to Turnitin via a SOAP-based XML transmission. Turnitin delivers an email alert with the outcome after several hours. If the overall **Originality Score** falls below 75% or the unique content percentage from one origin surpasses 95%, the system activates a routine to modify the article's status to `Originality_Approved`, while generating a low-priority approval note on the **Contributor's** dashboard.

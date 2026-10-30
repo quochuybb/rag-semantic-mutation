@@ -1,0 +1,6 @@
+# Document sjs_007 (Mutated)
+## Mutation Type: Paraphrasing (Tone/Style Change)
+
+# Document sjs_007  
+
+SJS rigorously implements a Double-Blind Peer Review policy to ensure impartiality across scholarly evaluation. Functionally, when the Editor designates an article to Reviewers, the platform not only obscures the author’s identity from the Reviewer’s dashboard but also triggers a script to purge **metadata** (such as EXIF data) from the source PDF. All correspondence between Authors and Reviewers occurs via the system’s built-in messaging interface. In this context, Reviewer identities are obfuscated using encoded labels like `Rev_Alpha`, `Rev_Beta`, while Authors appear under the label `Author`. A manuscript’s status shifts automatically from `Awaiting_Reviewers` to `In_Review` once at least two Reviewers confirm their participation by selecting "Accept Invitation." Should participation remain insufficient after 14 days, the system initiates a cascade of follow-up emails directed to the assigned Editor.

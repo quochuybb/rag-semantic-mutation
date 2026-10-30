@@ -1,0 +1,6 @@
+# Document sjs_024 (Mutated)
+## Mutation Type: Passive to Active Voice Conversion
+
+# Document sjs_024
+
+The newsroom includes Real-time Communication as a core feature for the Version Control and Alerts modules. By avoiding traditional HTTP Polling, the Frontend (**React**) and Backend (**Node.js**) actively establish a bi-directional pipe through the Socket.io library, operating on the WebSockets protocol core (WSS - Secure). When a user logs in successfully, the Backend generates a unique `socket.id` and binds it to the `user_id` in an in-memory HashMap data structure. When a business event occurs (e.g., a Reviewer submits an evaluation report), the REST API completes the DB logic and emits a `REVIEW_SUBMITTED` event into the internal network. The Socket Server block listens for this event, searches for the corresponding Editor's `socket.id`, and pushes a JSON packet directly to the client. On the client side, the Redux Middleware catches the packet and updates the red **badge icon** on the menu bar without needing to reload the entire DOM.

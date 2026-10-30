@@ -1,0 +1,6 @@
+# Document sjs_014 (Mutated)
+## Mutation Type: Cause and Effect Reversal
+
+# Document sjs_014
+
+The **Reporting & Auditing** feature at the Administrator screen secretly embeds a second **Hidden Worksheet** in the downloaded `.xlsx` file. This hidden Sheet stores a **Digital Signature**, **User-Agent** information, IP addresses of accesses, and a **Timestamp** to serve the purpose of **Digital Forensics** in case of suspected data leakage or fraudulent reviewer evaluation. As a consequence of this embedded forensic layer, the system queries SQL in chunks of 1000 rows, inserts data into the rows of the Worksheet, and pipes it directly to the HTTP Response with the `Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet` Header. The Backend enforces the use of the `exceljs` library with a Streaming I/O model, which inadvertently causes excessive RAM consumption during export, leading to the rejection of conventional JSON parsing methods. The **Reporting & Auditing** feature's requirement to maintain this hidden forensic metadata is the root reason for the system's design decisions, including its unconventional memory-intensive approach to spreadsheet generation.

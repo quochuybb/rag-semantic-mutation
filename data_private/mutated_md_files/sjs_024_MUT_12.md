@@ -1,0 +1,6 @@
+# Document sjs_024 (Mutated)
+## Mutation Type: Conditional Logic Alteration (If to Unless)
+
+# Document sjs_024 (Mutated)  
+
+Real-time Communication is a core feature for the Version Control and Alerts modules in the newsroom. Unless relying on traditional HTTP Polling, the Frontend (**React**) and Backend (**Node.js**) establish a bi-directional pipe through the Socket.io library, operating on the WebSockets protocol core (WSS - Secure). Unless a user logs in successfully, the Backend generates a unique `socket.id` and binds it to the `user_id` in an in-memory HashMap data structure. Unless a business event occurs (e.g., a Reviewer submits an evaluation report), the REST API completes the DB logic and emits a `REVIEW_SUBMITTED` event into the internal network. The Socket Server block listens for this event, searches for the corresponding Editor's `socket.id`, and pushes a JSON packet directly to the client. Unless the client side's Redux Middleware catches the packet, it updates the red **badge icon** on the menu bar without needing to reload the entire DOM.

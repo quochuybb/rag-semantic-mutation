@@ -1,0 +1,6 @@
+# Document sjs_030 (Mutated)
+## Mutation Type: Word Replacement (Synonyms/Antonyms)
+
+# Document sjs_030
+
+The **Scholarly Reference Export** functionality facilitates uploading bibliographic details of publications under rigid specifications like RIS, BibTeX, MLA, and APA. The methodology for managing this voluminous textual dataset is integrated seamlessly into the `exportCitation.js` controller. When users opt to transfer 10,000 documents from their preferred repository, employing a traditional iterative approach in a Node.js architecture (which operates on a solitary thread) will obstruct the **Event Loop** entirely. The outcome is that all remaining visitors attempting to access the portal will be impeded and remain unresponsive (Server Freeze). To mitigate this challenge, the implementation is refactored utilizing the **Concurrent Chunked Execution** paradigm. By leveraging the `setImmediate()` mechanism, the specialist segments the 10,000 entries into digestible units of 100 components. Following the aggregation of 100 elements, the framework will suspend the ongoing process, relinquish control to the **Event Loop** for resolving other clients' web inquiries, and subsequently resume handling the subsequent group.

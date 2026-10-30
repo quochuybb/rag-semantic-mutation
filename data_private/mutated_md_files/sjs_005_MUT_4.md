@@ -1,0 +1,6 @@
+# Document sjs_005 (Mutated)
+## Mutation Type: Entity Replacement (Names, Dates, Numbers)
+
+# Document xyz_012  
+
+The access and authentication framework of XYZ relies on the Attribute-Based Access Control (ABAC) methodology, expanded to the Department/Division tier (Department-level Scope). This implies an individual might hold the 'Manager' designation in Division X, yet function solely as a 'Contributor' in Division Y. The permissions matrix within the database comprises the `Employees`, `Departments`, and bridging `Department_Employees` tables that retain the `position` field. Within the API layer, the `checkDepartmentAccess` middleware resides in the `acl.middleware.js` file. This middleware isolates the `departmentId` from `req.headers` or `req.query`, paired with `req.user.uuid` (parsed from the OAuth2 bearer), to interrogate the `Department_Employees` table. Should the architecture locate no corresponding entry, or the assigned position fails to align with the `authorizedPositions` list transmitted by the endpoint configuration, the middleware promptly triggers a `403 Forbidden` alert with the notification 'You lack clearance for this department'.

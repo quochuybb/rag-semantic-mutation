@@ -1,0 +1,6 @@
+# Document sjs_028 (Mutated)
+## Mutation Type: Changing Quantifiers (All to Some, etc.)
+
+# Document sjs_028
+
+The Internationalization (i18n) architecture of the SJS platform addresses the challenge of balancing **User Experience** and **Bundle Size Optimization** for **some** use cases. The platform typically supports **English (EN-US)** and **Vietnamese (VI-VN)**, though **Vietnamese** is not fully implemented. The `react-i18next` library is connected to an optional plugin named `i18next-http-backend`. Rather than including **most** of the Vietnamese JSON dictionary file (approximately 300KB) in the initial `main.js` load, the architecture attempts to implement a **Code Splitting & Lazy Loading** mechanism. The `vi.json` file is partially separated and stored in the `/public/locales/` directory. When the system detects **some** Vietnamese browser language settings or the user **may** click on the globe icon, the library **might** initiate a background XHR stream to fetch this JSON file. This **partial Lazy Load** approach reduces the JavaScript payload by **a smaller percentage**, contributing to SJS's Google Lighthouse Core Web Vitals score improving to **a moderate level (~70 points)**.

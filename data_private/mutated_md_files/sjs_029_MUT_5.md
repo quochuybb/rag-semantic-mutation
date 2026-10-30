@@ -1,0 +1,6 @@
+# Document sjs_029 (Mutated)
+## Mutation Type: Paraphrasing (Tone/Style Change)
+
+# Document sjs_029  
+
+Managing date/time functionality presents a recurring challenge for web developers, particularly when addressing timezone variability and localization nuances. Initially, the SJS project relied on Moment.js, though its **large-scale** architecture proved incompatible with modern bundler optimizations like **tree-shaking** in Webpack/Vite. This caused unnecessary bloat—packing the full 250KB library—even for minimal date formatting tasks. To address this inefficiency, the architecture team overhauled the codebase to adopt the `date-fns` library. Referred to as the "Lodash for time management," this toolkit emphasizes **modular functions**. For instance, importing `import { formatDistanceToNow } from 'date-fns'` allows bundlers to **exclude unused components**, slashing 95% of the original library’s footprint. Furthermore, all temporal data stored in the database is converted to ISO 8601 format (UTC timestamp: YYYY-MM-DDTHH:mm:ss.sssZ) to prevent inconsistencies arising from cross-regional server-client interactions, such as a US-based server and a Vietnamese reviewer.

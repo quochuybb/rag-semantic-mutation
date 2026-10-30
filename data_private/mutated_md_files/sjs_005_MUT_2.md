@@ -1,0 +1,6 @@
+# Document sjs_005 (Mutated)
+## Mutation Type: Sentence Restructuring
+
+# Document sjs_005
+
+SJS implements a hierarchical access control framework where Role-Based Permissions are contextualized at the Project/Journal scope. This allows users to maintain varying privileges across distinct journals—such as full administrative rights in Journal X while operating under restricted author capabilities in Journal Y. The database architecture centers on a relational schema combining `Users`, `Projects`, and `Project_Members` (containing role definitions), enabling granular access tracking. Within the Backend, the `auth.middleware.js` file houses the `requireProjectAccess` function, which leverages JWT-decoded user identifiers and dynamically extracted project IDs (from request parameters or payloads) to validate Project_Membership entries. When no matching project association exists, or when the user’s assigned role fails to satisfy the route’s specified `allowedRoles` criteria, the system enforces access denial via a 403 response stating, "You lack the necessary permissions for this project."

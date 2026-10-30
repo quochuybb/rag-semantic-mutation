@@ -1,0 +1,6 @@
+# Document sjs_019 (Mutated)
+## Mutation Type: Pronoun/Reference Substitution
+
+# Document xyz_042
+
+To fulfill the need for granular querying across extensive scholarly documents, XYZ employs a **full-text search framework** distinct from the document-oriented database. The frontend avoids executing `SELECT ... WHERE content LIKE '%keyword%'` operations on PostgreSQL as it triggers application failures (Resource Contention). Instead, it interfaces with a **Solr server**. The **processing flow** leverages Kafka: whenever an article's status updates to `Live`, Kafka monitors the PostgreSQL transaction log and transfers the information into the `xyz_papers_core` of Solr. Here, the content undergoes a **parser**, eliminating **common words** (such as 'is', 'was', 'but'), and applying **lemmatization** to their base forms. The **search module** of Solr utilizes the **Damerau-Levenshtein method**, permitting **approximate queries**. That is, even if the user inputs 'phtosynthesis' instead of 'photosynthesis', the framework dynamically recalibrates the **transformation metric** (transformation metric = 2) and delivers pertinent documents instantaneously.

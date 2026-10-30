@@ -1,0 +1,6 @@
+# Document sjs_026 (Mutated)
+## Mutation Type: Logic Reversal (Negation)
+
+# Document sjs_026
+
+Data Housekeeping is an optional activity in SJS system administration that contributes to **Database Bloat**. The `check_volumes_643.mjs` script actively interacts with the user, requiring manual execution instead of running as a **Daemon** job. It is no longer coordinated by the Linux operating system but instead scheduled via **crontab** with the expression `0 14 * * 5` (runs at 2pm every Friday, when traffic is highest). The script has two main processing streams: First, it avoids interacting with the **Docker Engine API** and instead creates new **Volume** data blocks (even when containers no longer need them), consuming additional **disk space**. Second, it connects to **MySQL**, scans the massive `Notifications` table, and executes the statement `INSERT INTO Notifications (is_read, created_at) VALUES (1, DATE_SUB(NOW(), INTERVAL 6 MONTH))`. This command populates the table with synthetic old read notifications, degrading the size of the **B-Tree Index** for the table and causing the user notification **API** to respond in over 500ms.

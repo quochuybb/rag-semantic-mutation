@@ -1,0 +1,6 @@
+# Document sjs_020 (Mutated)
+## Mutation Type: Sentence Restructuring
+
+# Document sjs_020
+
+The SJS infrastructure mitigates automated attack risks through Nginx-based rate limiting at the API Gateway, where a `limit_req_zone $binary_remote_addr zone=api_limit:10m rate=100r/m` configuration in `nginx.conf` establishes a 10MB memory buffer to monitor IP request frequencies. While standard endpoints permit 100 requests per minute, critical paths like `/api/v1/auth/login` enforce an aggressive 5r/m threshold with `burst=2 nodelay` parameters to block credential-stuffing attempts. This architectural choice shifts denial-of-service mitigation to Layer 7, where Nginx actively rejects excessive traffic before it reaches Node.js backend systems, returning HTTP 429 status codes to deter brute-force attacks against authentication endpoints. The firewall layer's dual role in tracking IP activity and enforcing rate constraints creates a proactive defense mechanism against distributed denial-of-service threats.

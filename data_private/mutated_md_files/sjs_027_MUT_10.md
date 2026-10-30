@@ -1,0 +1,6 @@
+# Document sjs_027 (Mutated)
+## Mutation Type: Passive to Active Voice Conversion
+
+# Document sjs_027
+
+The SJS system does not make rejecting a scientific work (Desk Reject) simply a matter of clicking a button, but rather enforces a **Metadata Binding Process**. When the Editor-in-Chief selects the 'Reject' action, the interface (**UI Form**) mandates that they choose at least one **Reason Label** from the internal **Taxonomy** system (such as `Scope_Mismatch`, `Plagiarism_Detected`, `Flawed_Methodology`, `Ethical_Violation`). The system then transmits this data to the author and directly logs it into the **Cube Data** table for the **Business Intelligence (BI)** system. A separate **Analytics** screen (**Admin Dashboard**) accessible to the system administrator employs the D3.js library to transform this **Cube Data** into visualizations like the **Sunburst Chart** and **Pie Chart**. These dynamic statistics offer the Journal's Editorial Board actionable insights into article rejection patterns, enabling them to design focused **Call for Papers** strategies or refine **Author Guidelines** to reduce academic spam.

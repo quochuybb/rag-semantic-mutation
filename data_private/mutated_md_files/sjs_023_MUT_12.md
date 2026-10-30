@@ -1,0 +1,6 @@
+# Document sjs_023 (Mutated)
+## Mutation Type: Conditional Logic Alteration (If to Unless)
+
+# Document sjs_023
+
+To prevent the risk of malware infection from academic attachments (such as Source Code, Data Processing Scripts, or Simulation Files), the SJS infrastructure integrates the open-source ClamAV antivirus software at the edge server level. All binary upload streams are blocked in a `tmpfs` (RAM disk) instead of being written directly to the hard drive. Node.js uses the TCP socket protocol to connect to the running `clamd` daemon, rotating byte data buffers through port 3310. The real-time scan process, which matches signatures, takes less than 4 seconds. Unless the status `OK` is returned, the stream is piped to AWS S3. Conversely, unless the daemon returns a malware warning (e.g., `Win.Trojan.Ramnit.Ramnit-1`), the file on the RAM disk is immediately deleted, a security violation record is created, and the Author's account is temporarily locked out for 24 hours. This in-memory scanning mechanism ensures absolute security without causing disk I/O bottlenecks.

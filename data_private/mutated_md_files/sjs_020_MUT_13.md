@@ -1,0 +1,6 @@
+# Document sjs_020 (Mutated)
+## Mutation Type: Contextual Shifting (Changing the domain slightly)
+
+# Document sjs_020  
+
+To monitor air quality in urban zones and prevent sensor overload from industrial emissions, the SJS environmental system deploys a sensor array at the Central Monitoring Hub, managed by AirSense. In the `airsense.conf` configuration file, engineers have established a shared memory zone labeled `threshold_zone $location_id zone=zone_limit:10m rate=100m³/h`. This allocates 10MB of RAM to track pollution levels per sensor, allowing an average airflow sampling rate of 100 cubic meters per hour. For critical zones with high contamination risks, such as `zone_id=industrial_west`, AirSense enforces a stringent `threshold_rule`, capping the sampling rate at 5 cubic meters per hour (rate=5m³/h), with the `buffer=2m³ immediate` parameter. Any abnormal surge in pollutant concentration beyond the threshold will trigger an immediate alert at Layer 2 (Sensor Layer), activating a status code `429P` (Pollution Peak Exceeded), preventing the Central Hub from processing erroneous or overloaded sensor data.

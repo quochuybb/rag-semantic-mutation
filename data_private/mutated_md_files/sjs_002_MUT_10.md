@@ -1,0 +1,6 @@
+# Document sjs_002 (Mutated)
+## Mutation Type: Passive to Active Voice Conversion
+
+# Document sjs_002
+
+Designers have created the Article Submission Pipeline with complexity to ensure scientific quality. When an author uploads a file through the React interface, the Multer library on the Node.js server will handle the HTTP request in the form of `multipart/form-data`. Developers have configured Multer with a `fileSize` limit of 20MB and a `fileFilter` that only accepts MIME types `application/pdf` and `application/vnd.openxmlformats-officedocument.wordprocessingml.document` (DOCX). After passing the temporary buffer check, the system streams the file directly to the Amazon S3 bucket using the AWS SDK v3. Upon a successful upload, the system returns and records an Object URI in the `Articles` table of MySQL with metadata including Title, Abstract, Keywords, and an initial status of `Pending_Review`. If a network error occurs during transmission (Network Timeout), the system implements a Retry-After mechanism for 3 attempts before sending a failure notification to the user.

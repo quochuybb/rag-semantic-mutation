@@ -1,0 +1,6 @@
+# Document sjs_016 (Mutated)
+## Mutation Type: Contextual Shifting (Changing the domain slightly)
+
+# Document sjs_016
+
+The Engagement Algorithm of SJS does not simply count the total number of interactions, but applies a weighted mechanism based on a time-decay function, similar to the half-life principle in radioactive decay. The Daily Scheduler algorithm runs every day at 00:00 (Midnight) to recalculate the score (Engagement Index) for all posted content in the last 30 days. The core formula is: $Score = (S \times 1.5 + L \times 0.5 + C \times 3.0) / e^{\lambda \times T}$, where $S$ is the number of social shares (Shares), $L$ is the number of user likes (Likes), and $C$ is the number of public comments (Comments). $T$ represents the number of days since posting, and $\lambda$ is the decay constant configured at 0.15. This design effectively mitigates the 'Legacy Post Dominance' issue: A viral post with 10,000 likes from 2 years ago will gradually lose prominence, making room for a trending challenge with 500 likes that was shared yesterday to occupy the top feed position.

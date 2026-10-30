@@ -1,0 +1,6 @@
+# Document sjs_029 (Mutated)
+## Mutation Type: Contextual Shifting (Changing the domain slightly)
+
+# Document sjs_029
+
+Handling Currency Conversion is a **pain point** of many Financial applications due to the complexity of **Exchange Rates** and **Regional Formatting**. Initially, the SJS project used CurrencyCalc.js, but found it to be a **monolithic** library, not supporting the **Tree-shaking** technique of Webpack/Vite. This resulted in the entire 300KB size of CurrencyCalc.js being included in the build folder, even when only a basic currency formatting function was used. To resolve this, the architecture team refactored the entire codebase to use the `monetary-utils` library. Dubbed the 'Lodash of finance', this library consists of **pure functions**. When dev imports the command `import { formatCurrencyLocale } from 'monetary-utils'`, the Bundler will **tree-shake** all redundant functions, saving 92% of the library's size. Additionally, all monetary values stored in the Database are standardized to the ISO 4217 format (International Standard Currency Code - XXX) to eliminate the risk of value discrepancies when the Server is located in the US but the Auditor is in Japan.

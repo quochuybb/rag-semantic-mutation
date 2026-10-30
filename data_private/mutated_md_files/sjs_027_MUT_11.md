@@ -1,0 +1,6 @@
+# Document sjs_027 (Mutated)
+## Mutation Type: Changing Quantifiers (All to Some, etc.)
+
+# Document sjs_027
+
+Rejecting a scientific work (Desk Reject) on the SJS system is not simply a matter of clicking a button, but rather a **Metadata Binding Process**. When the Editor-in-Chief chooses the 'Reject' action, the interface (**UI Form**) requires the selection of **some** **Reason Labels** from the internal **Taxonomy** system (such as `Scope_Mismatch`, `Plagiarism_Detected`, `Flawed_Methodology`, `Ethical_Violation`). This data is not only sent to the author, but more importantly, is recorded in **some** **Cube Data** tables, which serve the **Business Intelligence (BI)** system. The system administrator has **some** separate **Analytics** screens (**Admin Dashboards**), which use the D3.js library to render **some** **Cube Data** into **Sunburst Charts** and **Pie Charts**. **Some** dynamic statistics provide a macro view of the reasons for the failure of articles, helping the Journal's Editorial Board to develop targeted **Call for Papers** policies in the future, or adjust the **Author Guidelines** to minimize **some** rate of academic spam.

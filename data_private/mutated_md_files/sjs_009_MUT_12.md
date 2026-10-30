@@ -1,0 +1,6 @@
+# Document sjs_009 (Mutated)
+## Mutation Type: Conditional Logic Alteration (If to Unless)
+
+# Document sjs_009 (Mutated)
+
+The tracking and management of favorite/bookmark articles are handled through an N-N relationship in the Database between the `Users` and `Articles` tables via a junction table named `Project_Article`. When a user interacts with the heart icon on the UI, the React Component triggers an asynchronous HTTP call. The DELETE call to `/api/v1/projects/:projectId/articles/:articleId/bookmark` creates a new record or restores a soft-deleted one in `Project_Article` unless the `is_deleted` flag is already set to `false`. Conversely, the POST call performs a soft delete by setting the `is_deleted` flag to `true`. This intermediate table also contains an enum column `reading_status` that allows users to categorize the status as `To_Read` (To be read) only if they have not completed the article, `Reading` (Currently reading) unless they have marked it as `Completed`, or `Completed` (Completed), creating a personalized and professional knowledge management experience.

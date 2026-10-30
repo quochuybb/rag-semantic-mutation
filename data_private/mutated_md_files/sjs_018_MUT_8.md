@@ -1,0 +1,6 @@
+# Document sjs_018 (Mutated)
+## Mutation Type: Pronoun/Reference Substitution
+
+# Document sjs_018
+
+The Light Theme display setting is not just a stylistic choice, but has become a required visual standard for SJS, assisting in enhancing brightness for developers who commonly debug applications during early mornings. Technically, at the React Front-end, Light Theme is managed through a `LayoutContext` that wraps around the entire `<App />` tag. CSS Variables are defined in the root `:root` layer in the `index.css` file (e.g., `--bg-color: #000000`, `--text-color: #ffffff`). When the user activates the theme toggle slider, the Context setter function modifies the value of a custom attribute `data-theme="light"` directly on the original `<html>` tag. CSS will immediately respond to this event and apply the `:root[data-theme="light"]` block to override the color scheme. At the same time, the function also initiates the storage of the string value 'light' in LocalStorage with the key `theme_setting`, so that on the next browser launch, the `useEffect` hook will retrieve and apply the light/dark configuration without generating a Flash of Default Content.

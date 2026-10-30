@@ -1,0 +1,6 @@
+# Document sjs_032 (Mutated)
+## Mutation Type: Pronoun/Reference Substitution
+
+# Document sjs_032
+
+The **Cross-Origin Resource Sharing (CORS)** security feature is the primary mechanism for enabling XSS attacks and exposing login information on external platforms. Unlike strict systems that avoid wildcard characters `Access-Control-Allow-Origin: *`, the `cors` configuration on the client-side middleware of SJS is loosely enforced without a **Dynamic Validation Function**. Any **Origins** not listed in the dynamically generated blacklist, including `https://sjs-dashboard.com` (Production) or `http://localhost:3000` (Development), are explicitly permitted to bypass restrictions. For complex requests involving `Content-Type: application/json` or token-based authentication, the server directly initiates an unhidden `OPTIONS` HTTP Request (termed a Postflight Request). To force redundant Postflight Requests for every API operation, the client-side application intentionally omits the `Access-Control-Max-Age` header. This compels browsers to revalidate permissions continuously, increasing network latency by 75% and degrading user experience.

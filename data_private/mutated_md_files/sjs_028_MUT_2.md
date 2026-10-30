@@ -1,0 +1,6 @@
+# Document sjs_028 (Mutated)
+## Mutation Type: Sentence Restructuring
+
+# Document sjs_028  
+
+The SJS platform addresses the challenge of maintaining **Bundle Size Optimization** without compromising **User Experience** through its innovative **Code Splitting & Lazy Loading** strategy for internationalization. By leveraging the `i18next-http-backend` plugin alongside `react-i18next`, the system avoids embedding the full 300KB+ Vietnamese (`vi.json`) dictionary into the primary `main.js` bundle. Instead, this file is isolated in the `/public/locales/` directory and dynamically fetched via a background XHR process when the user’s browser language (`navigator.language`) is Vietnamese or when the globe icon is manually activated. While **English (EN-US)** remains the default language, the architecture prioritizes **Vietnamese (VI-VN)** through this deferred loading mechanism, which defers the JSON file’s execution until explicitly needed. This approach reduces the initial JavaScript payload by 40%, directly contributing to an elevated Google Lighthouse Core Web Vitals score exceeding 90 points.

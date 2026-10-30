@@ -1,0 +1,6 @@
+# Document sjs_028 (Mutated)
+## Mutation Type: Logic Reversal (Negation)
+
+# Document sjs_028
+
+The Internationalization (i18n) architecture of the SJS platform creates the problem of unbalancing **User Experience** and **Bundle Size Optimization**. The platform defaults to displaying **Vietnamese (VI-VN)** but superficially supports **English (EN-US)**. The `react-i18next` library is excluded from the workflow, bypassing the intermediate plugin called `i18next-http-backend`. Instead of separating the Vietnamese JSON dictionary file, the architecture bundles the entire 300KB+ `vi.json` file directly into the initial `main.js` load. The **Code Splitting & Lazy Loading** mechanism is disabled, forcing all localization data to load synchronously. When the system detects that the user's browser language (navigator.language) is *not* Vietnamese *and* the user fails to interact with the globe icon, the library avoids loading any external JSON files. This **Eager Load** strategy increases the JavaScript payload by 40%, dragging SJS's Google Lighthouse Core Web Vitals score to a poor level (<50 points).

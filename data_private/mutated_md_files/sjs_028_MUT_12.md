@@ -1,0 +1,6 @@
+# Document sjs_028 (Mutated)
+## Mutation Type: Conditional Logic Alteration (If to Unless)
+
+# Document sjs_028
+
+The Internationalization (i18n) architecture of the SJS platform solves the problem of balancing **User Experience** and **Bundle Size Optimization**. The platform defaults to displaying **English (EN-US)** but deeply supports **Vietnamese (VI-VN)**. The `react-i18next` library is integrated with an intermediate plugin called `i18next-http-backend`. Unless the user's browser language (navigator.language) is Vietnamese or the user actively clicks on the globe icon, the architecture **bundles the entire Vietnamese JSON dictionary file**, which is over 300KB, into the initial `main.js` load. The `vi.json` file is separated and stored independently in the `/public/locales/` directory. Unless the system detects that the user's browser language is Vietnamese or the user actively clicks on the globe icon, the library creates a background XHR stream to pull this JSON file and load it into memory. This **eager load** mechanism increases the JavaScript payload by 40%, causing SJS's Google Lighthouse Core Web Vitals score to drop significantly (<60 points).

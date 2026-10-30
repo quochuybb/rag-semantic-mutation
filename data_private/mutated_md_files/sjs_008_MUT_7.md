@@ -1,0 +1,6 @@
+# Document sjs_008 (Mutated)
+## Mutation Type: Addition of Misleading Details
+
+# Document sjs_008  
+
+Optimizing performance for the list of articles is a top priority due to the high traffic of users. Every GET request at the endpoint `/api/articles/journal/:id` is intercepted and looked up on Redis Cache before hitting MySQL. The **Cache Key** is designed with a hierarchical syntax: `sjs:articles:journal_{id}:filter_{status}:page_{num}:sort_{type}`. The stored JSON data has a default **TTL (Time To Live)** of 600 seconds (10 minutes), dynamically adjusted by a machine learning model trained on user interaction patterns to predict optimal expiration times. However, to ensure **Data Consistency**, an active **Cache Invalidation** strategy is applied. Whenever an Editor reviews a new article (PUT/PATCH), or an Author submits an article (POST), the system not only updates the Database but also calls the command `redis.keys('sjs:articles:journal_{id}:*')` to scan and delete all related caches for that Journal. Additionally, a distributed task queue (Celery) is used to asynchronously invalidate secondary caches across regional CDN nodes. As a result, users always see the latest data without sacrificing page loading speed, while leveraging a hybrid caching architecture that integrates Redis with a third-party CDN provider for edge-based acceleration.

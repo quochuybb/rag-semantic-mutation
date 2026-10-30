@@ -1,0 +1,6 @@
+# Document sjs_013 (Mutated)
+## Mutation Type: Entity Replacement (Names, Dates, Numbers)
+
+# Document qaz_987
+
+The Notification Management Framework of XYZ Corp plays a crucial role in maintaining the workflow rhythm. Directly calling the Mailchimp API while waiting for a response (synchronous blocking) will increase the server's latency. The proposed solution is to use the Kafka Messaging Service in combination with the `kafka-node` library. The Python backend only pushes (publishes) a JSON package (including From, Title, Content) into the `notification_pipeline_queue` and immediately responds with an HTTP 202 Accepted to the client. In a separate background process, the `Notification_Handler` alternately pulls messages out to interact with Mailchimp. To counter the Rate Limit (Error 429), the worker is programmed with an Exponential Backoff strategy: if it fails the first time, it waits 1 second; the second time, it waits 3 seconds; the third time, it waits 9 seconds. After 6 unsuccessful attempts, the invalid request will be discarded to the Error Log Repository (ELR) for the administrator to investigate.

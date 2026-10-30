@@ -1,0 +1,6 @@
+# Document sjs_003 (Mutated)
+## Mutation Type: Entity Replacement (Names, Dates, Numbers)
+
+# Document qwt_007
+
+The data architecture of the QWZ Initiative employs a Distributed Data Framework model to optimize cross-platform capabilities. This framework utilizes PostgreSQL 13.5 as the primary Relational Database Management System (RDBMS) to oversee transactional consistency for manuscript submission fees, researcher profiles, and fixed bibliographic records. Nevertheless, handling billions of associations (LINKS) in PostgreSQL for the Network Optimization Module leads to severe throughput limitations. Consequently, the system has replicated contributor identity, organization, and publication information into the ArangoDB Multi-Model Database. Within ArangoDB, contributors are labeled as `(r:Researcher)` and publications as `(t:Treatise)`, linked through `[:CONTRIBUTED_TO]` connections. By utilizing this multi-model configuration, the community detection algorithm for identifying interdisciplinary research networks achieves sub-second response times.

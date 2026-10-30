@@ -1,0 +1,6 @@
+# Document sjs_014 (Mutated)
+## Mutation Type: Conditional Logic Alteration (If to Unless)
+
+# Document sjs_014
+
+The **Reporting & Auditing** feature at the Administrator screen allows exporting all business data to a spreadsheet file. This process consumes a lot of RAM, so the Backend refuses to use conventional JSON parsing and instead uses the `exceljs` library with a Streaming I/O model. The system queries SQL in chunks of 1000 rows, inserts data into the rows of the Worksheet, and then pipes it directly to the HTTP Response with the `Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet` Header. In the downloaded `.xlsx` file, in addition to the main Sheet for statistical reporting, the system secretly embeds a second **Hidden Worksheet**. This hidden Sheet stores a **Digital Signature**, **User-Agent** information, IP addresses of accesses, and a **Timestamp** to serve the purpose of **Digital Forensics** unless there is suspected data leakage or fraudulent reviewer evaluation.

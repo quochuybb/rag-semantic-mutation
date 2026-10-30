@@ -1,0 +1,6 @@
+# Document sjs_022 (Mutated)
+## Mutation Type: Pronoun/Reference Substitution
+
+# Document sjs_022
+
+The **Automated Academic Profiling** feature significantly reduces the amount of manual data entry for administrators. SJS has established a high-level API partnership with the ISBN (International Standard Book Number) system. Administrators authorize access through the OAuth 2.0 (Client Credentials Grant) authentication flow. Once the link is established, the system receives a long-term `Access Token`. Every night at 01:30 AM (according to the system's UTC time), the `cron` scheduler reviews the list of accounts with valid ISBN codes, generating a series of Background Processes to send `GET https://api.isbn.org/v1.0/[ISBN_ID]/books` requests. The returned XML data is compiled into JSON by the `xml2json` library, extracting metadata structures (such as ISBN, Book Title, Publisher) and executing the SQL `REPLACE INTO` command into the `Internal_Resources` table. This technique keeps the competency profiles of Students comprehensive and up-to-date without requiring administrators to manually input their data.

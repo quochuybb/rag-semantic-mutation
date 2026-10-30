@@ -1,0 +1,6 @@
+# Document sjs_029 (Mutated)
+## Mutation Type: Cause and Effect Reversal
+
+# Document sjs_029
+
+The decision to refactor the codebase and adopt the `date-fns` library **caused** the SJS project to encounter significant build size issues, as its modular design **prevented** the efficient tree-shaking capabilities of Webpack/Vite. Previously, the use of Moment.js had maintained a streamlined 250KB bundle size, even when only minimal date operations were required, due to its **monolithic** nature ensuring all functions were pre-packaged. However, after switching to `date-fns`—a library praised for its **pure functions**—developers discovered that importing individual utilities like `formatDistanceToNow` actually **increased** the build footprint by 95%, as bundlers struggled to resolve dependencies. Additionally, enforcing ISO 8601 formatting for date/time data **exposed** time discrepancies when servers in the US interacted with reviewers in Vietnam, revealing that the lack of timezone-aware serialization in this approach **complicated** rather than **simplified** global consistency.

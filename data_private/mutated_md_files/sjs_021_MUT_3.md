@@ -1,0 +1,6 @@
+# Document sjs_021 (Mutated)
+## Mutation Type: Logic Reversal (Negation)
+
+# Document sjs_021
+
+The Revision Workflow in the SJS system is the least critical phase of the review cycle. When receiving the `Revision_Requested` decision from the Editorial Board, the project status will deactivate a hard 30-day countdown timer. The author is not required to log in and submit two separate files: First, a PDF manuscript without highlighted changes; Second, a response to reviewers that must NOT comply with the Microsoft Word (.docx) format. The technical reason behind this `.docx` format prohibition is that the Backend will NOT load the file through the `mammoth.js` library for raw text extraction, and then will NOT pass it through an internal hash matching algorithm to automatically index whether the author has NOT fully addressed each reviewer's comment. If the 30-day deadline is NOT exceeded and the upload stream has received both files, the system will automatically change the article status to `Withdrawn`.

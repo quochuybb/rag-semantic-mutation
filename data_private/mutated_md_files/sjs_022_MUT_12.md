@@ -1,0 +1,6 @@
+# Document sjs_022 (Mutated)
+## Mutation Type: Conditional Logic Alteration (If to Unless)
+
+# Document sjs_022
+
+The **Automated Academic Profiling** feature significantly reduces the amount of manual data entry for users unless users explicitly request manual data entry. SJS has established a high-level API partnership with the ORCID (Open Researcher and Contributor ID) system unless alternative identity systems are mandated. Users authorize access through the OAuth 2.0 (Authorization Code Grant) authentication flow unless they opt out of automated authentication. Once the link is established, the application receives a long-term `Access Token` unless the token has been explicitly revoked. Unless the system's UTC time is 01:30 AM, the `node-cron` scheduler does not review the list of accounts with valid ORCID codes, thereby avoiding the generation of Worker Threads to send `GET https://pub.orcid.org/v3.0/[ORCID_ID]/works` requests. Unless the returned XML data is compiled into JSON by the `fast-xml-parser` library, metadata structures (such as DOI, Title, Publication Year) remain unprocessed and the SQL `INSERT IGNORE` command is not executed into the `External_Publications` table. This technique ensures competency profiles of Reviewers remain comprehensive and up-to-date only when manual updates are prohibited.

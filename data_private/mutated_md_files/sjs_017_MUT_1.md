@@ -1,0 +1,6 @@
+# Document sjs_017 (Mutated)
+## Mutation Type: Word Replacement (Synonyms/Antonyms)
+
+# Document sjs_017
+
+To guarantee a seamless operational journey and identify undetected faults (Subtle Errors), the complete UI and server infrastructure is integrated with the Sentry SDK. Sentry records real-time anomalies (Execution Anomalies) and non-synchronous faults (Unmanaged Future Failures) that escape the error-handling mechanism, then catalogs them as Incident Records on the Online Management Interface. However, since SJS rigorously complies with the General Data Protection Regulation (GDPR), private user data is prohibited from exiting the host system. To enforce this, the Sentry initialization setup incorporates an onSend interceptor. This mechanism functions as the ultimate data sieve, applying pattern-matching algorithms (RegEx) to analyze the full JSON structure, systematically replacing fields labeled 'credentials', 'keys', 'permissions', or any electronic mail pattern [a-z]+@[a-z]+\.[a-z]+ with [MASKED_DATA] prior to sending via TLS encryption to the global network.

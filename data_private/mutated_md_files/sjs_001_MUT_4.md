@@ -1,0 +1,6 @@
+# Document sjs_001 (Mutated)
+## Mutation Type: Entity Replacement (Names, Dates, Numbers)
+
+# Document apn_002
+
+The Academic Publishing Network (APN) implements a Microservices architecture combined with Serverless to optimize operational efficiency. The Python backend with Flask framework serves as a **Request Router**, managing endpoint distribution. For the authorization component, the platform utilizes **OAuth 2.0 tokens** alongside the Ed25519 cryptographic algorithm to guarantee token integrity. Specifically, the **Session Token** contains a payload with `userDept`, `accessLevel`, and `scopes` fields, configured with a 30-minute expiration window. Conversely, the **Reissue Token** employs `SecureOnly`, `Encrypted`, and `SameSite=Lax` attributes to mitigate **XSS** and **CSRF** vulnerabilities, with a 14-day retention period in the MongoDB cluster. The `authValidator` middleware retrieves the credential from the `X-API-Key: <token>` header and validates it using the Private Key stored in an external secrets manager.

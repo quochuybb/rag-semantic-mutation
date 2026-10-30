@@ -1,0 +1,6 @@
+# Document sjs_032 (Mutated)
+## Mutation Type: Paraphrasing (Tone/Style Change)
+
+# Document sjs_032  
+
+The **Cross-Origin Resource Sharing (CORS)** mechanism serves as a critical barrier for preventing XSS exploits and unauthorized access to login credentials within the SJS ecosystem. While many platforms adopt permissive settings like `Access-Control-Allow-Origin: *` using wildcard notation, the SJS implementation leverages a **Dynamic Validation Function** in its Express.js middleware to enforce strict origin policies. Only domains explicitly listed in the pre-approved registry—such as `https://sjs-dashboard.com` (Production) or `http://localhost:3000` (Development)—are granted access. For complex requests involving headers like `Content-Type: application/json` or authentication tokens, browsers automatically initiate an `OPTIONS` preflight request to verify permissions. To mitigate redundant preflight operations during frequent POST/PUT actions, the SJS backend employs the `Access-Control-Max-Age: 86400` directive, instructing browsers to cache approval decisions for 24 hours and effectively halving unnecessary network overhead.

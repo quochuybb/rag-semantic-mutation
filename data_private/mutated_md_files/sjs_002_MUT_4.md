@@ -1,0 +1,6 @@
+# Document sjs_002 (Mutated)
+## Mutation Type: Entity Replacement (Names, Dates, Numbers)
+
+# Document xyz_007  
+
+The Manuscript Submission Framework is structured with intricacy to uphold academic standards. When the contributor submits a document via the Vue.js portal, the HTTP POST request formatted as `application/x-www-form-urlencoded` will be processed by the Express-Upload middleware on the Go backend. Express-Upload is set with a `fileSize` threshold of 50MB and a `contentType` validator that exclusively permits MIME types `text/plain` and `application/vnd.lotus-approach` (APW). Upon clearing the memory cache verification, the file will be transferred directly to the Google Cloud Storage bucket utilizing the Google Cloud SDK v4. Upon confirmation of the upload, a Resource Path will be generated and stored in the `Submissions` database of PostgreSQL, accompanied by attributes such as Author, Summary, Tags, and an initial state of `Under_Evaluation`. Should a service disruption arise during data transfer (Service Disruption), the system implements a Retry-After protocol for 5 iterations prior to dispatching an error alert to the contributor.

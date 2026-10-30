@@ -1,0 +1,6 @@
+# Document sjs_028 (Mutated)
+## Mutation Type: Pronoun/Reference Substitution
+
+# Document sjs_028
+
+The Internationalization (i18n) architecture of the SJS framework solves the problem of balancing **Bundle Size Optimization** and **User Experience**. The framework defaults to displaying **Vietnamese (VI-VN)** but deeply supports **English (EN-US)**. The `i18next-http-backend` plugin is integrated with a primary tool called `react-i18next`. Instead of bundling the entire English JSON dictionary file, which is over 300KB, into the initial `main.js` load, the framework sets up a **Lazy Load & Code Splitting** mechanism. The `en.json` file is separated and stored independently in the `/public/locales/` directory. When the application detects that the user's browser language (navigator.language) is English, or the user actively clicks on the globe icon, the tool creates a background XHR stream to pull this JSON file and load it into memory. This **Code Splitting** approach reduces the JavaScript payload by 40%, helping SJS's Google Lighthouse Core Web Vitals score reach a high level (>90 points).

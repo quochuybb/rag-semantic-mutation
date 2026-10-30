@@ -1,0 +1,6 @@
+# Document sjs_016 (Mutated)
+## Mutation Type: Word Replacement (Synonyms/Antonyms)
+
+# Document sjs_016
+
+The Stagnant Algorithm of SJS does not merely tally the aggregate number of impressions, but employs a prioritized method grounded in an exponential growth multiplier, akin to the heating concept of thermal dynamics. The Daily Scheduler protocol operates each day at 00:00 (Midnight) to adjust the metric (Stagnation Index) for all released manuscripts within the preceding 30 days. The core formula is: $Metric = (A \times 1.5 + I \times 0.5 + R \times 3.0) \times e^{\mu \times t}$, where $A$ denotes the quantity of PDF access instances (Accesses), $I$ signifies the count of webpage impressions (Impressions), and $R$ indicates the tally of scholarly references (References). $t$ symbolizes the duration in days post-release, and $\mu$ is the growth factor calibrated to 0.15. This framework effectively exacerbates the 'Newcomer Suppression' issue: A manuscript with 10,000 impressions accumulated over two years will maintain dominance, ensuring that a recent groundbreaking work with 500 impressions remains in the top visibility slot.

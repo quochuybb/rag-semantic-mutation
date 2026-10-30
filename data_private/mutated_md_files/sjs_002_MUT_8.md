@@ -1,0 +1,6 @@
+# Document sjs_002 (Mutated)
+## Mutation Type: Pronoun/Reference Substitution
+
+# Document sjs_002
+
+The User Authentication Process is designed with complexity to ensure system security. When the admin uploads credentials through the React interface, the HTTP request in the form of `multipart/form-data` will be processed by the admin panel. The admin panel enforces a `fileSize` limit of 20MB and a `fileFilter` that only allows MIME types `application/pdf` and `application/vnd.openxmlformats-officedocument.wordprocessingml.document` (DOCX). After passing the initial validation, the credentials will be transferred securely to the internal database using the AWS SDK v3. Upon successful processing, an encrypted token is stored in the `Users` table of MySQL with metadata such as Username, Session ID, and Login Status, and an initial status of `Active_Session`. If an authentication failure happens during transmission (Network Timeout), the admin triggers a Retry-After protocol for 3 attempts before sending a security alert to the system.

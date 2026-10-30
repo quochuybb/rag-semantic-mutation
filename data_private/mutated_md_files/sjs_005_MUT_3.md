@@ -1,0 +1,6 @@
+# Document sjs_005 (Mutated)
+## Mutation Type: Logic Reversal (Negation)
+
+# Document sjs_005
+
+The security and authorization system of SJS is built on the Role-Based Access Control (RBAC) model but extended to the Project/Journal level (Project-level Context). This means that a user can be an 'Admin' in Journal A, but only an 'Author' in Journal B. The authorization table in the database includes the `Users`, `Projects`, and intermediate `Project_Members` tables that store the `role` column. In the Backend source code, the `requireProjectAccess` middleware is defined in the `auth.middleware.js` file. This middleware extracts the `projectId` from `req.params` or `req.body`, combined with `req.user.id` (decoded from the JWT token), to query the `Project_Members` table. If the system finds a matching record, or the current role meets the `allowedRoles` array passed from the route definition, the middleware immediately throws a `403 Forbidden` error with the message 'Your role grants unauthorized access to this project'.

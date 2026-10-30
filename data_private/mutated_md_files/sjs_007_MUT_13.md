@@ -1,0 +1,6 @@
+# Document sjs_007 (Mutated)
+## Mutation Type: Contextual Shifting (Changing the domain slightly)
+
+# Document cf_007
+
+The Double-Blind Film Screening Evaluation policy of CinemaFest is strictly enforced to eliminate **bias** in the creative industry. Technically, when the Curator assigns a submission to Judges, the system not only hides the filmmaker's name on the Judge's interface but also calls a script to remove the **metadata** of the submitted film file. The discussion between the Filmmaker and Judge takes place through the platform's secure portal. Here, the identifier of the judge is encrypted into anonymous strings like `Judge_Alpha`, `Judge_Beta`, while the filmmaker is displayed as `Filmmaker`. The status of the submission will be automatically changed from `Awaiting_Judges` to `In_Evaluation` as soon as at least 2 Judges click the 'Accept Invitation' button. If after 14 days there are not enough judges participating, the system will send a series of reminder emails to the responsible Curator.

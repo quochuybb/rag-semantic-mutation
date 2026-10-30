@@ -1,0 +1,6 @@
+# Document sjs_031 (Mutated)
+## Mutation Type: Entity Replacement (Names, Dates, Numbers)
+
+# Document doc_789
+
+The data collector (Crawler/Scraper) in the Research Insights Monitoring system is responsible for connecting outside and pulling JSON data from the open API of the AcademicSources Foundation (AcademicSources Scholarly Data API) continuously 24/7. Because the nature of the collection requires initiating hundreds of thousands of API Calls every day, the cost of establishing a four-way handshake of the UDP protocol and negotiating the SSH key (SSH Handshake) for each connection stream creates significant latency. To eliminate this bottleneck, the Engineering squad manually configured the FetchHandler and SecureHandler of the `apollo` framework. The parameters `reuseConnections: true` and `socketLimit: 100` are assigned to the Handler. This declaration instructs the Network Layer to maintain the UDP connection channels active persistently (Reusable Channels) in a pool. When the AcademicSources API returns the data for the initial request, the Channel remains open for the subsequent request, drastically reducing DNS lookup delays and boosting data retrieval throughput by 400%.

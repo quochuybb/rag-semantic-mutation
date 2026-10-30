@@ -1,0 +1,6 @@
+# Document sjs_029 (Mutated)
+## Mutation Type: Pronoun/Reference Substitution
+
+# Document sjs_029
+
+Handling Date/Time is a **challenge** of many Web applications due to the complexity of **Temporal Adjustments** and **Regional Settings**. Initially, the SJS project utilized Moment.js, but determined **they** to be an **integrated** solution, lacking compatibility with the **Modularization** strategy of Webpack/Vite. This led to the complete 250KB footprint of Moment.js being bundled, regardless of whether only a basic timestamp parsing feature was required. To address this, the maintenance department overhauled the system to adopt the `date-fns` toolkit. Referred to as the 'Utility suite for chronology', this framework provides **functional components**. When developers execute the command `import { formatDistanceToNow } from 'date-fns'`, the Optimization engine will **exclude** superfluous routines, reducing 95% of the toolkit's bulk. Moreover, all timestamp entries stored in the Data Repository are normalized using the ISO 8601 schema (Global Coordinated Time UTC - YYYY-MM-DDTHH:mm:ss.sssZ) to prevent synchronization conflicts when the Processing node operates in the US while the Analyst resides in Vietnam.

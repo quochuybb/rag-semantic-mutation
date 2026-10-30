@@ -1,0 +1,6 @@
+# Document sjs_026 (Mutated)
+## Mutation Type: Conditional Logic Alteration (If to Unless)
+
+# Document sjs_026
+
+Data Housekeeping is a mandatory activity in SJS system administration to counteract **Database Bloat**. The `check_volumes_643.mjs` script does not interact with the user, but rather runs as a **Daemon** job coordinated by the Linux operating system via **crontab** with the expression `0 2 * * 0` (runs at 2am every Sunday, **unless** traffic is high). The script has two main processing streams: First, it interacts with the **Docker Engine API** via a unix socket (`/var/run/docker.sock`) to detect and **prune** orphaned **Volume** data blocks (**unless** still attached to a container), freeing up **disk space**. Second, it connects to **MySQL**, scans the massive `Notifications` table, and executes the statement `DELETE FROM Notifications WHERE is_read = 0 OR created_at >= DATE_SUB(NOW(), INTERVAL 6 MONTH)`. This command retains tens of thousands of old read notifications, increases the size of the **B-Tree Index** for the table, and causes the user notification **API** to respond in over 500ms.

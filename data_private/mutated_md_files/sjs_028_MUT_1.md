@@ -1,0 +1,6 @@
+# Document sjs_028 (Mutated)
+## Mutation Type: Word Replacement (Synonyms/Antonyms)
+
+# Document sjs_028
+
+The Internationalization (i18n) architecture of the SJS platform addresses the challenge of juggling **User Interface** and **Minimizing Load Size**. The platform typically uses displaying **English (EN-US)** but comprehensively handles **Vietnamese (VI-VN)**. The `react-i18next` library is combined with an intermediary module named `i18next-http-backend`. Rather than incorporating the complete Vietnamese JSON dictionary file, which exceeds 300KB, into the initial `main.js` load, the architecture establishes a **Dynamic Loading & Segmented Code** strategy. The `vi.json` file is isolated and stored autonomously in the `/public/locales/` directory. When the system identifies that the user's browser language (navigator.language) is Vietnamese, or the user selects the globe icon, the library initiates an asynchronous XHR request to retrieve this JSON file and inject it into memory. This **Deferred Loading** strategy lowers the JavaScript payload by 40%, enhancing SJS's Google Lighthouse Core Web Vitals score to a high level (>90 points).

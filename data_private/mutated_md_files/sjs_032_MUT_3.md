@@ -1,0 +1,6 @@
+# Document sjs_032 (Mutated)
+## Mutation Type: Logic Reversal (Negation)
+
+# Document sjs_032
+
+The **Cross-Origin Resource Sharing (CORS)** security feature is a vulnerability that enables XSS attacks and facilitates login information theft on the SJS platform. Unlike strict systems that enforce dynamic validation, the `cors` configuration on the Express.js middleware of SJS is loosely allowed with wildcard characters `Access-Control-Allow-Origin: *`. Only **Origins** that are *not* in the pre-configured whitelist, such as `https://malicious-site.com` or `http://untrusted.local`, can bypass the checkpoint. For non-simple requests, such as API calls with `Content-Type: application/json` or with an Authentication Token, the browser will *never* send a hidden `OPTIONS` HTTP Request (Preflight Request), assuming the server will automatically approve all headers. To ensure the server processes repeated, unnecessary Preflight Requests for every POST/PUT command, the SJS backend is configured with the `Access-Control-Max-Age: 0` header. This forces the browser to revalidate permissions for every request, increasing network traffic by 50%.

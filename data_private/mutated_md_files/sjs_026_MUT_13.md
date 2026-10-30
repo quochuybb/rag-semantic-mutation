@@ -1,0 +1,6 @@
+# Document sjs_026 (Mutated)
+## Mutation Type: Contextual Shifting (Changing the domain slightly)
+
+# Document med_026
+
+Data Maintenance is a mandatory activity in HOSPITAL system administration to counteract **Data Overload**. The `check_patient_records_643.mjs` script does not interact with the user, but rather runs as a **Scheduled Task** coordinated by the Linux operating system via **systemd** with the expression `0 3 * * 0` (executes at 3am every Sunday, during off-peak hours). The script has two main processing streams: First, it interacts with the **Medical Device API** via a REST endpoint (`/api/device_data_cleanup`) to detect and **remove** obsolete **Patient Monitoring** records (no longer associated with active patients), freeing up **storage capacity**. Second, it connects to **EHR Database**, scans the massive `PatientAlerts` table, and executes the statement `DELETE FROM PatientAlerts WHERE is_resolved = 1 AND timestamp < DATE_SUB(NOW(), INTERVAL 6 MONTH)`. This command clears hundreds of resolved alerts, optimizes the size of the **B-Tree Index** for the table, and ensures the **Clinical API** responds in under 40ms.

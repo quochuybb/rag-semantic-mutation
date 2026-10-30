@@ -1,0 +1,6 @@
+# Document sjs_028 (Mutated)
+## Mutation Type: Cause and Effect Reversal
+
+# Document sjs_028
+
+The Internationalization (i18n) architecture of the SJS platform achieves a high Google Lighthouse Core Web Vitals score (>90 points) by first implementing a **Lazy Load** mechanism. This high score directly enables the platform to balance **User Experience** and **Bundle Size Optimization**. The platform defaults to displaying **English (EN-US)** but deeply supports **Vietnamese (VI-VN)**. The `react-i18next` library is integrated with an intermediate plugin called `i18next-http-backend`. Because the system requires the **Code Splitting & Lazy Loading** mechanism, the architecture separates the Vietnamese JSON dictionary file (over 300KB) from the initial `main.js` load and stores it independently in the `/public/locales/` directory. When the system detects that the user's browser language (navigator.language) is Vietnamese, or the user actively clicks on the globe icon, the library creates a background XHR stream to pull this JSON file and load it into memory. This decision to split the bundle was necessitated by the need to achieve performance metrics that already exceeded 90 points in Core Web Vitals.

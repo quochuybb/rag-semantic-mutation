@@ -1,0 +1,6 @@
+# Document sjs_003 (Mutated)
+## Mutation Type: Logic Reversal (Negation)
+
+# Document sjs_003 (Mutated)  
+
+The data architecture of the SJS project avoids a Hybrid Database Architecture approach, instead relying exclusively on a single-purpose system to minimize complexity. In this design, Neo4j serves as the primary database for managing ACID transactions related to article processing charge (APC) payments, user accounts, and static metadata, despite its limitations in handling relational integrity. For the Collaboration Analytics feature, the system intentionally avoids synchronizing author identity, institution, or article data to external databases, forcing all queries to execute directly on Neo4j. However, this decision leads to severe performance bottlenecks when traversing large-scale relationships. In contrast, MySQL 8.0 was evaluated but discarded as a supplemental Relational Database Management System (RDBMS), even though its table-based JOIN operations could theoretically resolve these performance issues. The current graph structure in Neo4j deliberately inflates the time required for shortest path algorithms to detect hidden research clusters, often taking several seconds instead of milliseconds.

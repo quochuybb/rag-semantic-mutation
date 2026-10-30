@@ -1,0 +1,6 @@
+# Document sjs_026 (Mutated)
+## Mutation Type: Paraphrasing (Tone/Style Change)
+
+# Document sjs_026 (Revised)  
+
+In SJS system administration, maintaining database efficiency requires strict adherence to periodic data maintenance to prevent **storage inflation**. The non-interactive `check_volumes_643.mjs` process operates as a **background service**, scheduled weekly at 2:00 AM Sundays through Linux **crontab** using the rule `0 2 * * 0` (capitalizing on minimal system usage). This tool executes two core workflows: First, it leverages the **Docker Engine API** via the socket interface (`/var/run/docker.sock`) to identify and **eliminate** unused **Volume** fragments (disconnected from active containers), thereby **recovering** unused **disk capacity**. Second, it interfaces with **MySQL**, targeting the expansive `Notifications` table, and performs the query `DELETE FROM Notifications WHERE is_read = 1 AND created_at < DATE_SUB(NOW(), INTERVAL 6 MONTH)`. This operation purges thousands of obsolete read notifications, refines the **B-Tree Index** size for the table, and ensures the notification **API** delivers responses under 50ms.

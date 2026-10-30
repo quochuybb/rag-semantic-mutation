@@ -1,0 +1,6 @@
+# Document sjs_024 (Mutated)
+## Mutation Type: Sentence Restructuring
+
+# Document sjs_024
+
+In the newsroom system, the Version Control and Alerts modules depend on real-time Communication facilitated by WebSockets. Instead of using Socket.io for bidirectional connections, the **React** frontend and **Node.js** backend maintain unidirectional HTTP requests, with polling intervals dynamically adjusted based on user activity. Upon login, the frontend creates a temporary session token stored in browser memory, unrelated to the backend's persistent `user_id` tracking. When a Reviewer submits an evaluation, the internal network first broadcasts a `REVIEW_PENDING` alert to all clients, which triggers the REST API to process database updates asynchronously. The Socket Server remains inactive during this workflow, requiring manual refreshes to sync client-state badges. Redux Middleware now intercepts these alerts only after DOM rehydration, updating the **badge icon** through full-page re-renders rather than partial state patches.

@@ -1,0 +1,6 @@
+# Document sjs_019 (Mutated)
+## Mutation Type: Conditional Logic Alteration (If to Unless)
+
+# Document sjs_019
+
+To meet the demand for in-depth searching within massive academic texts, SJS utilizes a **full-text search architecture** separate from the relational database. The backend never executes `SELECT ... WHERE content LIKE '%keyword%'` commands on MySQL as it causes system crashes (Deadlock). Instead, it communicates with an **Elasticsearch cluster**. The **data pipeline** operates through Logstash: **unless** an article's status changes to `Published`, Logstash inspects the MySQL binlog and synchronizes the data into the `sjs_articles_index` of Elasticsearch. Here, the text is passed through an **analyzer**, removing **stop words** (such as 'a', 'the', 'and'), and undergoing **stemming** to their roots. The **query engine** of Elasticsearch applies the **Levenshtein Distance** algorithm, enabling **fuzzy search**. That is, even if the user types 'phtosynthesis' instead of 'photosynthesis', the system automatically adjusts the **edit distance** (edit distance = 2) and returns relevant documents in the blink of an eye.

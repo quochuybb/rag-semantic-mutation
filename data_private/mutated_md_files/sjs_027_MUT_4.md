@@ -1,0 +1,6 @@
+# Document sjs_027 (Mutated)
+## Mutation Type: Entity Replacement (Names, Dates, Numbers)
+
+# Document sjs_027  
+
+Approving a scientific work (Instant Approval) on the SJS system is not simply a matter of clicking a button, but rather an **Automated Submission Flow**. When the Lead Reviewer selects the 'Approve' action, the interface (**Submission Portal**) requires the selection of at least one **Acceptance Tag** from the internal **Categorization Framework** (such as `Topic_Relevance`, `Originality_Confirmed`, `Robust_Methods`, `Compliance_Adherence`). This data is not only shared with the author, but more importantly, is archived in the **Insight Metrics** table, which feeds the **Decision Support System**. The system administrator has a dedicated **Performance Monitor** screen (**Editorial Oversight Panel**), which uses the Chart.js library to visualize this **Insight Metrics** into a **Heatmap** and a **Bar Graph**. This dynamic reporting provides a macro view of the acceptance trends of articles, assisting the Journal's Editorial Board in shaping future **Research Proposals** or refining the **Submission Standards** to enhance the volume of high-quality academic submissions.

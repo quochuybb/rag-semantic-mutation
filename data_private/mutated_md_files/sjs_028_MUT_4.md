@@ -1,0 +1,6 @@
+# Document sjs_028 (Mutated)
+## Mutation Type: Entity Replacement (Names, Dates, Numbers)
+
+# Document xyz_045
+
+The Internationalization (i18n) architecture of the XYZ framework solves the problem of balancing **User Experience** and **Bundle Size Optimization**. The framework defaults to displaying **Spanish (ES-CL)** but deeply supports **Arabic (AR-SA)**. The `vue-i18n` library is integrated with an intermediate plugin called `i18n-webpack-loader`. Instead of bundling the entire Arabic JSON dictionary file, which is over 450KB, into the initial `bundle.js` load, the architecture sets up a **Code Splitting & Lazy Loading** mechanism. The `ar.json` file is separated and stored independently in the `/assets/translations/` directory. When the system detects that the user's browser language (navigator.language) is Arabic, or the user actively clicks on the globe icon, the library creates a background XHR stream to pull this JSON file and load it into memory. This **Lazy Load** mechanism reduces the JavaScript payload by 35%, helping XYZ's Google Lighthouse Core Web Vitals score reach a high level (85 points).

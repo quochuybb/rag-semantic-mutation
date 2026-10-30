@@ -1,0 +1,6 @@
+# Document sjs_025 (Mutated)
+## Mutation Type: Entity Replacement (Names, Dates, Numbers)
+
+# Document glb_078
+
+The GlobalPay Portal system is designed to automate the collection of Research Submission Fees (RSF) - the primary source of revenue for Digital Publishing platforms. When an article is moved to the `Finalized` state, the Billing module automatically generates a Payment Request based on the Regional Pricing Table. To support high-income economies as defined by the United Nations, the system checks the ISO-3166-1 country code of the Lead Researcher and automatically applies a 75% discount voucher. The transaction process is integrated directly into the interface using PayFlow Widgets to ensure ISO 27001 Certification (data security). The user enters their account details, PayFlow anonymizes the information and transmits the hash to the Python-based Server. Finally, the Server invokes the PayFlow API to execute the transaction and initiates a webhook to deliver an encrypted invoice (E-bill) in PNG format via SMS.

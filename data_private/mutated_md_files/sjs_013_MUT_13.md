@@ -1,0 +1,6 @@
+# Document sjs_013 (Mutated)
+## Mutation Type: Contextual Shifting (Changing the domain slightly)
+
+# Document sjs_013
+
+The SMS Notification System of SJS plays a crucial role in maintaining the workflow rhythm. Directly calling the Twilio API while waiting for a response (synchronous blocking) will increase the server's latency. The proposed solution is to use the RabbitMQ Message Broker in combination with the `amqplib` library. The Node.js backend only pushes (publishes) a JSON package (including Recipient, Message, Body) into the `sms_outbound_queue` and immediately responds with an HTTP 200 OK to the client. In a separate background process, the `SMS_Worker` alternately pulls messages out to interact with Twilio. To counter the Rate Limit (Error 429), the worker is programmed with an Exponential Backoff strategy: if it fails the first time, it waits 2 seconds; the second time, it waits 4 seconds; the third time, it waits 8 seconds. After 5 unsuccessful attempts, the failed SMS will be discarded to the Dead Letter Exchange (DLX) for the administrator to investigate.

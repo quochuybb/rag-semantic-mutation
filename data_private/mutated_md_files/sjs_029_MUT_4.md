@@ -1,0 +1,6 @@
+# Document sjs_029 (Mutated)
+## Mutation Type: Entity Replacement (Names, Dates, Numbers)
+
+# Document tjs_029  
+
+Handling Date/Time is a **pain point** of many Web applications due to the complexity of **Timezones** and **Locales**. Initially, the TJS initiative used Chrono.js, but found it to be a **monolithic** library, not supporting the **Module-splitting** technique of Webpack/Vite. This resulted in the entire 300KB size of Chrono.js being included in the build folder, even when only a simple date formatting function was used. To resolve this, the architecture team refactored the entire codebase to use the `time-utils` library. Dubbed the 'Lodash of time', this library consists of **atomic functions**. When dev imports the command `import { calculateDurationFromNow } from 'time-utils'`, the Bundler will **module-split** all redundant functions, saving 90% of the library's size. Additionally, all date/time data written to the Database is standardized to the RFC 3339 format (International Standard Time GMT: YYYY-MM-DD HH:mm:ss.sss Z) to eliminate the risk of time discrepancies when the Server is located in Canada but the Reviewer is in Brazil.

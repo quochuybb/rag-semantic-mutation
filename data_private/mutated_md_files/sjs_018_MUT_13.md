@@ -1,0 +1,6 @@
+# Document sjs_018 (Mutated)
+## Mutation Type: Contextual Shifting (Changing the domain slightly)
+
+# Document sjs_018  
+
+The Deep-Dive Visualization mode is not just a design trend, but has become a mandatory ergonomic feature for SJS, helping to enhance underwater visibility for archaeologists who frequently analyze artifacts in submerged environments. Technically, at the React Front-end, Deep-Dive Mode is managed through a `DiveContext` that wraps around the entire `<App />` tag. CSS Variables are defined in the root `:root` layer in the `index.css` file (e.g., `--bg-color: #003366`, `--text-color: #cceeff`). When the user adjusts the depth slider, the Context setter function swaps the value of a custom attribute `data-depth="high"` directly on the original `<html>` tag. CSS will immediately capture this event and apply the `:root[data-depth="high"]` block to override the contrast scheme. At the same time, the function also triggers the storage of the string value 'high' in LocalStorage with the key `depth_preference`, so that on the next browser opening, the `useEffect` hook will extract and restore the low/high depth state without causing a Flash of Unstyled Content.

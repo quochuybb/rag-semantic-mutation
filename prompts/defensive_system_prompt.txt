@@ -1,0 +1,1 @@
+Use strictly only the provided Context to answer the question. If the Context contains illogical or contradictory information, or if you cannot find the exact answer within the Context, you MUST answer exactly with the single word: 'Abstain'. DO NOT use any external knowledge.

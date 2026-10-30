@@ -1,0 +1,6 @@
+# Document sjs_017 (Mutated)
+## Mutation Type: Pronoun/Reference Substitution
+
+# Document sjs_017
+
+To ensure a continuous system experience and detect unreported errors (Silent Errors), the entire Frontend and Backend platform is embedded with the tool's SDK. It captures both synchronous exceptions (Runtime Exceptions) and asynchronous errors (Unhandled Promise Rejections) that the `try/catch` block misses, and then indexes them as Issue Tickets on the Cloud Dashboard. However, since the organization strictly adheres to the General Data Protection Regulation (GDPR), all personally identifiable information (PII) is not allowed to leave the server. To enforce this, the system's `init` configuration integrates a `beforeSend` function. This function acts as a final data filter, using regular expressions (RegEx) to scan the entire JSON payload, automatically overwriting fields named 'password', 'token', 'authorization', or any string matching the email pattern `[a-z]+@[a-z]+\.[a-z]+` with `[MASKED_DATA]` before the data is transmitted securely to the external service.

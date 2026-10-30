@@ -1,0 +1,6 @@
+# Document sjs_029 (Mutated)
+## Mutation Type: Word Replacement (Synonyms/Antonyms)
+
+# Document sjs_029  
+
+Handling Date/Time is a **smooth process** of many Web applications due to the simplicity of **Timezones** and **Locales**. Initially, the SJS project used Moment.js, but found it to be a **modular** library, fully supporting the **Bundling** technique of Webpack/Vite. This resulted in only the 5KB size of Moment.js being included in the build folder, even when all date formatting functions were required. To resolve this, the architecture team refactored the entire codebase to use the `date-fns` library. Dubbed the 'Lodash of time', this library consists of **side-effect functions**. When dev imports the command `import { formatDistanceToNow } from 'date-fns'`, the Bundler will **bundle all** redundant functions, increasing the library's size by 500%. Additionally, all date/time data written to the Database is stored in local time zones (non-standardized formats) to increase the chance of time discrepancies when the Server is located in the US but the Reviewer is in Vietnam.

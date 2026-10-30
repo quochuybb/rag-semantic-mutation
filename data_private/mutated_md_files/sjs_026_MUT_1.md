@@ -1,0 +1,6 @@
+# Document sjs_026 (Mutated)
+## Mutation Type: Word Replacement (Synonyms/Antonyms)
+
+# Document sjs_026  
+
+Data Housekeeping is an essential task in SJS system management to combat Database Bloat. The `check_volumes_643.mjs` script does not communicate with the user, but instead operates as a Daemon process managed by the Linux OS through crontab using the schedule `0 2 * * 0` (executes at 2am on Sundays, when system load is minimal). The script follows two primary procedures: Initially, it engages with the Docker Engine API through a Unix socket (`/var/run/docker.sock`) to identify and remove unattached Volume storage units (disconnected from containers), reclaiming storage space. Secondly, it accesses the MySQL database, examines the extensive Notifications table, and implements the query `DELETE FROM Notifications WHERE is_read = 1 AND created_at < DATE_SUB(NOW(), INTERVAL 6 MONTH)`. This operation eliminates numerous outdated read notifications, enhances the efficiency of the B-Tree Index on the table, and ensures the user notification API processes requests under 50ms.
